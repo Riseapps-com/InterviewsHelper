@@ -1,0 +1,62 @@
+{
+    "description": "A file which describes how many minutes should be provided for each section. Status fields are: [optional, required]",
+    "totalDurationMin": 90,
+    "javascript": {
+        "status": "required",
+        "durationMin": 15,
+        "label": "JavaScript"
+    },
+    "typescript": {
+        "status": "optional",
+        "durationMin": 10,
+        "label": "TypeScript"
+    },
+    "react": {
+        "status": "required",
+        "durationMin": 20,
+        "label": "React"
+    },
+    "reactNative": {
+        "status": "required",
+        "durationMin": 20,
+        "label": "React Native"
+    },
+    "nativePlatforms": {
+        "status": "required",
+        "durationMin": 10,
+        "label": "Native Platforms"
+    },
+    "dataStructuresAndAlgorithms": {
+        "status": "optional",
+        "durationMin": 10,
+        "label": "Data structures and algorithms"
+    },
+    "testing": {
+        "status": "optional",
+        "durationMin": 10,
+        "label": "Testing"
+    },
+    "communicationSkills": {
+        "status": "required",
+        "durationMin": 10,
+        "label": "Communication Skills"
+    },
+    "testTasks": {
+        "status": "required",
+        "durationMin": 5,
+        "label": "Test Tasks"
+    },
+    "other": {
+        "status": "optional",
+        "durationMin": 10,
+        "label": "Other"
+    },
+    "requiredSections": [
+        "javascript",
+        "react",
+        "reactNative",
+        "nativePlatforms",
+        "communicationSkills"
+    ],
+    "optionalSections": ["typescript", "dataStructuresAndAlgorithms", "testing", "other"]
+}
