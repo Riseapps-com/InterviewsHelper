@@ -1,7 +1,8 @@
-import { Candidate, QuestionToValidate } from './types'
+import { Candidate, QuestionData } from './types'
 import fs, { constants } from 'fs'
-import { questionsFilePath } from './findSuitableQuestions'
-import interviewQuestions from './interview_questions.json'
+import PDFDocument from 'pdfkit'
+import { questionsFilename } from './config'
+import interviewQuestions from './interviewQuestions'
 
 const pdfFileName: string = 'interviewQuestions.pdf'
 
@@ -12,68 +13,10 @@ const parseQuestions = (rawQuestions: string): string => {
     const questionsForPDF: string[] = questions.reduce((prev, curr, index) => {
         const questionSplit: string[] = curr.split('@')
         const questionKey: string = questionSplit[questionSplit.length - 2]
-        let interviewQuestion: QuestionToValidate = undefined
-        if (questionKey.includes('js')) {
-            interviewQuestion = interviewQuestions.javascript.data.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('ts')) {
-            interviewQuestion = interviewQuestions.typescript.data.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('r:rb')) {
-            interviewQuestion = interviewQuestions.react.reactBasics.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('r:r')) {
-            interviewQuestion = interviewQuestions.react.redux.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('r:m')) {
-            interviewQuestion = interviewQuestions.react.mobx.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('r:h')) {
-            interviewQuestion = interviewQuestions.react.hooks.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('r:ra')) {
-            interviewQuestion = interviewQuestions.react.reactAdvanced.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('r:ag')) {
-            interviewQuestion = interviewQuestions.react.apolloGraphql.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('rn')) {
-            interviewQuestion = interviewQuestions.reactNative.data.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('t:j')) {
-            interviewQuestion = interviewQuestions.testing.jest.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('t:d')) {
-            interviewQuestion = interviewQuestions.testing.detox.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('dsa')) {
-            interviewQuestion = interviewQuestions.dataStructuresAndAlgorithms.data.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('cs')) {
-            interviewQuestion = interviewQuestions.communicationSkills.data.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('tt')) {
-            interviewQuestion = interviewQuestions.testTasks.data.find(
-                (item) => item.key === questionKey,
-            )
-        } else if (questionKey.includes('o')) {
-            interviewQuestion = interviewQuestions.other.data.find(
-                (item) => item.key === questionKey,
-            )
-        }
+        let interviewQuestion: QuestionData = undefined
+
+        // todo
+
         return [...prev, `${index + 1}) ${interviewQuestion?.question}`]
     }, [])
 
@@ -81,12 +24,22 @@ const parseQuestions = (rawQuestions: string): string => {
 }
 
 const generateInterviewPDF = (candidate: Candidate): void => {
-    fs.access(questionsFilePath, constants.F_OK, (err) => {
+    fs.access(questionsFilename, constants.F_OK, (err) => {
         if (err) {
             console.error(err)
             return
         }
-        fs.readFileSync(questionsFilePath, 'utf8')
+
+        const pdfDocument = new PDFDocument({ margin: 64 })
+        pdfDocument.fontSize(14);
+        pdfDocument.font('Times-Roman')
+        pdfDocument.image('pieChart.png', 0, 15, { width: 600 }).text('Proportional to width', 0, 0)
+        pdfDocument.text(parseQuestions(fs.readFileSync(questionsFilename, 'utf8')), {
+            width: 410,
+            align: 'justify',
+        })
+        pdfDocument.pipe(fs.createWriteStream(pdfFileName))
+        pdfDocument.end()
     })
 }
 

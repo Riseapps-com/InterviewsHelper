@@ -1,8 +1,7 @@
-import { QuestionData, Role, Topic } from './types'
-import interviewQuestions from './interview_questions.json'
+import { QuestionData, Role } from './types'
 import fs from 'fs'
-
-const questionsFilePath: string = 'questions.txt'
+import { questionsFilename, Topic } from './config'
+import interviewQuestions from './interviewQuestions'
 
 const isSuitableForTrainee = (requiredFor: Role): boolean => requiredFor === 'trainee'
 
@@ -78,40 +77,27 @@ const findSuitableQuestions = (role: Role, includedTopics: Topic[]): void => {
 
     const questions: QuestionData[] = includedTopics.reduce((prev, curr) => {
         let suitableQuestions: QuestionData[]
-        if (
-            curr === 'reactBasics' ||
-            curr === 'redux' ||
-            curr === 'mobx' ||
-            curr === 'apolloGraphql' ||
-            curr === 'reactAdvanced'
-        ) {
-            suitableQuestions = interviewQuestions.react[curr].filter((item: QuestionData) =>
+
+        if (curr.split('.').length > 1) {
+            const keys: string[] = curr.split('.')
+            suitableQuestions = (interviewQuestions[keys[0]][
+                keys[1]
+            ] as QuestionData[]).filter((item: QuestionData) =>
                 isSuitableQuestion(role, item.requiredFor),
             )
-        } else if (curr === 'jest' || curr === 'detox') {
-            suitableQuestions = interviewQuestions.testing[curr].filter((item: QuestionData) =>
+        } else {
+            suitableQuestions = (interviewQuestions[curr]
+                .data as QuestionData[]).filter((item: QuestionData) =>
                 isSuitableQuestion(role, item.requiredFor),
-            )
-        } else if (
-            curr === 'javascript' ||
-            curr === 'typescript' ||
-            curr === 'reactNative' ||
-            curr === 'dataStructuresAndAlgorithms' ||
-            curr === 'communicationSkills' ||
-            curr === 'testTasks' ||
-            curr === 'other'
-        ) {
-            suitableQuestions = interviewQuestions[curr].data.filter((item: QuestionData) =>
-                isSuitableQuestion(role, item.requiredFor),
-            )
+            ) as QuestionData[]
         }
 
         return [...prev, ...suitableQuestions]
     }, [])
     fs.writeFileSync(
-        questionsFilePath,
+        questionsFilename,
         questions.map((question) => formatQuestion(question)).join('\n'),
     )
 }
 
-export { findSuitableQuestions, questionsFilePath }
+export { findSuitableQuestions }

@@ -1,7 +1,8 @@
 import fetch, { Response } from 'node-fetch'
 import fs from 'fs'
-import { Topic, TopicDurationForChart } from './types'
-import interview from './interview.json'
+import { Topic } from './config'
+import { TopicDuration } from './types'
+import interview from './interview'
 
 const pieChartFilename: string = 'pieChart.png'
 
@@ -20,23 +21,18 @@ const chartColors: string[] = [
 const generatePieChart = async (topics: Topic[]) => {
     console.log(`generatePieChart([${topics}])`)
 
-    const topicDurations: TopicDurationForChart[] = topics.reduce((curr, prev) => {
-        let topicDuration: TopicDurationForChart
-        if (
-            prev === 'reactBasics' ||
-            prev === 'redux' ||
-            prev === 'mobx' ||
-            prev === 'hooks' ||
-            prev === 'reactAdvanced' ||
-            prev === 'apolloGraphql'
-        ) {
-            topicDuration = interview.react
-        } else if (prev === 'jest' || prev === 'detox') {
-            topicDuration = interview.testing
+    const topicDurations: TopicDuration[] = topics.reduce((curr, prev) => {
+        let topicDuration: TopicDuration
+
+        if (prev.split('.').length > 1) {
+            const keys: string[] = prev.split('.')
+            topicDuration = interview[keys[0]] as TopicDuration
         } else {
-            topicDuration = interview[prev]
+            console.log(interview)
+            topicDuration = interview[prev] as TopicDuration
         }
-        return [...curr, topicDuration]
+
+        return curr.includes(topicDuration) ? [...curr] : [...curr, topicDuration]
     }, [])
 
     const chartData = {

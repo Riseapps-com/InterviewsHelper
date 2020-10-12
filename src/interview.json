@@ -1,5 +1,4 @@
 {
-    "description": "A file which describes how many minutes should be provided for each section. Status fields are: [optional, required]",
     "totalDurationMin": 90,
     "javascript": {
         "status": "required",
