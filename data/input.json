@@ -1,0 +1,8 @@
+{
+    "role": "trainee",
+    "includedTopics": ["javascript", "typescript", "react.redux"],
+    "candidate": {
+        "firstname": "Dmitry",
+        "lastname": "Usik"
+    }
+}

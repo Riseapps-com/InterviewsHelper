@@ -1,5 +1,5 @@
 import fs from 'fs'
-import config from '../config'
+import config from './config'
 
 const createOutputsDirectory = (): void => {
     console.log('createOutputsDirectory()')

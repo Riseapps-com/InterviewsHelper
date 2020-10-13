@@ -3,8 +3,8 @@ import fs from 'fs'
 import { TopicDuration } from './types'
 import interview from './interview'
 import QuickChart from 'quickchart-js'
-import config from '../config'
-import input from '../input'
+import config from './config'
+import input from './input'
 
 const getTopicDurations = (topics: string[]): TopicDuration[] =>
     topics.reduce((curr, prev) => {

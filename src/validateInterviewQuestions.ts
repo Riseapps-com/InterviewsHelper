@@ -2,7 +2,7 @@ import fs from 'fs'
 import { QuestionData } from './types'
 import startCase from 'lodash.startcase'
 import interviewQuestions from './interviewQuestions'
-import config from '../config'
+import config from './config'
 
 const validateRequireFor = (requiredFor: string): boolean =>
     requiredFor === 'trainee' ||

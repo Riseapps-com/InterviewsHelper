@@ -1,8 +1,8 @@
 import { QuestionData } from './types'
 import fs from 'fs'
 import interviewQuestions from './interviewQuestions'
-import config from '../config'
-import input from '../input'
+import config from './config'
+import input from './input'
 
 const isSuitableForTrainee = (requiredFor: string): boolean => requiredFor === 'trainee'
 

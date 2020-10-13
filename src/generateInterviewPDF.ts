@@ -1,8 +1,8 @@
 import fs from 'fs'
 import PDFDocument from 'pdfkit'
 import { parseQuestions } from './parseQuestions'
-import config from '../config'
-import input from '../input'
+import config from './config'
+import input from './input'
 
 const documentHorizontalMargin: number = 48
 const documentVerticalMargin: number = 64

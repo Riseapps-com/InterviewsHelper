@@ -1,6 +1,6 @@
 import { QuestionData } from './types'
 import interviewQuestions from './interviewQuestions'
-import config from '../config'
+import config from './config'
 
 const parseQuestions = (rawQuestions: string): string => {
     const questions: string[] = rawQuestions
