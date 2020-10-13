@@ -1,41 +1,26 @@
 import fetch, { Response } from 'node-fetch'
 import fs from 'fs'
-import { pieChartFilepath, Topic, TopLevelTopic } from './config'
 import { TopicDuration } from './types'
 import interview from './interview'
 import QuickChart from 'quickchart-js'
+import config from '../config'
 
-const chartColors: string[] = [
-    'rgb(254,74,73)',
-    'rgb(42,183,202)',
-    'rgb(254,215,102)',
-    'rgb(246,171,182)',
-    'rgb(0,91,150)',
-    'rgb(123,192,67)',
-    'rgb(243,119,54)',
-    'rgb(255,119,170)',
-    'rgb(133,68,66)',
-]
-
-const chartTextColor: string = 'rgb(74,78,77)'
-
-const getTopicDurations = (topics: Topic[]): TopicDuration[] =>
+const getTopicDurations = (topics: string[]): TopicDuration[] =>
     topics.reduce((curr, prev) => {
         let topicDuration: TopicDuration
 
         if (prev.split('.').length > 1) {
             const keys: string[] = prev.split('.')
-            const topLevelTopic: TopLevelTopic = keys[0] as TopLevelTopic
+            const topLevelTopic: string = keys[0]
             topicDuration = interview.topics[topLevelTopic]
         } else {
-            const topLevelTopic: TopLevelTopic = prev as TopLevelTopic
-            topicDuration = interview.topics[topLevelTopic]
+            topicDuration = interview.topics[prev]
         }
 
         return curr.includes(topicDuration) ? [...curr] : [...curr, topicDuration]
     }, [])
 
-const generatePieChart = async (topics: Topic[]) => {
+const generatePieChart = async (topics: string[]) => {
     console.log(`generatePieChart([${topics}])`)
 
     const topicDurations: TopicDuration[] = getTopicDurations(topics)
@@ -47,7 +32,7 @@ const generatePieChart = async (topics: Topic[]) => {
             datasets: [
                 {
                     data: topicDurations.map((topicDuration) => topicDuration.durationMin),
-                    backgroundColor: chartColors,
+                    backgroundColor: config.pieChart.dataColors,
                     label: 'Main Dataset',
                 },
             ],
@@ -61,8 +46,8 @@ const generatePieChart = async (topics: Topic[]) => {
                 display: true,
                 align: 'center',
                 labels: {
-                    fontColor: chartTextColor,
-                    fontSize: 12,
+                    fontColor: config.pieChart.fontColor,
+                    fontSize: config.pieChart.fontSize,
                     fontStyle: 'bold',
                 },
             },
@@ -70,19 +55,29 @@ const generatePieChart = async (topics: Topic[]) => {
                 datalabels: {
                     display: true,
                     font: {
-                        size: 16,
-                        weight: 'bold',
+                        size: config.pieChart.fontSize,
+                        weight: config.pieChart.fontStyle,
                     },
-                    color: chartTextColor,
+                    color: config.pieChart.dataFontColor,
                 },
                 doughnutlabel: {
                     labels: [
                         {
                             text: interview.totalDurationMin,
-                            font: { size: 32, weight: 'bold' },
-                            color: chartTextColor,
+                            font: {
+                                size: config.pieChart.centerFontSize,
+                                weight: config.pieChart.fontStyle,
+                            },
+                            color: config.pieChart.fontColor,
                         },
-                        { text: 'min', font: { size: 16, weight: 'bold' }, color: chartTextColor },
+                        {
+                            text: 'min',
+                            font: {
+                                size: config.pieChart.fontSize,
+                                weight: config.pieChart.fontStyle,
+                            },
+                            color: config.pieChart.fontColor,
+                        },
                     ],
                 },
             },
@@ -90,7 +85,7 @@ const generatePieChart = async (topics: Topic[]) => {
     })
 
     const response: Response = await fetch(pieChart.getUrl())
-    fs.writeFileSync(pieChartFilepath, await response.buffer())
+    fs.writeFileSync(config.pieChartFilepath, await response.buffer())
 }
 
 export { generatePieChart }

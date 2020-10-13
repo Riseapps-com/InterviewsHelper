@@ -1,8 +1,8 @@
 import fs from 'fs'
-import { notValidQuestionsFilepath, Topic } from './config'
 import { QuestionData } from './types'
 import startCase from 'lodash.startcase'
 import interviewQuestions from './interviewQuestions'
+import config from '../config'
 
 const validateRequireFor = (requiredFor: string): boolean =>
     requiredFor === 'trainee' ||
@@ -45,7 +45,7 @@ const validateInterviewQuestions = (): boolean => {
 
     const notValidQuestions: string[] = []
 
-    const isValid: boolean = Object.keys(interviewQuestions).reduce((prev, curr: Topic) => {
+    const isValid: boolean = Object.keys(interviewQuestions).reduce((prev, curr: string) => {
         let isValid: boolean
 
         isValid = areQuestionsValid(
@@ -65,11 +65,11 @@ const validateInterviewQuestions = (): boolean => {
 
 const writeNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
     if (notValidQuestions.length) {
-        fs.writeFileSync(notValidQuestionsFilepath, notValidQuestions.join('\n'))
+        fs.writeFileSync(config.notValidQuestionsFilepath, notValidQuestions.join('\n'))
     } else {
         try {
-            if (fs.existsSync(notValidQuestionsFilepath)) {
-                fs.unlinkSync(notValidQuestionsFilepath)
+            if (fs.existsSync(config.notValidQuestionsFilepath)) {
+                fs.unlinkSync(config.notValidQuestionsFilepath)
             }
         } catch (error) {
             console.log(error)

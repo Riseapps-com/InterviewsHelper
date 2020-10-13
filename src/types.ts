@@ -1,5 +1,3 @@
-import { Topic, TopLevelTopic } from './config'
-
 export type Status = 'optional' | 'required'
 
 export type Role = 'trainee' | 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior'
@@ -23,7 +21,7 @@ export type Question = {
 }
 
 export type InterviewQuestions = {
-    [key in Topic]: Question
+    [key in string]: Question
 }
 
 export type TopicDuration = {
@@ -33,7 +31,7 @@ export type TopicDuration = {
 }
 
 export type Topics = {
-    [key in TopLevelTopic]: TopicDuration
+    [key in string]: TopicDuration
 }
 
 export type Interview = {

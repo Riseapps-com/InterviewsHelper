@@ -1,11 +1,11 @@
 import { QuestionData } from './types'
 import interviewQuestions from './interviewQuestions'
-import { suitableQuestionMarker } from './config'
+import config from '../config'
 
 const parseQuestions = (rawQuestions: string): string => {
     const questions: string[] = rawQuestions
         .split('\n')
-        .filter((question) => question.startsWith(suitableQuestionMarker))
+        .filter((question) => question.startsWith(config.suitableQuestionMarker))
     const questionsForPDF: string[] = questions.reduce((prev, curr, index) => {
         const questionSplit: string[] = curr.split('@')
         const questionKey: string = questionSplit[questionSplit.length - 2]

@@ -1,0 +1,19 @@
+{
+    "role": "trainee",
+    "includedTopics": [
+        "javascript",
+        "typescript",
+        "react.redux",
+        "reactNative",
+        "nativePlatforms",
+        "testing.jest",
+        "communicationSkills",
+        "other",
+        "dataStructuresAndAlgorithms",
+        "testTasks"
+    ],
+    "candidate": {
+        "firstname": "Dmitry",
+        "lastname": "Usik"
+    }
+}

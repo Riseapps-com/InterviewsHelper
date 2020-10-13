@@ -1,30 +1,30 @@
-import { QuestionData, Role } from './types'
+import { QuestionData } from './types'
 import fs from 'fs'
-import { questionsFilepath, Topic } from './config'
 import interviewQuestions from './interviewQuestions'
+import config from '../config'
 
-const isSuitableForTrainee = (requiredFor: Role): boolean => requiredFor === 'trainee'
+const isSuitableForTrainee = (requiredFor: string): boolean => requiredFor === 'trainee'
 
-const isSuitableForJunior = (requiredFor: Role): boolean =>
+const isSuitableForJunior = (requiredFor: string): boolean =>
     requiredFor === 'trainee' || requiredFor === 'junior'
 
-const isSuitableForJuniorPlus = (requiredFor: Role): boolean =>
+const isSuitableForJuniorPlus = (requiredFor: string): boolean =>
     requiredFor === 'trainee' || requiredFor === 'junior' || requiredFor === 'junior+'
 
-const isSuitableForMiddleMinus = (requiredFor: Role): boolean =>
+const isSuitableForMiddleMinus = (requiredFor: string): boolean =>
     requiredFor === 'trainee' ||
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
     requiredFor === 'middle-'
 
-const isSuitableForMiddle = (requiredFor: Role): boolean =>
+const isSuitableForMiddle = (requiredFor: string): boolean =>
     requiredFor === 'trainee' ||
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
     requiredFor === 'middle-' ||
     requiredFor === 'middle'
 
-const isSuitableForMiddlePlus = (requiredFor: Role): boolean =>
+const isSuitableForMiddlePlus = (requiredFor: string): boolean =>
     requiredFor === 'trainee' ||
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
@@ -32,7 +32,7 @@ const isSuitableForMiddlePlus = (requiredFor: Role): boolean =>
     requiredFor === 'middle' ||
     requiredFor === 'middle+'
 
-const isSuitableForSenior = (requiredFor: Role): boolean =>
+const isSuitableForSenior = (requiredFor: string): boolean =>
     requiredFor === 'trainee' ||
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
@@ -41,7 +41,7 @@ const isSuitableForSenior = (requiredFor: Role): boolean =>
     requiredFor === 'middle+' ||
     requiredFor === 'senior'
 
-const isSuitableQuestion = (role: Role, requiredFor: Role): boolean => {
+const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
     let isSuitable: boolean = false
     switch (role) {
         case 'trainee':
@@ -72,7 +72,7 @@ const isSuitableQuestion = (role: Role, requiredFor: Role): boolean => {
 const formatQuestion = (question: QuestionData): string =>
     `${question.order}. ${question.question} (timeForAnswer: ${question.estimatedTimeMin} min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`
 
-const findSuitableQuestions = (role: Role, includedTopics: Topic[]): void => {
+const findSuitableQuestions = (role: string, includedTopics: string[]): void => {
     console.log(`findSuitableQuestions(${role}, [${includedTopics}])`)
 
     const questions: QuestionData[] = includedTopics.reduce((prev, curr) => {
@@ -85,7 +85,7 @@ const findSuitableQuestions = (role: Role, includedTopics: Topic[]): void => {
         return [...prev, ...suitableQuestions]
     }, [])
     fs.writeFileSync(
-        questionsFilepath,
+        config.questionsFilepath,
         questions.map((question) => formatQuestion(question)).join('\n'),
     )
 }

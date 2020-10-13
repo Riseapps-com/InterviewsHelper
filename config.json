@@ -1,0 +1,30 @@
+{
+    "outputDirectory": "outputs",
+    "notValidQuestionsFilepath": "outputs/notValidQuestions.txt",
+    "questionsFilepath": "outputs/questions.txt",
+    "pieChartFilepath": "outputs/pieChart.png",
+    "forInterviewerFilepath": "outputs/forInterviewer.pdf",
+    "forCandidateFilepath": "outputs/forCandidate.pdf",
+    "resultDraftFilepath": "outputs/resultDraft.txt",
+    "resultFilepath": "outputs/result.pdf",
+    "suitableQuestionMarker": "+ ",
+    "pieChart": {
+        "dataColors": [
+            "rgb(254,74,73)",
+            "rgb(42,183,202)",
+            "rgb(254,215,102)",
+            "rgb(246,171,182)",
+            "rgb(0,91,150)",
+            "rgb(123,192,67)",
+            "rgb(243,119,54)",
+            "rgb(79,55,45)",
+            "rgb(255,119,170)",
+            "rgb(74,78,77)"
+        ],
+        "fontColor": "rgb(74,78,77)",
+        "dataFontColor": "rgb(255, 255, 255)",
+        "fontSize": 12,
+        "centerFontSize": 32,
+        "fontStyle": "bold"
+    }
+}

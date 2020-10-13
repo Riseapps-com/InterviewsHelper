@@ -1,11 +1,11 @@
 import fs from 'fs'
-import { outputDirectory } from './config'
+import config from '../config'
 
 const createOutputsDirectory = (): void => {
     console.log('createOutputsDirectory()')
 
-    if (!fs.existsSync(outputDirectory)) {
-        fs.mkdirSync(outputDirectory)
+    if (!fs.existsSync(config.outputDirectory)) {
+        fs.mkdirSync(config.outputDirectory)
     }
 }
 
