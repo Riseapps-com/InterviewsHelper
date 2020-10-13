@@ -1,3 +1,5 @@
+import { Candidate, Role } from './types'
+
 export type Topic =
     | 'javascript'
     | 'typescript'
@@ -27,7 +29,42 @@ export type TopLevelTopic =
     | 'testTasks'
     | 'other'
 
-const notValidQuestionsFilename: string = 'notValidQuestions.txt'
-const questionsFilename: string = 'questions.txt'
+const outputDirectory: string = 'outputs'
 
-export { notValidQuestionsFilename, questionsFilename }
+const notValidQuestionsFilepath: string = `${outputDirectory}/notValidQuestions.txt`
+const questionsFilepath: string = `${outputDirectory}/questions.txt`
+const pieChartFilepath: string = `${outputDirectory}/pieChart.png`
+const forInterviewerFilepath: string = `${outputDirectory}/forInterviewer.pdf`
+const forCandidateFilepath: string = `${outputDirectory}/forCandidate.pdf`
+const resultDraftFilepath: string = `${outputDirectory}/resultDraft.txt`
+const resultFilepath: string = `${outputDirectory}/result.pdf`
+const suitableQuestionMarker: string = '+ '
+
+// input args
+const role: Role | null = 'trainee'
+const includedTopics: Topic[] = [
+    'javascript',
+    'typescript',
+    'react.redux',
+    'react.hooks',
+    'react.reactBasics',
+]
+const candidate: Candidate = {
+    firstname: 'Dmitry',
+    lastname: 'Usik',
+}
+
+export {
+    outputDirectory,
+    notValidQuestionsFilepath,
+    questionsFilepath,
+    pieChartFilepath,
+    forInterviewerFilepath,
+    forCandidateFilepath,
+    resultDraftFilepath,
+    resultFilepath,
+    suitableQuestionMarker,
+    role,
+    includedTopics,
+    candidate,
+}

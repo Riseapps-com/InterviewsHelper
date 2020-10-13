@@ -1,6 +1,3 @@
 node_modules/**/*
-
-pieChart.png
-questions.txt
-notValidQuestions.txt
-interviewQuestions.pdf
+outputs/**/*
+/yarn-error.log

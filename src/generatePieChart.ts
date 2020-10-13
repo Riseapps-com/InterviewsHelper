@@ -1,10 +1,9 @@
 import fetch, { Response } from 'node-fetch'
 import fs from 'fs'
-import { Topic, TopLevelTopic } from './config'
+import { pieChartFilepath, Topic, TopLevelTopic } from './config'
 import { TopicDuration } from './types'
 import interview from './interview'
-
-const pieChartFilename: string = 'pieChart.png'
+import QuickChart from 'quickchart-js'
 
 const chartColors: string[] = [
     'rgb(254,74,73)',
@@ -18,10 +17,10 @@ const chartColors: string[] = [
     'rgb(133,68,66)',
 ]
 
-const generatePieChart = async (topics: Topic[]) => {
-    console.log(`generatePieChart([${topics}])`)
+const chartTextColor: string = 'rgb(74,78,77)'
 
-    const topicDurations: TopicDuration[] = topics.reduce((curr, prev) => {
+const getTopicDurations = (topics: Topic[]): TopicDuration[] =>
+    topics.reduce((curr, prev) => {
         let topicDuration: TopicDuration
 
         if (prev.split('.').length > 1) {
@@ -36,7 +35,13 @@ const generatePieChart = async (topics: Topic[]) => {
         return curr.includes(topicDuration) ? [...curr] : [...curr, topicDuration]
     }, [])
 
-    const chartData = {
+const generatePieChart = async (topics: Topic[]) => {
+    console.log(`generatePieChart([${topics}])`)
+
+    const topicDurations: TopicDuration[] = getTopicDurations(topics)
+
+    const pieChart = new QuickChart()
+    pieChart.setConfig({
         type: 'doughnut',
         data: {
             datasets: [
@@ -52,28 +57,40 @@ const generatePieChart = async (topics: Topic[]) => {
             title: {
                 display: false,
             },
+            legend: {
+                display: true,
+                align: 'center',
+                labels: {
+                    fontColor: chartTextColor,
+                    fontSize: 12,
+                    fontStyle: 'bold',
+                },
+            },
             plugins: {
                 datalabels: {
                     display: true,
                     font: {
-                        size: 10,
+                        size: 16,
                         weight: 'bold',
                     },
+                    color: chartTextColor,
                 },
                 doughnutlabel: {
                     labels: [
-                        { text: interview.totalDurationMin, font: { size: 20, weight: 'bold' } },
-                        { text: 'min' },
+                        {
+                            text: interview.totalDurationMin,
+                            font: { size: 32, weight: 'bold' },
+                            color: chartTextColor,
+                        },
+                        { text: 'min', font: { size: 16, weight: 'bold' }, color: chartTextColor },
                     ],
                 },
             },
         },
-    }
+    })
 
-    const response: Response = await fetch(
-        `https://quickchart.io/chart?bkg=white&c=${JSON.stringify(chartData)}`,
-    )
-    fs.writeFileSync(pieChartFilename, await response.buffer())
+    const response: Response = await fetch(pieChart.getUrl())
+    fs.writeFileSync(pieChartFilepath, await response.buffer())
 }
 
-export { generatePieChart, pieChartFilename }
+export { generatePieChart }

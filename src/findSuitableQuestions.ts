@@ -1,6 +1,6 @@
 import { QuestionData, Role } from './types'
 import fs from 'fs'
-import { questionsFilename, Topic } from './config'
+import { questionsFilepath, Topic } from './config'
 import interviewQuestions from './interviewQuestions'
 
 const isSuitableForTrainee = (requiredFor: Role): boolean => requiredFor === 'trainee'
@@ -70,7 +70,7 @@ const isSuitableQuestion = (role: Role, requiredFor: Role): boolean => {
 }
 
 const formatQuestion = (question: QuestionData): string =>
-    `${question.order}. ${question.question} (timeForAnswer: @${question.estimatedTimeMin}@ min) (requiredFor: @${question.requiredFor}@) (key: @${question.key}@)`
+    `${question.order}. ${question.question} (timeForAnswer: ${question.estimatedTimeMin} min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`
 
 const findSuitableQuestions = (role: Role, includedTopics: Topic[]): void => {
     console.log(`findSuitableQuestions(${role}, [${includedTopics}])`)
@@ -85,7 +85,7 @@ const findSuitableQuestions = (role: Role, includedTopics: Topic[]): void => {
         return [...prev, ...suitableQuestions]
     }, [])
     fs.writeFileSync(
-        questionsFilename,
+        questionsFilepath,
         questions.map((question) => formatQuestion(question)).join('\n'),
     )
 }

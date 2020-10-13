@@ -1,5 +1,5 @@
-import fs, { constants } from 'fs'
-import { notValidQuestionsFilename, Topic } from './config'
+import fs from 'fs'
+import { notValidQuestionsFilepath, Topic } from './config'
 import { QuestionData } from './types'
 import startCase from 'lodash.startcase'
 import interviewQuestions from './interviewQuestions'
@@ -65,11 +65,12 @@ const validateInterviewQuestions = (): boolean => {
 
 const writeNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
     if (notValidQuestions.length) {
-        fs.writeFileSync(notValidQuestionsFilename, notValidQuestions.join('\n'))
+        fs.writeFileSync(notValidQuestionsFilepath, notValidQuestions.join('\n'))
     } else {
         try {
-            fs.accessSync(notValidQuestionsFilename, constants.F_OK)
-            fs.unlinkSync(notValidQuestionsFilename)
+            if (fs.existsSync(notValidQuestionsFilepath)) {
+                fs.unlinkSync(notValidQuestionsFilepath)
+            }
         } catch (error) {
             console.log(error)
         }
