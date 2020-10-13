@@ -2,6 +2,7 @@ import { QuestionData } from './types'
 import fs from 'fs'
 import interviewQuestions from './interviewQuestions'
 import config from '../config'
+import input from '../input'
 
 const isSuitableForTrainee = (requiredFor: string): boolean => requiredFor === 'trainee'
 
@@ -72,14 +73,14 @@ const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
 const formatQuestion = (question: QuestionData): string =>
     `${question.order}. ${question.question} (timeForAnswer: ${question.estimatedTimeMin} min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`
 
-const findSuitableQuestions = (role: string, includedTopics: string[]): void => {
-    console.log(`findSuitableQuestions(${role}, [${includedTopics}])`)
+const findSuitableQuestions = (): void => {
+    console.log(`findSuitableQuestions(${input.role}, [${input.includedTopics}])`)
 
-    const questions: QuestionData[] = includedTopics.reduce((prev, curr) => {
+    const questions: QuestionData[] = input.includedTopics.reduce((prev, curr) => {
         let suitableQuestions: QuestionData[]
 
         suitableQuestions = interviewQuestions[curr].data.filter((item: QuestionData) =>
-            isSuitableQuestion(role, item.requiredFor),
+            isSuitableQuestion(input.role, item.requiredFor),
         ) as QuestionData[]
 
         return [...prev, ...suitableQuestions]

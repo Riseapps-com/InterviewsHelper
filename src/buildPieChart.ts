@@ -4,6 +4,7 @@ import { TopicDuration } from './types'
 import interview from './interview'
 import QuickChart from 'quickchart-js'
 import config from '../config'
+import input from '../input'
 
 const getTopicDurations = (topics: string[]): TopicDuration[] =>
     topics.reduce((curr, prev) => {
@@ -20,12 +21,13 @@ const getTopicDurations = (topics: string[]): TopicDuration[] =>
         return curr.includes(topicDuration) ? [...curr] : [...curr, topicDuration]
     }, [])
 
-const generatePieChart = async (topics: string[]) => {
-    console.log(`generatePieChart([${topics}])`)
+const buildPieChart = async () => {
+    console.log(`buildPieChart([${input.includedTopics}])`)
 
-    const topicDurations: TopicDuration[] = getTopicDurations(topics)
+    const topicDurations: TopicDuration[] = getTopicDurations(input.includedTopics)
 
     const pieChart = new QuickChart()
+    pieChart.setWidth(700)
     pieChart.setConfig({
         type: 'doughnut',
         data: {
@@ -88,4 +90,4 @@ const generatePieChart = async (topics: string[]) => {
     fs.writeFileSync(config.pieChartFilepath, await response.buffer())
 }
 
-export { generatePieChart }
+export { buildPieChart }

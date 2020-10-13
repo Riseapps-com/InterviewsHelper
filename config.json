@@ -3,8 +3,8 @@
     "notValidQuestionsFilepath": "outputs/notValidQuestions.txt",
     "questionsFilepath": "outputs/questions.txt",
     "pieChartFilepath": "outputs/pieChart.png",
+    "barChartFilepath": "outputs/barChart.png",
     "forInterviewerFilepath": "outputs/forInterviewer.pdf",
-    "forCandidateFilepath": "outputs/forCandidate.pdf",
     "resultDraftFilepath": "outputs/resultDraft.txt",
     "resultFilepath": "outputs/result.pdf",
     "suitableQuestionMarker": "+ ",
@@ -26,5 +26,10 @@
         "fontSize": 12,
         "centerFontSize": 32,
         "fontStyle": "bold"
-    }
+    },
+    "pdfDocumentInfo": {
+        "creator": "Dmitry Usik",
+        "author": "Dmitry Usik"
+    },
+    "maxMark": 5
 }
