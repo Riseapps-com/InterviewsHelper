@@ -15,6 +15,17 @@ export type Topic =
     | 'communicationSkills'
     | 'testTasks'
     | 'other'
+export type TopLevelTopic =
+    | 'javascript'
+    | 'typescript'
+    | 'react'
+    | 'reactNative'
+    | 'nativePlatforms'
+    | 'testing'
+    | 'dataStructuresAndAlgorithms'
+    | 'communicationSkills'
+    | 'testTasks'
+    | 'other'
 
 const notValidQuestionsFilename: string = 'notValidQuestions.txt'
 const questionsFilename: string = 'questions.txt'

@@ -9,13 +9,17 @@ const pdfFileName: string = 'interviewQuestions.pdf'
 const parseQuestions = (rawQuestions: string): string => {
     const questions: string[] = rawQuestions
         .split('\n')
-        .filter((question) => question.startsWith(''))
+        .filter((question) => question.startsWith('+ '))
     const questionsForPDF: string[] = questions.reduce((prev, curr, index) => {
         const questionSplit: string[] = curr.split('@')
         const questionKey: string = questionSplit[questionSplit.length - 2]
-        let interviewQuestion: QuestionData = undefined
+        let interviewQuestion: QuestionData
 
-        // todo
+        Object.values(interviewQuestions).forEach((question) => {
+            if (!interviewQuestion) {
+                interviewQuestion = question.data.find((item) => item.key === questionKey)
+            }
+        })
 
         return [...prev, `${index + 1}) ${interviewQuestion?.question}`]
     }, [])
@@ -31,7 +35,7 @@ const generateInterviewPDF = (candidate: Candidate): void => {
         }
 
         const pdfDocument = new PDFDocument({ margin: 64 })
-        pdfDocument.fontSize(14);
+        pdfDocument.fontSize(14)
         pdfDocument.font('Times-Roman')
         pdfDocument.image('pieChart.png', 0, 15, { width: 600 }).text('Proportional to width', 0, 0)
         pdfDocument.text(parseQuestions(fs.readFileSync(questionsFilename, 'utf8')), {

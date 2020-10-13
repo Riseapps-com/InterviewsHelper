@@ -1,5 +1,5 @@
 import fs, { constants } from 'fs'
-import { notValidQuestionsFilename } from './config'
+import { notValidQuestionsFilename, Topic } from './config'
 import { QuestionData } from './types'
 import startCase from 'lodash.startcase'
 import interviewQuestions from './interviewQuestions'
@@ -45,30 +45,15 @@ const validateInterviewQuestions = (): boolean => {
 
     const notValidQuestions: string[] = []
 
-    const isValid: boolean = Object.keys(interviewQuestions).reduce((prev, curr) => {
+    const isValid: boolean = Object.keys(interviewQuestions).reduce((prev, curr: Topic) => {
         let isValid: boolean
 
-        if (Array.isArray(interviewQuestions[curr].data)) {
-            isValid = areQuestionsValid(
-                interviewQuestions[curr].data as QuestionData[],
-                curr,
-                notValidQuestions,
-                topicToKey(curr),
-            )
-        } else {
-            isValid = Object.keys(interviewQuestions[curr]).reduce(
-                (prev, _curr) =>
-                    curr !== 'links'
-                        ? areQuestionsValid(
-                              interviewQuestions[curr][_curr] as QuestionData[],
-                              curr,
-                              notValidQuestions,
-                              topicToKey(curr),
-                          )
-                        : true,
-                true,
-            )
-        }
+        isValid = areQuestionsValid(
+            interviewQuestions[curr].data,
+            curr,
+            notValidQuestions,
+            topicToKey(curr),
+        )
 
         return isValid
     }, true)

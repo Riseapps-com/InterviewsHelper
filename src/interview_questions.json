@@ -585,13 +585,29 @@
             "https://www.bestinterviewquestion.com/typescript-interview-questions"
         ]
     },
-    "react": {
-        "reactBasics": [],
-        "redux": [],
-        "mobx": [],
-        "hooks": [],
-        "reactAdvanced": [],
-        "apolloGraphql": []
+    "react.reactBasics": {
+        "data": [],
+        "links": []
+    },
+    "react.redux": {
+        "data": [],
+        "links": []
+    },
+    "react.mobx": {
+        "data": [],
+        "links": []
+    },
+    "react.hooks": {
+        "data": [],
+        "links": []
+    },
+    "react.reactAdvanced": {
+        "data": [],
+        "links": []
+    },
+    "react.apolloGraphql": {
+        "data": [],
+        "links": []
     },
     "reactNative": {
         "data": [],
@@ -601,9 +617,12 @@
         "data": [],
         "links": []
     },
-    "testing": {
-        "jest": [],
-        "detox": [],
+    "testing.jest": {
+        "data": [],
+        "links": []
+    },
+    "testing.detox": {
+        "data": [],
         "links": []
     },
     "dataStructuresAndAlgorithms": {

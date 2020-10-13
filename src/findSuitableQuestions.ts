@@ -78,19 +78,9 @@ const findSuitableQuestions = (role: Role, includedTopics: Topic[]): void => {
     const questions: QuestionData[] = includedTopics.reduce((prev, curr) => {
         let suitableQuestions: QuestionData[]
 
-        if (curr.split('.').length > 1) {
-            const keys: string[] = curr.split('.')
-            suitableQuestions = (interviewQuestions[keys[0]][
-                keys[1]
-            ] as QuestionData[]).filter((item: QuestionData) =>
-                isSuitableQuestion(role, item.requiredFor),
-            )
-        } else {
-            suitableQuestions = (interviewQuestions[curr]
-                .data as QuestionData[]).filter((item: QuestionData) =>
-                isSuitableQuestion(role, item.requiredFor),
-            ) as QuestionData[]
-        }
+        suitableQuestions = interviewQuestions[curr].data.filter((item: QuestionData) =>
+            isSuitableQuestion(role, item.requiredFor),
+        ) as QuestionData[]
 
         return [...prev, ...suitableQuestions]
     }, [])

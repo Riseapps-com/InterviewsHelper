@@ -1,6 +1,6 @@
 import fetch, { Response } from 'node-fetch'
 import fs from 'fs'
-import { Topic } from './config'
+import { Topic, TopLevelTopic } from './config'
 import { TopicDuration } from './types'
 import interview from './interview'
 
@@ -26,10 +26,11 @@ const generatePieChart = async (topics: Topic[]) => {
 
         if (prev.split('.').length > 1) {
             const keys: string[] = prev.split('.')
-            topicDuration = interview[keys[0]] as TopicDuration
+            const topLevelTopic: TopLevelTopic = keys[0] as TopLevelTopic
+            topicDuration = interview.topics[topLevelTopic]
         } else {
-            console.log(interview)
-            topicDuration = interview[prev] as TopicDuration
+            const topLevelTopic: TopLevelTopic = prev as TopLevelTopic
+            topicDuration = interview.topics[topLevelTopic]
         }
 
         return curr.includes(topicDuration) ? [...curr] : [...curr, topicDuration]
