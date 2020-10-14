@@ -7,10 +7,20 @@ import { createOutputsDirectory } from './src/createOutputsDirectory'
 import { generateResultDraft } from './src/generateResultDraft'
 import { _generateResultPDF } from './src/generateResultPDF'
 import { buildRadarChart } from './src/buildRadarChart'
+import { parseQuestions } from './src/parseQuestions'
+import { parseResultDraft } from './src/parseResultDraft'
 
+const validateQuestionsDBArg = includes(process.argv, '--validateQuestionsDB')
 const findQuestionsArg = includes(process.argv, '--findQuestions')
 const generateInterviewPDFArg = includes(process.argv, '--generateInterviewPDF')
 const generateResultPDFArg = includes(process.argv, '--generateResultPDF')
+
+const validateQuestionsDB = (): void => {
+    console.log('Executing validateQuestionsDB()...')
+    if (!validateInterviewQuestions()) {
+        console.log('Questions are not valid. See output/notValidQuestions.txt for more details.')
+    }
+}
 
 const findQuestions = async (): Promise<void> => {
     console.log('Executing findQuestions()...')
@@ -30,8 +40,9 @@ const generateInterviewPDF = async (): Promise<void> => {
     console.log('Executing generateInterviewPDF()...')
 
     try {
-        _generateInterviewPDF()
-        generateResultDraft()
+        const parsedQuestions = parseQuestions()
+        _generateInterviewPDF(parsedQuestions)
+        generateResultDraft(parsedQuestions)
     } catch (error) {
         console.log(error)
     }
@@ -41,11 +52,13 @@ const generateResultPDF = async (): Promise<void> => {
     console.log('Executing generateResultPDF()...')
 
     try {
-        await buildRadarChart()
-        _generateResultPDF()
+        const parsedResultDraft = parseResultDraft()
+        await buildRadarChart(parsedResultDraft)
+        _generateResultPDF(parsedResultDraft)
     } catch (error) {}
 }
 
+validateQuestionsDBArg && validateQuestionsDB()
 findQuestionsArg && findQuestions()
 generateInterviewPDFArg && generateInterviewPDF()
 generateResultPDFArg && generateResultPDF()

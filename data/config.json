@@ -22,14 +22,27 @@
             "rgb(74,78,77)"
         ],
         "fontColor": "rgb(74,78,77)",
-        "dataFontColor": "rgb(255, 255, 255)",
         "fontSize": 12,
+        "fontStyle": "bold",
         "centerFontSize": 32,
-        "fontStyle": "bold"
+        "dataFontColor": "rgb(255, 255, 255)"
     },
-    "pdfDocumentInfo": {
+    "radarChart": {
+        "datasetColor": "rgb(0, 54, 167)",
+        "datasetBackgroundColor": "rgba(0, 54, 167, 0.3)",
+        "fontSize": 10,
+        "fontColor": "rgb(74,78,77)",
+        "fontStyle": "bold",
+        "legendFontSize": 14,
+        "gridColor": "rgb(187, 187, 187)",
+        "ticksBackgroundColor": "rgba(255, 255, 255, 0.1)"
+    },
+    "pdfDocument": {
         "creator": "Dmitry Usik",
-        "author": "Dmitry Usik"
+        "author": "Dmitry Usik",
+        "verticalMargin": 64,
+        "horizontalMargin": 48
     },
-    "maxMark": 5
+    "maxMark": 5,
+    "topicKey": "@topic@"
 }

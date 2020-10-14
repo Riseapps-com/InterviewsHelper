@@ -44,6 +44,7 @@ const isSuitableForSenior = (requiredFor: string): boolean =>
 
 const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
     let isSuitable: boolean = false
+
     switch (role) {
         case 'trainee':
             isSuitable = isSuitableForTrainee(requiredFor)
@@ -67,6 +68,7 @@ const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
             isSuitable = isSuitableForSenior(requiredFor)
             break
     }
+
     return isSuitable
 }
 
@@ -77,13 +79,13 @@ const formatQuestions = (questionsMap: Map<string, QuestionData[]>): string => {
             (question) =>
                 `${question.order}. ${question.question} (timeForAnswer: ${question.estimatedTimeMin} min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`,
         )
-        topics.push(`${key} @topic@\n${questions.join('\n')}`)
+        topics.push(`${key} ${config.topicKey}\n${questions.join('\n')}`)
     })
     return topics.join('\n')
 }
 
 const findSuitableQuestions = (): void => {
-    console.log(`findSuitableQuestions(${input.role}, [${input.includedTopics}])`)
+    console.log(`findSuitableQuestions()`)
 
     const questions: QuestionData[] = input.includedTopics.reduce((prev, curr) => {
         let suitableQuestions: QuestionData[]

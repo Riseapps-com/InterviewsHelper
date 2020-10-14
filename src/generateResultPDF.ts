@@ -1,9 +1,5 @@
-import { parseResultDraft } from './parseResultDraft'
-
-const _generateResultPDF = (): void => {
-    console.log('_generateResultPDF()')
-
-    console.log(parseResultDraft())
+const _generateResultPDF = (resultDraft: Map<string, number[]>): void => {
+    console.log(`_generateResultPDF(${[...resultDraft.keys()]})`)
 }
 
 export { _generateResultPDF }

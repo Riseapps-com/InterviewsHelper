@@ -22,9 +22,9 @@ const getTopicDurations = (topics: string[]): TopicDuration[] =>
     }, [])
 
 const buildPieChart = async () => {
-    console.log(`buildPieChart([${input.includedTopics}])`)
+    console.log(`buildPieChart()`)
 
-    const topicDurations: TopicDuration[] = getTopicDurations(input.includedTopics)
+    const topicDurations = getTopicDurations(input.includedTopics)
 
     const pieChart = new QuickChart()
     pieChart.setWidth(700)
@@ -50,7 +50,7 @@ const buildPieChart = async () => {
                 labels: {
                     fontColor: config.pieChart.fontColor,
                     fontSize: config.pieChart.fontSize,
-                    fontStyle: 'bold',
+                    fontStyle: config.pieChart.fontStyle,
                 },
             },
             plugins: {

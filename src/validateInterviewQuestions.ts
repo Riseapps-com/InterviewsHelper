@@ -41,41 +41,35 @@ const topicToKey = (topic: string): string =>
         .map((word) => word[0].toLowerCase())
         .join('')
 
+const saveNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
+    if (notValidQuestions.length) {
+        fs.writeFileSync(config.notValidQuestionsFilepath, notValidQuestions.join('\n'))
+    } else {
+        if (fs.existsSync(config.notValidQuestionsFilepath)) {
+            fs.unlinkSync(config.notValidQuestionsFilepath)
+        }
+    }
+}
+
 const validateInterviewQuestions = (): boolean => {
     console.log('validateInterviewQuestions()')
 
     const notValidQuestions: string[] = []
 
-    const isValid: boolean = Object.keys(interviewQuestions).reduce((prev, curr: string) => {
-        let isValid: boolean
+    const isValid: boolean = Object.keys(interviewQuestions).reduce(
+        (prev, curr: string) =>
+            areQuestionsValid(
+                interviewQuestions[curr].data,
+                curr,
+                notValidQuestions,
+                topicToKey(curr),
+            ),
+        true,
+    )
 
-        isValid = areQuestionsValid(
-            interviewQuestions[curr].data,
-            curr,
-            notValidQuestions,
-            topicToKey(curr),
-        )
-
-        return isValid
-    }, true)
-
-    writeNotValidQuestionsToFile(notValidQuestions)
+    saveNotValidQuestionsToFile(notValidQuestions)
 
     return isValid
-}
-
-const writeNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
-    if (notValidQuestions.length) {
-        fs.writeFileSync(config.notValidQuestionsFilepath, notValidQuestions.join('\n'))
-    } else {
-        try {
-            if (fs.existsSync(config.notValidQuestionsFilepath)) {
-                fs.unlinkSync(config.notValidQuestionsFilepath)
-            }
-        } catch (error) {
-            console.log(error)
-        }
-    }
 }
 
 export { validateInterviewQuestions }

@@ -1,15 +1,15 @@
-import { parseQuestions } from './parseQuestions'
 import fs from 'fs'
 import config from './config'
+import { QuestionData } from './types'
 
-const generateResultDraft = (): void => {
-    console.log('generateResultDraft()')
+const generateResultDraft = (questions: Map<string, QuestionData[]>): void => {
+    console.log(`generateResultDraft(${[...questions.keys()]})`)
 
-    const questions = parseQuestions()
     const topics: string[] = []
+
     for (let key of questions.keys()) {
         topics.push(
-            `${key} @topic@\n${questions
+            `${key} ${config.topicKey}\n${questions
                 .get(key)
                 .map((question, index) => `${index + 1})`)
                 .join('\n')}`,

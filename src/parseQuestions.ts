@@ -5,17 +5,15 @@ import fs from 'fs'
 
 const parseQuestions = (): Map<string, QuestionData[]> => {
     const parsedQuestions = new Map<string, QuestionData[]>()
-
     const rows: string[] = fs
         .readFileSync(config.questionsFilepath, 'utf8')
         .split('\n')
-        .filter((row) => row.includes('@topic@') || row.startsWith(config.suitableQuestionMarker))
-
+        .filter((row) => row.includes(config.topicKey) || row.startsWith(config.suitableQuestionMarker))
     let currentTopic: string
 
     rows.forEach((row) => {
-        if (row.includes('@topic@')) {
-            currentTopic = row.split(' @topic@')[0]
+        if (row.includes(config.topicKey)) {
+            currentTopic = row.split(` ${config.topicKey}`)[0]
         } else {
             const questionSplit: string[] = row.split('@')
             const questionKey: string = questionSplit[questionSplit.length - 2]
