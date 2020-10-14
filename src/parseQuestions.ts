@@ -1,26 +1,44 @@
 import { QuestionData } from './types'
 import interviewQuestions from './interviewQuestions'
 import config from './config'
+import fs from 'fs'
 
-const parseQuestions = (rawQuestions: string): string => {
-    const questions: string[] = rawQuestions
+const parseQuestions = (): Map<string, QuestionData[]> => {
+    const parsedQuestions = new Map<string, QuestionData[]>()
+
+    const rows: string[] = fs
+        .readFileSync(config.questionsFilepath, 'utf8')
         .split('\n')
-        .filter((question) => question.startsWith(config.suitableQuestionMarker))
-    const questionsForPDF: string[] = questions.reduce((prev, curr, index) => {
-        const questionSplit: string[] = curr.split('@')
-        const questionKey: string = questionSplit[questionSplit.length - 2]
-        let interviewQuestion: QuestionData
+        .filter((row) => row.includes('@topic@') || row.startsWith(config.suitableQuestionMarker))
 
-        Object.values(interviewQuestions).forEach((question) => {
-            if (!interviewQuestion) {
-                interviewQuestion = question.data.find((item) => item.key === questionKey)
+    let currentTopic: string
+
+    rows.forEach((row) => {
+        if (row.includes('@topic@')) {
+            currentTopic = row.split(' @topic@')[0]
+        } else {
+            const questionSplit: string[] = row.split('@')
+            const questionKey: string = questionSplit[questionSplit.length - 2]
+            let interviewQuestion: QuestionData
+
+            Object.values(interviewQuestions).forEach((question) => {
+                if (!interviewQuestion) {
+                    interviewQuestion = question.data.find((item) => item.key === questionKey)
+                }
+            })
+
+            if (interviewQuestion && parsedQuestions.get(currentTopic)) {
+                parsedQuestions.set(currentTopic, [
+                    ...parsedQuestions.get(currentTopic),
+                    interviewQuestion,
+                ])
+            } else if (interviewQuestion) {
+                parsedQuestions.set(currentTopic, [interviewQuestion])
             }
-        })
+        }
+    })
 
-        return [...prev, `${index + 1}) ${interviewQuestion?.question}`]
-    }, [])
-
-    return questionsForPDF.join('\n')
+    return parsedQuestions
 }
 
 export { parseQuestions }

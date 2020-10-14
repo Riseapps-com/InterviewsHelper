@@ -70,8 +70,17 @@ const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
     return isSuitable
 }
 
-const formatQuestion = (question: QuestionData): string =>
-    `${question.order}. ${question.question} (timeForAnswer: ${question.estimatedTimeMin} min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`
+const formatQuestions = (questionsMap: Map<string, QuestionData[]>): string => {
+    const topics: string[] = []
+    questionsMap.forEach((value, key) => {
+        const questions: string[] = value.map(
+            (question) =>
+                `${question.order}. ${question.question} (timeForAnswer: ${question.estimatedTimeMin} min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`,
+        )
+        topics.push(`${key} @topic@\n${questions.join('\n')}`)
+    })
+    return topics.join('\n')
+}
 
 const findSuitableQuestions = (): void => {
     console.log(`findSuitableQuestions(${input.role}, [${input.includedTopics}])`)
@@ -85,10 +94,17 @@ const findSuitableQuestions = (): void => {
 
         return [...prev, ...suitableQuestions]
     }, [])
-    fs.writeFileSync(
-        config.questionsFilepath,
-        questions.map((question) => formatQuestion(question)).join('\n'),
-    )
+
+    const questionsMap = new Map<string, QuestionData[]>()
+    questions.forEach((question) => {
+        if (questionsMap.get(question.topic)) {
+            questionsMap.set(question.topic, [...questionsMap.get(question.topic), question])
+        } else {
+            questionsMap.set(question.topic, [question])
+        }
+    })
+
+    fs.writeFileSync(config.questionsFilepath, formatQuestions(questionsMap))
 }
 
 export { findSuitableQuestions }

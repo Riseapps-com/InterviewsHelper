@@ -3,7 +3,7 @@
     "notValidQuestionsFilepath": "outputs/notValidQuestions.txt",
     "questionsFilepath": "outputs/questions.txt",
     "pieChartFilepath": "outputs/pieChart.png",
-    "barChartFilepath": "outputs/barChart.png",
+    "radarChartFilepath": "outputs/radarChart.png",
     "forInterviewerFilepath": "outputs/forInterviewer.pdf",
     "resultDraftFilepath": "outputs/resultDraft.txt",
     "resultFilepath": "outputs/result.pdf",

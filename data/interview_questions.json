@@ -6,399 +6,456 @@
                 "key": "j1",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What is hoisting?"
+                "question": "What is hoisting?",
+                "topic": "JavaScript"
             },
             {
                 "order": 2,
                 "key": "j2",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What is scope?"
+                "question": "What is scope?",
+                "topic": "JavaScript"
             },
             {
                 "order": 3,
                 "key": "j3",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What are closures?"
+                "question": "What are closures?",
+                "topic": "JavaScript"
             },
             {
                 "order": 4,
                 "key": "j4",
                 "estimatedTimeMin": 1,
                 "requiredFor": "junior+",
-                "question": "What does “use strict” do?"
+                "question": "What does “use strict” do?",
+                "topic": "JavaScript"
             },
             {
                 "order": 5,
                 "key": "j5",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
-                "question": "What is a typed language?"
+                "question": "What is a typed language?",
+                "topic": "JavaScript"
             },
             {
                 "order": 6,
                 "key": "j6",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
-                "question": "What is ECMAScript?"
+                "question": "What is ECMAScript?",
+                "topic": "JavaScript"
             },
             {
                 "order": 7,
                 "key": "j7",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What are the new features in ES6 or ECMAScript 2015?"
+                "question": "What are the new features in ES6 or ECMAScript 2015?",
+                "topic": "JavaScript"
             },
             {
                 "order": 8,
                 "key": "j8",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What are the data types supported by JavaScript?"
+                "question": "What are the data types supported by JavaScript?",
+                "topic": "JavaScript"
             },
             {
                 "order": 9,
                 "key": "j9",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "How does “typeof” operator work?"
+                "question": "How does “typeof” operator work?",
+                "topic": "JavaScript"
             },
             {
                 "order": 10,
                 "key": "j10",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What is the difference between undefined and null?"
+                "question": "What is the difference between undefined and null?",
+                "topic": "JavaScript"
             },
             {
                 "order": 11,
                 "key": "j11",
                 "estimatedTimeMin": 1,
                 "requiredFor": "junior",
-                "question": "What is the difference between undeclared and undefined?"
+                "question": "What is the difference between undeclared and undefined?",
+                "topic": "JavaScript"
             },
             {
                 "order": 12,
                 "key": "j12",
                 "estimatedTimeMin": 3,
                 "requiredFor": "trainee",
-                "question": "What do “&&”, “||”, “!!” operator do?"
+                "question": "What do “&&”, “||”, “!!” operator do?",
+                "topic": "JavaScript"
             },
             {
                 "order": 13,
                 "key": "j13",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
-                "question": "How to convert string to number and vice versa?"
+                "question": "How to convert string to number and vice versa?",
+                "topic": "JavaScript"
             },
             {
                 "order": 14,
                 "key": "j14",
                 "estimatedTimeMin": 1,
                 "requiredFor": "junior",
-                "question": "What would be the result of  2 + 5 + ‘3’?"
+                "question": "What would be the result of  2 + 5 + ‘3’?",
+                "topic": "JavaScript"
             },
             {
                 "order": 15,
                 "key": "j15",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What's the difference between “==” and “===” operators ?"
+                "question": "What's the difference between “==” and “===” operators ?",
+                "topic": "JavaScript"
             },
             {
                 "order": 16,
                 "key": "j16",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "Why does it return false when comparing two similar objects in JavaScript?"
+                "question": "Why does it return false when comparing two similar objects in JavaScript?",
+                "topic": "JavaScript"
             },
             {
                 "order": 17,
                 "key": "j17",
                 "estimatedTimeMin": 2,
                 "requiredFor": "trainee",
-                "question": "What are the falsy values in JavaScript?"
+                "question": "What are the falsy values in JavaScript?",
+                "topic": "JavaScript"
             },
             {
                 "order": 18,
                 "key": "j18",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
-                "question": "How to check if a value is falsy?"
+                "question": "How to check if a value is falsy?",
+                "topic": "JavaScript"
             },
             {
                 "order": 19,
                 "key": "j19",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What is the value of “this” in JavaScript?"
+                "question": "What is the value of “this” in JavaScript?",
+                "topic": "JavaScript"
             },
             {
                 "order": 20,
                 "key": "j20",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What is the prototype of an object?"
+                "question": "What is the prototype of an object?",
+                "topic": "JavaScript"
             },
             {
                 "order": 21,
                 "key": "j21",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What is the difference between implicit and explicit coercion?"
+                "question": "What is the difference between implicit and explicit coercion?",
+                "topic": "JavaScript"
             },
             {
                 "order": 22,
                 "key": "j22",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What is “NaN” and how to check if a value is “NaN”?"
+                "question": "What is “NaN” and how to check if a value is “NaN”?",
+                "topic": "JavaScript"
             },
             {
                 "order": 23,
                 "key": "j23",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
-                "question": "How to check if a value is an Array?"
+                "question": "How to check if a value is an Array?",
+                "topic": "JavaScript"
             },
             {
                 "order": 24,
                 "key": "j24",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "How to check if a certain property exists in an object?"
+                "question": "How to check if a certain property exists in an object?",
+                "topic": "JavaScript"
             },
             {
                 "order": 25,
                 "key": "j25",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "What are the ways of making objects in JavaScript?"
+                "question": "What are the ways of making objects in JavaScript?",
+                "topic": "JavaScript"
             },
             {
                 "order": 26,
                 "key": "j26",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
-                "question": "What is the difference between “Object.seal” and “Object.freeze” methods?"
+                "question": "What is the difference between “Object.seal” and “Object.freeze” methods?",
+                "topic": "JavaScript"
             },
             {
                 "order": 27,
                 "key": "j27",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
-                "question": "What is the difference between the “in” operator and the “hasOwnProperty” method in objects?"
+                "question": "What is the difference between the “in” operator and the “hasOwnProperty” method in objects?",
+                "topic": "JavaScript"
             },
             {
                 "order": 28,
                 "key": "j28",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "What does the “new” keyword do?"
+                "question": "What does the “new” keyword do?",
+                "topic": "JavaScript"
             },
             {
                 "order": 29,
                 "key": "j29",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What is an IIFE, what is the use of it?"
+                "question": "What is an IIFE, what is the use of it?",
+                "topic": "JavaScript"
             },
             {
                 "order": 30,
                 "key": "j30",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "What is the use of the “Function.prototype.apply” method?"
+                "question": "What is the use of the “Function.prototype.apply” method?",
+                "topic": "JavaScript"
             },
             {
                 "order": 31,
                 "key": "j31",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "What is the use of the “Function.prototype.call” method?"
+                "question": "What is the use of the “Function.prototype.call” method?",
+                "topic": "JavaScript"
             },
             {
                 "order": 32,
                 "key": "j32",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "What is the difference between “Function.prototype.apply” and “Function.prototype.call”?"
+                "question": "What is the difference between “Function.prototype.apply” and “Function.prototype.call”?",
+                "topic": "JavaScript"
             },
             {
                 "order": 33,
                 "key": "j33",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "What is the usage of “Function.prototype.bind”?"
+                "question": "What is the usage of “Function.prototype.bind”?",
+                "topic": "JavaScript"
             },
             {
                 "order": 34,
                 "key": "j34",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What is functional programming and what are the features of JavaScript that make it a candidate as a functional language?"
+                "question": "What is functional programming and what are the features of JavaScript that make it a candidate as a functional language?",
+                "topic": "JavaScript"
             },
             {
                 "order": 35,
                 "key": "j35",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What are higher order functions?"
+                "question": "What are higher order functions?",
+                "topic": "JavaScript"
             },
             {
                 "order": 36,
                 "key": "j36",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "Why are functions called first-class objects?"
+                "question": "Why are functions called first-class objects?",
+                "topic": "JavaScript"
             },
             {
                 "order": 37,
                 "key": "j37",
                 "estimatedTimeMin": 1,
                 "requiredFor": "junior+",
-                "question": "What is the “arguments” object?"
+                "question": "What is the “arguments” object?",
+                "topic": "JavaScript"
             },
             {
                 "order": 38,
                 "key": "j38",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What is the difference between passing a variable by value and by reference?"
+                "question": "What is the difference between passing a variable by value and by reference?",
+                "topic": "JavaScript"
             },
             {
                 "order": 39,
                 "key": "j39",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "How many ways can a function be invoked?"
+                "question": "How many ways can a function be invoked?",
+                "topic": "JavaScript"
             },
             {
                 "order": 40,
                 "key": "j40",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
-                "question": "What is memoization and what's the use of it?"
+                "question": "What is memoization and what's the use of it?",
+                "topic": "JavaScript"
             },
             {
                 "order": 41,
                 "key": "j41",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
-                "question": "What's the difference between “var”, “let” and “const” keywords?"
+                "question": "What's the difference between “var”, “let” and “const” keywords?",
+                "topic": "JavaScript"
             },
             {
                 "order": 42,
                 "key": "j42",
                 "estimatedTimeMin": 2,
                 "requiredFor": "trainee",
-                "question": "What are arrow functions?"
+                "question": "What are arrow functions?",
+                "topic": "JavaScript"
             },
             {
                 "order": 43,
                 "key": "j43",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What are classes?"
+                "question": "What are classes?",
+                "topic": "JavaScript"
             },
             {
                 "order": 44,
                 "key": "j44",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What are template literals?"
+                "question": "What are template literals?",
+                "topic": "JavaScript"
             },
             {
                 "order": 45,
                 "key": "j45",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What is object destructuring?"
+                "question": "What is object destructuring?",
+                "topic": "JavaScript"
             },
             {
                 "order": 46,
                 "key": "j46",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "What are ES6 modules?"
+                "question": "What are ES6 modules?",
+                "topic": "JavaScript"
             },
             {
                 "order": 47,
                 "key": "j47",
                 "estimatedTimeMin": 2,
                 "requiredFor": "trainee",
-                "question": "What is a callback function?"
+                "question": "What is a callback function?",
+                "topic": "JavaScript"
             },
             {
                 "order": 48,
                 "key": "j48",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
-                "question": "What are promises?"
+                "question": "What are promises?",
+                "topic": "JavaScript"
             },
             {
                 "order": 49,
                 "key": "j49",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
-                "question": "What is “async/await” and how it works?"
+                "question": "What is “async/await” and how it works?",
+                "topic": "JavaScript"
             },
             {
                 "order": 50,
                 "key": "j50",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
-                "question": "What are generators?"
+                "question": "What are generators?",
+                "topic": "JavaScript"
             },
             {
                 "order": 51,
                 "key": "j51",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
-                "question": "What are symbols?"
+                "question": "What are symbols?",
+                "topic": "JavaScript"
             },
             {
                 "order": 52,
                 "key": "j52",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
-                "question": "What is proxy?"
+                "question": "What is proxy?",
+                "topic": "JavaScript"
             },
             {
                 "order": 53,
                 "key": "j53",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What is the difference between spread operator and rest operator?"
+                "question": "What is the difference between spread operator and rest operator?",
+                "topic": "JavaScript"
             },
             {
                 "order": 54,
                 "key": "j54",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
-                "question": "What are default parameters?"
+                "question": "What are default parameters?",
+                "topic": "JavaScript"
             },
             {
                 "order": 55,
                 "key": "j55",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
-                "question": "What are wrapper objects?"
+                "question": "What are wrapper objects?",
+                "topic": "JavaScript"
             },
             {
                 "order": 56,
                 "key": "j56",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
-                "question": "What are the ways to deal with asynchronous code in JavasScript?"
+                "question": "What are the ways to deal with asynchronous code in JavasScript?",
+                "topic": "JavaScript"
             },
             {
                 "order": 57,
                 "key": "j57",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
-                "question": "Explain exception handling in JavaScript."
+                "question": "Explain exception handling in JavaScript.",
+                "topic": "JavaScript"
             }
         ],
         "links": [
@@ -415,168 +472,192 @@
                 "key": "t1",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
-                "question": "What are the benefits of using TypeScript?"
+                "question": "What are the benefits of using TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 2,
                 "key": "t2",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
-                "question": "What are the drawbacks of using TypeScript?"
+                "question": "What are the drawbacks of using TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 3,
                 "key": "t3",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
-                "question": "What is “tsconfig.json” file?"
+                "question": "What is “tsconfig.json” file?",
+                "topic": "TypeScript"
             },
             {
                 "order": 4,
                 "key": "t4",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
-                "question": "What are the components of TypeScript?"
+                "question": "What are the components of TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 5,
                 "key": "t5",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
-                "question": "What is static typing in TypeScript?"
+                "question": "What is static typing in TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 6,
                 "key": "t6",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
-                "question": "What are the object-oriented terms supported by TypeScript?"
+                "question": "What are the object-oriented terms supported by TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 7,
                 "key": "t7",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
-                "question": "What are the access modifiers supported by TypeScript?"
+                "question": "What are the access modifiers supported by TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 8,
                 "key": "t8",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
-                "question": "Does TypeScript support function overloading?"
+                "question": "Does TypeScript support function overloading?",
+                "topic": "TypeScript"
             },
             {
                 "order": 9,
                 "key": "t9",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
-                "question": "What is method overriding in TypeScript?"
+                "question": "What is method overriding in TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 10,
                 "key": "t10",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
-                "question": "What does “super” keyword mean in TypeScript?"
+                "question": "What does “super” keyword mean in TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 11,
                 "key": "t11",
                 "estimatedTimeMin": 1,
                 "requiredFor": "middle-",
-                "question": "Which keyword is used for inheritance in TypeScript?"
+                "question": "Which keyword is used for inheritance in TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 12,
                 "key": "t12",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
-                "question": "What types does TypeScript contain?"
+                "question": "What types does TypeScript contain?",
+                "topic": "TypeScript"
             },
             {
                 "order": 13,
                 "key": "t13",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
-                "question": "List out the built-in data types in TypeScript."
+                "question": "List out the built-in data types in TypeScript.",
+                "topic": "TypeScript"
             },
             {
                 "order": 14,
                 "key": "t14",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
-                "question": "What are interfaces in TypeScript?"
+                "question": "What are interfaces in TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 15,
                 "key": "t15",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
-                "question": "What are classes in TypeScript? List out some of the features."
+                "question": "What are classes in TypeScript? List out some of the features.",
+                "topic": "TypeScript"
             },
             {
                 "order": 16,
                 "key": "t16",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle+",
-                "question": "What is the namespace in Typescript and how to declare it?"
+                "question": "What is the namespace in TypeScript and how to declare it?",
+                "topic": "TypeScript"
             },
             {
                 "order": 17,
                 "key": "t17",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
-                "question": "Explain decorators in TypeScript."
+                "question": "Explain decorators in TypeScript.",
+                "topic": "TypeScript"
             },
             {
                 "order": 18,
                 "key": "t18",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle+",
-                "question": "What are mixins in TypeScript?"
+                "question": "What are mixins in TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 19,
                 "key": "t19",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
-                "question": "Explain “declare” keyword in TypeScript."
+                "question": "Explain “declare” keyword in TypeScript.",
+                "topic": "TypeScript"
             },
             {
                 "order": 20,
                 "key": "t20",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
-                "question": "What are generics in TypeScript?"
+                "question": "What are generics in TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 21,
                 "key": "t21",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
-                "question": "What is the difference between interface and type statements?"
+                "question": "What is the difference between interface and type statements?",
+                "topic": "TypeScript"
             },
             {
                 "order": 22,
                 "key": "t22",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
-                "question": "Explain enum in TypeScript."
+                "question": "Explain enum in TypeScript.",
+                "topic": "TypeScript"
             },
             {
                 "order": 23,
                 "key": "t23",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
-                "question": "Why are optional parameters added in TypeScript?"
+                "question": "Why are optional parameters added in TypeScript?",
+                "topic": "TypeScript"
             },
             {
                 "order": 24,
                 "key": "t24",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
-                "question": "What type utilities are in TypeScript?"
+                "question": "What type utilities are in TypeScript?",
+                "topic": "TypeScript"
             }
         ],
         "links": [

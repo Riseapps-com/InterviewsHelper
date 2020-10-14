@@ -6,7 +6,7 @@ import { buildPieChart } from './src/buildPieChart'
 import { createOutputsDirectory } from './src/createOutputsDirectory'
 import { generateResultDraft } from './src/generateResultDraft'
 import { _generateResultPDF } from './src/generateResultPDF'
-import { buildBarChart } from './src/buildBarChart'
+import { buildRadarChart } from './src/buildRadarChart'
 
 const findQuestionsArg = includes(process.argv, '--findQuestions')
 const generateInterviewPDFArg = includes(process.argv, '--generateInterviewPDF')
@@ -41,7 +41,7 @@ const generateResultPDF = async (): Promise<void> => {
     console.log('Executing generateResultPDF()...')
 
     try {
-        await buildBarChart()
+        await buildRadarChart()
         _generateResultPDF()
     } catch (error) {}
 }

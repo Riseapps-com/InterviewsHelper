@@ -13,6 +13,7 @@ export type QuestionData = {
     estimatedTimeMin: number
     requiredFor: Role
     question: string
+    topic: string
 }
 
 export type Question = {

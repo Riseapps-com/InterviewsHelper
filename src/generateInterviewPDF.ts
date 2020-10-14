@@ -48,16 +48,18 @@ const _generateInterviewPDF = (): void => {
             })
             .moveDown(4)
 
-        pdfDocument.fontSize(14).font('Times-Bold').text('Questions:')
+        pdfDocument.fontSize(14).font('Times-Bold').text('Questions:').moveDown(1)
 
-        parseQuestions(fs.readFileSync(config.questionsFilepath, 'utf8'))
-            .split('\n')
-            .reduce(
+        const questions = parseQuestions()
+
+        for (let key of questions.keys()) {
+            pdfDocument.fontSize(14).font('Times-Bold').text(key)
+            questions.get(key).reduce(
                 (curr, prev) =>
                     curr
                         .fontSize(14)
                         .font('Times-Roman')
-                        .text(prev, {
+                        .text(prev.question, {
                             align: 'justify',
                             continued: true,
                         })
@@ -66,8 +68,9 @@ const _generateInterviewPDF = (): void => {
                         .text(`Mark: `, { continued: true })
                         .font('Times-Bold')
                         .text(`    / ${config.maxMark}`, { underline: true }),
-                pdfDocument.moveDown(1),
-            )
+                pdfDocument,
+            ).moveDown(1)
+        }
 
         pdfDocument.pipe(fs.createWriteStream(config.forInterviewerFilepath))
         pdfDocument.end()

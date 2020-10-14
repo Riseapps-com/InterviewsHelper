@@ -18,6 +18,7 @@ const validateQuestion = (question: QuestionData, index: number, key: string): b
     question.estimatedTimeMin &&
     question.question &&
     question.key === `${key}${index + 1}` &&
+    question.topic &&
     validateRequireFor(question.requiredFor)
 
 const areQuestionsValid = (
