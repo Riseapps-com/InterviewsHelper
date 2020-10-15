@@ -40,7 +40,7 @@ Example:
     }
 }
 ```
-Possible values for role:
+Allowed values for role:
 ```typescript
 type Role = 'trainee' | 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior'
 ```
