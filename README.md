@@ -1,15 +1,15 @@
 # ReactNativeInterviewsHelper
 
-## Description:
+## :cat2::rat: Description:
 
-## It solves next problems:
+## :ok_woman: It solves next problems:
 1) 
 2)
 3)
 4)
 5)
 
-## How to use it:
+## :running: How to use it:
 
 ## :hammer: Scripts:
 | Script | Description |
@@ -19,7 +19,7 @@
 | generateInterviewPDF | Generates a PDF document for the interview and .txt drafts for the result. | 
 | generateResultPDF | Generates a PDF document with the interview result. |
 
-## Input:
+## :pencil: Input:
 
 Example:
 ```json
@@ -45,7 +45,7 @@ Allowed values for role:
 type Role = 'trainee' | 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior'
 ```
 
-## Config:
+## :pencil: Config:
 
 Example:
 ```json
@@ -105,7 +105,7 @@ Example:
 }
 ```
 
-## Output examples:
+## :bar_chart: Output examples:
 | For interviewer: | Result: |
 :-------------------------:|:-------------------------:
 | [forInterviewer_example.pdf](forInterviewer_example.pdf) | [result_example.pdf](result_example.pdf) |
