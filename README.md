@@ -48,11 +48,11 @@ TypeScript @topic@
 ```
 4) Run **generateInterviewPDF** script and the next files will be generated:
 
-**outputs/forInterviewer.pdf**:
+4.1) **outputs/forInterviewer.pdf**:
 ```txt
 Will be used for the interview.
 ```
-**outputs/resultDraft.txt**:
+4.2) **outputs/resultDraft.txt**:
 ```txt
 JavaScript @topic@
 1)
@@ -67,7 +67,7 @@ TypeScript @topic@
 4)
 5)
 ```
-**outputs/resultNotesDraft.txt**:
+4.3) **outputs/resultNotesDraft.txt**:
 ```txt
 @notes@
 -
