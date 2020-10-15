@@ -47,8 +47,11 @@ TypeScript @topic@
 5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
 ```
 4) Run **generateInterviewPDF** script and the next files will be generated:
+
 **outputs/forInterviewer.pdf**:
+
 Will be used for the interview.
+
 **outputs/resultDraft.txt**:
 ```txt
 JavaScript @topic@
@@ -64,7 +67,8 @@ TypeScript @topic@
 4)
 5)
 ```
-**outputs/resultNotesDraft**:
+
+**outputs/resultNotesDraft.txt**:
 ```txt
 @notes@
 -
