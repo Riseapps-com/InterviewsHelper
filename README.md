@@ -8,7 +8,7 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 
 1) Automation of many manual processes;
 2) More comprehensive evaluation;
-3) Feedback standardization;
+3) Feedback standardization.
 
 ## :running: How to use it:
 
