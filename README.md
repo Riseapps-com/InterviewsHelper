@@ -6,7 +6,7 @@
 
 ## :running: How to use it:
 
-1) Fill **config/input.json** file;
+1) Fill **config/input.json** file:
 ```json
 {
     "role": "middle-",
@@ -20,22 +20,18 @@
     }
 }
 ```
-2) Run **findQuestions** script. The next file will be generated in **output/questions.txt*:
+2) Run **findQuestions** script. The next file **output/questions.txt** will be generated:
 ```txt
 JavaScript @topic@
 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
 2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j2@)
 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j3@)
-4. What does “use strict” do? (timeForAnswer: 1 min) (requiredFor: junior+) (key: @j4@)
-5. What is a typed language? (timeForAnswer: 3 min) (requiredFor: junior) (key: @j5@)
 TypeScript @topic@
 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t1@)
 2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t3@)
 3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t5@)
-4. What are the object-oriented terms supported by TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t6@)
-5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
 ```
-3) Mark suitable questions with **"+ "** at the beggining (marker could be configured through **config.json** file):
+3) Mark suitable questions with **"+ "** at the beginning (marker could be configured through **config/config.json** file):
 ```txt
 JavaScript @topic@
 + 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
@@ -51,7 +47,8 @@ TypeScript @topic@
 5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
 ```
 4) Run **generateInterviewPDF** script and the next files will be generated:
-**outputs/forInterviewer.pdf**
+**outputs/forInterviewer.pdf**:
+Will be used for the interview.
 **outputs/resultDraft.txt**:
 ```txt
 JavaScript @topic@
@@ -77,7 +74,7 @@ TypeScript @topic@
 Yes / No
 @recommend@
 ```
-5) Fill **outputs/resultDraft.txt** with the marks from 1 to maxMark (could be configured through config/config.json):
+5) Fill **outputs/resultDraft.txt** with the marks from **0** to **maxMark** (could be configured through **config/config.json** file):
 ```txt
 JavaScript @topic@
 1) 5
@@ -92,7 +89,7 @@ TypeScript @topic@
 4) 5
 5) 5
 ```
-6) Fill **notes** and **recommend** fields in **outputs/resultDraft.txt**:
+6) Fill **notes** and **recommend** fields in **outputs/resultDraft.txt** file:
 ```txt
 ```txt
 @notes@
@@ -109,10 +106,10 @@ Yes
 ## :hammer: Scripts:
 | Script | Description |
 | :--- | :--- |
-| validateQuestionsDB | Validates the questions database. Checks for the correct format for each question in the database. |
-| findQuestions | Finds suitable questions based on the input params and puts them to the .txt file. |
-| generateInterviewPDF | Generates a PDF document for the interview and .txt drafts for the result. | 
-| generateResultPDF | Generates a PDF document with the interview result. |
+| **validateQuestionsDB** | Validates the questions database. Checks for the correct format for each question in the database. |
+| **findQuestions** | Finds suitable questions based on the input params and puts them to the .txt file. |
+| **generateInterviewPDF** | Generates a PDF document for the interview and .txt drafts for the result. | 
+| **generateResultPDF** | Generates a PDF document with the interview result. |
 
 ## :pencil: Input:
 
