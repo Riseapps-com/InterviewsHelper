@@ -108,5 +108,5 @@ Example:
 ## Output examples:
 | For interviewer: | Result: |
 :-------------------------:|:-------------------------:
-| ![](forInterviewer.pdf) | ![](result.pdf) |
+| ![forInterviewer.pdf](forInterviewer.pdf) | ![result.pdf](result.pdf) |
 | ![](forInterviewer_preview.png) | ![](result_preview.png)| 
