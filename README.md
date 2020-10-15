@@ -3,7 +3,10 @@
 ## :information_source: Description:
 
 ## :cat2::rat: It solves next problems:
-1) Fill config/input.json file;
+
+## :running: How to use it:
+
+1) Fill **config/input.json** file;
 ```json
 {
     "role": "middle-",
@@ -17,7 +20,7 @@
     }
 }
 ```
-2) Run **findQuestions** script. The next file will be generated in output/questions.txt:
+2) Run **findQuestions** script. The next file will be generated in **output/questions.txt*:
 ```txt
 JavaScript @topic@
 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
@@ -32,7 +35,7 @@ TypeScript @topic@
 4. What are the object-oriented terms supported by TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t6@)
 5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
 ```
-3) Mark suitable questions with "+ " at the beggining (marker could be configured through config.json file):
+3) Mark suitable questions with **"+ "** at the beggining (marker could be configured through **config.json** file):
 ```txt
 JavaScript @topic@
 + 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
@@ -47,10 +50,61 @@ TypeScript @topic@
 + 4. What are the object-oriented terms supported by TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t6@)
 5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
 ```
-4) **outputs/forInterviewer.pdf**, **outputs/resultDraft.txt** and **outputs/resultNotesDraft** will be generated;
+4) Run **generateInterviewPDF** script and the next files will be generated:
+**outputs/forInterviewer.pdf**
+**outputs/resultDraft.txt**:
+```txt
+JavaScript @topic@
+1)
+2)
+3)
+4)
+5)
+TypeScript @topic@
+1)
+2)
+3)
+4)
+5)
+```
+**outputs/resultNotesDraft**:
+```txt
+@notes@
+-
+@notes@
 
+@recommend@
+Yes / No
+@recommend@
+```
+5) Fill **outputs/resultDraft.txt** with the marks from 1 to maxMark (could be configured through config/config.json):
+```txt
+JavaScript @topic@
+1) 5
+2) 4
+3) 3
+4) 2
+5) 1
+TypeScript @topic@
+1) 5
+2) 5
+3) 5
+4) 5
+5) 5
+```
+6) Fill **notes** and **recommend** fields in **outputs/resultDraft.txt**:
+```txt
+```txt
+@notes@
+Good theory.
+@notes@
 
-## :running: How to use it:
+@recommend@
+Yes
+@recommend@
+```
+7) Run **generateResultPDF** script and **outputs/result.pdf** file will be generated.
+
 
 ## :hammer: Scripts:
 | Script | Description |
