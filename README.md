@@ -2,7 +2,7 @@
 
 ## :information_source: Description:
 
-A bunch of scripts on node.js for improving interview process. Could be reused between different departments (only the questions database should be prepared).
+A bunch of scripts on node.js aimed at improving the interview process. Could be reused between different departments (only the questions database should be prepared).
 
 ## :cat2::rat: It solves next problems:
 
