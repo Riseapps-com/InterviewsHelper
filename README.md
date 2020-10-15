@@ -106,5 +106,7 @@ Example:
 ```
 
 ## Output examples:
-For interviewer:
+For interviewer: | Result:
+:-------------------------:|:-------------------------:
+![](forInterviewer_preview.png) | ![](result_preview.png)
 <img src="forInterviewer_preview.png" />
