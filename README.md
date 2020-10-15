@@ -211,9 +211,9 @@ Example:
 | [forInterviewer_example.pdf](forInterviewer_example.pdf) | [result_example.pdf](result_example.pdf) |
 | ![](forInterviewer_preview.png) | ![](result_preview.png)| 
 
-## todo:
+## :ledger: TODO:
 
-- [ ] Task 1 
-- [ ] Task 1 
-- [ ] Task 1 
-- [ ] Task 1 
+- [ ] Abillity to add a new question to the specific position
+- [ ] Prepare ready questions sets
+- [ ] Ability to find most suitable questions
+- [ ] Send files to email 
