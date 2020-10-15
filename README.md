@@ -38,7 +38,7 @@
     }
 }
 ```
-```javascript
+```typescript
 type Input = {
     role: Role
     includedTopics: string[]
