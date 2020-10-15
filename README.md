@@ -1,8 +1,8 @@
 # ReactNativeInterviewsHelper
 
-## :cat2::rat: Description:
+## :information_source: Description:
 
-## :ok_woman: It solves next problems:
+## :cat2::rat: It solves next problems:
 1) Fill config/input.json file;
 ```json
 {
