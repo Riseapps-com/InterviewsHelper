@@ -17,7 +17,7 @@ const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void
     console.log(`buildRadarChart(${[...resultDraft.keys()]})`)
 
     const radarChart = new QuickChart()
-    radarChart.setWidth(700)
+    radarChart.setWidth(config.radarChart.width)
     radarChart.setConfig({
         type: 'radar',
         data: {

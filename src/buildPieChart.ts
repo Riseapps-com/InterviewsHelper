@@ -28,7 +28,7 @@ const buildPieChart = async () => {
     const topicDurations = getTopicDurations(input.includedTopics)
 
     const pieChart = new QuickChart()
-    pieChart.setWidth(700)
+    pieChart.setWidth(config.pieChart.width)
     pieChart.setConfig({
         type: 'doughnut',
         data: {

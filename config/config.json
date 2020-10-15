@@ -9,6 +9,7 @@
     "resultFilename": "result.pdf",
     "suitableQuestionMarker": "+ ",
     "pieChart": {
+        "width": 700,
         "dataColors": [
             "rgb(254,74,73)",
             "rgb(42,183,202)",
@@ -28,6 +29,7 @@
         "dataFontColor": "rgb(255, 255, 255)"
     },
     "radarChart": {
+        "width": 700,
         "datasetColor": "rgb(0, 54, 167)",
         "datasetBackgroundColor": "rgba(0, 54, 167, 0.3)",
         "fontSize": 10,
