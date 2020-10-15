@@ -12,7 +12,7 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 
 ## :running: How to use it:
 
-1) Fill **config/input.json** file:
+1 Fill **config/input.json** file:
 ```json
 {
     "role": "middle-",
@@ -26,7 +26,7 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
     }
 }
 ```
-2) Run **findQuestions** script. The next file **output/questions.txt** will be generated:
+2 Run **findQuestions** script. The next file **output/questions.txt** will be generated:
 ```txt
 JavaScript @topic@
 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
@@ -37,7 +37,7 @@ TypeScript @topic@
 2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t3@)
 3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t5@)
 ```
-3) Mark suitable questions with **"+ "** at the beginning (marker could be configured through **config/config.json** file):
+3 Mark suitable questions with **"+ "** at the beginning (marker could be configured through **config/config.json** file):
 ```txt
 JavaScript @topic@
 + 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
@@ -52,12 +52,12 @@ TypeScript @topic@
 + 4. What are the object-oriented terms supported by TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t6@)
 5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
 ```
-4) Run **generateInterviewPDF** script and the next files will be generated:
-4.1) **outputs/forInterviewer.pdf**:
+4 Run **generateInterviewPDF** script and the next files will be generated:
+4.1 **outputs/forInterviewer.pdf**:
 ```txt
 Will be used for the interview.
 ```
-4.2) **outputs/resultDraft.txt**:
+4.2 **outputs/resultDraft.txt**:
 ```txt
 JavaScript @topic@
 1)
@@ -72,7 +72,7 @@ TypeScript @topic@
 4)
 5)
 ```
-4.3) **outputs/resultNotesDraft.txt**:
+4.3 **outputs/resultNotesDraft.txt**:
 ```txt
 @notes@
 -
@@ -82,7 +82,7 @@ TypeScript @topic@
 Yes / No
 @recommend@
 ```
-5) Fill **outputs/resultDraft.txt** with the marks from **0** to **maxMark** (could be configured through **config/config.json** file):
+5 Fill **outputs/resultDraft.txt** with the marks from **0** to **maxMark** (could be configured through **config/config.json** file):
 ```txt
 JavaScript @topic@
 1) 5
@@ -97,7 +97,7 @@ TypeScript @topic@
 4) 5
 5) 5
 ```
-6) Fill **notes** and **recommend** fields in **outputs/resultDraft.txt** file:
+6 Fill **notes** and **recommend** fields in **outputs/resultDraft.txt** file:
 ```txt
 ```txt
 @notes@
@@ -108,7 +108,7 @@ Good theory.
 Yes
 @recommend@
 ```
-7) Run **generateResultPDF** script and **outputs/result.pdf** file will be generated.
+7 Run **generateResultPDF** script and **outputs/result.pdf** file will be generated.
 
 
 ## :hammer: Scripts:
