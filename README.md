@@ -3,11 +3,52 @@
 ## :cat2::rat: Description:
 
 ## :ok_woman: It solves next problems:
-1) 
-2)
-3)
-4)
-5)
+1) Fill config/input.json file;
+```json
+{
+    "role": "middle-",
+    "includedTopics": [
+        "javascript",
+        "typescript"
+    ],
+    "candidate": {
+        "firstname": "Dmitry",
+        "lastname": "Usik"
+    }
+}
+```
+2) Run **findQuestions** script. The next file will be generated in output/questions.txt:
+```txt
+JavaScript @topic@
+1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
+2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j2@)
+3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j3@)
+4. What does “use strict” do? (timeForAnswer: 1 min) (requiredFor: junior+) (key: @j4@)
+5. What is a typed language? (timeForAnswer: 3 min) (requiredFor: junior) (key: @j5@)
+TypeScript @topic@
+1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t1@)
+2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t3@)
+3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t5@)
+4. What are the object-oriented terms supported by TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t6@)
+5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
+```
+3) Mark suitable questions with "+ " at the beggining (marker could be configured through config.json file):
+```txt
+JavaScript @topic@
++ 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
+2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j2@)
++ 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j3@)
++ 4. What does “use strict” do? (timeForAnswer: 1 min) (requiredFor: junior+) (key: @j4@)
+5. What is a typed language? (timeForAnswer: 3 min) (requiredFor: junior) (key: @j5@)
+TypeScript @topic@
++ 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t1@)
++ 2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t3@)
+3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t5@)
++ 4. What are the object-oriented terms supported by TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t6@)
+5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
+```
+4) **outputs/forInterviewer.pdf**, **outputs/resultDraft.txt** and **outputs/resultNotesDraft** will be generated;
+
 
 ## :running: How to use it:
 
