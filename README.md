@@ -106,3 +106,5 @@ Example:
 ```
 
 ## Output examples:
+For interviewer:
+<img src="forInterviewer_preview" />
