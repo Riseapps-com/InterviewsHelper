@@ -77,8 +77,10 @@ const formatQuestions = (questionsMap: Map<string, QuestionData[]>): string => {
     const topics: string[] = []
     questionsMap.forEach((value, key) => {
         const questions: string[] = value.map(
-            (question) =>
-                `${question.order}. ${question.question} (timeForAnswer: ${question.estimatedTimeMin} min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`,
+            (question, index) =>
+                `${index + 1}. ${question.question} (timeForAnswer: ${
+                    question.estimatedTimeMin
+                } min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`,
         )
         topics.push(`${key} ${config.topicKey}\n${questions.join('\n')}`)
     })

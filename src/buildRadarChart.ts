@@ -3,15 +3,7 @@ import fetch, { Response } from 'node-fetch'
 import fs from 'fs'
 import config from './config'
 import { wrapToOutputsDirectory } from './createOutputsDirectory'
-
-const marksToRadarChartValues = (marks: number[][]): number[] =>
-    marks.reduce((prev, curr) => {
-        const maxTopicMark: number = curr.length * config.maxMark
-        const candidateTopicMark: number = curr.reduce((prev, curr) => prev + curr, 0)
-        const topicMarkPercent: number = Math.round((100 * candidateTopicMark) / maxTopicMark)
-
-        return [...prev, topicMarkPercent]
-    }, [])
+import { marksToPercentageValues } from './marksToPercentageValues'
 
 const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void> => {
     console.log(`buildRadarChart(${[...resultDraft.keys()]})`)
@@ -25,7 +17,7 @@ const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void
             datasets: [
                 {
                     label: 'Result',
-                    data: marksToRadarChartValues([...resultDraft.values()]),
+                    data: marksToPercentageValues([...resultDraft.values()]),
                     backgroundColor: config.radarChart.datasetBackgroundColor,
                     pointBorderColor: config.radarChart.datasetColor,
                     pointBackgroundColor: config.radarChart.datasetColor,

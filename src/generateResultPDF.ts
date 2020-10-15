@@ -3,12 +3,15 @@ import input from './input'
 import fs from 'fs'
 import { drawRiseappsLogo, getPdfDocument } from './pdfUtils'
 import { wrapToOutputsDirectory } from './createOutputsDirectory'
+import { marksToPercentageValues } from './marksToPercentageValues'
 
 const _generateResultPDF = (
     resultDraft: Map<string, number[]>,
     resultNotesDraft: string[],
 ): void => {
     console.log(`_generateResultPDF(${[...resultDraft.keys()]})`)
+
+    const percentageValues = marksToPercentageValues([...resultDraft.values()])
 
     const pdfDocument = getPdfDocument()
 
@@ -29,6 +32,21 @@ const _generateResultPDF = (
             valign: 'center',
         })
         .moveDown(4)
+
+    pdfDocument.fontSize(14).font('Times-Bold').text('Topics:')
+    Array.of(...resultDraft.keys()).reduce(
+        (prev, curr, index) =>
+            pdfDocument
+                .fontSize(14)
+                .font('Times-Roman')
+                .text(`${curr}: `, { continued: true })
+                .fontSize(14)
+                .font('Times-Bold')
+                .text(`${percentageValues[index]} / 100`),
+        pdfDocument,
+    )
+
+    pdfDocument.moveDown(1)
 
     pdfDocument
         .fontSize(14)
