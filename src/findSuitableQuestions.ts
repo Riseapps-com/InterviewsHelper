@@ -3,6 +3,7 @@ import fs from 'fs'
 import interviewQuestions from './interviewQuestions'
 import config from './config'
 import input from './input'
+import { wrapToOutputsDirectory } from './createOutputsDirectory'
 
 const isSuitableForTrainee = (requiredFor: string): boolean => requiredFor === 'trainee'
 
@@ -106,7 +107,10 @@ const findSuitableQuestions = (): void => {
         }
     })
 
-    fs.writeFileSync(config.questionsFilepath, formatQuestions(questionsMap))
+    fs.writeFileSync(
+        wrapToOutputsDirectory(config.questionsFilename),
+        formatQuestions(questionsMap),
+    )
 }
 
 export { findSuitableQuestions }

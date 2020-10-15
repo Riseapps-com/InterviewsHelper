@@ -2,11 +2,12 @@ import QuickChart from 'quickchart-js'
 import fetch, { Response } from 'node-fetch'
 import fs from 'fs'
 import config from './config'
+import { wrapToOutputsDirectory } from './createOutputsDirectory'
 
 const marksToRadarChartValues = (marks: number[][]): number[] =>
     marks.reduce((prev, curr) => {
         const maxTopicMark: number = curr.length * config.maxMark
-        const candidateTopicMark: number = curr.reduce((prev1, curr1) => prev1 + curr1, 0)
+        const candidateTopicMark: number = curr.reduce((prev, curr) => prev + curr, 0)
         const topicMarkPercent: number = Math.round((100 * candidateTopicMark) / maxTopicMark)
 
         return [...prev, topicMarkPercent]
@@ -71,7 +72,7 @@ const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void
     })
 
     const response: Response = await fetch(radarChart.getUrl())
-    fs.writeFileSync(config.radarChartFilepath, await response.buffer())
+    fs.writeFileSync(wrapToOutputsDirectory(config.radarChartFilename), await response.buffer())
 }
 
 export { buildRadarChart }

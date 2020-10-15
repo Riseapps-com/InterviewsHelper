@@ -1,6 +1,14 @@
 {
-    "role": "trainee",
-    "includedTopics": ["javascript", "typescript", "react.redux", "communicationSkills", "other"],
+    "role": "middle-",
+    "includedTopics": [
+        "javascript",
+        "typescript",
+        "react.redux",
+        "reactNative",
+        "nativePlatforms",
+        "communicationSkills",
+        "testTasks"
+    ],
     "candidate": {
         "firstname": "Dmitry",
         "lastname": "Usik"

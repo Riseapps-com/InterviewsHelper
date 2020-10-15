@@ -1,12 +1,12 @@
 {
-    "outputDirectory": "outputs",
-    "notValidQuestionsFilepath": "outputs/notValidQuestions.txt",
-    "questionsFilepath": "outputs/questions.txt",
-    "pieChartFilepath": "outputs/pieChart.png",
-    "radarChartFilepath": "outputs/radarChart.png",
-    "forInterviewerFilepath": "outputs/forInterviewer.pdf",
-    "resultDraftFilepath": "outputs/resultDraft.txt",
-    "resultFilepath": "outputs/result.pdf",
+    "notValidQuestionsFilename": "notValidQuestions.txt",
+    "questionsFilename": "questions.txt",
+    "pieChartFilename": "pieChart.png",
+    "radarChartFilename": "radarChart.png",
+    "forInterviewerFilename": "forInterviewer.pdf",
+    "resultDraftFilename": "resultDraft.txt",
+    "resultNotesDraftFilename": "resultNotesDraft.txt",
+    "resultFilename": "result.pdf",
     "suitableQuestionMarker": "+ ",
     "pieChart": {
         "dataColors": [
@@ -41,8 +41,12 @@
         "creator": "Dmitry Usik",
         "author": "Dmitry Usik",
         "verticalMargin": 64,
-        "horizontalMargin": 48
+        "horizontalMargin": 48,
+        "logoWidth": 80,
+        "logoMargin": 24
     },
     "maxMark": 5,
-    "topicKey": "@topic@"
+    "topicKey": "@topic@",
+    "notesKey": "@notes@",
+    "recommendKey": "@recommend@"
 }

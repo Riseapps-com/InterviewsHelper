@@ -2,13 +2,18 @@ import { QuestionData } from './types'
 import interviewQuestions from './interviewQuestions'
 import config from './config'
 import fs from 'fs'
+import { wrapToOutputsDirectory } from './createOutputsDirectory'
 
 const parseQuestions = (): Map<string, QuestionData[]> => {
+    console.log(`parseQuestions()`)
+
     const parsedQuestions = new Map<string, QuestionData[]>()
     const rows: string[] = fs
-        .readFileSync(config.questionsFilepath, 'utf8')
+        .readFileSync(wrapToOutputsDirectory(config.questionsFilename), 'utf8')
         .split('\n')
-        .filter((row) => row.includes(config.topicKey) || row.startsWith(config.suitableQuestionMarker))
+        .filter(
+            (row) => row.includes(config.topicKey) || row.startsWith(config.suitableQuestionMarker),
+        )
     let currentTopic: string
 
     rows.forEach((row) => {

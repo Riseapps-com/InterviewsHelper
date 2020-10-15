@@ -1,6 +1,7 @@
 import fs from 'fs'
 import config from './config'
 import { QuestionData } from './types'
+import { wrapToOutputsDirectory } from './createOutputsDirectory'
 
 const generateResultDraft = (questions: Map<string, QuestionData[]>): void => {
     console.log(`generateResultDraft(${[...questions.keys()]})`)
@@ -16,7 +17,7 @@ const generateResultDraft = (questions: Map<string, QuestionData[]>): void => {
         )
     }
 
-    fs.writeFileSync(config.resultDraftFilepath, topics.join('\n'))
+    fs.writeFileSync(wrapToOutputsDirectory(config.resultDraftFilename), topics.join('\n'))
 }
 
 export { generateResultDraft }

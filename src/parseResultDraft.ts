@@ -1,10 +1,13 @@
 import fs from 'fs'
 import config from './config'
+import { wrapToOutputsDirectory } from './createOutputsDirectory'
 
 const parseResultDraft = (): Map<string, number[]> => {
+    console.log(`parseResultDraft()`)
+
     const parsedResultDraft = new Map<string, number[]>()
     const rows: string[] = fs
-        .readFileSync(config.resultDraftFilepath, 'utf8')
+        .readFileSync(wrapToOutputsDirectory(config.resultDraftFilename), 'utf8')
         .split('\n')
         .filter((row) => row)
     let currentTopic: string

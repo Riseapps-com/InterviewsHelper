@@ -5,6 +5,7 @@ import interview from './interview'
 import QuickChart from 'quickchart-js'
 import config from './config'
 import input from './input'
+import { wrapToOutputsDirectory } from './createOutputsDirectory'
 
 const getTopicDurations = (topics: string[]): TopicDuration[] =>
     topics.reduce((curr, prev) => {
@@ -87,7 +88,7 @@ const buildPieChart = async () => {
     })
 
     const response: Response = await fetch(pieChart.getUrl())
-    fs.writeFileSync(config.pieChartFilepath, await response.buffer())
+    fs.writeFileSync(wrapToOutputsDirectory(config.pieChartFilename), await response.buffer())
 }
 
 export { buildPieChart }

@@ -1,12 +1,16 @@
 import fs from 'fs'
-import config from './config'
+import input from './input'
+
+const outputsDirectory: string = `outputs-${input.candidate.firstname.toLowerCase()}-${input.candidate.lastname.toLowerCase()}`
 
 const createOutputsDirectory = (): void => {
     console.log('createOutputsDirectory()')
 
-    if (!fs.existsSync(config.outputDirectory)) {
-        fs.mkdirSync(config.outputDirectory)
+    if (!fs.existsSync(outputsDirectory)) {
+        fs.mkdirSync(outputsDirectory)
     }
 }
 
-export { createOutputsDirectory }
+const wrapToOutputsDirectory = (filename: string): string => `${outputsDirectory}/${filename}`
+
+export { createOutputsDirectory, wrapToOutputsDirectory }

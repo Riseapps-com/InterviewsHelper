@@ -3,6 +3,7 @@ import { QuestionData } from './types'
 import startCase from 'lodash.startcase'
 import interviewQuestions from './interviewQuestions'
 import config from './config'
+import { wrapToOutputsDirectory } from './createOutputsDirectory'
 
 const validateRequireFor = (requiredFor: string): boolean =>
     requiredFor === 'trainee' ||
@@ -43,10 +44,13 @@ const topicToKey = (topic: string): string =>
 
 const saveNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
     if (notValidQuestions.length) {
-        fs.writeFileSync(config.notValidQuestionsFilepath, notValidQuestions.join('\n'))
+        fs.writeFileSync(
+            wrapToOutputsDirectory(config.notValidQuestionsFilename),
+            notValidQuestions.join('\n'),
+        )
     } else {
-        if (fs.existsSync(config.notValidQuestionsFilepath)) {
-            fs.unlinkSync(config.notValidQuestionsFilepath)
+        if (fs.existsSync(wrapToOutputsDirectory(config.notValidQuestionsFilename))) {
+            fs.unlinkSync(wrapToOutputsDirectory(config.notValidQuestionsFilename))
         }
     }
 }

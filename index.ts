@@ -9,6 +9,8 @@ import { _generateResultPDF } from './src/generateResultPDF'
 import { buildRadarChart } from './src/buildRadarChart'
 import { parseQuestions } from './src/parseQuestions'
 import { parseResultDraft } from './src/parseResultDraft'
+import { generateResultNotesDraft } from './src/generateResultNotesDraft'
+import { parseResultNotesDraft } from './src/parseResultNotes'
 
 const validateQuestionsDBArg = includes(process.argv, '--validateQuestionsDB')
 const findQuestionsArg = includes(process.argv, '--findQuestions')
@@ -43,6 +45,7 @@ const generateInterviewPDF = async (): Promise<void> => {
         const parsedQuestions = parseQuestions()
         _generateInterviewPDF(parsedQuestions)
         generateResultDraft(parsedQuestions)
+        generateResultNotesDraft()
     } catch (error) {
         console.log(error)
     }
@@ -53,8 +56,9 @@ const generateResultPDF = async (): Promise<void> => {
 
     try {
         const parsedResultDraft = parseResultDraft()
+        const parsedResultNotesDraft = parseResultNotesDraft()
         await buildRadarChart(parsedResultDraft)
-        _generateResultPDF(parsedResultDraft)
+        _generateResultPDF(parsedResultDraft, parsedResultNotesDraft)
     } catch (error) {}
 }
 
