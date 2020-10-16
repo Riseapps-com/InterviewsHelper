@@ -28,40 +28,40 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 ```
 2) Run **findQuestions** script. The next file **output/questions.txt** will be generated:
 ```txt
-JavaScript @topic@
+@topic@JavaScript@topic@ ≈7 questions
 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j1@questionKey@)
 2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j2@questionKey@)
 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j3@questionKey@)
-TypeScript @topic@
+@topic@TypeScript@topic@ ≈4 questions
 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @questionKey@t1@questionKey@)
 2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
 3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
 ```
 3) Mark suitable questions with **"+ "** at the beginning (marker could be configured through **config/config.json** file):
 ```txt
-JavaScript @topic@
+@topic@JavaScript@topic@ ≈7 questions
 + 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j1@questionKey@)
 2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j2@questionKey@)
 + 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j3@questionKey@)
-TypeScript @topic@
+@topic@TypeScript@topic@ ≈4 questions
 + 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @questionKey@t1@questionKey@)
 + 2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
 3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
 ```
-4) Run **generateInterviewPDF** script and the next files will be generated:
+4) Run **generateInterviewPDF** script, and the next files will be generated:
 - **outputs/forInterviewer.pdf**:
 ```txt
 Will be used for the interview.
 ```
 - **outputs/resultDraft.txt**:
 ```txt
-JavaScript @topic@
+@topic@JavaScript@topic@
 1)
 2)
 3)
 4)
 5)
-TypeScript @topic@
+@topic@TypeScript@topic@
 1)
 2)
 3)
@@ -80,13 +80,13 @@ Yes / No
 ```
 5) Fill **outputs/resultDraft.txt** with the marks from **0** to **maxMark** (could be configured through **config/config.json** file):
 ```txt
-JavaScript @topic@
+@topic@JavaScript@topic@
 1) 5
 2) 4
 3) 3
 4) 2
 5) 1
-TypeScript @topic@
+@topic@TypeScript@topic@
 1) 5
 2) 5
 3) 5
@@ -135,7 +135,7 @@ Example:
     }
 }
 ```
-Allowed values for role:
+Allowed values for the role:
 ```typescript
 type Role = 'trainee' | 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior'
 ```
@@ -209,7 +209,7 @@ Example:
 
 ## :ledger: TODO:
 
-- [ ] Abillity to add a new question to the specific position
-- [ ] Prepare ready questions sets
-- [ ] Ability to find most suitable questions
-- [ ] Send files to email 
+- [ ] Ability to add a new question to the specific position.
+- [ ] Prepare ready questions sets.
+- [ ] Ability to find most suitable questions.
+- [ ] Send files to email. 

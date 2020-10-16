@@ -10,7 +10,7 @@ const generateResultDraft = (questions: Map<string, QuestionData[]>): void => {
 
     for (let key of questions.keys()) {
         topics.push(
-            `${key} ${config.topicKey}\n${questions
+            `${config.topicKey}${key}${config.topicKey}\n${questions
                 .get(key)
                 .map((question, index) => `${index + 1})`)
                 .join('\n')}`,

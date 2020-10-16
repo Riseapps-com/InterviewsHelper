@@ -18,7 +18,7 @@ const parseQuestions = (): Map<string, QuestionData[]> => {
 
     rows.forEach((row) => {
         if (row.includes(config.topicKey)) {
-            currentTopic = row.split(` ${config.topicKey}`)[0]
+            currentTopic = row.split(`${config.topicKey}`)[1]
         } else {
             const questionSplit: string[] = row.split(config.questionKey)
             const questionKey: string = questionSplit[1]

@@ -8,7 +8,6 @@ export type QuestionData = {
     estimatedTimeMin: number
     requiredFor: Role
     question: string
-    topic: string
 }
 
 export type Question = {
@@ -24,6 +23,7 @@ export type TopicDuration = {
     status: Status
     durationMin: number
     label: string
+    questionsNumber: number
 }
 
 export type Topics = {

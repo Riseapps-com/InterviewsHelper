@@ -14,7 +14,7 @@ const parseResultDraft = (): Map<string, number[]> => {
 
     rows.forEach((row) => {
         if (row.includes(config.topicKey)) {
-            currentTopic = row.split(` ${config.topicKey}`)[0]
+            currentTopic = row.split(`${config.topicKey}`)[1]
         } else {
             const mark: number = Number(row.split(') ')[1])
             if (parsedResultDraft.get(currentTopic)) {

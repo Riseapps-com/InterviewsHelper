@@ -1,9 +1,10 @@
-import { QuestionData } from './types'
+import { QuestionData, TopicDuration } from './types'
 import fs from 'fs'
 import interviewQuestions from './wrappers/interviewQuestions'
 import config from './wrappers/config'
 import input from './wrappers/input'
 import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
+import interview from './wrappers/interview'
 
 const isSuitableForTrainee = (requiredFor: string): boolean => requiredFor === 'trainee'
 
@@ -73,7 +74,7 @@ const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
     return isSuitable
 }
 
-const formatQuestions = (questionsMap: Map<string, QuestionData[]>): string => {
+const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): string => {
     const topics: string[] = []
     questionsMap.forEach((value, key) => {
         const questions: string[] = value.map(
@@ -84,7 +85,11 @@ const formatQuestions = (questionsMap: Map<string, QuestionData[]>): string => {
                     question.key
                 }${config.questionKey})`,
         )
-        topics.push(`${key} ${config.topicKey}\n${questions.join('\n')}`)
+        topics.push(
+            `${config.topicKey}${key.label}${config.topicKey} ≈${
+                key.questionsNumber
+            } questions\n${questions.join('\n')}`,
+        )
     })
     return topics.join('\n')
 }
@@ -92,23 +97,14 @@ const formatQuestions = (questionsMap: Map<string, QuestionData[]>): string => {
 const findSuitableQuestions = (): void => {
     console.log(`findSuitableQuestions()`)
 
-    const questions: QuestionData[] = input.includedTopics.reduce((prev, curr) => {
-        let suitableQuestions: QuestionData[]
+    const questionsMap = new Map<TopicDuration, QuestionData[]>()
 
-        suitableQuestions = interviewQuestions[curr].data.filter((item: QuestionData) =>
-            isSuitableQuestion(input.role, item.requiredFor),
-        ) as QuestionData[]
-
-        return [...prev, ...suitableQuestions]
-    }, [])
-
-    const questionsMap = new Map<string, QuestionData[]>()
-    questions.forEach((question) => {
-        if (questionsMap.get(question.topic)) {
-            questionsMap.set(question.topic, [...questionsMap.get(question.topic), question])
-        } else {
-            questionsMap.set(question.topic, [question])
-        }
+    input.includedTopics.forEach((topic) => {
+        const globalTopic: string = topic.includes('.') ? topic.split('.')[0] : topic
+        let suitableQuestions: QuestionData[] = interviewQuestions[
+            topic
+        ].data.filter((item: QuestionData) => isSuitableQuestion(input.role, item.requiredFor))
+        suitableQuestions.length && questionsMap.set(interview.topics[globalTopic], suitableQuestions)
     })
 
     fs.writeFileSync(

@@ -4,52 +4,62 @@
         "javascript": {
             "status": "required",
             "durationMin": 15,
-            "label": "JavaScript"
+            "label": "JavaScript",
+            "questionsNumber": 7
         },
         "typescript": {
             "status": "optional",
             "durationMin": 10,
-            "label": "TypeScript"
+            "label": "TypeScript",
+            "questionsNumber": 4
         },
         "react": {
             "status": "required",
             "durationMin": 20,
-            "label": "React"
+            "label": "React",
+            "questionsNumber": 10
         },
         "reactNative": {
             "status": "required",
             "durationMin": 20,
-            "label": "React Native"
+            "label": "React Native",
+            "questionsNumber": 7
         },
         "nativePlatforms": {
             "status": "required",
             "durationMin": 10,
-            "label": "Native Platforms"
+            "label": "Native Platforms",
+            "questionsNumber": 3
         },
         "dataStructuresAndAlgorithms": {
             "status": "optional",
             "durationMin": 10,
-            "label": "Data structures and algorithms"
+            "label": "Data structures and algorithms",
+            "questionsNumber": 3
         },
         "testing": {
             "status": "optional",
             "durationMin": 10,
-            "label": "Testing"
+            "label": "Testing",
+            "questionsNumber": 5
         },
         "communicationSkills": {
             "status": "required",
             "durationMin": 10,
-            "label": "Communication Skills"
+            "label": "Communication Skills",
+            "questionsNumber": 5
         },
         "testTasks": {
             "status": "required",
             "durationMin": 5,
-            "label": "Test Tasks"
+            "label": "Test Tasks",
+            "questionsNumber": 1
         },
         "other": {
             "status": "optional",
             "durationMin": 10,
-            "label": "Other"
+            "label": "Other",
+            "questionsNumber": 3
         }
     },
     "requiredSections": [
