@@ -96,4 +96,5 @@ export type Config = {
     topicKey: string
     notesKey: string
     recommendKey: string
+    questionKey: string
 }

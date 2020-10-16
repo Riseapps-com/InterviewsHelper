@@ -20,8 +20,8 @@ const parseQuestions = (): Map<string, QuestionData[]> => {
         if (row.includes(config.topicKey)) {
             currentTopic = row.split(` ${config.topicKey}`)[0]
         } else {
-            const questionSplit: string[] = row.split('@')
-            const questionKey: string = questionSplit[questionSplit.length - 2]
+            const questionSplit: string[] = row.split(config.questionKey)
+            const questionKey: string = questionSplit[1]
             let interviewQuestion: QuestionData
 
             Object.values(interviewQuestions).forEach((question) => {

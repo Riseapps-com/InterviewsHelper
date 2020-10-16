@@ -80,7 +80,9 @@ const formatQuestions = (questionsMap: Map<string, QuestionData[]>): string => {
             (question, index) =>
                 `${index + 1}. ${question.question} (timeForAnswer: ${
                     question.estimatedTimeMin
-                } min) (requiredFor: ${question.requiredFor}) (key: @${question.key}@)`,
+                } min) (requiredFor: ${question.requiredFor}) (key: ${config.questionKey}${
+                    question.key
+                }${config.questionKey})`,
         )
         topics.push(`${key} ${config.topicKey}\n${questions.join('\n')}`)
     })
