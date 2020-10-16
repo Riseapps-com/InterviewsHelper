@@ -40,17 +40,13 @@ TypeScript @topic@
 3) Mark suitable questions with **"+ "** at the beginning (marker could be configured through **config/config.json** file):
 ```txt
 JavaScript @topic@
-+ 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
-2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j2@)
-+ 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j3@)
-+ 4. What does “use strict” do? (timeForAnswer: 1 min) (requiredFor: junior+) (key: @j4@)
-5. What is a typed language? (timeForAnswer: 3 min) (requiredFor: junior) (key: @j5@)
++ 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j1@questionKey@)
+2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j2@questionKey@)
++ 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j3@questionKey@)
 TypeScript @topic@
-+ 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t1@)
-+ 2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t3@)
-3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t5@)
-+ 4. What are the object-oriented terms supported by TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t6@)
-5. What are the access modifiers supported by TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t7@)
++ 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @questionKey@t1@questionKey@)
++ 2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
+3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
 ```
 4) Run **generateInterviewPDF** script and the next files will be generated:
 - **outputs/forInterviewer.pdf**:
