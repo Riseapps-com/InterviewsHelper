@@ -38,7 +38,7 @@ const _generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => 
                 `${curr} (${
                     Object.values(interview.topics).find((topic) => topic.label === curr)
                         .durationMin
-                } min)`,
+                } min):`,
             )
         return questions
             .get(curr)
