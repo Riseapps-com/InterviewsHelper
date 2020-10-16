@@ -99,7 +99,6 @@ TypeScript @topic@
 ```
 6) Fill **notes** and **recommend** fields in **outputs/resultDraft.txt** file:
 ```txt
-```txt
 @notes@
 Good theory.
 @notes@
