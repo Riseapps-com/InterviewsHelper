@@ -29,13 +29,13 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 2) Run **findQuestions** script. The next file **output/questions.txt** will be generated:
 ```txt
 JavaScript @topic@
-1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j1@)
-2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j2@)
-3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @j3@)
+1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j1@questionKey@)
+2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j2@questionKey@)
+3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j3@questionKey@)
 TypeScript @topic@
-1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @t1@)
-2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t3@)
-3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @t5@)
+1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @questionKey@t1@questionKey@)
+2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
+3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
 ```
 3) Mark suitable questions with **"+ "** at the beginning (marker could be configured through **config/config.json** file):
 ```txt
