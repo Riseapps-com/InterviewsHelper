@@ -1,9 +1,9 @@
 import fs from 'fs'
 import { QuestionData } from './types'
 import startCase from 'lodash.startcase'
-import interviewQuestions from './interviewQuestions'
-import config from './config'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
+import interviewQuestions from './wrappers/interviewQuestions'
+import config from './wrappers/config'
+import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
 
 const validateRequireFor = (requiredFor: string): boolean =>
     requiredFor === 'trainee' ||

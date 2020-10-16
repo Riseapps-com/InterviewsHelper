@@ -1,5 +1,5 @@
 import PDFDocument from 'pdfkit'
-import config from './config'
+import config from '../wrappers/config'
 
 const getPdfDocument = (): PDFKit.PDFDocument =>
     new PDFDocument({

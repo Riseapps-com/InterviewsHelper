@@ -1,9 +1,9 @@
-import config from './config'
-import input from './input'
+import config from './wrappers/config'
+import input from './wrappers/input'
 import fs from 'fs'
-import { drawRiseappsLogo, getPdfDocument } from './pdfUtils'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
-import { marksToPercentageValues } from './marksToPercentageValues'
+import { drawRiseappsLogo, getPdfDocument } from './utils/pdfUtils'
+import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
+import { marksToPercentageValues } from './utils/marksToPercentageValues'
 
 const _generateResultPDF = (
     resultDraft: Map<string, number[]>,

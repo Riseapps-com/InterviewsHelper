@@ -1,6 +1,6 @@
-import { QuestionData } from './types'
-import interviewQuestions from './interviewQuestions'
-import config from './config'
+import { QuestionData } from '../types'
+import interviewQuestions from '../wrappers/interviewQuestions'
+import config from '../wrappers/config'
 import fs from 'fs'
 import { wrapToOutputsDirectory } from './createOutputsDirectory'
 

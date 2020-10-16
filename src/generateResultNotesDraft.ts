@@ -1,6 +1,6 @@
 import fs from 'fs'
-import config from './config'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
+import config from './wrappers/config'
+import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
 
 const generateResultNotesDraft = (): void => {
     fs.writeFileSync(

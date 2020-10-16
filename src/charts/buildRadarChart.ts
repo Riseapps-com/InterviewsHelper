@@ -1,9 +1,9 @@
 import QuickChart from 'quickchart-js'
 import fetch, { Response } from 'node-fetch'
 import fs from 'fs'
-import config from './config'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
-import { marksToPercentageValues } from './marksToPercentageValues'
+import config from '../wrappers/config'
+import { wrapToOutputsDirectory } from '../utils/createOutputsDirectory'
+import { marksToPercentageValues } from '../utils/marksToPercentageValues'
 
 const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void> => {
     console.log(`buildRadarChart(${[...resultDraft.keys()]})`)

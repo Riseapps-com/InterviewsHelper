@@ -1,11 +1,11 @@
 import fetch, { Response } from 'node-fetch'
 import fs from 'fs'
-import { TopicDuration } from './types'
-import interview from './interview'
+import { TopicDuration } from '../types'
+import interview from '../wrappers/interview'
 import QuickChart from 'quickchart-js'
-import config from './config'
-import input from './input'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
+import config from '../wrappers/config'
+import input from '../wrappers/input'
+import { wrapToOutputsDirectory } from '../utils/createOutputsDirectory'
 
 const getTopicDurations = (topics: string[]): TopicDuration[] =>
     topics.reduce((curr, prev) => {

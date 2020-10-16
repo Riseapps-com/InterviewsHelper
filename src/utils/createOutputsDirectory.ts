@@ -1,5 +1,5 @@
 import fs from 'fs'
-import input from './input'
+import input from '../wrappers/input'
 
 const outputsDirectory: string = `outputs-${input.candidate.firstname.toLowerCase()}-${input.candidate.lastname.toLowerCase()}`
 

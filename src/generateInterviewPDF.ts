@@ -1,10 +1,10 @@
 import fs from 'fs'
-import config from './config'
-import input from './input'
+import config from './wrappers/config'
+import input from './wrappers/input'
 import { QuestionData } from './types'
-import interview from './interview'
-import { drawRiseappsLogo, getPdfDocument } from './pdfUtils'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
+import interview from './wrappers/interview'
+import { drawRiseappsLogo, getPdfDocument } from './utils/pdfUtils'
+import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
 
 const _generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => {
     console.log(`_generateInterviewPDF(${[...questions.keys()]})`)
@@ -17,7 +17,7 @@ const _generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => 
         .fontSize(18)
         .font('Times-Bold')
         .text(
-            `Being interviewed - ${input.candidate.firstname} ${input.candidate.lastname} (${input.role})`,
+            `Candidate - ${input.candidate.firstname} ${input.candidate.lastname} (${input.role})`,
         )
         .moveDown(4)
 

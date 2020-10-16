@@ -1,7 +1,7 @@
 import fs from 'fs'
-import config from './config'
+import config from './wrappers/config'
 import { QuestionData } from './types'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
+import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
 
 const generateResultDraft = (questions: Map<string, QuestionData[]>): void => {
     console.log(`generateResultDraft(${[...questions.keys()]})`)

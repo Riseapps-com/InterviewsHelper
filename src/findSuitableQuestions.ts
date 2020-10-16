@@ -1,9 +1,9 @@
 import { QuestionData } from './types'
 import fs from 'fs'
-import interviewQuestions from './interviewQuestions'
-import config from './config'
-import input from './input'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
+import interviewQuestions from './wrappers/interviewQuestions'
+import config from './wrappers/config'
+import input from './wrappers/input'
+import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
 
 const isSuitableForTrainee = (requiredFor: string): boolean => requiredFor === 'trainee'
 

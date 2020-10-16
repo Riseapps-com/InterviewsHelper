@@ -1,4 +1,4 @@
-import config from './config'
+import config from '../wrappers/config'
 
 const marksToPercentageValues = (marks: number[][]): number[] =>
     marks.reduce((prev, curr) => {

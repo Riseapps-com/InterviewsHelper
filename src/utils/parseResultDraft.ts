@@ -1,5 +1,5 @@
 import fs from 'fs'
-import config from './config'
+import config from '../wrappers/config'
 import { wrapToOutputsDirectory } from './createOutputsDirectory'
 
 const parseResultDraft = (): Map<string, number[]> => {
