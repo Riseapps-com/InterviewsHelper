@@ -1,13 +1,13 @@
 {
     "totalDurationMin": 90,
     "topics": {
-        "javascript": {
+        "javaScript": {
             "status": "required",
             "durationMin": 15,
             "label": "JavaScript",
             "questionsNumber": 7
         },
-        "typescript": {
+        "typeScript": {
             "status": "optional",
             "durationMin": 10,
             "label": "TypeScript",

@@ -4,7 +4,7 @@
     "description": "A bunch of utilities for automating the process of interviews as much as possible with minimal time resources.",
     "main": "index.js",
     "scripts": {
-        "validateQuestionsDB": "ts-node index.ts --validateQuestionDB",
+        "validateQuestionsDB": "ts-node index.ts --validateQuestionsDB",
         "findQuestions": "ts-node index.ts --findQuestions",
         "generateInterviewPDF": "ts-node index.ts --generateInterviewPDF",
         "generateResultPDF": "ts-node index.ts --generateResultPDF"

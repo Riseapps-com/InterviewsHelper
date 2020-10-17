@@ -36,10 +36,15 @@ const areQuestionsValid = (
     }, true)
 
 const topicToKey = (topic: string): string =>
-    startCase(topic)
-        .split(' ')
-        .map((word) => word[0].toLowerCase())
-        .join('')
+    topic
+        .split('.')
+        .map((item) =>
+            startCase(item)
+                .split(' ')
+                .map((word) => word[0].toLowerCase())
+                .join(''),
+        )
+        .join('.')
 
 const saveNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
     if (notValidQuestions.length) {

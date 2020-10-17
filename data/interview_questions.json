@@ -1,401 +1,401 @@
 {
-    "javascript": {
+    "javaScript": {
         "data": [
             {
                 "order": 1,
-                "key": "j1",
+                "key": "js1",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What is hoisting?"
             },
             {
                 "order": 2,
-                "key": "j2",
+                "key": "js2",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What is scope?"
             },
             {
                 "order": 3,
-                "key": "j3",
+                "key": "js3",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What are closures?"
             },
             {
                 "order": 4,
-                "key": "j4",
+                "key": "js4",
                 "estimatedTimeMin": 1,
                 "requiredFor": "junior+",
                 "question": "What does “use strict” do?"
             },
             {
                 "order": 5,
-                "key": "j5",
+                "key": "js5",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
                 "question": "What is a typed language?"
             },
             {
                 "order": 6,
-                "key": "j6",
+                "key": "js6",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
                 "question": "What is ECMAScript?"
             },
             {
                 "order": 7,
-                "key": "j7",
+                "key": "js7",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What are the new features in ES6 or ECMAScript 2015?"
             },
             {
                 "order": 8,
-                "key": "j8",
+                "key": "js8",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What are the data types supported by JavaScript?"
             },
             {
                 "order": 9,
-                "key": "j9",
+                "key": "js9",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "How does “typeof” operator work?"
             },
             {
                 "order": 10,
-                "key": "j10",
+                "key": "js10",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What is the difference between undefined and null?"
             },
             {
                 "order": 11,
-                "key": "j11",
+                "key": "js11",
                 "estimatedTimeMin": 1,
                 "requiredFor": "junior",
                 "question": "What is the difference between undeclared and undefined?"
             },
             {
                 "order": 12,
-                "key": "j12",
+                "key": "js12",
                 "estimatedTimeMin": 3,
                 "requiredFor": "trainee",
                 "question": "What do “&&”, “||”, “!!” operator do?"
             },
             {
                 "order": 13,
-                "key": "j13",
+                "key": "js13",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
                 "question": "How to convert string to number and vice versa?"
             },
             {
                 "order": 14,
-                "key": "j14",
+                "key": "js14",
                 "estimatedTimeMin": 1,
                 "requiredFor": "junior",
                 "question": "What would be the result of  2 + 5 + ‘3’?"
             },
             {
                 "order": 15,
-                "key": "j15",
+                "key": "js15",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
-                "question": "What's the difference between “==” and “===” operators ?"
+                "question": "What's the difference between “==” and “===” operators?"
             },
             {
                 "order": 16,
-                "key": "j16",
+                "key": "js16",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "Why does it return false when comparing two similar objects in JavaScript?"
             },
             {
                 "order": 17,
-                "key": "j17",
+                "key": "js17",
                 "estimatedTimeMin": 2,
                 "requiredFor": "trainee",
                 "question": "What are the falsy values in JavaScript?"
             },
             {
                 "order": 18,
-                "key": "j18",
+                "key": "js18",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
                 "question": "How to check if a value is falsy?"
             },
             {
                 "order": 19,
-                "key": "j19",
+                "key": "js19",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What is the value of “this” in JavaScript?"
             },
             {
                 "order": 20,
-                "key": "j20",
+                "key": "js20",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What is the prototype of an object?"
             },
             {
                 "order": 21,
-                "key": "j21",
+                "key": "js21",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What is the difference between implicit and explicit coercion?"
             },
             {
                 "order": 22,
-                "key": "j22",
+                "key": "js22",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What is “NaN” and how to check if a value is “NaN”?"
             },
             {
                 "order": 23,
-                "key": "j23",
+                "key": "js23",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
                 "question": "How to check if a value is an Array?"
             },
             {
                 "order": 24,
-                "key": "j24",
+                "key": "js24",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "How to check if a certain property exists in an object?"
             },
             {
                 "order": 25,
-                "key": "j25",
+                "key": "js25",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "What are the ways of making objects in JavaScript?"
             },
             {
                 "order": 26,
-                "key": "j26",
+                "key": "js26",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
                 "question": "What is the difference between “Object.seal” and “Object.freeze” methods?"
             },
             {
                 "order": 27,
-                "key": "j27",
+                "key": "js27",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
                 "question": "What is the difference between the “in” operator and the “hasOwnProperty” method in objects?"
             },
             {
                 "order": 28,
-                "key": "j28",
+                "key": "js28",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "What does the “new” keyword do?"
             },
             {
                 "order": 29,
-                "key": "j29",
+                "key": "js29",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What is an IIFE, what is the use of it?"
             },
             {
                 "order": 30,
-                "key": "j30",
+                "key": "js30",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "What is the use of the “Function.prototype.apply” method?"
             },
             {
                 "order": 31,
-                "key": "j31",
+                "key": "js31",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "What is the use of the “Function.prototype.call” method?"
             },
             {
                 "order": 32,
-                "key": "j32",
+                "key": "js32",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "What is the difference between “Function.prototype.apply” and “Function.prototype.call”?"
             },
             {
                 "order": 33,
-                "key": "j33",
+                "key": "js33",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "What is the usage of “Function.prototype.bind”?"
             },
             {
                 "order": 34,
-                "key": "j34",
+                "key": "js34",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What is functional programming and what are the features of JavaScript that make it a candidate as a functional language?"
             },
             {
                 "order": 35,
-                "key": "j35",
+                "key": "js35",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What are higher order functions?"
             },
             {
                 "order": 36,
-                "key": "j36",
+                "key": "js36",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "Why are functions called first-class objects?"
             },
             {
                 "order": 37,
-                "key": "j37",
+                "key": "js37",
                 "estimatedTimeMin": 1,
                 "requiredFor": "junior+",
                 "question": "What is the “arguments” object?"
             },
             {
                 "order": 38,
-                "key": "j38",
+                "key": "js38",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What is the difference between passing a variable by value and by reference?"
             },
             {
                 "order": 39,
-                "key": "j39",
+                "key": "js39",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "How many ways can a function be invoked?"
             },
             {
                 "order": 40,
-                "key": "j40",
+                "key": "js40",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
                 "question": "What is memoization and what's the use of it?"
             },
             {
                 "order": 41,
-                "key": "j41",
+                "key": "js41",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
                 "question": "What's the difference between “var”, “let” and “const” keywords?"
             },
             {
                 "order": 42,
-                "key": "j42",
+                "key": "js42",
                 "estimatedTimeMin": 2,
                 "requiredFor": "trainee",
                 "question": "What are arrow functions?"
             },
             {
                 "order": 43,
-                "key": "j43",
+                "key": "js43",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What are classes?"
             },
             {
                 "order": 44,
-                "key": "j44",
+                "key": "js44",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What are template literals?"
             },
             {
                 "order": 45,
-                "key": "j45",
+                "key": "js45",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior",
                 "question": "What is object destructuring?"
             },
             {
                 "order": 46,
-                "key": "j46",
+                "key": "js46",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "What are ES6 modules?"
             },
             {
                 "order": 47,
-                "key": "j47",
+                "key": "js47",
                 "estimatedTimeMin": 2,
                 "requiredFor": "trainee",
                 "question": "What is a callback function?"
             },
             {
                 "order": 48,
-                "key": "j48",
+                "key": "js48",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
                 "question": "What are promises?"
             },
             {
                 "order": 49,
-                "key": "j49",
+                "key": "js49",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
                 "question": "What is “async/await” and how it works?"
             },
             {
                 "order": 50,
-                "key": "j50",
+                "key": "js50",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
                 "question": "What are generators?"
             },
             {
                 "order": 51,
-                "key": "j51",
+                "key": "js51",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
                 "question": "What are symbols?"
             },
             {
                 "order": 52,
-                "key": "j52",
+                "key": "js52",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
                 "question": "What is proxy?"
             },
             {
                 "order": 53,
-                "key": "j53",
+                "key": "js53",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What is the difference between spread operator and rest operator?"
             },
             {
                 "order": 54,
-                "key": "j54",
+                "key": "js54",
                 "estimatedTimeMin": 1,
                 "requiredFor": "trainee",
                 "question": "What are default parameters?"
             },
             {
                 "order": 55,
-                "key": "j55",
+                "key": "js55",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
                 "question": "What are wrapper objects?"
             },
             {
                 "order": 56,
-                "key": "j56",
+                "key": "js56",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior+",
                 "question": "What are the ways to deal with asynchronous code in JavasScript?"
             },
             {
                 "order": 57,
-                "key": "j57",
+                "key": "js57",
                 "estimatedTimeMin": 3,
                 "requiredFor": "junior",
                 "question": "Explain exception handling in JavaScript."
@@ -408,172 +408,172 @@
             "https://developer.mozilla.org/ru/docs/Web/JavaScript"
         ]
     },
-    "typescript": {
+    "typeScript": {
         "data": [
             {
                 "order": 1,
-                "key": "t1",
+                "key": "ts1",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
                 "question": "What are the benefits of using TypeScript?"
             },
             {
                 "order": 2,
-                "key": "t2",
+                "key": "ts2",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
                 "question": "What are the drawbacks of using TypeScript?"
             },
             {
                 "order": 3,
-                "key": "t3",
+                "key": "ts3",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
                 "question": "What is “tsconfig.json” file?"
             },
             {
                 "order": 4,
-                "key": "t4",
+                "key": "ts4",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
                 "question": "What are the components of TypeScript?"
             },
             {
                 "order": 5,
-                "key": "t5",
+                "key": "ts5",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
                 "question": "What is static typing in TypeScript?"
             },
             {
                 "order": 6,
-                "key": "t6",
+                "key": "ts6",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
                 "question": "What are the object-oriented terms supported by TypeScript?"
             },
             {
                 "order": 7,
-                "key": "t7",
+                "key": "ts7",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
                 "question": "What are the access modifiers supported by TypeScript?"
             },
             {
                 "order": 8,
-                "key": "t8",
+                "key": "ts8",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
                 "question": "Does TypeScript support function overloading?"
             },
             {
                 "order": 9,
-                "key": "t9",
+                "key": "ts9",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
                 "question": "What is method overriding in TypeScript?"
             },
             {
                 "order": 10,
-                "key": "t10",
+                "key": "ts10",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
                 "question": "What does “super” keyword mean in TypeScript?"
             },
             {
                 "order": 11,
-                "key": "t11",
+                "key": "ts11",
                 "estimatedTimeMin": 1,
                 "requiredFor": "middle-",
                 "question": "Which keyword is used for inheritance in TypeScript?"
             },
             {
                 "order": 12,
-                "key": "t12",
+                "key": "ts12",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
                 "question": "What types does TypeScript contain?"
             },
             {
                 "order": 13,
-                "key": "t13",
+                "key": "ts13",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
                 "question": "List out the built-in data types in TypeScript."
             },
             {
                 "order": 14,
-                "key": "t14",
+                "key": "ts14",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
                 "question": "What are interfaces in TypeScript?"
             },
             {
                 "order": 15,
-                "key": "t15",
+                "key": "ts15",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
                 "question": "What are classes in TypeScript? List out some of the features."
             },
             {
                 "order": 16,
-                "key": "t16",
+                "key": "ts16",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle+",
                 "question": "What is the namespace in TypeScript and how to declare it?"
             },
             {
                 "order": 17,
-                "key": "t17",
+                "key": "ts17",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
                 "question": "Explain decorators in TypeScript."
             },
             {
                 "order": 18,
-                "key": "t18",
+                "key": "ts18",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle+",
                 "question": "What are mixins in TypeScript?"
             },
             {
                 "order": 19,
-                "key": "t19",
+                "key": "ts19",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
                 "question": "Explain “declare” keyword in TypeScript."
             },
             {
                 "order": 20,
-                "key": "t20",
+                "key": "ts20",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle-",
                 "question": "What are generics in TypeScript?"
             },
             {
                 "order": 21,
-                "key": "t21",
+                "key": "ts21",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle",
                 "question": "What is the difference between interface and type statements?"
             },
             {
                 "order": 22,
-                "key": "t22",
+                "key": "ts22",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
                 "question": "Explain enum in TypeScript."
             },
             {
                 "order": 23,
-                "key": "t23",
+                "key": "ts23",
                 "estimatedTimeMin": 2,
                 "requiredFor": "middle-",
                 "question": "Why are optional parameters added in TypeScript?"
             },
             {
                 "order": 24,
-                "key": "t24",
+                "key": "ts24",
                 "estimatedTimeMin": 3,
                 "requiredFor": "middle",
                 "question": "What type utilities are in TypeScript?"
@@ -586,28 +586,860 @@
         ]
     },
     "react.reactBasics": {
-        "data": [],
-        "links": []
+        "data": [
+            {
+                "order": 1,
+                "key": "r.rb1",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior",
+                "question": "What is React?"
+            },
+            {
+                "order": 2,
+                "key": "r.rb2",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior",
+                "question": "What is Virtual DOM?"
+            },
+            {
+                "order": 3,
+                "key": "r.rb3",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior+",
+                "question": "How Virtual DOM works?"
+            },
+            {
+                "order": 4,
+                "key": "r.rb4",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior",
+                "question": "What is the difference between Real DOM and Virtual DOM?"
+            },
+            {
+                "order": 5,
+                "key": "r.rb5",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is React Fiber?"
+            },
+            {
+                "order": 6,
+                "key": "r.rb6",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is reconciliation?"
+            },
+            {
+                "order": 7,
+                "key": "r.rb7",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What are the advantages of React?"
+            },
+            {
+                "order": 8,
+                "key": "r.rb8",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What are the limitations of React?"
+            },
+            {
+                "order": 9,
+                "key": "r.rb9",
+                "estimatedTimeMin": 2,
+                "requiredFor": "trainee",
+                "question": "What is JSX?"
+            },
+            {
+                "order": 10,
+                "key": "r.rb10",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "How to create Components in React?"
+            },
+            {
+                "order": 11,
+                "key": "r.rb11",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What are Pure Components?"
+            },
+            {
+                "order": 12,
+                "key": "r.rb12",
+                "estimatedTimeMin": 2,
+                "requiredFor": "trainee",
+                "question": "What is state in React?"
+            },
+            {
+                "order": 13,
+                "key": "r.rb13",
+                "estimatedTimeMin": 2,
+                "requiredFor": "trainee",
+                "question": "What are props in React?"
+            },
+            {
+                "order": 14,
+                "key": "r.rb14",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "What is the difference between state and props?"
+            },
+            {
+                "order": 15,
+                "key": "r.rb15",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "Why should we not update the state directly?"
+            },
+            {
+                "order": 16,
+                "key": "r.rb16",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What is the purpose of callback function as an argument of “setState()”?"
+            },
+            {
+                "order": 17,
+                "key": "r.rb17",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "What are inline conditional expressions?"
+            },
+            {
+                "order": 18,
+                "key": "r.rb18",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What is “key“ prop and what is the benefit of using it in arrays of elements?"
+            },
+            {
+                "order": 19,
+                "key": "r.rb19",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What is the use of Refs?"
+            },
+            {
+                "order": 20,
+                "key": "r.rb20",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "How to create Refs?"
+            },
+            {
+                "order": 21,
+                "key": "r.rb21",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What are controlled components?"
+            },
+            {
+                "order": 22,
+                "key": "r.rb22",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What are uncontrolled components?"
+            },
+            {
+                "order": 23,
+                "key": "r.rb23",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior",
+                "question": "What are the different phases of the component lifecycle?"
+            },
+            {
+                "order": 24,
+                "key": "r.rb24",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior",
+                "question": "What are the lifecycle methods of React?"
+            },
+            {
+                "order": 25,
+                "key": "r.rb25",
+                "estimatedTimeMin": 1,
+                "requiredFor": "junior",
+                "question": "What is “children” prop?"
+            },
+            {
+                "order": 26,
+                "key": "r.rb26",
+                "estimatedTimeMin": 2,
+                "requiredFor": "trainee",
+                "question": "How to write comments in React?"
+            },
+            {
+                "order": 27,
+                "key": "r.rb27",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "What are stateless components?"
+            },
+            {
+                "order": 28,
+                "key": "r.rb28",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "What are stateful components?"
+            },
+            {
+                "order": 29,
+                "key": "r.rb29",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "Can you force a component to rerender without calling “setState()“?"
+            },
+            {
+                "order": 30,
+                "key": "r.rb30",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "How to loop inside JSX?"
+            },
+            {
+                "order": 31,
+                "key": "r.rb31",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "How to combine multiple inline style objects?"
+            },
+            {
+                "order": 32,
+                "key": "r.rb32",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "Why can't you update props in React?"
+            }
+        ],
+        "links": [
+            "https://learning.shine.com/talenteconomy/interview-questions/redux-interview-questions/",
+            "https://github.com/sudheerj/reactjs-interview-questions#what-is-flux"
+        ]
     },
     "react.redux": {
-        "data": [],
-        "links": []
+        "data": [
+            {
+                "order": 1,
+                "key": "r.r1",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior+",
+                "question": "What is Flux?"
+            },
+            {
+                "order": 2,
+                "key": "r.r2",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "What is Redux?"
+            },
+            {
+                "order": 3,
+                "key": "r.r3",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior+",
+                "question": "What are the core principles of Redux?"
+            },
+            {
+                "order": 4,
+                "key": "r.r4",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "Do you need to keep all component states in Redux store?"
+            },
+            {
+                "order": 5,
+                "key": "r.r5",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "How to set initial state in Redux?"
+            },
+            {
+                "order": 6,
+                "key": "r.r6",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "How to access redux store outside a react component?"
+            },
+            {
+                "order": 7,
+                "key": "r.r7",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "How to reset state in Redux?"
+            },
+            {
+                "order": 8,
+                "key": "r.r8",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "How to use “connect” from react-redux?"
+            },
+            {
+                "order": 9,
+                "key": "r.r9",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What is the purpose of the constants in Redux?"
+            },
+            {
+                "order": 10,
+                "key": "r.r10",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior",
+                "question": "What are reducers in Redux?"
+            },
+            {
+                "order": 11,
+                "key": "r.r11",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior",
+                "question": "What are actions in Redux?"
+            },
+            {
+                "order": 12,
+                "key": "r.r12",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior+",
+                "question": "What are middlewares in Redux?"
+            },
+            {
+                "order": 13,
+                "key": "r.r13",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What are selectors in Redux?"
+            },
+            {
+                "order": 14,
+                "key": "r.r14",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "How to add multiple middlewares to Redux?"
+            },
+            {
+                "order": 15,
+                "key": "r.r15",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What 3rd party middlewares do you know (“redux-saga”, “redux-thunk”)?"
+            },
+            {
+                "order": 16,
+                "key": "r.r16",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "Describe how to work with “redux-saga”."
+            },
+            {
+                "order": 17,
+                "key": "r.r17",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "Describe how to work with “redux-thunk”."
+            },
+            {
+                "order": 18,
+                "key": "r.r18",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior+",
+                "question": "What hooks from Redux do you know?"
+            },
+            {
+                "order": 19,
+                "key": "r.r19",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What libraries from the Redux ecosystem do you know?"
+            },
+            {
+                "order": 20,
+                "key": "r.r20",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What tool for Redux debugging do you know?"
+            }
+        ],
+        "links": ["https://react-redux.js.org/introduction/quick-start"]
     },
     "react.mobx": {
-        "data": [],
-        "links": []
+        "data": [
+            {
+                "order": 1,
+                "key": "r.m1",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What is the difference between Redux and Mobx?"
+            },
+            {
+                "order": 2,
+                "key": "r.m2",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "In what cases does it make sense to choose Mobx instead of Redux?"
+            },
+            {
+                "order": 3,
+                "key": "r.m3",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What is observable?"
+            },
+            {
+                "order": 4,
+                "key": "r.m4",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What are actions?"
+            },
+            {
+                "order": 5,
+                "key": "r.m5",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What are computends?"
+            },
+            {
+                "order": 6,
+                "key": "r.m6",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What are reactions?"
+            },
+            {
+                "order": 7,
+                "key": "r.m7",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "Does it make sense to use decorators with mobx?"
+            },
+            {
+                "order": 8,
+                "key": "r.m8",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What tools for Mobx debugging do you know?"
+            }
+        ],
+        "links": ["https://mobx.js.org/README.html"]
     },
     "react.hooks": {
-        "data": [],
-        "links": []
+        "data": [
+            {
+                "order": 1,
+                "key": "r.h1",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "What are react hooks?"
+            },
+            {
+                "order": 2,
+                "key": "r.h2",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "Why should I use hooks?"
+            },
+            {
+                "order": 3,
+                "key": "r.h3",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "How does the performance of using hooks compare to that of classes?"
+            },
+            {
+                "order": 4,
+                "key": "r.h4",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior",
+                "question": "What is the “useState” hook?"
+            },
+            {
+                "order": 5,
+                "key": "r.h5",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior",
+                "question": "What is the “useEffect” hook?"
+            },
+            {
+                "order": 6,
+                "key": "r.h6",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What is the “useReducer” hook?"
+            },
+            {
+                "order": 7,
+                "key": "r.h7",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is the “useMemo” hook?"
+            },
+            {
+                "order": 8,
+                "key": "r.h8",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What is the “useRef” hook?"
+            },
+            {
+                "order": 9,
+                "key": "r.h9",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What is the “useCallback” hook?"
+            },
+            {
+                "order": 10,
+                "key": "r.h10",
+                "estimatedTimeMin": 3,
+                "requiredFor": "junior+",
+                "question": "What are custom hooks?"
+            }
+        ],
+        "links": [
+            "https://medium.com/@stevenjinyi/study-sheet-for-react-interview-questions-2020-2fe25b8fa316#5245"
+        ]
     },
     "react.reactAdvanced": {
-        "data": [],
-        "links": []
+        "data": [
+            {
+                "order": 1,
+                "key": "r.ra1",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle+",
+                "question": "How to measure and optimize the performance in React?"
+            },
+            {
+                "order": 2,
+                "key": "r.ra2",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What is diffing algorithm?"
+            },
+            {
+                "order": 3,
+                "key": "r.ra3",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What are error boundaries in React v16?"
+            },
+            {
+                "order": 4,
+                "key": "r.ra4",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What is HOC?"
+            },
+            {
+                "order": 5,
+                "key": "r.ra5",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What is context?"
+            },
+            {
+                "order": 6,
+                "key": "r.ra6",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "In what scenarios do not error boundaries catch errors?"
+            },
+            {
+                "order": 7,
+                "key": "r.ra7",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What are the possible return types of render method?"
+            },
+            {
+                "order": 8,
+                "key": "r.ra8",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is the main purpose of constructor?"
+            },
+            {
+                "order": 9,
+                "key": "r.ra9",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What are default props?"
+            },
+            {
+                "order": 10,
+                "key": "r.ra10",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What are forward refs?"
+            },
+            {
+                "order": 11,
+                "key": "r.ra11",
+                "estimatedTimeMin": 2,
+                "requiredFor": "junior+",
+                "question": "What are fragments?"
+            },
+            {
+                "order": 12,
+                "key": "r.ra12",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What is “React.memo” function?"
+            },
+            {
+                "order": 13,
+                "key": "r.ra13",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What is “React.lazy” function?"
+            },
+            {
+                "order": 14,
+                "key": "r.ra14",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What is the purpose of “getDerivedStateFromError”?"
+            },
+            {
+                "order": 15,
+                "key": "r.ra15",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "How to prevent a function from being called multiple times?"
+            },
+            {
+                "order": 16,
+                "key": "r.ra16",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is ESLint?"
+            },
+            {
+                "order": 17,
+                "key": "r.ra17",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What tools for React debugging do you know?"
+            }
+        ],
+        "links": ["https://en.reactjs.org/docs/getting-started.html"]
     },
     "react.apolloGraphql": {
-        "data": [],
-        "links": []
+        "data": [
+            {
+                "order": 1,
+                "key": "r.ag1",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is GraphQL?"
+            },
+            {
+                "order": 2,
+                "key": "r.ag2",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is query language?"
+            },
+            {
+                "order": 3,
+                "key": "r.ag3",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What is the type of response of a GraphQL query?"
+            },
+            {
+                "order": 4,
+                "key": "r.ag4",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "How GraphQL helps in the data loading process?"
+            },
+            {
+                "order": 5,
+                "key": "r.ag5",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "How GraphQL helps in low network areas?"
+            },
+            {
+                "order": 6,
+                "key": "r.ag6",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "Name three advantages of using GraphQL over REST."
+            },
+            {
+                "order": 7,
+                "key": "r.ag7",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "Give three differences between GraphQL and REST."
+            },
+            {
+                "order": 8,
+                "key": "r.ag8",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What is the use of SDL?"
+            },
+            {
+                "order": 9,
+                "key": "r.ag9",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What are the operations GraphQL supports?"
+            },
+            {
+                "order": 10,
+                "key": "r.ag10",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is Query?"
+            },
+            {
+                "order": 11,
+                "key": "r.ag11",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is Mutation?"
+            },
+            {
+                "order": 12,
+                "key": "r.ag12",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is Subscription?"
+            },
+            {
+                "order": 13,
+                "key": "r.ag13",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "Can we use queries to modify data?"
+            },
+            {
+                "order": 14,
+                "key": "r.ag14",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What are fields?"
+            },
+            {
+                "order": 15,
+                "key": "r.ag15",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What are arguments?"
+            },
+            {
+                "order": 16,
+                "key": "r.ag16",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "How can you use variables in a query?"
+            },
+            {
+                "order": 17,
+                "key": "r.ag17",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "Where “__typename” is used?"
+            },
+            {
+                "order": 18,
+                "key": "r.ag18",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What is a non-null type modifier in GraphQL?"
+            },
+            {
+                "order": 19,
+                "key": "r.ag19",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What is Fragment?"
+            },
+            {
+                "order": 20,
+                "key": "r.ag20",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What are the scalar types that GraphQL supports?"
+            },
+            {
+                "order": 21,
+                "key": "r.ag21",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What is Interface in GraphQL?"
+            },
+            {
+                "order": 22,
+                "key": "r.ag22",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "What are Unions in GraphQL?"
+            },
+            {
+                "order": 23,
+                "key": "r.ag23",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "Can you use Enums in GraphQL?"
+            },
+            {
+                "order": 24,
+                "key": "r.ag24",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is Apollo?"
+            },
+            {
+                "order": 25,
+                "key": "r.ag25",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle",
+                "question": "Does Apollo support caching?"
+            },
+            {
+                "order": 26,
+                "key": "r.ag26",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle+",
+                "question": "What is Resolver?"
+            },
+            {
+                "order": 27,
+                "key": "r.ag27",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "List out the benefits of Apollo Client."
+            },
+            {
+                "order": 28,
+                "key": "r.ag28",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What are Links in Apollo Client?"
+            },
+            {
+                "order": 29,
+                "key": "r.ag29",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What network and error policies from Apollo Client do you know?"
+            },
+            {
+                "order": 30,
+                "key": "r.ag30",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle+",
+                "question": "What GraphQL Codegens do you know?"
+            }
+        ],
+        "links": [
+            "https://www.opencodez.com/web-development/tutorial6-51-imp-graphql-interview-questions-answers.htm"
+        ]
     },
     "reactNative": {
         "data": [],
@@ -634,7 +1466,36 @@
         "links": []
     },
     "testTasks": {
-        "data": [],
+        "data": [
+            {
+                "order": 1,
+                "key": "tt1",
+                "estimatedTimeMin": 5,
+                "requiredFor": "middle-",
+                "question": "Implement the Array.prototype.map method by hand."
+            },
+            {
+                "order": 2,
+                "key": "tt2",
+                "estimatedTimeMin": 5,
+                "requiredFor": "middle-",
+                "question": "Implement the Array.prototype.filter method by hand."
+            },
+            {
+                "order": 3,
+                "key": "tt3",
+                "estimatedTimeMin": 5,
+                "requiredFor": "middle",
+                "question": "Implement the Array.prototype.reduce method by hand."
+            },
+            {
+                "order": 4,
+                "key": "tt4",
+                "estimatedTimeMin": 5,
+                "requiredFor": "middle+",
+                "question": "Implement a memoization helper function."
+            }
+        ],
         "links": []
     },
     "other": {
