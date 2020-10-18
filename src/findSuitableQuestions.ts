@@ -92,8 +92,14 @@ const findSuitableQuestions = (): void => {
         let suitableQuestions: QuestionData[] = interviewQuestions[
             topic
         ].data.filter((item: QuestionData) => isSuitableQuestion(input.role, item.requiredFor))
-        suitableQuestions.length &&
-            questionsMap.set(interview.topics[globalTopic], suitableQuestions)
+        if (suitableQuestions.length) {
+            questionsMap.get(interview.topics[globalTopic])
+                ? questionsMap.set(interview.topics[globalTopic], [
+                      ...questionsMap.get(interview.topics[globalTopic]),
+                      ...suitableQuestions,
+                  ])
+                : questionsMap.set(interview.topics[globalTopic], suitableQuestions)
+        }
     })
 
     fs.writeFileSync(

@@ -1,6 +1,6 @@
 {
-    "role": "middle-",
-    "includedTopics": ["javaScript", "typeScript", "react.reactBasics", "react.redux", "testTasks"],
+    "role": "junior+",
+    "includedTopics": ["javaScript", "typeScript", "react.reactBasics", "react.redux", "communicationSkills", "testTasks"],
     "candidate": {
         "firstname": "Dmitry",
         "lastname": "Usik"
