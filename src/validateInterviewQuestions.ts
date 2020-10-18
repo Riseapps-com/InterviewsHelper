@@ -6,7 +6,6 @@ import config from './wrappers/config'
 import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
 
 const validateRequireFor = (requiredFor: string): boolean =>
-    requiredFor === 'trainee' ||
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
     requiredFor === 'middle-' ||

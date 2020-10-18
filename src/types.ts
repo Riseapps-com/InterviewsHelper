@@ -1,6 +1,6 @@
 export type Status = 'optional' | 'required'
 
-export type Role = 'trainee' | 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior'
+export type Role = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior'
 
 export type QuestionData = {
     order: number

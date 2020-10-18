@@ -63,11 +63,11 @@
         }
     },
     "requiredSections": [
-        "javascript",
+        "javaScript",
         "react",
         "reactNative",
         "nativePlatforms",
         "communicationSkills"
     ],
-    "optionalSections": ["typescript", "dataStructuresAndAlgorithms", "testing", "other"]
+    "optionalSections": ["typeScript", "dataStructuresAndAlgorithms", "testing", "other"]
 }

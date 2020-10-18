@@ -137,7 +137,7 @@ Example:
 ```
 Allowed values for the role:
 ```typescript
-type Role = 'trainee' | 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior'
+type Role = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior'
 ```
 
 ## :pencil: Config:

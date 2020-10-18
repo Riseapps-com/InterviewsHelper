@@ -6,29 +6,21 @@ import input from './wrappers/input'
 import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
 import interview from './wrappers/interview'
 
-const isSuitableForTrainee = (requiredFor: string): boolean => requiredFor === 'trainee'
-
-const isSuitableForJunior = (requiredFor: string): boolean =>
-    requiredFor === 'trainee' || requiredFor === 'junior'
+const isSuitableForJunior = (requiredFor: string): boolean => requiredFor === 'junior'
 
 const isSuitableForJuniorPlus = (requiredFor: string): boolean =>
-    requiredFor === 'trainee' || requiredFor === 'junior' || requiredFor === 'junior+'
+    requiredFor === 'junior' || requiredFor === 'junior+'
 
 const isSuitableForMiddleMinus = (requiredFor: string): boolean =>
-    requiredFor === 'trainee' ||
-    requiredFor === 'junior' ||
-    requiredFor === 'junior+' ||
-    requiredFor === 'middle-'
+    requiredFor === 'junior' || requiredFor === 'junior+' || requiredFor === 'middle-'
 
 const isSuitableForMiddle = (requiredFor: string): boolean =>
-    requiredFor === 'trainee' ||
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
     requiredFor === 'middle-' ||
     requiredFor === 'middle'
 
 const isSuitableForMiddlePlus = (requiredFor: string): boolean =>
-    requiredFor === 'trainee' ||
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
     requiredFor === 'middle-' ||
@@ -36,7 +28,6 @@ const isSuitableForMiddlePlus = (requiredFor: string): boolean =>
     requiredFor === 'middle+'
 
 const isSuitableForSenior = (requiredFor: string): boolean =>
-    requiredFor === 'trainee' ||
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
     requiredFor === 'middle-' ||
@@ -48,9 +39,6 @@ const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
     let isSuitable: boolean = false
 
     switch (role) {
-        case 'trainee':
-            isSuitable = isSuitableForTrainee(requiredFor)
-            break
         case 'junior':
             isSuitable = isSuitableForJunior(requiredFor)
             break
