@@ -67,7 +67,8 @@
         "react",
         "reactNative",
         "nativePlatforms",
-        "communicationSkills"
+        "communicationSkills",
+        "testTasks"
     ],
     "optionalSections": ["typeScript", "dataStructuresAndAlgorithms", "testing", "other"]
 }

@@ -1445,8 +1445,154 @@
         "data": [],
         "links": []
     },
-    "nativePlatforms": {
-        "data": [],
+    "nativePlatforms.ios": {
+        "data": [
+            {
+                "order": 1,
+                "key": "np.i1",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "Have you ever published apps to App Store? Describe the process."
+            },
+            {
+                "order": 2,
+                "key": "np.i2",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "Describe how to create certifications and provision profiles on iOS."
+            },
+            {
+                "order": 3,
+                "key": "np.i3",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is CocoaPods?"
+            },
+            {
+                "order": 4,
+                "key": "np.i4",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "How to create Splash Screen on iOS?"
+            },
+            {
+                "order": 5,
+                "key": "np.i5",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is AppDelegate.m?"
+            },
+            {
+                "order": 6,
+                "key": "np.i6",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is Info.plist?"
+            },
+            {
+                "order": 7,
+                "key": "np.i7",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "How to add the app icon on iOS?"
+            },
+            {
+                "order": 8,
+                "key": "np.i8",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What are permissions on iOS?"
+            },
+            {
+                "order": 9,
+                "key": "np.i9",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What is ViewController on iOS?"
+            }
+        ],
+        "links": []
+    },
+    "nativePlatforms.android": {
+        "data": [
+            {
+                "order": 1,
+                "key": "np.a1",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "Have you ever published apps to Play Market? Describe the process."
+            },
+            {
+                "order": 2,
+                "key": "np.a2",
+                "estimatedTimeMin": 1,
+                "requiredFor": "middle",
+                "question": "What is ”.keystore” file on Android?"
+            },
+            {
+                "order": 3,
+                "key": "np.a3",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is AndroidManifest.xml?"
+            },
+            {
+                "order": 4,
+                "key": "np.a4",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle-",
+                "question": "What is build.gradle? How many such files does the android project contain?"
+            },
+            {
+                "order": 5,
+                "key": "np.a5",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What is Activity?"
+            },
+            {
+                "order": 6,
+                "key": "np.a6",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "What are permissions on Android? What types does android have?"
+            },
+            {
+                "order": 7,
+                "key": "np.a7",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "How to set the app icon on Android?"
+            },
+            {
+                "order": 8,
+                "key": "np.a8",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "How to create Splash Screen on Android?"
+            },
+            {
+                "order": 9,
+                "key": "np.a9",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is MainActivity.java?"
+            },
+            {
+                "order": 10,
+                "key": "np.a10",
+                "estimatedTimeMin": 2,
+                "requiredFor": "middle-",
+                "question": "What is MainApplication.java?"
+            },
+            {
+                "order": 11,
+                "key": "np.a11",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
+                "question": "How is ”res” directory structure on Android?"
+            }
+        ],
         "links": []
     },
     "testing.jest": {
@@ -1661,6 +1807,13 @@
                 "key": "cs10",
                 "estimatedTimeMin": 2,
                 "requiredFor": "junior+",
+                "question": "Name the main aspects of application development."
+            },
+            {
+                "order": 11,
+                "key": "cs11",
+                "estimatedTimeMin": 3,
+                "requiredFor": "middle",
                 "question": "Name the main aspects of application development."
             }
         ],

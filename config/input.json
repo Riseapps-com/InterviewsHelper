@@ -1,6 +1,16 @@
 {
-    "role": "junior+",
-    "includedTopics": ["javaScript", "typeScript", "react.reactBasics", "react.redux", "communicationSkills", "testTasks"],
+    "role": "middle-",
+    "includedTopics": [
+        "javaScript",
+        "typeScript",
+        "react.reactBasics",
+        "react.redux",
+        "dataStructuresAndAlgorithms",
+        "nativePlatforms.ios",
+        "nativePlatforms.android",
+        "communicationSkills",
+        "testTasks"
+    ],
     "candidate": {
         "firstname": "Dmitry",
         "lastname": "Usik"
