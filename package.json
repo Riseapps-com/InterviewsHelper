@@ -17,7 +17,6 @@
     "author": "Dmitry Usik",
     "license": "ISC",
     "dependencies": {
-        "@types/chart.js": "^2.9.25",
         "chart.js": "^2.9.3",
         "lodash.includes": "^4.3.0",
         "lodash.startcase": "^4.4.0",
@@ -26,6 +25,7 @@
         "quickchart-js": "^1.0.3"
     },
     "devDependencies": {
+        "@types/chart.js": "^2.9.25",
         "@types/lodash.includes": "^4.3.6",
         "@types/lodash.startcase": "^4.4.6",
         "@types/node": "^14.11.8",
