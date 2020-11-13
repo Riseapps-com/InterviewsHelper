@@ -1,17 +1,14 @@
 {
-    "compilerOptions": {
-        "allowJs": true,
-        "allowSyntheticDefaultImports": true,
-        "lib": ["dom", "esnext"],
-        "moduleResolution": "node",
-        "noEmit": true,
-        "skipLibCheck": true,
-        "noImplicitAny": true,
-        "resolveJsonModule": true,
-        "esModuleInterop": true,
-        "isolatedModules": false,
-        "baseUrl": "./",
-        "sourceMap": true,
-        "downlevelIteration": true
-    }
+  "compilerOptions": {
+    "module": "commonjs",
+    "esModuleInterop": true,
+    "target": "es6",
+    "moduleResolution": "node",
+    "sourceMap": true,
+    "outDir": "dist",
+    "resolveJsonModule": true
+  },
+  "lib": [
+    "es2015"
+  ]
 }
