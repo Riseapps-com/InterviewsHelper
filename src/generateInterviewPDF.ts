@@ -29,6 +29,19 @@ const _generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => 
         })
         .moveDown(4)
 
+    pdfDocument.fontSize(14).font('Times-Bold').text('Evaluation:')
+
+    Object.keys(config.evaluation).forEach((key) =>
+        pdfDocument
+            .fontSize(14)
+            .font('Times-Bold')
+            .text(`${key} - `, { continued: true })
+            .font('Times-Roman')
+            .text(config.evaluation[key]),
+    )
+
+    pdfDocument.moveDown(1)
+
     pdfDocument.fontSize(14).font('Times-Bold').text('Questions:').moveDown(1)
 
     Array.of(...questions.keys()).reduce((prev, curr) => {

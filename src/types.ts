@@ -79,6 +79,14 @@ export type PdfDocument = {
     logoMargin: number
 }
 
+export type Evaluation = {
+    1: string
+    2: string
+    3: string
+    4: string
+    5: string
+}
+
 export type Config = {
     notValidQuestionsFilename: string
     questionsFilename: string
@@ -97,4 +105,5 @@ export type Config = {
     notesKey: string
     recommendKey: string
     questionKey: string
+    evaluation: Evaluation
 }

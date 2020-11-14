@@ -51,5 +51,12 @@
     "topicKey": "@topic@",
     "notesKey": "@notes@",
     "recommendKey": "@recommend@",
-    "questionKey": "@questionKey@"
+    "questionKey": "@questionKey@",
+    "evaluation": {
+        "1": "Doesn't have theoretical and practical skills in this area.",
+        "2": "Has superficial theoretical or practical skills in this area.",
+        "3": "Has enough practice and superficial theoretical skills in this area.",
+        "4": "Has good theoretical and practice skills in this area.",
+        "5": "Has excellent theoretical and practice skills in this area."
+    }
 }
