@@ -5,119 +5,119 @@
         "question": "What is hoisting?",
         "order": 1,
         "key": "js1",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is scope?",
         "order": 2,
         "key": "js2",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are closures?",
         "order": 3,
         "key": "js3",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What does use strict do?",
         "order": 4,
         "key": "js4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is typed language?",
         "order": 5,
         "key": "js5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is ECMAScript?",
         "order": 6,
         "key": "js6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are the new features in ES6 or ECMAScript 2015?",
         "order": 7,
         "key": "js7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are the data types supported by JavaScript?",
         "order": 8,
         "key": "js8",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 3,
         "requiredFor": "junior"
       },
       {
         "question": "How does typeof operator work?",
         "order": 9,
         "key": "js9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the difference between undefined and null?",
         "order": 10,
         "key": "js10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the difference between undeclared and undefined?",
         "order": 11,
         "key": "js11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What do &&, || and !! operators do?",
         "order": 12,
         "key": "js12",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
-        "question": "How to convert string to a number and vice versa?",
+        "question": "How to convert a string to a number and vice versa?",
         "order": 13,
         "key": "js13",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What would be the result of  2 + 5 + ‘3’?",
         "order": 14,
         "key": "js14",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What's the difference between == and === operators?",
         "order": 15,
         "key": "js15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "Why does it return false when comparing two similar objects in JavaScript?",
         "order": 16,
         "key": "js16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are the falsy values in JavaScript?",
         "order": 17,
         "key": "js17",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
@@ -131,28 +131,28 @@
         "question": "What is the value of this in JavaScript?",
         "order": 19,
         "key": "js19",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the prototype of an object?",
         "order": 20,
         "key": "js20",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the difference between implicit and explicit coercion?",
         "order": 21,
         "key": "js21",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is NaN and how to check if a value is NaN?",
         "order": 22,
         "key": "js22",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
@@ -160,49 +160,49 @@
         "order": 23,
         "key": "js23",
         "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "requiredFor": "junior+"
       },
       {
         "question": "How to check if a certain property exists in an object?",
         "order": 24,
         "key": "js24",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are the ways of making objects in JavaScript?",
         "order": 25,
         "key": "js25",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the difference between Object.seal and Object.freeze methods?",
         "order": 26,
         "key": "js26",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is the difference between in operator and hasOwnProperty method in objects?",
         "order": 27,
         "key": "js27",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What does new keyword do?",
         "order": 28,
         "key": "js28",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is IIFE, what is the use of it?",
         "order": 29,
         "key": "js29",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the use of the Function.prototype.apply method?",
@@ -215,204 +215,204 @@
         "question": "What is the use of the Function.prototype.call method?",
         "order": 31,
         "key": "js31",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the difference between Function.prototype.apply and Function.prototype.call?",
         "order": 32,
         "key": "js32",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is the usage of Function.prototype.bind?",
         "order": 33,
         "key": "js33",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is functional programming and what are the features of JavaScript that make it a candidate as a functional language?",
         "order": 34,
         "key": "js34",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are higher-order functions?",
         "order": 35,
         "key": "js35",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "Why are functions called first-class objects?",
         "order": 36,
         "key": "js36",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is arguments object?",
         "order": 37,
         "key": "js37",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the difference between passing a variable by value and by reference?",
         "order": 38,
         "key": "js38",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "How many ways can a function be invoked?",
         "order": 39,
         "key": "js39",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is memoization and what's the use of it?",
         "order": 40,
         "key": "js40",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
-        "question": "What's the difference between var, let and const keywords?",
+        "question": "What's the difference between var, let, and const keywords?",
         "order": 41,
         "key": "js41",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 3,
         "requiredFor": "junior"
       },
       {
         "question": "What are arrow functions?",
         "order": 42,
         "key": "js42",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are classes?",
         "order": 43,
         "key": "js43",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are template literals?",
         "order": 44,
         "key": "js44",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is object destructuring?",
         "order": 45,
         "key": "js45",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are ES6 modules?",
         "order": 46,
         "key": "js46",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is callback function?",
         "order": 47,
         "key": "js47",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are promises?",
         "order": 48,
         "key": "js48",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is async/await and how it works?",
         "order": 49,
         "key": "js49",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are generators?",
         "order": 50,
         "key": "js50",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What are symbols?",
         "order": 51,
         "key": "js51",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is proxy?",
         "order": 52,
         "key": "js52",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is the difference between spread operator and rest operator?",
         "order": 53,
         "key": "js53",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are default parameters?",
         "order": 54,
         "key": "js54",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are wrapper objects?",
         "order": 55,
         "key": "js55",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are the ways to deal with asynchronous code in JavaScript?",
         "order": 56,
         "key": "js56",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "Explain exception handling in JavaScript.",
         "order": 57,
         "key": "js57",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 3,
         "requiredFor": "junior"
       },
       {
         "question": "How to use timers in JavaScript?",
         "order": 58,
         "key": "js58",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 3,
         "requiredFor": "junior"
       },
       {
         "question": "Which tools for working with Date do you know in JavaScript?",
         "order": 59,
         "key": "js59",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       }
     ],
     "links": [
@@ -428,169 +428,169 @@
         "question": "What are the benefits of using TypeScript?",
         "order": 1,
         "key": "ts1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the drawbacks of using TypeScript?",
         "order": 2,
         "key": "ts2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is tsconfig.json file?",
         "order": 3,
         "key": "ts3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the components of TypeScript?",
         "order": 4,
         "key": "ts4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is static typing in TypeScript?",
         "order": 5,
         "key": "ts5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the object-oriented terms supported by TypeScript?",
         "order": 6,
         "key": "ts6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the access modifiers supported by TypeScript?",
         "order": 7,
         "key": "ts7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "Does TypeScript support function overloading?",
         "order": 8,
         "key": "ts8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is method overriding in TypeScript?",
         "order": 9,
         "key": "ts9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What does super keyword mean in TypeScript?",
         "order": 10,
         "key": "ts10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Which keyword is used for inheritance in TypeScript?",
         "order": 11,
         "key": "ts11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What types does TypeScript contain?",
         "order": 12,
         "key": "ts12",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "List out the built-in data types in TypeScript.",
         "order": 13,
         "key": "ts13",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are interfaces in TypeScript?",
         "order": 14,
         "key": "ts14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are classes in TypeScript? List out some of the features.",
         "order": 15,
         "key": "ts15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is the namespace in Typescript and how to declare it?",
         "order": 16,
         "key": "ts16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle+"
       },
       {
         "question": "Explain decorators in TypeScript.",
         "order": 17,
         "key": "ts17",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are mixins in TypeScript?",
         "order": 18,
         "key": "ts18",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle+"
       },
       {
         "question": "Explain declare keyword in TypeScript.",
         "order": 19,
         "key": "ts19",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are generics in TypeScript?",
         "order": 20,
         "key": "ts20",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is the difference between interface and type statements?",
         "order": 21,
         "key": "ts21",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle+"
       },
       {
         "question": "Explain enum in TypeScript.",
         "order": 22,
         "key": "ts22",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Why are optional parameters added in TypeScript?",
         "order": 23,
         "key": "ts23",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What Utility Types are in TypeScript?",
         "order": 24,
         "key": "ts24",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       }
     ],
     "links": [
@@ -605,225 +605,225 @@
         "question": "What is React?",
         "order": 1,
         "key": "r.rb1",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is Virtual DOM?",
         "order": 2,
         "key": "r.rb2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "How does Virtual DOM work?",
         "order": 3,
         "key": "r.rb3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the difference between Real DOM and Virtual DOM?",
         "order": 4,
         "key": "r.rb4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is React Fiber?",
         "order": 5,
         "key": "r.rb5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is reconciliation?",
         "order": 6,
         "key": "r.rb6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What are the advantages of React?",
         "order": 7,
         "key": "r.rb7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "What are the limitations of React?",
         "order": 8,
         "key": "r.rb8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is JSX?",
         "order": 9,
         "key": "r.rb9",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "How to create Components in React?",
         "order": 10,
         "key": "r.rb10",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are Pure Components?",
         "order": 11,
         "key": "r.rb11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is state in React?",
         "order": 12,
         "key": "r.rb12",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are props in React?",
         "order": 13,
         "key": "r.rb13",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is the difference between state and props?",
         "order": 14,
         "key": "r.rb14",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "Why should we not update the state directly?",
         "order": 15,
         "key": "r.rb15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the purpose of callback function as an argument of setState()?",
         "order": 16,
         "key": "r.rb16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are inline conditional expressions?",
         "order": 17,
         "key": "r.rb17",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is key prop and what is the benefit of using it in arrays of elements?",
         "order": 18,
         "key": "r.rb18",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the use of Refs?",
         "order": 19,
         "key": "r.rb19",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "How to create Ref?",
         "order": 20,
         "key": "r.rb20",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are controlled components?",
         "order": 21,
         "key": "r.rb21",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are uncontrolled components?",
         "order": 22,
         "key": "r.rb22",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are the different phases of the component lifecycle?",
         "order": 23,
         "key": "r.rb23",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are the lifecycle methods of React?",
         "order": 24,
         "key": "r.rb24",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is children prop?",
         "order": 25,
         "key": "r.rb25",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "How to write comments in React?",
         "order": 26,
         "key": "r.rb26",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are stateless components?",
         "order": 27,
         "key": "r.rb27",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are stateful components?",
         "order": 28,
         "key": "r.rb28",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "Can you force a component to rerender without calling setState()?",
         "order": 29,
         "key": "r.rb29",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "How to loop inside JSX?",
         "order": 30,
         "key": "r.rb30",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "How to combine multiple inline style objects?",
         "order": 31,
         "key": "r.rb31",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "Why can't you update props in React?",
         "order": 32,
         "key": "r.rb32",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       }
     ],
     "links": [
@@ -837,50 +837,50 @@
         "question": "What is Flux?",
         "order": 1,
         "key": "r.r1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is Redux?",
         "order": 2,
         "key": "r.r2",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What are the core principles of Redux?",
         "order": 3,
         "key": "r.r3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "Do you need to keep all component states in Redux store?",
         "order": 4,
         "key": "r.r4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "How to set the initial state in Redux?",
         "order": 5,
         "key": "r.r5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "How to access the Redux store outside a react component?",
         "order": 6,
         "key": "r.r6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "How to reset the state in Redux?",
         "order": 7,
         "key": "r.r7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "How to use connect from react-redux?",
@@ -922,56 +922,56 @@
         "order": 13,
         "key": "r.r13",
         "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "requiredFor": "junior+"
       },
       {
         "question": "How to add multiple middlewares to Redux?",
         "order": 14,
         "key": "r.r14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What 3rd party middlewares do you know (redux-saga, redux-thunk)?",
         "order": 15,
         "key": "r.r15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe how to work with redux-saga.",
         "order": 16,
         "key": "r.r16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe how to work with redux-thunk.",
         "order": 17,
         "key": "r.r17",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "What hooks from Redux do you know?",
         "order": 18,
         "key": "r.r18",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "What libraries from the Redux ecosystem do you know?",
         "order": 19,
         "key": "r.r19",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "What tool for Redux debugging do you know?",
         "order": 20,
         "key": "r.r20",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       }
     ],
     "links": [
@@ -986,57 +986,57 @@
         "question": "What is the difference between Redux and Mobx?",
         "order": 1,
         "key": "r.m1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "In what cases does it make sense to choose Mobx instead of Redux?",
         "order": 2,
         "key": "r.m2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is observable?",
         "order": 3,
         "key": "r.m3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are actions?",
         "order": 4,
         "key": "r.m4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are computends?",
         "order": 5,
         "key": "r.m5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are reactions?",
         "order": 6,
         "key": "r.m6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Does it make sense to use decorators with Mobx?",
         "order": 7,
         "key": "r.m7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What tools for Mobx debugging do you know?",
         "order": 8,
         "key": "r.m8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       }
     ],
     "links": [
@@ -1049,71 +1049,71 @@
         "question": "What are React hooks?",
         "order": 1,
         "key": "r.h1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "Why should I use hooks?",
         "order": 2,
         "key": "r.h2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "How does the performance of using hooks compare to that of classes?",
         "order": 3,
         "key": "r.h3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is useState hook?",
         "order": 4,
         "key": "r.h4",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is useEffect hook?",
         "order": 5,
         "key": "r.h5",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 3,
         "requiredFor": "junior"
       },
       {
         "question": "What is useReducer hook?",
         "order": 6,
         "key": "r.h6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is useMemo hook?",
         "order": 7,
         "key": "r.h7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is useRef hook?",
         "order": 8,
         "key": "r.h8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is useCallback hook?",
         "order": 9,
         "key": "r.h9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are custom hooks?",
         "order": 10,
         "key": "r.h10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       }
     ],
     "links": []
@@ -1124,127 +1124,127 @@
         "question": "How to measure and optimize the performance in React?",
         "order": 1,
         "key": "r.ra1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is diffing algorithm?",
         "order": 2,
         "key": "r.ra2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are error boundaries in React v16?",
         "order": 3,
         "key": "r.ra3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is HOC?",
         "order": 4,
         "key": "r.ra4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is context?",
         "order": 5,
         "key": "r.ra5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "In what scenarios do not error boundaries catch errors?",
         "order": 6,
         "key": "r.ra6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the possible return types of render method?",
         "order": 7,
         "key": "r.ra7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is the main purpose of constructor?",
         "order": 8,
         "key": "r.ra8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What are default props?",
         "order": 9,
         "key": "r.ra9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What are forward refs?",
         "order": 10,
         "key": "r.ra10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What are fragments?",
         "order": 11,
         "key": "r.ra11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is React.memo function?",
         "order": 12,
         "key": "r.ra12",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is React.lazy function?",
         "order": 13,
         "key": "r.ra13",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is the purpose of getDerivedStateFromError?",
         "order": 14,
         "key": "r.ra14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "How to prevent a function from being called multiple times?",
         "order": 15,
         "key": "r.ra15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is ESLint?",
         "order": 16,
         "key": "r.ra16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is prettier?",
         "order": 17,
         "key": "r.ra17",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What tools for React debugging do you know?",
         "order": 18,
         "key": "r.ra18",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       }
     ],
     "links": []
@@ -1255,211 +1255,211 @@
         "question": "What is GraphQL?",
         "order": 1,
         "key": "r.ag1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is query language?",
         "order": 2,
         "key": "r.ag2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is the type of response of a GraphQL query?",
         "order": 3,
         "key": "r.ag3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "How GraphQL helps in the data loading process?",
         "order": 4,
         "key": "r.ag4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "How GraphQL helps in low network areas?",
         "order": 5,
         "key": "r.ag5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Name three advantages of using GraphQL over REST.",
         "order": 6,
         "key": "r.ag6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "Give three differences between GraphQL and REST.",
         "order": 7,
         "key": "r.ag7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is the use of SDL?",
         "order": 8,
         "key": "r.ag8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the operations GraphQL supports?",
         "order": 9,
         "key": "r.ag9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Query?",
         "order": 10,
         "key": "r.ag10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Mutation?",
         "order": 11,
         "key": "r.ag11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Subscription?",
         "order": 12,
         "key": "r.ag12",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Can we use queries to modify data?",
         "order": 13,
         "key": "r.ag13",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are fields?",
         "order": 14,
         "key": "r.ag14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are arguments?",
         "order": 15,
         "key": "r.ag15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "How can you use variables in a query?",
         "order": 16,
         "key": "r.ag16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Where __typename is used?",
         "order": 17,
         "key": "r.ag17",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is non-null type modifier in GraphQL?",
         "order": 18,
         "key": "r.ag18",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Fragment?",
         "order": 19,
         "key": "r.ag19",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the scalar types that GraphQL supports?",
         "order": 20,
         "key": "r.ag20",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Interface in GraphQL?",
         "order": 21,
         "key": "r.ag21",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Union in GraphQL?",
         "order": 22,
         "key": "r.ag22",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Can you use Enum in GraphQL?",
         "order": 23,
         "key": "r.ag23",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Apollo?",
         "order": 24,
         "key": "r.ag24",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Does Apollo support the cache?",
         "order": 25,
         "key": "r.ag25",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Resolver?",
         "order": 26,
         "key": "r.ag26",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "List out the benefits of Apollo Client.",
         "order": 27,
         "key": "r.ag27",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are Links in Apollo Client?",
         "order": 28,
         "key": "r.ag28",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What network and error policies from Apollo Client do you know?",
         "order": 29,
         "key": "r.ag29",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What GraphQL Codegens do you know?",
         "order": 30,
         "key": "r.ag30",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       }
     ],
     "links": [
@@ -1472,127 +1472,127 @@
         "question": "What are the benefits of React Native?",
         "order": 1,
         "key": "rn1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "What are the drawbacks of React Native?",
         "order": 2,
         "key": "rn2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is the last version of React Native?",
         "order": 3,
         "key": "rn3",
         "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "requiredFor": "junior+"
       },
       {
         "question": "What important things were added in the last release of React Native?",
         "order": 4,
         "key": "rn4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the core components of React Native?",
         "order": 5,
         "key": "rn5",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 3,
         "requiredFor": "junior"
       },
       {
         "question": "How to boost the performance of lists in React Native?",
         "order": 6,
         "key": "rn6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "What ways to work with platform-specific code do you know in React Native?",
         "order": 7,
         "key": "rn7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "Have you ever had trouble while updating React Native to the next version?",
         "order": 8,
         "key": "rn8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What tools for debugging do you use?",
         "order": 9,
         "key": "rn9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe the Flexbox approach.",
         "order": 10,
         "key": "rn10",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 3,
         "requiredFor": "junior"
       },
       {
         "question": "How to boost the performance for images?",
         "order": 11,
         "key": "rn11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "Have you ever supported multilanguage apps? Describe the approach you used.",
         "order": 12,
         "key": "rn12",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Have you ever developed native modules? Describe your experience.",
         "order": 13,
         "key": "rn13",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle+"
       },
       {
         "question": "Have you ever implemented complex animations? What solutions did you use for it?",
         "order": 14,
         "key": "rn14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
-        "question": "What libraries for navigation did you use? Describe your expience.",
+        "question": "What libraries for navigation did you use? Describe your experience.",
         "order": 15,
         "key": "rn15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "Have you ever faced performance issues? How did you resolve them?",
         "order": 16,
         "key": "rn16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "How many threads does the React Native application work in?",
         "order": 17,
         "key": "rn17",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Describe the flow of the React Native bridge.",
         "order": 18,
         "key": "rn18",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       }
     ],
     "links": [
@@ -1605,64 +1605,64 @@
         "question": "Have you ever published apps to App Store? Describe the process.",
         "order": 1,
         "key": "np.i1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "Describe how to create certifications and provision profiles on iOS.",
         "order": 2,
         "key": "np.i2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is CocoaPods?",
         "order": 3,
         "key": "np.i3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "How to create a Splash Screen on iOS?",
         "order": 4,
         "key": "np.i4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is AppDelegate.m?",
         "order": 5,
         "key": "np.i5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is Info.plist?",
         "order": 6,
         "key": "np.i6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "How to add the app icon on iOS?",
         "order": 7,
         "key": "np.i7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What are permissions on iOS?",
         "order": 8,
         "key": "np.i8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is ViewController on iOS?",
         "order": 9,
         "key": "np.i9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       }
     ],
     "links": []
@@ -1673,78 +1673,78 @@
         "question": "Have you ever published apps to Play Market? Describe the process.",
         "order": 1,
         "key": "np.a1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is keystore file on Android?",
         "order": 2,
         "key": "np.a2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is AndroidManifest.xml?",
         "order": 3,
         "key": "np.a3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is build.gradle? How many such files does the android project contain?",
         "order": 4,
         "key": "np.a4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is Activity?",
         "order": 5,
         "key": "np.a5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What are permissions on Android? What types does Android have?",
         "order": 6,
         "key": "np.a6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "How to set the app icon on Android?",
         "order": 7,
         "key": "np.a7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "How to create a Splash Screen on Android?",
         "order": 8,
         "key": "np.a8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is MainActivity.java?",
         "order": 9,
         "key": "np.a9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is MainApplication.java?",
         "order": 10,
         "key": "np.a10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe res directory structure on Android.",
         "order": 11,
         "key": "np.a11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       }
     ],
     "links": []
@@ -1755,106 +1755,106 @@
         "question": "What are the benefits of Unit testings?",
         "order": 1,
         "key": "t.j1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the drawbacks of Unit testing?",
         "order": 2,
         "key": "t.j2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is jest?",
         "order": 3,
         "key": "t.j3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What matchers from jest do you know?",
         "order": 4,
         "key": "t.j4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Is it possible to test async code with jest?",
         "order": 5,
         "key": "t.j5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Which test lifecycle methods of jest do you know?",
         "order": 6,
         "key": "t.j6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is mock function?",
         "order": 7,
         "key": "t.j7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "How to mock implementation of the function?",
         "order": 8,
         "key": "t.j8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "How to mock the return value of the function?",
         "order": 9,
         "key": "t.j9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Is it possible to mock a module?",
         "order": 10,
         "key": "t.j10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Is it possible to mock the function name?",
         "order": 11,
         "key": "t.j11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle+"
       },
       {
         "question": "Is it possible to use fake timers with jest?",
         "order": 12,
         "key": "t.j12",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is snapshot? Is it possible to test snapshots with jest?",
         "order": 13,
         "key": "t.j13",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle+"
       },
       {
         "question": "How to mock Node modules?",
         "order": 14,
         "key": "t.j14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle+"
       },
       {
         "question": "Is it possible to mock ES6 class?",
         "order": 15,
         "key": "t.j15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle+"
       }
     ],
     "links": [
@@ -1867,78 +1867,78 @@
         "question": "What are the benefits of End to End testing?",
         "order": 1,
         "key": "t.d1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What are the drawbacks of End to End testing?",
         "order": 2,
         "key": "t.d2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is black-box testings?",
         "order": 3,
         "key": "t.d3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is grey-box testing?",
         "order": 4,
         "key": "t.d4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "How detox automatically synchronizes with the app?",
         "order": 5,
         "key": "t.d5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle+"
       },
       {
         "question": "What methods of detox do you know?",
         "order": 6,
         "key": "t.d6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle+"
       },
       {
         "question": "What methods of device do you know?",
         "order": 7,
         "key": "t.d7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is the lifecycle of detox?",
         "order": 8,
         "key": "t.d8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What matchers from detox do you know?",
         "order": 9,
         "key": "t.d9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What actions from detox do you know?",
         "order": 10,
         "key": "t.d10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What expectations from detox do you know?",
         "order": 11,
         "key": "t.d11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       }
     ],
     "links": [
@@ -1951,120 +1951,120 @@
         "question": "What are common operations that can be performed on a data structure?",
         "order": 1,
         "key": "dsaa1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is Array?",
         "order": 2,
         "key": "dsaa2",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is Map?",
         "order": 3,
         "key": "dsaa3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is Set?",
         "order": 4,
         "key": "dsaa4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is Stack?",
         "order": 5,
         "key": "dsaa5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is Queue?",
         "order": 6,
         "key": "dsaa6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is Linked Collection?",
         "order": 7,
         "key": "dsaa7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is Graph?",
         "order": 8,
         "key": "dsaa8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Tree?",
         "order": 9,
         "key": "dsaa9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is hashing?",
         "order": 10,
         "key": "dsaa10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "What is recursive function?",
         "order": 11,
         "key": "dsaa11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is linear search?",
         "order": 12,
         "key": "dsaa12",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is binary search?",
         "order": 13,
         "key": "dsaa13",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is selection sort?",
         "order": 14,
         "key": "dsaa14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is insertion sort?",
         "order": 15,
         "key": "dsaa15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is merge sort?",
         "order": 16,
         "key": "dsaa16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What is quicksort?",
         "order": 17,
         "key": "dsaa17",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       }
     ],
     "links": [
@@ -2078,85 +2078,85 @@
         "question": "Have you ever done estimations? Describe this process.",
         "order": 1,
         "key": "cs1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "Describe the project management systems you worked with.",
         "order": 2,
         "key": "cs2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       },
       {
         "question": "What is Scrum?",
         "order": 3,
         "key": "cs3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What is Kanban?",
         "order": 4,
         "key": "cs4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Describe the git-flows you worked with.",
         "order": 5,
         "key": "cs5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "How many OS did you work with?",
         "order": 6,
         "key": "cs6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What code editor or IDE do you prefer?",
         "order": 7,
         "key": "cs7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
         "question": "What cloud code repositories did you work with?",
         "order": 8,
         "key": "cs8",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What design systems did you work with?",
         "order": 9,
         "key": "cs9",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Describe your biggest challenge through the development career.",
         "order": 10,
         "key": "cs10",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Name the main aspects of application development in your opinion.",
         "order": 11,
         "key": "cs11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "What CI/CD did you work with?",
         "order": 12,
         "key": "cs12",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       }
     ],
     "links": []
@@ -2167,140 +2167,140 @@
         "question": "Implement the Array.prototype.map method by hand.",
         "order": 1,
         "key": "tt1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "middle-"
       },
       {
         "question": "Implement the Array.prototype.filter method by hand.",
         "order": 2,
         "key": "tt2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "junior+"
       },
       {
         "question": "Implement the Array.prototype.reduce method by hand.",
         "order": 3,
         "key": "tt3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "middle"
       },
       {
         "question": "Implement a memoization helper function.",
         "order": 4,
         "key": "tt4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "middle-"
       },
       {
         "question": "Implement a function that checks if a string is a palindrome.",
         "order": 5,
         "key": "tt5",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       },
       {
         "question": "Сalculate the angle between the hour and minute hands.",
         "order": 6,
         "key": "tt6",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       },
       {
         "question": "Calculate the average value of the array.",
         "order": 7,
         "key": "tt7",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       },
       {
         "question": "Find the min and max elements of the array.",
         "order": 8,
         "key": "tt8",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       },
       {
         "question": "Swap the max and min elements of the array.",
         "order": 9,
         "key": "tt9",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       },
       {
         "question": "Find the sum of positive and negative numbers of the array.",
         "order": 10,
         "key": "tt10",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       },
       {
         "question": "Find the sum of positive and negative numbers of the array which are located between min and max values of the array.",
         "order": 11,
         "key": "tt11",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "junior+"
       },
       {
         "question": "Merge 2 different arrays adding their values.",
         "order": 12,
         "key": "tt12",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "junior+"
       },
       {
         "question": "Fill the array with the first 10 numbers of the Fibonacci series.",
         "order": 13,
         "key": "tt13",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "junior+"
       },
       {
         "question": "Swap the value of 2 variables without using the 3rd.",
         "order": 14,
         "key": "tt14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "junior+"
       },
       {
         "question": "Create a function that returns the number of true values there are in an array.",
         "order": 15,
         "key": "tt15",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       },
       {
         "question": "Write a function that converts an object into an array, where each element represents a key-value pair in the form of an array.",
         "order": 16,
         "key": "tt16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "junior+"
       },
       {
         "question": "Create a function that takes two numbers as arguments (num, length) and returns an array of multiples of num until the array length reaches length.",
         "order": 17,
         "key": "tt17",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "junior+"
       },
       {
         "question": "Create a function that concatenates n input arrays, where n is variable.",
         "order": 18,
         "key": "tt18",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 5,
+        "requiredFor": "junior+"
       },
       {
         "question": "Create a function that takes two vectors as arrays and checks if the two vectors are orthogonal or not. The return value is boolean. Two vectors a and b are orthogonal if their dot product is equal to zero.",
         "order": 19,
         "key": "tt19",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       },
       {
         "question": "Create a function that takes two arguments: the final price and the discount percentage as integers and returns the final price after the discount.",
         "order": 20,
         "key": "tt20",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 5,
         "requiredFor": "junior"
       }
     ],
@@ -2314,162 +2314,162 @@
         "question": "Have you ever worked with serverless architecture (Amazon, Google, etc.)?",
         "order": 1,
         "key": "o1",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Have you ever worked with local databases (Realm, SQLite, etc.)?",
         "order": 2,
         "key": "o2",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
-        "question": "Have you ever worked with 3rd party device (USB, BLE, WIFI) devices?",
+        "question": "Have you ever worked with 3rd party devices (USB, BLE, WIFI) devices?",
         "order": 3,
         "key": "o3",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "How do push notifications work?",
         "order": 4,
         "key": "o4",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "Have you ever worked with in-app purchases?",
         "order": 5,
         "key": "o5",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Have you ever worked with purchase systems (Paypal, Stripe, etc.)?",
         "order": 6,
         "key": "o6",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "Have you ever worked with deep links (Branch, Firebase)?",
         "order": 7,
         "key": "o7",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle"
       },
       {
         "question": "Describe the OOP approach?",
         "order": 8,
         "key": "o8",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 3,
         "requiredFor": "junior"
       },
       {
         "question": "What is abstraction?",
         "order": 9,
         "key": "o9",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is polymorphism?",
         "order": 10,
         "key": "o10",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "What is inheritance?",
         "order": 11,
         "key": "o11",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
-        "question": "What is incapsulation?",
+        "question": "What is encapsulation?",
         "order": 12,
         "key": "o12",
-        "estimatedTimeMin": 1,
+        "estimatedTimeMin": 2,
         "requiredFor": "junior"
       },
       {
         "question": "Describe the Singleton design pattern.",
         "order": 13,
         "key": "o13",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "Describe the Factory Method design pattern.",
         "order": 14,
         "key": "o14",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe the Strategy design pattern.",
         "order": 15,
         "key": "o15",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe the Observer design pattern.",
         "order": 16,
         "key": "o16",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe the Builder design pattern.",
         "order": 17,
         "key": "o17",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe the Adapter design pattern.",
         "order": 18,
         "key": "o18",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Describe the State design pattern.",
         "order": 19,
         "key": "o19",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "middle-"
       },
       {
         "question": "Mention what are the HTTP methods supported by REST.",
         "order": 20,
         "key": "o20",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 3,
+        "requiredFor": "junior+"
       },
       {
         "question": "Have you ever worked with Geoposition?",
         "order": 21,
         "key": "o21",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "junior+"
       },
       {
-        "question": "What but-tracking systems have you worked with?",
+        "question": "What bug-tracking systems have you worked with?",
         "order": 22,
         "key": "o22",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle"
       },
       {
         "question": "Have you ever implemented Social Sing In?",
         "order": 23,
         "key": "o23",
-        "estimatedTimeMin": 1,
-        "requiredFor": "junior"
+        "estimatedTimeMin": 2,
+        "requiredFor": "middle-"
       }
     ],
     "links": []
