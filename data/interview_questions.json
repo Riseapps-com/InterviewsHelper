@@ -1039,9 +1039,7 @@
         "requiredFor": "middle"
       }
     ],
-    "links": [
-      "https://mobx.js.org/README.html"
-    ]
+    "links": ["https://mobx.js.org/README.html"]
   },
   "react.hooks": {
     "data": [
@@ -1595,9 +1593,7 @@
         "requiredFor": "middle-"
       }
     ],
-    "links": [
-      "https://reactnative.dev/docs/getting-started"
-    ]
+    "links": ["https://reactnative.dev/docs/getting-started"]
   },
   "nativePlatforms.ios": {
     "data": [
@@ -1857,9 +1853,7 @@
         "requiredFor": "middle+"
       }
     ],
-    "links": [
-      "https://jestjs.io/docs/en/getting-started"
-    ]
+    "links": ["https://jestjs.io/docs/en/getting-started"]
   },
   "testing.detox": {
     "data": [
@@ -1941,9 +1935,7 @@
         "requiredFor": "middle"
       }
     ],
-    "links": [
-      "https://github.com/wix/Detox/blob/master/docs/README.md"
-    ]
+    "links": ["https://github.com/wix/Detox/blob/master/docs/README.md"]
   },
   "dataStructuresAndAlgorithms": {
     "data": [
@@ -2304,9 +2296,7 @@
         "requiredFor": "junior"
       }
     ],
-    "links": [
-      "https://edabit.com/"
-    ]
+    "links": ["https://edabit.com/"]
   },
   "other": {
     "data": [

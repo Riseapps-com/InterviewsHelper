@@ -1,111 +1,116 @@
-import { QuestionData, TopicDuration } from './types'
-import fs from 'fs'
-import interviewQuestions from './wrappers/interviewQuestions'
-import config from './wrappers/config'
-import input from './wrappers/input'
-import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
-import interview from './wrappers/interview'
+import fs from 'fs';
 
-const isSuitableForJunior = (requiredFor: string): boolean => requiredFor === 'junior'
+import { QuestionData, TopicDuration } from './types';
+import { wrapToOutputsDirectory } from './utils/createOutputsDirectory';
+import config from './wrappers/config';
+import input from './wrappers/input';
+import interview from './wrappers/interview';
+import interviewQuestions from './wrappers/interviewQuestions';
+
+const isSuitableForJunior = (requiredFor: string): boolean => requiredFor === 'junior';
 
 const isSuitableForJuniorPlus = (requiredFor: string): boolean =>
-    requiredFor === 'junior' || requiredFor === 'junior+'
+  requiredFor === 'junior' || requiredFor === 'junior+';
 
 const isSuitableForMiddleMinus = (requiredFor: string): boolean =>
-    requiredFor === 'junior' || requiredFor === 'junior+' || requiredFor === 'middle-'
+  requiredFor === 'junior' || requiredFor === 'junior+' || requiredFor === 'middle-';
 
 const isSuitableForMiddle = (requiredFor: string): boolean =>
-    requiredFor === 'junior' ||
-    requiredFor === 'junior+' ||
-    requiredFor === 'middle-' ||
-    requiredFor === 'middle'
+  requiredFor === 'junior' ||
+  requiredFor === 'junior+' ||
+  requiredFor === 'middle-' ||
+  requiredFor === 'middle';
 
 const isSuitableForMiddlePlus = (requiredFor: string): boolean =>
-    requiredFor === 'junior' ||
-    requiredFor === 'junior+' ||
-    requiredFor === 'middle-' ||
-    requiredFor === 'middle' ||
-    requiredFor === 'middle+'
+  requiredFor === 'junior' ||
+  requiredFor === 'junior+' ||
+  requiredFor === 'middle-' ||
+  requiredFor === 'middle' ||
+  requiredFor === 'middle+';
 
 const isSuitableForSenior = (requiredFor: string): boolean =>
-    requiredFor === 'junior' ||
-    requiredFor === 'junior+' ||
-    requiredFor === 'middle-' ||
-    requiredFor === 'middle' ||
-    requiredFor === 'middle+' ||
-    requiredFor === 'senior'
+  requiredFor === 'junior' ||
+  requiredFor === 'junior+' ||
+  requiredFor === 'middle-' ||
+  requiredFor === 'middle' ||
+  requiredFor === 'middle+' ||
+  requiredFor === 'senior';
 
 const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
-    let isSuitable: boolean = false
+  let isSuitable;
 
-    switch (role) {
-        case 'junior':
-            isSuitable = isSuitableForJunior(requiredFor)
-            break
-        case 'junior+':
-            isSuitable = isSuitableForJuniorPlus(requiredFor)
-            break
-        case 'middle-':
-            isSuitable = isSuitableForMiddleMinus(requiredFor)
-            break
-        case 'middle':
-            isSuitable = isSuitableForMiddle(requiredFor)
-            break
-        case 'middle+':
-            isSuitable = isSuitableForMiddlePlus(requiredFor)
-            break
-        case 'senior':
-            isSuitable = isSuitableForSenior(requiredFor)
-            break
-    }
+  switch (role) {
+    case 'junior':
+      isSuitable = isSuitableForJunior(requiredFor);
+      break;
+    case 'junior+':
+      isSuitable = isSuitableForJuniorPlus(requiredFor);
+      break;
+    case 'middle-':
+      isSuitable = isSuitableForMiddleMinus(requiredFor);
+      break;
+    case 'middle':
+      isSuitable = isSuitableForMiddle(requiredFor);
+      break;
+    case 'middle+':
+      isSuitable = isSuitableForMiddlePlus(requiredFor);
+      break;
+    case 'senior':
+      isSuitable = isSuitableForSenior(requiredFor);
+      break;
+    default:
+      isSuitable = isSuitableForJunior(requiredFor);
+  }
 
-    return isSuitable
-}
+  return isSuitable;
+};
 
 const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): string => {
-    const topics: string[] = []
-    questionsMap.forEach((value, key) => {
-        const questions: string[] = value.map(
-            (question, index) =>
-                `${index + 1}. ${question.question} (timeForAnswer: ${
-                    question.estimatedTimeMin
-                } min) (requiredFor: ${question.requiredFor}) (key: ${config.questionKey}${
-                    question.key
-                }${config.questionKey})`,
-        )
-        topics.push(
-            `${config.topicKey}${key.label}${config.topicKey} ≈${
-                key.questionsNumber
-            } questions\n${questions.join('\n')}`,
-        )
-    })
-    return topics.join('\n')
-}
+  const topics: string[] = [];
+
+  questionsMap.forEach((value, key) => {
+    const questions: string[] = value.map(
+      (question, index) =>
+        `${index + 1}. ${question.question} (timeForAnswer: ${
+          question.estimatedTimeMin
+        } min) (requiredFor: ${question.requiredFor}) (key: ${config.questionKey}${question.key}${
+          config.questionKey
+        })`
+    );
+
+    topics.push(
+      `${config.topicKey}${key.label}${config.topicKey} ≈${
+        key.questionsNumber
+      } questions\n${questions.join('\n')}`
+    );
+  });
+
+  return topics.join('\n');
+};
 
 const findSuitableQuestions = (): void => {
-    console.log(`findSuitableQuestions()`)
+  console.log(`findSuitableQuestions()`);
 
-    const questionsMap = new Map<TopicDuration, QuestionData[]>()
+  const questionsMap = new Map<TopicDuration, QuestionData[]>();
 
-    input.includedTopics.forEach((topic) => {
-        const globalTopic: string = topic.includes('.') ? topic.split('.')[0] : topic
-        let suitableQuestions: QuestionData[] = interviewQuestions[
-            topic
-        ].data.filter((item: QuestionData) => isSuitableQuestion(input.role, item.requiredFor))
-        if (suitableQuestions.length) {
-            questionsMap.get(interview.topics[globalTopic])
-                ? questionsMap.set(interview.topics[globalTopic], [
-                      ...questionsMap.get(interview.topics[globalTopic]),
-                      ...suitableQuestions,
-                  ])
-                : questionsMap.set(interview.topics[globalTopic], suitableQuestions)
-        }
-    })
+  input.includedTopics.forEach(topic => {
+    const globalTopic: string = topic.includes('.') ? topic.split('.')[0] : topic;
+    const suitableQuestions: QuestionData[] = interviewQuestions[
+      topic
+    ].data.filter((item: QuestionData) => isSuitableQuestion(input.role, item.requiredFor));
 
-    fs.writeFileSync(
-        wrapToOutputsDirectory(config.questionsFilename),
-        formatQuestions(questionsMap),
-    )
-}
+    if (suitableQuestions.length && questionsMap.get(interview.topics[globalTopic])) {
+      const questions = questionsMap.get(interview.topics[globalTopic]);
 
-export { findSuitableQuestions }
+      if (questions) {
+        questionsMap.set(interview.topics[globalTopic], [...questions, ...suitableQuestions]);
+      }
+    } else if (suitableQuestions.length) {
+      questionsMap.set(interview.topics[globalTopic], suitableQuestions);
+    }
+  });
+
+  fs.writeFileSync(wrapToOutputsDirectory(config.questionsFilename), formatQuestions(questionsMap));
+};
+
+export { findSuitableQuestions };

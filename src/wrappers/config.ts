@@ -1,6 +1,6 @@
-import _config from '../../config/config.json'
-import { Config } from '../types'
+import _config from '../../config/config.json';
+import { Config } from '../types';
 
-const config: Config = _config as Config
+const config: Config = _config as Config;
 
-export default config
+export default config;

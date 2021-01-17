@@ -1,6 +1,6 @@
-import _input from '../../config/input.json'
-import { Input } from '../types'
+import _input from '../../config/input.json';
+import { Input } from '../types';
 
-const input: Input = _input as Input
+const input: Input = _input as Input;
 
-export default input
+export default input;

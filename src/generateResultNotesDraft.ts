@@ -1,12 +1,15 @@
-import fs from 'fs'
-import config from './wrappers/config'
-import { wrapToOutputsDirectory } from './utils/createOutputsDirectory'
+import fs from 'fs';
+
+import { wrapToOutputsDirectory } from './utils/createOutputsDirectory';
+import config from './wrappers/config';
+
+const { notesKey, recommendKey } = config;
 
 const generateResultNotesDraft = (): void => {
-    fs.writeFileSync(
-        wrapToOutputsDirectory(config.resultNotesDraftFilename),
-        `${config.notesKey}\n-\n${config.notesKey}\n\n${config.recommendKey}\nYes / No\n${config.recommendKey}`,
-    )
-}
+  fs.writeFileSync(
+    wrapToOutputsDirectory(config.resultNotesDraftFilename),
+    `${notesKey}\n-\n${notesKey}\n\n${recommendKey}\nYes / No\n${recommendKey}`
+  );
+};
 
-export { generateResultNotesDraft }
+export { generateResultNotesDraft };

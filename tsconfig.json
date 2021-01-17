@@ -1,14 +1,31 @@
 {
   "compilerOptions": {
-    "module": "commonjs",
+    "allowJs": true,
+    "allowSyntheticDefaultImports": true,
+    "alwaysStrict": true,
+    "baseUrl": "./",
     "esModuleInterop": true,
-    "target": "es6",
+    "isolatedModules": false,
+    "lib": ["ES2016"],
     "moduleResolution": "node",
+    "noEmit": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitAny": true,
+    "noImplicitReturns": true,
+    "noImplicitThis": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "removeComments": true,
+    "skipLibCheck": true,
+    "strict": true,
+    "strictBindCallApply": true,
+    "strictFunctionTypes": true,
+    "strictNullChecks": true,
+    "strictPropertyInitialization": true,
+    "target": "ES2016",
+    "resolveJsonModule": true,
     "sourceMap": true,
-    "outDir": "dist",
-    "resolveJsonModule": true
+    "useDefineForClassFields": true
   },
-  "lib": [
-    "es2015"
-  ]
+  "exclude": ["node_modules"]
 }

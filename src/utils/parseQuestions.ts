@@ -1,47 +1,47 @@
-import { QuestionData } from '../types'
-import interviewQuestions from '../wrappers/interviewQuestions'
-import config from '../wrappers/config'
-import fs from 'fs'
-import { wrapToOutputsDirectory } from './createOutputsDirectory'
+import fs from 'fs';
+
+import { QuestionData } from '../types';
+import config from '../wrappers/config';
+import interviewQuestions from '../wrappers/interviewQuestions';
+import { wrapToOutputsDirectory } from './createOutputsDirectory';
 
 const parseQuestions = (): Map<string, QuestionData[]> => {
-    console.log(`parseQuestions()`)
+  console.log(`parseQuestions()`);
 
-    const parsedQuestions = new Map<string, QuestionData[]>()
-    const rows: string[] = fs
-        .readFileSync(wrapToOutputsDirectory(config.questionsFilename), 'utf8')
-        .split('\n')
-        .filter(
-            (row) => row.includes(config.topicKey) || row.startsWith(config.suitableQuestionMarker),
-        )
-    let currentTopic: string
+  const parsedQuestions = new Map<string, QuestionData[]>();
+  const rows: string[] = fs
+    .readFileSync(wrapToOutputsDirectory(config.questionsFilename), 'utf8')
+    .split('\n')
+    .filter(row => row.includes(config.topicKey) || row.startsWith(config.suitableQuestionMarker));
+  let currentTopic: string;
 
-    rows.forEach((row) => {
-        if (row.includes(config.topicKey)) {
-            currentTopic = row.split(`${config.topicKey}`)[1]
-        } else {
-            const questionSplit: string[] = row.split(config.questionKey)
-            const questionKey: string = questionSplit[1]
-            let interviewQuestion: QuestionData
+  rows.forEach(row => {
+    if (row.includes(config.topicKey)) {
+      const [, currentTopicInner] = row.split(`${config.topicKey}`);
 
-            Object.values(interviewQuestions).forEach((question) => {
-                if (!interviewQuestion) {
-                    interviewQuestion = question.data.find((item) => item.key === questionKey)
-                }
-            })
+      currentTopic = currentTopicInner;
+    } else {
+      const questionSplit: string[] = row.split(config.questionKey);
+      const questionKey: string = questionSplit[1];
+      let interviewQuestion: QuestionData | undefined;
 
-            if (interviewQuestion && parsedQuestions.get(currentTopic)) {
-                parsedQuestions.set(currentTopic, [
-                    ...parsedQuestions.get(currentTopic),
-                    interviewQuestion,
-                ])
-            } else if (interviewQuestion) {
-                parsedQuestions.set(currentTopic, [interviewQuestion])
-            }
+      Object.values(interviewQuestions).forEach(question => {
+        if (!interviewQuestion) {
+          interviewQuestion = question.data.find(item => item.key === questionKey);
         }
-    })
+      });
 
-    return parsedQuestions
-}
+      const parsedQuestionsItem = parsedQuestions.get(currentTopic);
 
-export { parseQuestions }
+      if (interviewQuestion && parsedQuestionsItem) {
+        parsedQuestions.set(currentTopic, [...parsedQuestionsItem, interviewQuestion]);
+      } else if (interviewQuestion) {
+        parsedQuestions.set(currentTopic, [interviewQuestion]);
+      }
+    }
+  });
+
+  return parsedQuestions;
+};
+
+export { parseQuestions };
