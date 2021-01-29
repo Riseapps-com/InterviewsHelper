@@ -28,6 +28,7 @@ const buildPieChart = async () => {
   console.log(`buildPieChart()`);
 
   const topicDurations = getTopicDurations(input.includedTopics);
+  const interviewDuration = topicDurations.reduce((prev, curr) => prev + curr.durationMin, 0);
 
   const pieChart = new QuickChart();
 
@@ -69,7 +70,7 @@ const buildPieChart = async () => {
         doughnutlabel: {
           labels: [
             {
-              text: interview.totalDurationMin,
+              text: interviewDuration,
               font: {
                 size: config.pieChart.centerFontSize,
                 weight: config.pieChart.fontStyle,

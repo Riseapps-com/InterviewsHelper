@@ -1,24 +1,14 @@
 {
   "role": "middle",
   "includedTopics": [
-    "javaScript",
-    "typeScript",
-    "react.reactBasics",
     "react.redux",
-    "react.mobx",
     "react.hooks",
-    "react.reactAdvanced",
-    "react.apolloGraphql",
-    "reactNative",
+    "testing.jest",
     "dataStructuresAndAlgorithms",
-    "nativePlatforms.ios",
-    "nativePlatforms.android",
-    "communicationSkills",
-    "testTasks",
-    "other"
+    "testTasks"
   ],
   "candidate": {
-    "firstname": "Dmitry",
-    "lastname": "Usik"
+    "firstname": "Roman",
+    "lastname": "Krasikov"
   }
 }
