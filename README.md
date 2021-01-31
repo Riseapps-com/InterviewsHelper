@@ -235,7 +235,7 @@ Example:
 
 ## :ledger: TODO:
 
-- [ ] Ability to add a new question to the specific position.
+- [ ] Add a parser in order to process the questions from confuluence.
 - [ ] Prepare ready questions sets.
 - [ ] Ability to find most suitable questions.
 - [ ] Send files to email.
