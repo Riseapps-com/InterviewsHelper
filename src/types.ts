@@ -30,7 +30,7 @@ export type Topics = {
   [key in string]: TopicDuration;
 };
 
-export type Interview = {
+export type InterviewStructure = {
   totalDurationMin: number;
   topics: Topics;
   requiredSections: string[];
@@ -40,10 +40,12 @@ export type Interview = {
 export type Candidate = {
   firstname: string;
   lastname: string;
+  email: string;
+  phoneNumber: string;
 };
 
 export type Input = {
-  role: Role;
+  supposedRole: Role;
   includedTopics: string[];
   candidate: Candidate;
 };

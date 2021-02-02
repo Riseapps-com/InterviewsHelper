@@ -6,7 +6,7 @@ import { drawRiseappsLogo, getPdfDocument } from './utils/pdfUtils';
 import config from './wrappers/config';
 import input from './wrappers/input';
 // eslint-disable-next-line unused-imports/no-unused-imports-ts
-import interview from './wrappers/interview';
+import interviewStructure from './wrappers/interviewStructure';
 
 const _generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => {
   console.log(`_generateInterviewPDF(${[...questions.keys()]})`);
@@ -18,7 +18,9 @@ const _generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => 
   pdfDocument
     .fontSize(18)
     .font('Times-Bold')
-    .text(`Candidate - ${input.candidate.firstname} ${input.candidate.lastname} (${input.role})`)
+    .text(
+      `Candidate - ${input.candidate.firstname} ${input.candidate.lastname} (${input.supposedRole})`
+    )
     .moveDown(4);
 
   pdfDocument
@@ -50,7 +52,7 @@ const _generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => 
       .font('Times-Bold')
       .text(
         `${curr} (${
-          Object.values(interview.topics).find(topic => topic.label === curr)?.durationMin
+          Object.values(interviewStructure.topics).find(topic => topic.label === curr)?.durationMin
         } min):`
       );
 

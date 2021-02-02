@@ -4,8 +4,8 @@ import { QuestionData, TopicDuration } from './types';
 import { wrapToOutputsDirectory } from './utils/createOutputsDirectory';
 import config from './wrappers/config';
 import input from './wrappers/input';
-import interview from './wrappers/interview';
 import interviewQuestions from './wrappers/interviewQuestions';
+import interviewStructure from './wrappers/interviewStructure';
 
 const isSuitableForJunior = (requiredFor: string): boolean => requiredFor === 'junior';
 
@@ -97,16 +97,19 @@ const findSuitableQuestions = (): void => {
     const globalTopic: string = topic.includes('.') ? topic.split('.')[0] : topic;
     const suitableQuestions: QuestionData[] = interviewQuestions[
       topic
-    ].data.filter((item: QuestionData) => isSuitableQuestion(input.role, item.requiredFor));
+    ].data.filter((item: QuestionData) => isSuitableQuestion(input.supposedRole, item.requiredFor));
 
-    if (suitableQuestions.length && questionsMap.get(interview.topics[globalTopic])) {
-      const questions = questionsMap.get(interview.topics[globalTopic]);
+    if (suitableQuestions.length && questionsMap.get(interviewStructure.topics[globalTopic])) {
+      const questions = questionsMap.get(interviewStructure.topics[globalTopic]);
 
       if (questions) {
-        questionsMap.set(interview.topics[globalTopic], [...questions, ...suitableQuestions]);
+        questionsMap.set(interviewStructure.topics[globalTopic], [
+          ...questions,
+          ...suitableQuestions,
+        ]);
       }
     } else if (suitableQuestions.length) {
-      questionsMap.set(interview.topics[globalTopic], suitableQuestions);
+      questionsMap.set(interviewStructure.topics[globalTopic], suitableQuestions);
     }
   });
 

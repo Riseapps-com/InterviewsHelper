@@ -1,5 +1,5 @@
 {
-  "name": "interview_questions_helper",
+  "name": "InterviewsHelper",
   "version": "1.0.0",
   "description": "A bunch of utilities for automating the process of interviews as much as possible with minimal time resources.",
   "main": "index.js",
@@ -7,6 +7,7 @@
     "compile": "tsc",
     "lint": "eslint . --ext .ts,.js --fix && prettier -c '**/*.{ts,js,json,yml,md}' --write",
     "verify": "yarn compile && yarn lint",
+    "parseConfluencePage": "ts-node index.ts --parseConfluencePage",
     "validateQuestionsDB": "ts-node index.ts --validateQuestionsDB",
     "findQuestions": "ts-node index.ts --findQuestions",
     "generateInterviewPDF": "ts-node index.ts --generateInterviewPDF",
@@ -23,6 +24,7 @@
     "chart.js": "^2.9.4",
     "lodash.startcase": "^4.4.0",
     "node-fetch": "^2.6.1",
+    "node-html-parser": "^2.1.0",
     "pdfkit": "^0.11.0",
     "quickchart-js": "^1.0.5"
   },

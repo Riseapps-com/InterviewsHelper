@@ -1,6 +1,6 @@
-import interview_questions from '../../data/interview_questions.json';
+import _interviewQuestions from '../../data/interviewQuestions.json';
 import { InterviewQuestions } from '../types';
 
-const interviewQuestions: InterviewQuestions = interview_questions as InterviewQuestions;
+const interviewQuestions: InterviewQuestions = _interviewQuestions as InterviewQuestions;
 
 export default interviewQuestions;

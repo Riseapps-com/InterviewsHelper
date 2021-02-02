@@ -6,7 +6,7 @@ import { TopicDuration } from '../types';
 import { wrapToOutputsDirectory } from '../utils/createOutputsDirectory';
 import config from '../wrappers/config';
 import input from '../wrappers/input';
-import interview from '../wrappers/interview';
+import interviewStructure from '../wrappers/interviewStructure';
 
 const getTopicDurations = (topics: string[]): TopicDuration[] =>
   topics.reduce((curr: TopicDuration[], prev) => {
@@ -16,9 +16,9 @@ const getTopicDurations = (topics: string[]): TopicDuration[] =>
       const keys: string[] = prev.split('.');
       const topLevelTopic: string = keys[0];
 
-      topicDuration = interview.topics[topLevelTopic];
+      topicDuration = interviewStructure.topics[topLevelTopic];
     } else {
-      topicDuration = interview.topics[prev];
+      topicDuration = interviewStructure.topics[prev];
     }
 
     return curr.includes(topicDuration) ? [...curr] : [...curr, topicDuration];

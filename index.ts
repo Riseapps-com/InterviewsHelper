@@ -5,16 +5,28 @@ import { _generateInterviewPDF } from './src/generateInterviewPDF';
 import { generateResultDraft } from './src/generateResultDraft';
 import { generateResultNotesDraft } from './src/generateResultNotesDraft';
 import { _generateResultPDF } from './src/generateResultPDF';
+import { _parseConfluencePage } from './src/parseConfluencePage';
 import { createOutputsDirectory } from './src/utils/createOutputsDirectory';
 import { parseQuestions } from './src/utils/parseQuestions';
 import { parseResultDraft } from './src/utils/parseResultDraft';
 import { parseResultNotesDraft } from './src/utils/parseResultNotes';
 import { validateInterviewQuestions } from './src/validateInterviewQuestions';
 
+const parseConfluencePageArg = process.argv.includes('--parseConfluencePage');
 const validateQuestionsDBArg = process.argv.includes('--validateQuestionsDB');
 const findQuestionsArg = process.argv.includes('--findQuestions');
 const generateInterviewPDFArg = process.argv.includes('--generateInterviewPDF');
 const generateResultPDFArg = process.argv.includes('--generateResultPDF');
+
+const parseConfluencePage = (): void => {
+  console.log('Executing parseConfluencePage()...');
+
+  try {
+    _parseConfluencePage();
+  } catch (error) {
+    console.log(error);
+  }
+};
 
 const validateQuestionsDB = (): void => {
   console.log('Executing validateQuestionsDB()...');
@@ -64,6 +76,10 @@ const generateResultPDF = async (): Promise<void> => {
     console.log(error);
   }
 };
+
+if (parseConfluencePageArg) {
+  parseConfluencePage();
+}
 
 if (validateQuestionsDBArg) {
   validateQuestionsDB();
