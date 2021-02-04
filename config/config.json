@@ -51,7 +51,10 @@
     "regularFont": "Times-Roman",
     "foreignFontPath": "assets/fonts/NotoSans-Regular.ttf",
     "regularForeignFont": "NotoSans-Regular",
-    "boldFont": "Times-Bold"
+    "boldFont": "Times-Bold",
+    "smallerFontSize": 12,
+    "baseFontSize": 14,
+    "biggerFontSize": 16
   },
   "topicKey": "@topic@",
   "notesKey": "@notes@",

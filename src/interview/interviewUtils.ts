@@ -79,12 +79,11 @@ export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): vo
   pdfUtils.drawRiseappsLogo(pdfDocument);
 
   pdfDocument
-    .fontSize(16)
-    .font(config.pdfDocument.regularFont)
+    .fontSize(config.pdfDocument.biggerFontSize)
+    .font(config.pdfDocument.boldFont)
     .text(`${input.candidate.firstname} ${input.candidate.lastname}`)
     .text(input.candidate.email)
-    .text(input.candidate.phoneNumber)
-    .text(`Supposed role - ${input.supposedRole}`)
+    .text(`Supposed role: ${input.supposedRole}`)
     .moveDown(4);
 
   pdfDocument
@@ -95,11 +94,14 @@ export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): vo
     })
     .moveDown(4);
 
-  pdfDocument.fontSize(14).font(config.pdfDocument.boldFont).text('Evaluation');
+  pdfDocument
+    .fontSize(config.pdfDocument.baseFontSize)
+    .font(config.pdfDocument.boldFont)
+    .text('Evaluation');
 
   Object.keys(config.evaluation).forEach(key =>
     pdfDocument
-      .fontSize(14)
+      .fontSize(config.pdfDocument.baseFontSize)
       .font(config.pdfDocument.boldFont)
       .text(`${key} - `, { continued: true })
       .font(config.pdfDocument.regularFont)
@@ -108,11 +110,15 @@ export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): vo
 
   pdfDocument.moveDown(1);
 
-  pdfDocument.fontSize(14).font(config.pdfDocument.boldFont).text('Questions').moveDown(1);
+  pdfDocument
+    .fontSize(config.pdfDocument.baseFontSize)
+    .font(config.pdfDocument.boldFont)
+    .text('Questions')
+    .moveDown(1);
 
   Array.of(...questions.keys()).reduce((prev, curr) => {
     prev
-      .fontSize(14)
+      .fontSize(config.pdfDocument.baseFontSize)
       .font(config.pdfDocument.boldFont)
       .text(
         `${curr} (${
@@ -127,7 +133,7 @@ export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): vo
         .reduce(
           (innerCurr, innerPrev, index) =>
             innerCurr
-              .fontSize(14)
+              .fontSize(config.pdfDocument.baseFontSize)
               .font(config.pdfDocument.regularFont)
               .text(`${index + 1}) ${innerPrev.question}`, {
                 align: 'justify',

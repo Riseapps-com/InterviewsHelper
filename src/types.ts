@@ -36,23 +36,17 @@ export type InterviewStructure = {
   optionalSections: string[];
 };
 
-export type Candidate = {
+export type Person = {
   firstname: string;
   lastname: string;
   email: string;
-  phoneNumber: string;
-};
-
-export type TechnicalSpecialist = {
-  firstname: string;
-  lastname: string;
 };
 
 export type Input = {
   supposedRole: Role;
   includedTopics: string[];
-  candidate: Candidate;
-  technicalSpecialist: TechnicalSpecialist;
+  candidate: Person;
+  technicalSpecialist: Person;
 };
 
 export type PieChart = {
@@ -89,6 +83,9 @@ export type PdfDocument = {
   foreignFontPath: string;
   regularForeignFont: string;
   boldFont: string;
+  smallerFontSize: number;
+  baseFontSize: number;
+  biggerFontSize: number;
 };
 
 export type Evaluation = {

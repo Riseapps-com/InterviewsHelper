@@ -65,9 +65,18 @@ export const generateResultPDF = (
   );
 
   pdfDocument
-    .fontSize(18)
+    .fontSize(config.pdfDocument.baseFontSize)
     .font(config.pdfDocument.boldFont)
-    .text(`Result - ${input.candidate.firstname} ${input.candidate.lastname}`)
+    .text('Candidate')
+    .font(config.pdfDocument.regularFont)
+    .text(`${input.candidate.firstname} ${input.candidate.lastname}`)
+    .text(input.candidate.email)
+    .font(config.pdfDocument.boldFont)
+    .moveDown(1)
+    .text('Technical specialist')
+    .font(config.pdfDocument.regularFont)
+    .text(`${input.technicalSpecialist.firstname} ${input.technicalSpecialist.lastname}`)
+    .text(input.technicalSpecialist.email)
     .moveDown(4);
 
   pdfDocument
@@ -78,35 +87,32 @@ export const generateResultPDF = (
     })
     .moveDown(4);
 
-  pdfDocument.fontSize(14).font('Times-Bold').text('Topics:');
+  pdfDocument.fontSize(config.pdfDocument.baseFontSize).font('Times-Bold').text('Topics');
   Array.of(...resultDraft.keys()).reduce(
     (_, curr, index) =>
       pdfDocument
-        .fontSize(14)
-        .font(config.pdfDocument.boldFont)
-        .text(`${curr}: `, { continued: true })
-        .fontSize(14)
-        .font(config.pdfDocument.boldFont)
-        .text(`${normalizedMarks[index]} / 100`),
+        .fontSize(config.pdfDocument.baseFontSize)
+        .font(config.pdfDocument.regularFont)
+        .text(`${curr}: ${normalizedMarks[index]} / 100`),
     pdfDocument
   );
 
   pdfDocument.moveDown(1);
 
   pdfDocument
-    .fontSize(14)
+    .fontSize(config.pdfDocument.baseFontSize)
     .font(config.pdfDocument.boldFont)
-    .text('Notes:')
-    .fontSize(12)
+    .text('Notes')
+    .fontSize(config.pdfDocument.smallerFontSize)
     .font(config.pdfDocument.regularForeignFont)
     .text(resultNotesDraft[0])
     .moveDown(1);
 
   pdfDocument
-    .fontSize(14)
+    .fontSize(config.pdfDocument.baseFontSize)
     .font(config.pdfDocument.boldFont)
-    .text('Recommend: ', { continued: true })
-    .fontSize(14)
+    .text('Recommend')
+    .fontSize(config.pdfDocument.baseFontSize)
     .font(config.pdfDocument.regularFont)
     .text(resultNotesDraft[1]);
 
