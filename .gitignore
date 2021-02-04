@@ -2,3 +2,4 @@ node_modules/**/*
 *outputs*/**/*
 /yarn-error.log
 config/input.json
+/data/questionsDB.html

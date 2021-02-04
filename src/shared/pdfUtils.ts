@@ -1,8 +1,8 @@
 import PDFDocument from 'pdfkit';
 
-import config from '../wrappers/config';
+import { config } from '../wrappers';
 
-const getPdfDocument = (): PDFKit.PDFDocument =>
+export const createPDFDocument = (): PDFKit.PDFDocument =>
   new PDFDocument({
     margins: {
       top: config.pdfDocument.verticalMargin,
@@ -17,12 +17,10 @@ const getPdfDocument = (): PDFKit.PDFDocument =>
     },
   });
 
-const drawRiseappsLogo = (pdfDocument: PDFKit.PDFDocument) =>
+export const drawRiseappsLogo = (pdfDocument: PDFKit.PDFDocument) =>
   pdfDocument.image(
-    'assets/images/riseapps_logo.png',
+    config.pdfDocument.riseappsLogoPath,
     pdfDocument.page.width - config.pdfDocument.logoWidth - config.pdfDocument.logoMargin,
     config.pdfDocument.logoMargin,
     { width: config.pdfDocument.logoWidth }
   );
-
-export { drawRiseappsLogo, getPdfDocument };

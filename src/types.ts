@@ -1,5 +1,3 @@
-export type Status = 'optional' | 'required';
-
 export type Role = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior';
 
 export type QuestionData = {
@@ -12,12 +10,13 @@ export type QuestionData = {
 
 export type Question = {
   data: QuestionData[];
-  links: string[];
 };
 
 export type InterviewQuestions = {
   [key in string]: Question;
 };
+
+export type Status = 'optional' | 'required';
 
 export type TopicDuration = {
   status: Status;
@@ -44,10 +43,16 @@ export type Candidate = {
   phoneNumber: string;
 };
 
+export type TechnicalSpecialist = {
+  firstname: string;
+  lastname: string;
+};
+
 export type Input = {
   supposedRole: Role;
   includedTopics: string[];
   candidate: Candidate;
+  technicalSpecialist: TechnicalSpecialist;
 };
 
 export type PieChart = {
@@ -77,8 +82,13 @@ export type PdfDocument = {
   author: string;
   verticalMargin: number;
   horizontalMargin: number;
+  riseappsLogoPath: string;
   logoWidth: number;
   logoMargin: number;
+  regularFont: string;
+  foreignFontPath: string;
+  regularForeignFont: string;
+  boldFont: string;
 };
 
 export type Evaluation = {
@@ -86,6 +96,7 @@ export type Evaluation = {
 };
 
 export type Config = {
+  questionsDatabasePath: string;
   notValidQuestionsFilename: string;
   questionsFilename: string;
   pieChartFilename: string;
@@ -98,10 +109,14 @@ export type Config = {
   pieChart: PieChart;
   radarChart: RadarChart;
   pdfDocument: PdfDocument;
-  maxMark: number;
   topicKey: string;
   notesKey: string;
   recommendKey: string;
   questionKey: string;
+  maxMark: number;
   evaluation: Evaluation;
+};
+
+export type QuestionsDBTopics = {
+  [key: string]: string;
 };

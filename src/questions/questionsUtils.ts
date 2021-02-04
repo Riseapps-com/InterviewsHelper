@@ -1,43 +1,28 @@
 import fs from 'fs';
 
-import { QuestionData, TopicDuration } from './types';
-import { wrapToOutputsDirectory } from './utils/createOutputsDirectory';
-import config from './wrappers/config';
-import input from './wrappers/input';
-import interviewQuestions from './wrappers/interviewQuestions';
-import interviewStructure from './wrappers/interviewStructure';
+import { fsUtils } from '../shared';
+import { InterviewQuestions, QuestionData, TopicDuration } from '../types';
+import { config, input, interviewStructure } from '../wrappers';
 
 const isSuitableForJunior = (requiredFor: string): boolean => requiredFor === 'junior';
 
 const isSuitableForJuniorPlus = (requiredFor: string): boolean =>
-  requiredFor === 'junior' || requiredFor === 'junior+';
+  isSuitableForJunior(requiredFor) || requiredFor === 'junior+';
 
 const isSuitableForMiddleMinus = (requiredFor: string): boolean =>
-  requiredFor === 'junior' || requiredFor === 'junior+' || requiredFor === 'middle-';
+  isSuitableForJuniorPlus(requiredFor) || requiredFor === 'middle-';
 
 const isSuitableForMiddle = (requiredFor: string): boolean =>
-  requiredFor === 'junior' ||
-  requiredFor === 'junior+' ||
-  requiredFor === 'middle-' ||
-  requiredFor === 'middle';
+  isSuitableForMiddleMinus(requiredFor) || requiredFor === 'middle';
 
 const isSuitableForMiddlePlus = (requiredFor: string): boolean =>
-  requiredFor === 'junior' ||
-  requiredFor === 'junior+' ||
-  requiredFor === 'middle-' ||
-  requiredFor === 'middle' ||
-  requiredFor === 'middle+';
+  isSuitableForMiddle(requiredFor) || requiredFor === 'middle+';
 
 const isSuitableForSenior = (requiredFor: string): boolean =>
-  requiredFor === 'junior' ||
-  requiredFor === 'junior+' ||
-  requiredFor === 'middle-' ||
-  requiredFor === 'middle' ||
-  requiredFor === 'middle+' ||
-  requiredFor === 'senior';
+  isSuitableForMiddlePlus(requiredFor) || requiredFor === 'senior';
 
-const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
-  let isSuitable;
+const isQuestionSuitable = (role: string, requiredFor: string): boolean => {
+  let isSuitable = false;
 
   switch (role) {
     case 'junior':
@@ -59,7 +44,6 @@ const isSuitableQuestion = (role: string, requiredFor: string): boolean => {
       isSuitable = isSuitableForSenior(requiredFor);
       break;
     default:
-      isSuitable = isSuitableForJunior(requiredFor);
   }
 
   return isSuitable;
@@ -88,8 +72,8 @@ const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): stri
   return topics.join('\n');
 };
 
-const findSuitableQuestions = (): void => {
-  console.log(`findSuitableQuestions()`);
+export const generateQuestions = (interviewQuestions: InterviewQuestions): void => {
+  console.log(`generateQuestions()`);
 
   const questionsMap = new Map<TopicDuration, QuestionData[]>();
 
@@ -97,7 +81,7 @@ const findSuitableQuestions = (): void => {
     const globalTopic: string = topic.includes('.') ? topic.split('.')[0] : topic;
     const suitableQuestions: QuestionData[] = interviewQuestions[
       topic
-    ].data.filter((item: QuestionData) => isSuitableQuestion(input.supposedRole, item.requiredFor));
+    ].data.filter((item: QuestionData) => isQuestionSuitable(input.supposedRole, item.requiredFor));
 
     if (suitableQuestions.length && questionsMap.get(interviewStructure.topics[globalTopic])) {
       const questions = questionsMap.get(interviewStructure.topics[globalTopic]);
@@ -113,7 +97,8 @@ const findSuitableQuestions = (): void => {
     }
   });
 
-  fs.writeFileSync(wrapToOutputsDirectory(config.questionsFilename), formatQuestions(questionsMap));
+  fs.writeFileSync(
+    fsUtils.wrapToOutputsDirectory(config.questionsFilename),
+    formatQuestions(questionsMap)
+  );
 };
-
-export { findSuitableQuestions };

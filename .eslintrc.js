@@ -10,14 +10,7 @@ module.exports = {
     es6: true,
     'jest/globals': true,
   },
-  plugins: [
-    'prettier',
-    '@typescript-eslint',
-    'jest',
-    'jest-formatting',
-    'simple-import-sort',
-    'unused-imports',
-  ],
+  plugins: ['prettier', '@typescript-eslint', 'jest', 'jest-formatting', 'simple-import-sort'],
   extends: [
     'airbnb-base',
     'prettier',
@@ -43,6 +36,7 @@ module.exports = {
     'import/no-named-default': 'off',
     'import/no-extraneous-dependencies': 'off',
     'no-underscore-dangle': 'off',
+    'no-plusplus': 'off',
     camelcase: 'off',
     'no-throw-literal': 'off',
     'class-methods-use-this': 'off',
@@ -140,14 +134,6 @@ module.exports = {
     'import/order': 'off',
     'simple-import-sort/imports': 'error',
     'simple-import-sort/exports': 'error',
-
-    // unused-imports
-    '@typescript-eslint/no-unused-vars': 'off',
-    'unused-imports/no-unused-imports-ts': 'error',
-    'unused-imports/no-unused-vars-ts': [
-      'warn',
-      { vars: 'all', varsIgnorePattern: '^_', args: 'after-used', argsIgnorePattern: '^_' },
-    ],
   },
   overrides: [
     {

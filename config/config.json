@@ -1,4 +1,5 @@
 {
+  "questionsDatabasePath": "data/questionsDB.html",
   "notValidQuestionsFilename": "notValidQuestions.txt",
   "questionsFilename": "questions.txt",
   "pieChartFilename": "pieChart.png",
@@ -44,14 +45,19 @@
     "author": "Dmitry Usik",
     "verticalMargin": 64,
     "horizontalMargin": 48,
+    "riseappsLogoPath": "assets/images/riseappsLogo.png",
     "logoWidth": 80,
-    "logoMargin": 24
+    "logoMargin": 24,
+    "regularFont": "Times-Roman",
+    "foreignFontPath": "assets/fonts/NotoSans-Regular.ttf",
+    "regularForeignFont": "NotoSans-Regular",
+    "boldFont": "Times-Bold"
   },
-  "maxMark": 5,
   "topicKey": "@topic@",
   "notesKey": "@notes@",
   "recommendKey": "@recommend@",
   "questionKey": "@questionKey@",
+  "maxMark": 5,
   "evaluation": {
     "1": "Doesn't have theoretical and practical skills in this area.",
     "2": "Has superficial theoretical or practical skills in this area.",

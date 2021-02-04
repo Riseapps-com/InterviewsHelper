@@ -1,48 +1,46 @@
-import { buildPieChart } from './src/charts/buildPieChart';
-import { buildRadarChart } from './src/charts/buildRadarChart';
-import { findSuitableQuestions } from './src/findSuitableQuestions';
-import { _generateInterviewPDF } from './src/generateInterviewPDF';
-import { generateResultDraft } from './src/generateResultDraft';
-import { generateResultNotesDraft } from './src/generateResultNotesDraft';
-import { _generateResultPDF } from './src/generateResultPDF';
-import { _parseConfluencePage } from './src/parseConfluencePage';
-import { createOutputsDirectory } from './src/utils/createOutputsDirectory';
-import { parseQuestions } from './src/utils/parseQuestions';
-import { parseResultDraft } from './src/utils/parseResultDraft';
-import { parseResultNotesDraft } from './src/utils/parseResultNotes';
-import { validateInterviewQuestions } from './src/validateInterviewQuestions';
+import { htmlUtils } from './src/html';
+import { interviewUtils } from './src/interview';
+import { questionsUtils } from './src/questions';
+import { resultUtils } from './src/result';
+import { chartsUtils, fsUtils } from './src/shared';
+import { InterviewQuestions } from './src/types';
+import { validationUtils } from './src/validation';
+import { config } from './src/wrappers';
 
-const parseConfluencePageArg = process.argv.includes('--parseConfluencePage');
 const validateQuestionsDBArg = process.argv.includes('--validateQuestionsDB');
-const findQuestionsArg = process.argv.includes('--findQuestions');
+const generateQuestionsArg = process.argv.includes('--generateQuestions');
 const generateInterviewPDFArg = process.argv.includes('--generateInterviewPDF');
 const generateResultPDFArg = process.argv.includes('--generateResultPDF');
 
-const parseConfluencePage = (): void => {
-  console.log('Executing parseConfluencePage()...');
+const parseQuestionsDB = () => {
+  let interviewQuestions: InterviewQuestions;
 
   try {
-    _parseConfluencePage();
+    interviewQuestions = htmlUtils.parseQuestionsDB();
   } catch (error) {
     console.log(error);
   }
+
+  return interviewQuestions;
 };
 
+const interviewQuestions: InterviewQuestions = parseQuestionsDB();
+
 const validateQuestionsDB = (): void => {
-  console.log('Executing validateQuestionsDB()...');
-  if (!validateInterviewQuestions()) {
-    console.log('Questions are not valid. See output/notValidQuestions.txt for more details.');
+  console.log(JSON.stringify(interviewQuestions));
+  fsUtils.createOutputsDirectory();
+  if (!validationUtils.validateInterviewQuestions(interviewQuestions)) {
+    console.log(`Questions are not valid. 
+      See ${fsUtils.outputsDirectory}/${config.notValidQuestionsFilename} for more details.`);
   }
 };
 
-const findQuestions = async (): Promise<void> => {
-  console.log('Executing findQuestions()...');
-
+const generateQuestions = async (): Promise<void> => {
   try {
-    createOutputsDirectory();
-    if (validateInterviewQuestions()) {
-      findSuitableQuestions();
-      await buildPieChart();
+    fsUtils.createOutputsDirectory();
+    if (validationUtils.validateInterviewQuestions(interviewQuestions)) {
+      questionsUtils.generateQuestions(interviewQuestions);
+      await chartsUtils.buildPieChart();
     }
   } catch (error) {
     console.log(error);
@@ -50,43 +48,35 @@ const findQuestions = async (): Promise<void> => {
 };
 
 const generateInterviewPDF = async (): Promise<void> => {
-  console.log('Executing generateInterviewPDF()...');
-
   try {
-    const parsedQuestions = parseQuestions();
+    const parsedQuestions = interviewUtils.parseQuestions(interviewQuestions);
 
-    _generateInterviewPDF(parsedQuestions);
-    generateResultDraft(parsedQuestions);
-    generateResultNotesDraft();
+    interviewUtils.generateInterviewPDF(parsedQuestions);
+    interviewUtils.generateResultDraft(parsedQuestions);
+    interviewUtils.generateResultNotesDraft();
   } catch (error) {
     console.log(error);
   }
 };
 
 const generateResultPDF = async (): Promise<void> => {
-  console.log('Executing generateResultPDF()...');
-
   try {
-    const parsedResultDraft = parseResultDraft();
-    const parsedResultNotesDraft = parseResultNotesDraft();
+    const parsedResultDraft = resultUtils.parseResultDraft();
+    const parsedResultNotesDraft = resultUtils.parseResultNotesDraft();
 
-    await buildRadarChart(parsedResultDraft);
-    _generateResultPDF(parsedResultDraft, parsedResultNotesDraft);
+    await chartsUtils.buildRadarChart(parsedResultDraft);
+    resultUtils.generateResultPDF(parsedResultDraft, parsedResultNotesDraft);
   } catch (error) {
     console.log(error);
   }
 };
 
-if (parseConfluencePageArg) {
-  parseConfluencePage();
-}
-
 if (validateQuestionsDBArg) {
   validateQuestionsDB();
 }
 
-if (findQuestionsArg) {
-  findQuestions();
+if (generateQuestionsArg) {
+  generateQuestions();
 }
 
 if (generateInterviewPDFArg) {
