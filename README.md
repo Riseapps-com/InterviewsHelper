@@ -10,7 +10,7 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 2. More comprehensive evaluation;
 3. Feedback standardization.
 
-## Prepare questions database:
+## :book: Prepare questions database:
 
 Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/ALXyNnsB) as html file and save it as **data/questionsDB.html** (path could be configured through **config/config.json** file).
 
