@@ -10,6 +10,10 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 2. More comprehensive evaluation;
 3. Feedback standardization.
 
+## Prepare questions database:
+
+Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/ALXyNnsB) as html file and save it as **data/questionsDB.html** (path could be configured through **config/config.json** file).
+
 ## :running: How to use it:
 
 1. Fill **config/input.json** file:
@@ -152,19 +156,29 @@ Example:
 
 ```json
 {
-  "role": "middle-",
+  "supposedLevel": "middle+",
   "includedTopics": [
-    "javascript",
-    "typescript",
+    "javaScript",
+    "react.basics",
     "react.redux",
+    "react.hooks",
+    "react.advanced",
     "reactNative",
-    "nativePlatforms",
+    "nativePlatforms.ios",
+    "nativePlatforms.android",
+    "dataStructuresAndAlgorithms",
     "communicationSkills",
     "testTasks"
   ],
-  "candidate": {
+  "interviewee": {
+    "firstname": "Ivan",
+    "lastname": "Ivanov",
+    "email": "i.ivanov@mail.com"
+  },
+  "interviewer": {
     "firstname": "Dmitry",
-    "lastname": "Usik"
+    "lastname": "Usik",
+    "email": "d.usik@riseapps.biz"
   }
 }
 ```
