@@ -2,7 +2,7 @@ import fs from 'fs';
 import parse from 'node-html-parser';
 
 import { topicsUtils } from '../shared';
-import { InterviewQuestions, Question, QuestionData, Role } from '../types';
+import { InterviewQuestions, Question, QuestionData, Level } from '../types';
 import { config, questionsDBTopics } from '../wrappers';
 
 const questionDataSeparator = ' [';
@@ -33,7 +33,7 @@ const parseDatabaseQuestion = (
     order: questionsLength + 1,
     key: `${topicsUtils.topicToKey(questionsDBTopics[topic])}${questionsLength + 1}`,
     estimatedTimeMin: Number.parseFloat(questionSplit[2].replace(questionExtraData, '')),
-    requiredFor: questionSplit[1].replace(questionExtraData, '') as Role,
+    requiredFor: questionSplit[1].replace(questionExtraData, '') as Level,
     question: questionSplit[0],
   };
 };

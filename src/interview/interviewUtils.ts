@@ -81,9 +81,9 @@ export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): vo
   pdfDocument
     .fontSize(config.pdfDocument.biggerFontSize)
     .font(config.pdfDocument.boldFont)
-    .text(`${input.candidate.firstname} ${input.candidate.lastname}`)
-    .text(input.candidate.email)
-    .text(`Supposed role: ${input.supposedRole}`)
+    .text(`${input.interviewee.firstname} ${input.interviewee.lastname}`)
+    .text(input.interviewee.email)
+    .text(`Supposed level: ${input.supposedLevel}`)
     .moveDown(4);
 
   pdfDocument

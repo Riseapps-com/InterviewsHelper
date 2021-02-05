@@ -1,10 +1,10 @@
-export type Role = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior';
+export type Level = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior';
 
 export type QuestionData = {
   order: number;
   key: string;
   estimatedTimeMin: number;
-  requiredFor: Role;
+  requiredFor: Level;
   question: string;
 };
 
@@ -43,10 +43,10 @@ export type Person = {
 };
 
 export type Input = {
-  supposedRole: Role;
+  supposedLevel: Level;
   includedTopics: string[];
-  candidate: Person;
-  technicalSpecialist: Person;
+  interviewee: Person;
+  interviewer: Person;
 };
 
 export type PieChart = {

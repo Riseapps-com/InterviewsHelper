@@ -2,8 +2,8 @@ import fs from 'fs';
 
 import { input } from '../wrappers';
 
-const firstName = input.candidate.firstname.toLowerCase();
-const lastName = input.candidate.lastname.toLowerCase();
+const firstName = input.interviewee.firstname.toLowerCase();
+const lastName = input.interviewee.lastname.toLowerCase();
 
 export const outputsDirectory = `outputs-${firstName}-${lastName}`;
 

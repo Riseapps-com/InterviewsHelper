@@ -67,16 +67,11 @@ export const generateResultPDF = (
   pdfDocument
     .fontSize(config.pdfDocument.baseFontSize)
     .font(config.pdfDocument.boldFont)
-    .text('Candidate')
+    .text('Interviewee')
     .font(config.pdfDocument.regularFont)
-    .text(`${input.candidate.firstname} ${input.candidate.lastname}`)
-    .text(input.candidate.email)
+    .text(`${input.interviewee.firstname} ${input.interviewee.lastname}`)
+    .text(input.interviewee.email)
     .font(config.pdfDocument.boldFont)
-    .moveDown(1)
-    .text('Technical specialist')
-    .font(config.pdfDocument.regularFont)
-    .text(`${input.technicalSpecialist.firstname} ${input.technicalSpecialist.lastname}`)
-    .text(input.technicalSpecialist.email)
     .moveDown(4);
 
   pdfDocument
@@ -114,7 +109,13 @@ export const generateResultPDF = (
     .text('Recommend')
     .fontSize(config.pdfDocument.baseFontSize)
     .font(config.pdfDocument.regularFont)
-    .text(resultNotesDraft[1]);
+    .text(resultNotesDraft[1])
+    .font(config.pdfDocument.boldFont)
+    .moveDown(1)
+    .text('Interviewer')
+    .font(config.pdfDocument.regularFont)
+    .text(`${input.interviewer.firstname} ${input.interviewer.lastname}`)
+    .text(input.interviewer.email);
 
   pdfDocument.pipe(fs.createWriteStream(fsUtils.wrapToOutputsDirectory(config.resultFilename)));
   pdfDocument.end();

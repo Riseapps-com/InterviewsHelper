@@ -12,23 +12,11 @@ const generateQuestionsArg = process.argv.includes('--generateQuestions');
 const generateInterviewPDFArg = process.argv.includes('--generateInterviewPDF');
 const generateResultPDFArg = process.argv.includes('--generateResultPDF');
 
-const parseQuestionsDB = () => {
-  let interviewQuestions: InterviewQuestions;
+const interviewQuestions: InterviewQuestions = htmlUtils.parseQuestionsDB();
 
-  try {
-    interviewQuestions = htmlUtils.parseQuestionsDB();
-  } catch (error) {
-    console.log(error);
-  }
-
-  return interviewQuestions;
-};
-
-const interviewQuestions: InterviewQuestions = parseQuestionsDB();
+fsUtils.createOutputsDirectory();
 
 const validateQuestionsDB = (): void => {
-  console.log(JSON.stringify(interviewQuestions));
-  fsUtils.createOutputsDirectory();
   if (!validationUtils.validateInterviewQuestions(interviewQuestions)) {
     console.log(`Questions are not valid. 
       See ${fsUtils.outputsDirectory}/${config.notValidQuestionsFilename} for more details.`);
@@ -37,7 +25,6 @@ const validateQuestionsDB = (): void => {
 
 const generateQuestions = async (): Promise<void> => {
   try {
-    fsUtils.createOutputsDirectory();
     if (validationUtils.validateInterviewQuestions(interviewQuestions)) {
       questionsUtils.generateQuestions(interviewQuestions);
       await chartsUtils.buildPieChart();

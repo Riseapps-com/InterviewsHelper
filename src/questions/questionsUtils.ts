@@ -21,10 +21,10 @@ const isSuitableForMiddlePlus = (requiredFor: string): boolean =>
 const isSuitableForSenior = (requiredFor: string): boolean =>
   isSuitableForMiddlePlus(requiredFor) || requiredFor === 'senior';
 
-const isQuestionSuitable = (role: string, requiredFor: string): boolean => {
+const isQuestionSuitable = (level: string, requiredFor: string): boolean => {
   let isSuitable = false;
 
-  switch (role) {
+  switch (level) {
     case 'junior':
       isSuitable = isSuitableForJunior(requiredFor);
       break;
@@ -81,7 +81,9 @@ export const generateQuestions = (interviewQuestions: InterviewQuestions): void 
     const globalTopic: string = topic.includes('.') ? topic.split('.')[0] : topic;
     const suitableQuestions: QuestionData[] = interviewQuestions[
       topic
-    ].data.filter((item: QuestionData) => isQuestionSuitable(input.supposedRole, item.requiredFor));
+    ].data.filter((item: QuestionData) =>
+      isQuestionSuitable(input.supposedLevel, item.requiredFor)
+    );
 
     if (suitableQuestions.length && questionsMap.get(interviewStructure.topics[globalTopic])) {
       const questions = questionsMap.get(interviewStructure.topics[globalTopic]);
