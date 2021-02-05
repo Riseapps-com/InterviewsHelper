@@ -141,7 +141,7 @@ Yes
 
 7. Run **generateResultPDF** script and **outputs/result.pdf** file will be generated.
 
-## :hammer: Scripts:
+## :hammer: Scripts
 
 | Script                 | Description                                                                                        |
 | :--------------------- | :------------------------------------------------------------------------------------------------- |
