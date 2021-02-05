@@ -1,20 +1,20 @@
 # ReactNativeInterviewsHelper
 
-## :information_source: Description:
+## :information_source: Description
 
 A bunch of scripts on node.js aimed at improving the interview process. Could be reused between different departments (only the questions database should be prepared).
 
-## :cat2::rat: It solves next problems:
+## :cat2::rat: It solves next problems
 
 1. Automation of many manual processes;
 2. More comprehensive evaluation;
 3. Feedback standardization.
 
-## :book: Prepare questions database:
+## :book: Prepare questions database
 
 Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/ALXyNnsB) as html file and save it as **data/questionsDB.html** (path could be configured through **config/config.json** file).
 
-## :running: How to use it:
+## :running: How to use it
 
 1. Fill **config/input.json** file:
 
@@ -150,7 +150,7 @@ Yes
 | _generateInterviewPDF_ | Generates a PDF document for the interview and .txt drafts for the result.                         |
 | _generateResultPDF_    | Generates a PDF document with the interview result.                                                |
 
-## :pencil: Input:
+## :pencil: Input
 
 Example:
 
@@ -189,7 +189,7 @@ Allowed values for the level:
 type Level = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior';
 ```
 
-## :pencil: Config:
+## :pencil: Config
 
 Example:
 
@@ -267,14 +267,14 @@ Example:
 }
 ```
 
-## :bar_chart: Output examples:
+## :bar_chart: Output examples
 
 |                     For interviewer:                     |                 Result:                  |
 | :------------------------------------------------------: | :--------------------------------------: |
 | [forInterviewer_example.pdf](forInterviewer_example.pdf) | [result_example.pdf](result_example.pdf) |
 |             ![](forInterviewer_preview.png)              |         ![](result_preview.png)          |
 
-## :ledger: TODO:
+## :ledger: TODO
 
 - [ ] Prepare ready questions sets.
 - [ ] Send files to email.
