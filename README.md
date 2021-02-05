@@ -16,16 +16,34 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 
 ```json
 {
-  "role": "middle-",
-  "includedTopics": ["javascript", "typescript"],
-  "candidate": {
+  "supposedLevel": "middle+",
+  "includedTopics": [
+    "javaScript",
+    "react.basics",
+    "react.redux",
+    "react.hooks",
+    "react.advanced",
+    "reactNative",
+    "nativePlatforms.ios",
+    "nativePlatforms.android",
+    "dataStructuresAndAlgorithms",
+    "communicationSkills",
+    "testTasks"
+  ],
+  "interviewee": {
+    "firstname": "Ivan",
+    "lastname": "Ivanov",
+    "email": "i.ivanov@mail.com"
+  },
+  "interviewer": {
     "firstname": "Dmitry",
-    "lastname": "Usik"
+    "lastname": "Usik",
+    "email": "d.usik@riseapps.biz"
   }
 }
 ```
 
-2. Run **findQuestions** script. The next file **output/questions.txt** will be generated:
+2. Run **generateQuestions** script. The next file **output/questions.txt** will be generated:
 
 ```txt
 @topic@JavaScript@topic@ ≈7 questions
@@ -34,7 +52,7 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j3@questionKey@)
 @topic@TypeScript@topic@ ≈4 questions
 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @questionKey@t1@questionKey@)
-2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
+2. What is tsconfig.json file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
 3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
 ```
 
@@ -47,7 +65,7 @@ A bunch of scripts on node.js aimed at improving the interview process. Could be
 + 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j3@questionKey@)
 @topic@TypeScript@topic@ ≈4 questions
 + 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @questionKey@t1@questionKey@)
-+ 2. What is “tsconfig.json” file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
++ 2. What is tsconfig.json file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
 3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
 ```
 
@@ -124,7 +142,7 @@ Yes
 | Script                 | Description                                                                                        |
 | :--------------------- | :------------------------------------------------------------------------------------------------- |
 | _validateQuestionsDB_  | Validates the questions database. Checks for the correct format for each question in the database. |
-| _findQuestions_        | Finds suitable questions based on the input params and puts them to the .txt file.                 |
+| _generateQuestions_    | Generates suitable questions based on the input params and puts them to the .txt file.             |
 | _generateInterviewPDF_ | Generates a PDF document for the interview and .txt drafts for the result.                         |
 | _generateResultPDF_    | Generates a PDF document with the interview result.                                                |
 
@@ -151,10 +169,10 @@ Example:
 }
 ```
 
-Allowed values for the role:
+Allowed values for the level:
 
 ```typescript
-type Role = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior';
+type Level = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior';
 ```
 
 ## :pencil: Config:
@@ -163,6 +181,7 @@ Example:
 
 ```json
 {
+  "questionsDatabasePath": "data/questionsDB.html",
   "notValidQuestionsFilename": "notValidQuestions.txt",
   "questionsFilename": "questions.txt",
   "pieChartFilename": "pieChart.png",
@@ -208,14 +227,22 @@ Example:
     "author": "Dmitry Usik",
     "verticalMargin": 64,
     "horizontalMargin": 48,
+    "riseappsLogoPath": "assets/images/riseappsLogo.png",
     "logoWidth": 80,
-    "logoMargin": 24
+    "logoMargin": 24,
+    "regularFont": "Times-Roman",
+    "foreignFontPath": "assets/fonts/NotoSans-Regular.ttf",
+    "regularForeignFont": "NotoSans-Regular",
+    "boldFont": "Times-Bold",
+    "smallerFontSize": 12,
+    "baseFontSize": 14,
+    "biggerFontSize": 16
   },
-  "maxMark": 5,
   "topicKey": "@topic@",
   "notesKey": "@notes@",
   "recommendKey": "@recommend@",
   "questionKey": "@questionKey@",
+  "maxMark": 5,
   "evaluation": {
     "1": "Doesn't have theoretical and practical skills in this area.",
     "2": "Has superficial theoretical or practical skills in this area.",
@@ -235,7 +262,5 @@ Example:
 
 ## :ledger: TODO:
 
-- [ ] Add a parser in order to process the questions from confuluence.
 - [ ] Prepare ready questions sets.
-- [ ] Ability to find most suitable questions.
 - [ ] Send files to email.
