@@ -2,16 +2,20 @@ import fs from 'fs';
 import fetch, { Response } from 'node-fetch';
 import QuickChart from 'quickchart-js';
 
+import { config, input } from '../../config';
+import { interviewStructure } from '../../data';
 import { TopicDuration } from '../types';
-import { config, input, interviewStructure } from '../wrappers';
 import { fsUtils } from './index';
 import * as marksUtils from './marksUtils';
 
-export const calculateInterviewDuration = (topicsDurations: TopicDuration[]): number =>
-  topicsDurations.reduce((prev, curr) => prev + curr.durationMin, 0);
+export const calculateInterviewDuration = (topicsDurations: TopicDuration[]) => {
+  const interviewDuration = topicsDurations.reduce((prev, curr) => prev + curr.durationMin, 0);
 
-export const getTopicsDurations = (topics: string[]): TopicDuration[] =>
-  topics.reduce((curr: TopicDuration[], prev) => {
+  return interviewDuration;
+};
+
+export const getTopicsDurations = (topics: string[]): TopicDuration[] => {
+  const topicsDuration = topics.reduce((curr: TopicDuration[], prev) => {
     let topicDuration: TopicDuration;
 
     if (prev.split('.').length > 1) {
@@ -26,6 +30,9 @@ export const getTopicsDurations = (topics: string[]): TopicDuration[] =>
     return curr.includes(topicDuration) ? [...curr] : [...curr, topicDuration];
   }, []);
 
+  return topicsDuration;
+};
+
 export const buildPieChart = async () => {
   console.log(`buildPieChart()`);
 
@@ -35,6 +42,7 @@ export const buildPieChart = async () => {
   const pieChart = new QuickChart();
 
   pieChart.setWidth(config.pieChart.width);
+
   pieChart.setConfig({
     type: 'doughnut',
     data: {
@@ -61,6 +69,8 @@ export const buildPieChart = async () => {
         },
       },
       plugins: {
+        // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+        // @ts-ignore
         datalabels: {
           display: true,
           font: {
@@ -96,12 +106,12 @@ export const buildPieChart = async () => {
   const response: Response = await fetch(pieChart.getUrl());
 
   fs.writeFileSync(
-    fsUtils.wrapToOutputsDirectory(config.pieChartFilename),
+    fsUtils.wrapToOutputDirectory(config.files.pieChartFilename),
     await response.buffer()
   );
 };
 
-export const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void> => {
+export const buildRadarChart = async (resultDraft: Map<string, number[]>) => {
   console.log(`buildRadarChart(${[...resultDraft.keys()]})`);
 
   const radarChart = new QuickChart();
@@ -123,6 +133,8 @@ export const buildRadarChart = async (resultDraft: Map<string, number[]>): Promi
       ],
     },
     options: {
+      // eslint-disable-next-line @typescript-eslint/ban-ts-comment
+      // @ts-ignore
       title: {
         display: false,
       },
@@ -163,7 +175,7 @@ export const buildRadarChart = async (resultDraft: Map<string, number[]>): Promi
   const response: Response = await fetch(radarChart.getUrl());
 
   fs.writeFileSync(
-    fsUtils.wrapToOutputsDirectory(config.radarChartFilename),
+    fsUtils.wrapToOutputDirectory(config.files.radarChartFilename),
     await response.buffer()
   );
 };

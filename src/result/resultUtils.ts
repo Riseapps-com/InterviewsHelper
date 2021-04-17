@@ -1,21 +1,21 @@
 import fs from 'fs';
 
-import { fsUtils, marksUtils, pdfUtils } from '../shared';
-import { config, input } from '../wrappers';
+import { config, input } from '../../config';
+import { fsUtils, pdfUtils } from '../shared';
 
-export const parseResultDraft = (): Map<string, number[]> => {
+export const parseResultDraft = () => {
   console.log(`parseResultDraft()`);
 
   const parsedResultDraft = new Map<string, number[]>();
   const rows: string[] = fs
-    .readFileSync(fsUtils.wrapToOutputsDirectory(config.resultDraftFilename), 'utf8')
+    .readFileSync(fsUtils.wrapToOutputDirectory(config.files.resultDraftFilename), 'utf8')
     .split('\n')
     .filter(row => row);
   let currentTopic: string;
 
   rows.forEach(row => {
-    if (row.includes(config.topicKey)) {
-      const [, currentTopicInner] = row.split(`${config.topicKey}`);
+    if (row.includes(config.parsers.topicKey)) {
+      const [, currentTopicInner] = row.split(`${config.parsers.topicKey}`);
 
       currentTopic = currentTopicInner;
     } else {
@@ -34,89 +34,101 @@ export const parseResultDraft = (): Map<string, number[]> => {
   return parsedResultDraft;
 };
 
-export const parseResultNotesDraft = (): [string, string] => {
+export const parseResultNotesDraft = () => {
   console.log(`parseResultNotesDraft()`);
 
   const resultNotesDraft = fs.readFileSync(
-    fsUtils.wrapToOutputsDirectory(config.resultNotesDraftFilename),
+    fsUtils.wrapToOutputDirectory(config.files.resultNotesDraftFilename),
     'utf8'
   );
-  const notes = resultNotesDraft.split(config.notesKey)[1].split('\n').join(' ').trim();
-  const recommend = resultNotesDraft.split(config.recommendKey)[1].replace('\n', '');
+  const feedback = resultNotesDraft
+    .split(config.parsers.feedbackKey)[1]
+    .split('\n')
+    .join(' ')
+    .trim();
+  const decision = resultNotesDraft.split(config.parsers.decisionKey)[1].replace('\n', '');
 
-  return [notes, recommend];
+  return [feedback, decision];
 };
 
-export const generateResultPDF = (
-  resultDraft: Map<string, number[]>,
-  resultNotesDraft: string[]
-): void => {
-  console.log(`generateResultPDF(${[...resultDraft.keys()]})`);
+const drawCandidateInfo = (pdf: PDFKit.PDFDocument) => {
+  const candidateName = `${input.candidate.firstname} ${input.candidate.lastname}`;
+  const candidateEmail = input.candidate.email || '-';
 
-  const normalizedMarks = marksUtils.normalizeMarks([...resultDraft.values()]);
+  pdf.moveDown(1);
+  pdfUtils.drawTitle(pdf, candidateName);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.emailIconPath, candidateEmail);
+};
+
+const drawRadarChart = (pdf: PDFKit.PDFDocument) => {
+  const radarChartMargin =
+    (pdf.page.width -
+      config.pdfDocument.horizontalMargin * 2 -
+      config.pdfDocument.radarChartWidth) /
+    2;
+
+  pdf
+    .moveDown(2)
+    .image(
+      fsUtils.wrapToOutputDirectory(config.files.radarChartFilename),
+      pdf.x + radarChartMargin,
+      pdf.y,
+      {
+        width: config.pdfDocument.radarChartWidth,
+        align: 'center',
+        valign: 'center',
+      }
+    );
+};
+
+const drawFeedback = (pdf: PDFKit.PDFDocument, feedback: string) => {
+  pdf.moveDown(2);
+  pdfUtils.drawTitle(pdf, 'Feedback');
+  pdf
+    .font(config.pdfDocument.regularFont)
+    .fontSize(config.pdfDocument.baseFontSize)
+    .fillColor(config.pdfDocument.blackColor)
+    .text(feedback);
+};
+
+const drawDecision = (pdf: PDFKit.PDFDocument, decision: string) => {
+  pdf.moveDown(1);
+  pdfUtils.drawTitle(pdf, 'Decision');
+  pdf
+    .font(config.pdfDocument.regularFont)
+    .fontSize(config.pdfDocument.baseFontSize)
+    .fillColor(config.pdfDocument.blackColor)
+    .text(decision);
+};
+
+const drawInterviewerInfo = (pdf: PDFKit.PDFDocument) => {
+  const interviewerName = `${input.interviewer.firstname} ${input.interviewer.lastname}`;
+  const interviewerEmail = input.interviewer.email || '-';
+  const interviewerLinkedin = input.interviewer.linkedin || '-';
+
+  pdf.moveDown(1);
+  pdfUtils.drawTitle(pdf, 'Interviewer');
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.userIconPath, interviewerName);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.emailIconPath, interviewerEmail);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.linkedinIconPath, interviewerLinkedin, true);
+};
+
+export const generateResultPDF = (resultNotesDraft: string[]): void => {
+  console.log(`generateResultPDF(${resultNotesDraft})`);
 
   const pdfDocument = pdfUtils.createPDFDocument();
 
-  pdfUtils.drawRiseappsLogo(pdfDocument);
+  pdfUtils.drawHeader(pdfDocument);
+  pdfUtils.drawStep(pdfDocument, 'Result');
+  drawCandidateInfo(pdfDocument);
+  drawRadarChart(pdfDocument);
+  drawFeedback(pdfDocument, resultNotesDraft[0]);
+  drawDecision(pdfDocument, resultNotesDraft[1]);
+  drawInterviewerInfo(pdfDocument);
+  pdfUtils.drawDate(pdfDocument);
 
-  pdfDocument.registerFont(
-    config.pdfDocument.regularForeignFont,
-    config.pdfDocument.foreignFontPath
+  pdfDocument.pipe(
+    fs.createWriteStream(fsUtils.wrapToOutputDirectory(config.files.resultFilename))
   );
-
-  pdfDocument
-    .fontSize(config.pdfDocument.baseFontSize)
-    .font(config.pdfDocument.boldFont)
-    .text('Interviewee')
-    .font(config.pdfDocument.regularFont)
-    .text(`${input.interviewee.firstname} ${input.interviewee.lastname}`)
-    .text(input.interviewee.email)
-    .font(config.pdfDocument.boldFont)
-    .moveDown(4);
-
-  pdfDocument
-    .image(fsUtils.wrapToOutputsDirectory(config.radarChartFilename), {
-      width: pdfDocument.page.width - config.pdfDocument.horizontalMargin * 2,
-      align: 'center',
-      valign: 'center',
-    })
-    .moveDown(4);
-
-  pdfDocument.fontSize(config.pdfDocument.baseFontSize).font('Times-Bold').text('Topics');
-  Array.of(...resultDraft.keys()).reduce(
-    (_, curr, index) =>
-      pdfDocument
-        .fontSize(config.pdfDocument.baseFontSize)
-        .font(config.pdfDocument.regularFont)
-        .text(`${curr}: ${normalizedMarks[index]} / 100`),
-    pdfDocument
-  );
-
-  pdfDocument.moveDown(1);
-
-  pdfDocument
-    .fontSize(config.pdfDocument.baseFontSize)
-    .font(config.pdfDocument.boldFont)
-    .text('Notes')
-    .fontSize(config.pdfDocument.smallerFontSize)
-    .font(config.pdfDocument.regularForeignFont)
-    .text(resultNotesDraft[0])
-    .moveDown(1);
-
-  pdfDocument
-    .fontSize(config.pdfDocument.baseFontSize)
-    .font(config.pdfDocument.boldFont)
-    .text('Recommend')
-    .fontSize(config.pdfDocument.baseFontSize)
-    .font(config.pdfDocument.regularFont)
-    .text(resultNotesDraft[1])
-    .font(config.pdfDocument.boldFont)
-    .moveDown(1)
-    .text('Interviewer')
-    .font(config.pdfDocument.regularFont)
-    .text(`${input.interviewer.firstname} ${input.interviewer.lastname}`)
-    .text(input.interviewer.email);
-
-  pdfDocument.pipe(fs.createWriteStream(fsUtils.wrapToOutputsDirectory(config.resultFilename)));
   pdfDocument.end();
 };
