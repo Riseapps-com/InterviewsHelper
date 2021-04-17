@@ -65,7 +65,7 @@ export const config: Config = {
     riseappsLogoPath: 'assets/images/riseappsLogo.png',
     logoWidth: 80,
     logoMargin: 48,
-    pieChartWidth: 400,
+    pieChartWidth: 360,
     radarChartWidth: 480,
     emailIconPath: 'assets/images/email.png',
     linkedinIconPath: 'assets/images/linkedin.png',
