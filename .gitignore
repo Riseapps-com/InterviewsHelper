@@ -1,5 +1,5 @@
 node_modules/**/*
 *outputs*/**/*
 /yarn-error.log
-config/input.json
+config/input.ts
 /data/questionsDB.html
