@@ -16,7 +16,7 @@ Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/
 
 ## :running: How to use it
 
-1. Fill `config/input.ts` file:
+1. Create and fill `config/input.ts` file:
 
 ```ts
 import { Input } from '../src/types';
