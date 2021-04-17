@@ -1,3 +1,4 @@
+import { config } from './config';
 import { htmlUtils } from './src/html';
 import { interviewUtils } from './src/interview';
 import { questionsUtils } from './src/questions';
@@ -5,7 +6,6 @@ import { resultUtils } from './src/result';
 import { chartsUtils, fsUtils } from './src/shared';
 import { InterviewQuestions } from './src/types';
 import { validationUtils } from './src/validation';
-import { config } from './src/wrappers';
 
 const validateQuestionsDBArg = process.argv.includes('--validateQuestionsDB');
 const generateQuestionsArg = process.argv.includes('--generateQuestions');
@@ -15,11 +15,12 @@ const generateResultPDFArg = process.argv.includes('--generateResultPDF');
 const interviewQuestions: InterviewQuestions = htmlUtils.parseQuestionsDB();
 
 fsUtils.createOutputsDirectory();
+fsUtils.createOutputDirectory();
 
 const validateQuestionsDB = (): void => {
   if (!validationUtils.validateInterviewQuestions(interviewQuestions)) {
     console.log(`Questions are not valid. 
-      See ${fsUtils.outputsDirectory}/${config.notValidQuestionsFilename} for more details.`);
+      See ${fsUtils.outputDirectory}/${config.files.notValidQuestionsFilename} for more details.`);
   }
 };
 
@@ -52,7 +53,7 @@ const generateResultPDF = async (): Promise<void> => {
     const parsedResultNotesDraft = resultUtils.parseResultNotesDraft();
 
     await chartsUtils.buildRadarChart(parsedResultDraft);
-    resultUtils.generateResultPDF(parsedResultDraft, parsedResultNotesDraft);
+    resultUtils.generateResultPDF(parsedResultNotesDraft);
   } catch (error) {
     console.log(error);
   }

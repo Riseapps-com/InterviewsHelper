@@ -13,9 +13,7 @@ module.exports = {
   plugins: ['prettier', '@typescript-eslint', 'jest', 'jest-formatting', 'simple-import-sort'],
   extends: [
     'airbnb-base',
-    'prettier',
     'plugin:prettier/recommended',
-    'prettier/@typescript-eslint',
     'plugin:@typescript-eslint/recommended',
     'plugin:jest/recommended',
     'plugin:jest-formatting/recommended',

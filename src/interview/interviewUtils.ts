@@ -1,28 +1,30 @@
 import fs from 'fs';
 
+import { config, input } from '../../config';
+import { interviewStructure } from '../../data';
 import { fsUtils, pdfUtils } from '../shared';
 import { InterviewQuestions, QuestionData } from '../types';
-import { config, input, interviewStructure } from '../wrappers';
 
-export const parseQuestions = (
-  interviewQuestions: InterviewQuestions
-): Map<string, QuestionData[]> => {
+export const parseQuestions = (interviewQuestions: InterviewQuestions) => {
   console.log(`parseQuestions()`);
 
   const parsedQuestions = new Map<string, QuestionData[]>();
   const rows: string[] = fs
-    .readFileSync(fsUtils.wrapToOutputsDirectory(config.questionsFilename), 'utf8')
+    .readFileSync(fsUtils.wrapToOutputDirectory(config.files.questionsFilename), 'utf8')
     .split('\n')
-    .filter(row => row.includes(config.topicKey) || row.startsWith(config.suitableQuestionMarker));
+    .filter(
+      row =>
+        row.includes(config.parsers.topicKey) || row.startsWith(config.files.suitableQuestionMarker)
+    );
   let currentTopic: string;
 
   rows.forEach(row => {
-    if (row.includes(config.topicKey)) {
-      const [, currentTopicInner] = row.split(`${config.topicKey}`);
+    if (row.includes(config.parsers.topicKey)) {
+      const [, currentTopicInner] = row.split(`${config.parsers.topicKey}`);
 
       currentTopic = currentTopicInner;
     } else {
-      const questionSplit: string[] = row.split(config.questionKey);
+      const questionSplit: string[] = row.split(config.parsers.questionKey);
       const questionKey: string = questionSplit[1];
       let interviewQuestion: QuestionData | undefined;
 
@@ -45,30 +47,110 @@ export const parseQuestions = (
   return parsedQuestions;
 };
 
-export const generateResultDraft = (questions: Map<string, QuestionData[]>): void => {
+export const generateResultDraft = (questions: Map<string, QuestionData[]>) => {
   console.log(`generateResultDraft(${[...questions.keys()]})`);
 
   const topics: string[] = [];
 
   Array.of(...questions.keys()).forEach(key => {
     topics.push(
-      `${config.topicKey}${key}${config.topicKey}\n${questions
+      `${config.parsers.topicKey}${key}${config.parsers.topicKey}\n${questions
         .get(key)
         ?.map((_, index) => `${index + 1})`)
         .join('\n')}`
     );
   });
 
-  fs.writeFileSync(fsUtils.wrapToOutputsDirectory(config.resultDraftFilename), topics.join('\n'));
+  fs.writeFileSync(
+    fsUtils.wrapToOutputDirectory(config.files.resultDraftFilename),
+    topics.join('\n')
+  );
 };
 
 export const generateResultNotesDraft = (): void => {
-  const { notesKey, recommendKey } = config;
+  const {
+    parsers: { feedbackKey, decisionKey },
+  } = config;
 
   fs.writeFileSync(
-    fsUtils.wrapToOutputsDirectory(config.resultNotesDraftFilename),
-    `${notesKey}\n-\n${notesKey}\n\n${recommendKey}\nYes / No\n${recommendKey}`
+    fsUtils.wrapToOutputDirectory(config.files.resultNotesDraftFilename),
+    // eslint-disable-next-line max-len
+    `${feedbackKey}\n-\n${feedbackKey}\n\n${decisionKey}\nRecommend / Don't recommend\n${decisionKey}`
   );
+};
+
+const drawCandidateInfo = (pdf: PDFKit.PDFDocument) => {
+  const candidateName = `${input.candidate.firstname} ${input.candidate.lastname}`;
+  const candidateEmail = input.candidate.email || '-';
+
+  pdf.moveDown(1);
+  pdfUtils.drawTitle(pdf, candidateName);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.userIconPath, input.candidate.supposedLevel);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.emailIconPath, candidateEmail);
+};
+
+const drawPieChart = (pdf: PDFKit.PDFDocument) => {
+  const pieChartMargin =
+    (pdf.page.width - config.pdfDocument.horizontalMargin * 2 - config.pdfDocument.pieChartWidth) /
+    2;
+
+  pdf.image(
+    fsUtils.wrapToOutputDirectory(config.files.pieChartFilename),
+    pdf.x + pieChartMargin,
+    pdf.y,
+    {
+      width: config.pdfDocument.pieChartWidth,
+      align: 'center',
+      valign: 'center',
+    }
+  );
+};
+
+const drawEvaluation = (pdf: PDFKit.PDFDocument) => {
+  pdf.moveDown(1);
+  pdfUtils.drawTitle(pdf, 'Evaluation');
+  pdf.fontSize(config.pdfDocument.baseFontSize).fillColor(config.pdfDocument.blackColor);
+  Object.keys(config.evaluation.scale).forEach(key =>
+    pdf
+      .font(config.pdfDocument.boldFont)
+      .text(`${key} - `, { continued: true })
+      .font(config.pdfDocument.regularFont)
+      .text(config.evaluation.scale[key])
+  );
+};
+
+const drawQuestions = (pdf: PDFKit.PDFDocument, questions: Map<string, QuestionData[]>) => {
+  pdf.moveDown(1);
+  pdfUtils.drawTitle(pdf, 'Questions');
+  drawPieChart(pdf);
+
+  Array.of(...questions.keys()).forEach(question => {
+    const topic = `${question} (${
+      Object.values(interviewStructure.topics).find(topic => topic.label === question)?.durationMin
+    } min)`;
+
+    pdf.moveDown(1);
+    pdfUtils.drawSubtitle(pdf, topic);
+
+    const questionData = questions.get(question);
+
+    if (questionData) {
+      questionData.forEach((data, index) => {
+        pdf
+          .font(config.pdfDocument.regularFont)
+          .fontSize(config.pdfDocument.baseFontSize)
+          .fillColor(config.pdfDocument.blackColor)
+          .text(`${index + 1}) ${data.question}`, {
+            align: 'justify',
+            continued: true,
+          })
+          .text('      ', { continued: true })
+          .font(config.pdfDocument.boldFont)
+          .text(`Mark: `, { continued: true })
+          .text(`    / ${config.evaluation.maxMark}`, { underline: true });
+      });
+    }
+  });
 };
 
 export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => {
@@ -76,84 +158,15 @@ export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): vo
 
   const pdfDocument = pdfUtils.createPDFDocument();
 
-  pdfUtils.drawRiseappsLogo(pdfDocument);
-
-  pdfDocument
-    .fontSize(config.pdfDocument.biggerFontSize)
-    .font(config.pdfDocument.boldFont)
-    .text(`${input.interviewee.firstname} ${input.interviewee.lastname}`)
-    .text(input.interviewee.email)
-    .text(`Supposed level: ${input.supposedLevel}`)
-    .moveDown(4);
-
-  pdfDocument
-    .image(fsUtils.wrapToOutputsDirectory(config.pieChartFilename), {
-      width: pdfDocument.page.width - config.pdfDocument.horizontalMargin * 2,
-      align: 'center',
-      valign: 'center',
-    })
-    .moveDown(4);
-
-  pdfDocument
-    .fontSize(config.pdfDocument.baseFontSize)
-    .font(config.pdfDocument.boldFont)
-    .text('Evaluation');
-
-  Object.keys(config.evaluation).forEach(key =>
-    pdfDocument
-      .fontSize(config.pdfDocument.baseFontSize)
-      .font(config.pdfDocument.boldFont)
-      .text(`${key} - `, { continued: true })
-      .font(config.pdfDocument.regularFont)
-      .text(config.evaluation[key])
-  );
-
-  pdfDocument.moveDown(1);
-
-  pdfDocument
-    .fontSize(config.pdfDocument.baseFontSize)
-    .font(config.pdfDocument.boldFont)
-    .text('Questions')
-    .moveDown(1);
-
-  Array.of(...questions.keys()).reduce((prev, curr) => {
-    prev
-      .fontSize(config.pdfDocument.baseFontSize)
-      .font(config.pdfDocument.boldFont)
-      .text(
-        `${curr} (${
-          Object.values(interviewStructure.topics).find(topic => topic.label === curr)?.durationMin
-        } min)`
-      );
-
-    const questionDate = questions.get(curr);
-
-    if (questionDate) {
-      return questionDate
-        .reduce(
-          (innerCurr, innerPrev, index) =>
-            innerCurr
-              .fontSize(config.pdfDocument.baseFontSize)
-              .font(config.pdfDocument.regularFont)
-              .text(`${index + 1}) ${innerPrev.question}`, {
-                align: 'justify',
-                continued: true,
-              })
-              .text('      ', { continued: true })
-              .font(config.pdfDocument.boldFont)
-              .text(`Mark: `, { continued: true })
-              .font(config.pdfDocument.boldFont)
-              .text(`    / ${config.maxMark}`, { underline: true }),
-          prev
-        )
-        .moveDown(1);
-    }
-
-    return pdfDocument;
-  }, pdfDocument);
+  pdfUtils.drawHeader(pdfDocument);
+  pdfUtils.drawStep(pdfDocument, 'Interview');
+  drawCandidateInfo(pdfDocument);
+  drawEvaluation(pdfDocument);
+  drawQuestions(pdfDocument, questions);
+  pdfUtils.drawDate(pdfDocument);
 
   pdfDocument.pipe(
-    fs.createWriteStream(fsUtils.wrapToOutputsDirectory(config.forInterviewerFilename))
+    fs.createWriteStream(fsUtils.wrapToOutputDirectory(config.files.forInterviewerFilename))
   );
   pdfDocument.end();
 };

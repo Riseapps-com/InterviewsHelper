@@ -1,20 +1,21 @@
 import fs from 'fs';
 import parse from 'node-html-parser';
 
+import { config } from '../../config';
+import { questionsDBTopicsMap } from '../../data';
 import { topicsUtils } from '../shared';
-import { InterviewQuestions, Level, Question, QuestionData } from '../types';
-import { config, questionsDBTopics } from '../wrappers';
+import { InterviewQuestions, Level, Question } from '../types';
 
 const questionDataSeparator = ' [';
 const questionExtraData = ']';
 const logicalAnd = '&amp;&amp;';
 const mainContentKey = '#main-content';
 
-const replaceLogicalAnd = (question: string): string =>
+const replaceLogicalAnd = (question: string) =>
   question.includes(logicalAnd) ? question.replace(logicalAnd, '&&') : question;
 
-const getDBTopicsIndexes = (content: string[]): number[] =>
-  Object.keys(questionsDBTopics).map(topic => {
+const getDBTopicsIndexes = (content: string[]) =>
+  Object.keys(questionsDBTopicsMap).map(topic => {
     let lastIndexOf = -1;
 
     content.forEach((contentRaw, index) => {
@@ -26,24 +27,20 @@ const getDBTopicsIndexes = (content: string[]): number[] =>
     return lastIndexOf;
   });
 
-const parseDatabaseQuestion = (
-  question: string,
-  questionsLength: number,
-  topic: string
-): QuestionData => {
+const parseDatabaseQuestion = (question: string, questionsLength: number, topic: string) => {
   const questionSplit = question.split(questionDataSeparator);
 
   return {
     order: questionsLength + 1,
-    key: `${topicsUtils.topicToKey(questionsDBTopics[topic])}${questionsLength + 1}`,
+    key: `${topicsUtils.topicToKey(questionsDBTopicsMap[topic])}${questionsLength + 1}`,
     estimatedTimeMin: Number.parseFloat(questionSplit[2].replace(questionExtraData, '')),
     requiredFor: questionSplit[1].replace(questionExtraData, '') as Level,
     question: replaceLogicalAnd(questionSplit[0]),
   };
 };
 
-export const parseQuestionsDB = (): InterviewQuestions => {
-  const html = fs.readFileSync(config.questionsDatabasePath, 'utf8');
+export const parseQuestionsDB = () => {
+  const html = fs.readFileSync(config.files.questionsDatabasePath, 'utf8');
 
   const parsedHtml = parse(html);
   const mainContent = parsedHtml.querySelector(mainContentKey);
@@ -53,7 +50,7 @@ export const parseQuestionsDB = (): InterviewQuestions => {
   const interviewQuestions: InterviewQuestions = {};
 
   dbTopicsIndexes.forEach((dbTopicIndex, index) => {
-    const topic = Object.keys(questionsDBTopics).find(dbTopic =>
+    const topic = Object.keys(questionsDBTopicsMap).find(dbTopic =>
       mainContentSplit[dbTopicIndex].includes(dbTopic)
     );
     const question: Question = {
@@ -74,7 +71,7 @@ export const parseQuestionsDB = (): InterviewQuestions => {
       }
     }
 
-    interviewQuestions[questionsDBTopics[topic]] = question;
+    interviewQuestions[questionsDBTopicsMap[topic]] = question;
   });
 
   return interviewQuestions;

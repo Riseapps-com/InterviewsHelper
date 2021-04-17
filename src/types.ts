@@ -1,3 +1,5 @@
+import ColorValue = PDFKit.Mixins.ColorValue;
+
 export type Level = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 'senior';
 
 export type QuestionData = {
@@ -36,17 +38,24 @@ export type InterviewStructure = {
   optionalSections: string[];
 };
 
-export type Person = {
+export type Candidate = {
   firstname: string;
   lastname: string;
   email: string;
+  supposedLevel: Level;
+};
+
+export type Interviewer = {
+  firstname: string;
+  lastname: string;
+  email: string;
+  linkedin: string;
 };
 
 export type Input = {
-  supposedLevel: Level;
   includedTopics: string[];
-  interviewee: Person;
-  interviewer: Person;
+  candidate: Candidate;
+  interviewer: Interviewer;
 };
 
 export type PieChart = {
@@ -76,44 +85,66 @@ export type PdfDocument = {
   author: string;
   verticalMargin: number;
   horizontalMargin: number;
-  riseappsLogoPath: string;
-  logoWidth: number;
-  logoMargin: number;
   regularFont: string;
-  foreignFontPath: string;
-  regularForeignFont: string;
+  regularFontPath: string;
   boldFont: string;
+  boldFontPath: string;
   smallerFontSize: number;
   baseFontSize: number;
   biggerFontSize: number;
+  biggestFontSize: number;
+  brandColor: ColorValue;
+  blackColor: ColorValue;
+  riseappsLogoPath: string;
+  logoWidth: number;
+  logoMargin: number;
+  pieChartWidth: number;
+  radarChartWidth: number;
+  emailIconPath: string;
+  linkedinIconPath: string;
+  userIconPath: string;
+  iconWidth: number;
+  lineMargin: number;
 };
 
-export type Evaluation = {
-  [key: string]: string;
-};
-
-export type Config = {
+export type Files = {
   questionsDatabasePath: string;
   notValidQuestionsFilename: string;
   questionsFilename: string;
-  pieChartFilename: string;
   radarChartFilename: string;
   forInterviewerFilename: string;
   resultDraftFilename: string;
   resultNotesDraftFilename: string;
+  pieChartFilename: string;
   resultFilename: string;
   suitableQuestionMarker: string;
+};
+
+export type Parsers = {
+  topicKey: string;
+  questionKey: string;
+  feedbackKey: string;
+  decisionKey: string;
+};
+
+export type Scale = {
+  [key: string]: string;
+};
+
+export type Evaluation = {
+  maxMark: number;
+  scale: Scale;
+};
+
+export type Config = {
+  files: Files;
   pieChart: PieChart;
   radarChart: RadarChart;
   pdfDocument: PdfDocument;
-  topicKey: string;
-  notesKey: string;
-  recommendKey: string;
-  questionKey: string;
-  maxMark: number;
+  parsers: Parsers;
   evaluation: Evaluation;
 };
 
-export type QuestionsDBTopics = {
+export type QuestionsDBTopicsMap = {
   [key: string]: string;
 };

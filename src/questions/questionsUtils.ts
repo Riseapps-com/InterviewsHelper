@@ -1,27 +1,47 @@
 import fs from 'fs';
 
+import { config, input } from '../../config';
+import { interviewStructure } from '../../data';
 import { fsUtils } from '../shared';
 import { InterviewQuestions, QuestionData, TopicDuration } from '../types';
-import { config, input, interviewStructure } from '../wrappers';
 
-const isSuitableForJunior = (requiredFor: string): boolean => requiredFor === 'junior';
+const isSuitableForJunior = (requiredFor: string) => {
+  const isSuitable = requiredFor === 'junior';
 
-const isSuitableForJuniorPlus = (requiredFor: string): boolean =>
-  isSuitableForJunior(requiredFor) || requiredFor === 'junior+';
+  return isSuitable;
+};
 
-const isSuitableForMiddleMinus = (requiredFor: string): boolean =>
-  isSuitableForJuniorPlus(requiredFor) || requiredFor === 'middle-';
+const isSuitableForJuniorPlus = (requiredFor: string) => {
+  const isSuitable = isSuitableForJunior(requiredFor) || requiredFor === 'junior+';
 
-const isSuitableForMiddle = (requiredFor: string): boolean =>
-  isSuitableForMiddleMinus(requiredFor) || requiredFor === 'middle';
+  return isSuitable;
+};
 
-const isSuitableForMiddlePlus = (requiredFor: string): boolean =>
-  isSuitableForMiddle(requiredFor) || requiredFor === 'middle+';
+const isSuitableForMiddleMinus = (requiredFor: string) => {
+  const isSuitable = isSuitableForJuniorPlus(requiredFor) || requiredFor === 'middle-';
 
-const isSuitableForSenior = (requiredFor: string): boolean =>
-  isSuitableForMiddlePlus(requiredFor) || requiredFor === 'senior';
+  return isSuitable;
+};
 
-const isQuestionSuitable = (level: string, requiredFor: string): boolean => {
+const isSuitableForMiddle = (requiredFor: string) => {
+  const isSuitable = isSuitableForMiddleMinus(requiredFor) || requiredFor === 'middle';
+
+  return isSuitable;
+};
+
+const isSuitableForMiddlePlus = (requiredFor: string) => {
+  const isSuitable = isSuitableForMiddle(requiredFor) || requiredFor === 'middle+';
+
+  return isSuitable;
+};
+
+const isSuitableForSenior = (requiredFor: string) => {
+  const isSuitable = isSuitableForMiddlePlus(requiredFor) || requiredFor === 'senior';
+
+  return isSuitable;
+};
+
+const isQuestionSuitable = (level: string, requiredFor: string) => {
   let isSuitable = false;
 
   switch (level) {
@@ -49,7 +69,7 @@ const isQuestionSuitable = (level: string, requiredFor: string): boolean => {
   return isSuitable;
 };
 
-const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): string => {
+const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>) => {
   const topics: string[] = [];
 
   questionsMap.forEach((value, key) => {
@@ -57,13 +77,13 @@ const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): stri
       (question, index) =>
         `${index + 1}. ${question.question} (timeForAnswer: ${
           question.estimatedTimeMin
-        } min) (requiredFor: ${question.requiredFor}) (key: ${config.questionKey}${question.key}${
-          config.questionKey
-        })`
+        } min) (requiredFor: ${question.requiredFor}) (key: ${config.parsers.questionKey}${
+          question.key
+        }${config.parsers.questionKey})`
     );
 
     topics.push(
-      `${config.topicKey}${key.label}${config.topicKey} ≈${
+      `${config.parsers.topicKey}${key.label}${config.parsers.topicKey} ≈${
         key.questionsNumber
       } questions\n${questions.join('\n')}`
     );
@@ -72,7 +92,7 @@ const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): stri
   return topics.join('\n');
 };
 
-export const generateQuestions = (interviewQuestions: InterviewQuestions): void => {
+export const generateQuestions = (interviewQuestions: InterviewQuestions) => {
   console.log(`generateQuestions()`);
 
   const questionsMap = new Map<TopicDuration, QuestionData[]>();
@@ -82,7 +102,7 @@ export const generateQuestions = (interviewQuestions: InterviewQuestions): void 
     const suitableQuestions: QuestionData[] = interviewQuestions[
       topic
     ].data.filter((item: QuestionData) =>
-      isQuestionSuitable(input.supposedLevel, item.requiredFor)
+      isQuestionSuitable(input.candidate.supposedLevel, item.requiredFor)
     );
 
     if (suitableQuestions.length && questionsMap.get(interviewStructure.topics[globalTopic])) {
@@ -100,7 +120,7 @@ export const generateQuestions = (interviewQuestions: InterviewQuestions): void 
   });
 
   fs.writeFileSync(
-    fsUtils.wrapToOutputsDirectory(config.questionsFilename),
+    fsUtils.wrapToOutputDirectory(config.files.questionsFilename),
     formatQuestions(questionsMap)
   );
 };
