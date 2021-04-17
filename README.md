@@ -12,11 +12,11 @@ A bunch of scripts on `node.js` aimed at improving the interview process. Could 
 
 ## :book: Prepare questions database
 
-Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/ALXyNnsB) as html file and save it as `data/questionsDB.html` (path could be configured through `config/config.json` file).
+Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/ALXyNnsB) as html file and save it as `data/questionsDB.html` (path could be configured through `config/config.ts` file).
 
 ## :running: How to use it
 
-1. Fill **config/input.json** file:
+1. Fill `config/input.ts` file:
 
 ```ts
 import { Input } from '../src/types';
@@ -64,7 +64,7 @@ export const input: Input = {
 };
 ```
 
-2. Run `generateQuestions` script. The next file `output/questions.txt` will be generated:
+2. Run `generateQuestions` script. The next file `outputs/questions.txt` will be generated:
 
 ```txt
 @topic@JavaScript@topic@ ≈7 questions
@@ -77,7 +77,7 @@ export const input: Input = {
 3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
 ```
 
-3. Mark suitable questions with `"+ "` at the beginning (marker could be configured through `config/config.json` file):
+3. Mark suitable questions with `"+ "` at the beginning (marker could be configured through `config/config.ts` file):
 
 ```txt
 @topic@JavaScript@topic@ ≈7 questions
