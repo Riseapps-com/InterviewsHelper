@@ -3,7 +3,7 @@ import fs from 'fs';
 import { config, input } from '../../config';
 import { fsUtils, pdfUtils } from '../shared';
 
-export const parseResultDraft = () => {
+export const parseResultDraft = (): Map<string, number[]> => {
   console.log(`parseResultDraft()`);
 
   const parsedResultDraft = new Map<string, number[]>();
@@ -34,24 +34,20 @@ export const parseResultDraft = () => {
   return parsedResultDraft;
 };
 
-export const parseResultNotesDraft = () => {
+export const parseResultNotesDraft = (): string[] => {
   console.log(`parseResultNotesDraft()`);
 
   const resultNotesDraft = fs.readFileSync(
     fsUtils.wrapToOutputDirectory(config.files.resultNotesDraftFilename),
     'utf8'
   );
-  const feedback = resultNotesDraft
-    .split(config.parsers.feedbackKey)[1]
-    .split('\n')
-    .join(' ')
-    .trim();
+  const feedback = resultNotesDraft.split(config.parsers.feedbackKey)[1].split('\n').join(' ').trim();
   const decision = resultNotesDraft.split(config.parsers.decisionKey)[1].replace('\n', '');
 
   return [feedback, decision];
 };
 
-const drawCandidateInfo = (pdf: PDFKit.PDFDocument) => {
+const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
   const candidateName = `${input.candidate.firstname} ${input.candidate.lastname}`;
   const candidateEmail = input.candidate.email || '-';
 
@@ -60,28 +56,20 @@ const drawCandidateInfo = (pdf: PDFKit.PDFDocument) => {
   pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.emailIconPath, candidateEmail);
 };
 
-const drawRadarChart = (pdf: PDFKit.PDFDocument) => {
+const drawRadarChart = (pdf: PDFKit.PDFDocument): void => {
   const radarChartMargin =
-    (pdf.page.width -
-      config.pdfDocument.horizontalMargin * 2 -
-      config.pdfDocument.radarChartWidth) /
-    2;
+    (pdf.page.width - config.pdfDocument.horizontalMargin * 2 - config.pdfDocument.radarChartWidth) / 2;
 
   pdf
     .moveDown(2)
-    .image(
-      fsUtils.wrapToOutputDirectory(config.files.radarChartFilename),
-      pdf.x + radarChartMargin,
-      pdf.y,
-      {
-        width: config.pdfDocument.radarChartWidth,
-        align: 'center',
-        valign: 'center',
-      }
-    );
+    .image(fsUtils.wrapToOutputDirectory(config.files.radarChartFilename), pdf.x + radarChartMargin, pdf.y, {
+      width: config.pdfDocument.radarChartWidth,
+      align: 'center',
+      valign: 'center',
+    });
 };
 
-const drawFeedback = (pdf: PDFKit.PDFDocument, feedback: string) => {
+const drawFeedback = (pdf: PDFKit.PDFDocument, feedback: string): void => {
   pdf.moveDown(2);
   pdfUtils.drawTitle(pdf, 'Feedback');
   pdf
@@ -91,7 +79,7 @@ const drawFeedback = (pdf: PDFKit.PDFDocument, feedback: string) => {
     .text(feedback);
 };
 
-const drawDecision = (pdf: PDFKit.PDFDocument, decision: string) => {
+const drawDecision = (pdf: PDFKit.PDFDocument, decision: string): void => {
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, 'Decision');
   pdf
@@ -101,7 +89,7 @@ const drawDecision = (pdf: PDFKit.PDFDocument, decision: string) => {
     .text(decision);
 };
 
-const drawInterviewerInfo = (pdf: PDFKit.PDFDocument) => {
+const drawInterviewerInfo = (pdf: PDFKit.PDFDocument): void => {
   const interviewerName = `${input.interviewer.firstname} ${input.interviewer.lastname}`;
   const interviewerEmail = input.interviewer.email || '-';
   const interviewerLinkedin = input.interviewer.linkedin || '-';
@@ -127,8 +115,6 @@ export const generateResultPDF = (resultNotesDraft: string[]): void => {
   drawInterviewerInfo(pdfDocument);
   pdfUtils.drawDate(pdfDocument);
 
-  pdfDocument.pipe(
-    fs.createWriteStream(fsUtils.wrapToOutputDirectory(config.files.resultFilename))
-  );
+  pdfDocument.pipe(fs.createWriteStream(fsUtils.wrapToOutputDirectory(config.files.resultFilename)));
   pdfDocument.end();
 };

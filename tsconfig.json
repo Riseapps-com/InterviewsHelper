@@ -16,6 +16,7 @@
     "noUnusedParameters": true,
     "removeComments": true,
     "skipLibCheck": true,
+    "strict": true,
     "target": "ES2016",
     "resolveJsonModule": true,
     "sourceMap": true,

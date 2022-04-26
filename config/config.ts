@@ -1,4 +1,6 @@
-import { Config } from '../src/types';
+/* eslint-disable @typescript-eslint/naming-convention */
+
+import type { Config } from '../src/types';
 
 export const config: Config = {
   files: {

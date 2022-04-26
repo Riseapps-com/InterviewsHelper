@@ -4,17 +4,18 @@ import parse from 'node-html-parser';
 import { config } from '../../config';
 import { questionsDBTopicsMap } from '../../data';
 import { topicsUtils } from '../shared';
-import { InterviewQuestions, Level, Question } from '../types';
+
+import type { InterviewQuestions, Level, Question, QuestionData } from '../types';
 
 const questionDataSeparator = ' [';
 const questionExtraData = ']';
 const logicalAnd = '&amp;&amp;';
 const mainContentKey = '#main-content';
 
-const replaceLogicalAnd = (question: string) =>
+const replaceLogicalAnd = (question: string): string =>
   question.includes(logicalAnd) ? question.replace(logicalAnd, '&&') : question;
 
-const getDBTopicsIndexes = (content: string[]) =>
+const getDBTopicsIndexes = (content: string[]): number[] =>
   Object.keys(questionsDBTopicsMap).map(topic => {
     let lastIndexOf = -1;
 
@@ -27,7 +28,7 @@ const getDBTopicsIndexes = (content: string[]) =>
     return lastIndexOf;
   });
 
-const parseDatabaseQuestion = (question: string, questionsLength: number, topic: string) => {
+const parseDatabaseQuestion = (question: string, questionsLength: number, topic: string): QuestionData => {
   const questionSplit = question.split(questionDataSeparator);
 
   return {
@@ -39,39 +40,34 @@ const parseDatabaseQuestion = (question: string, questionsLength: number, topic:
   };
 };
 
-export const parseQuestionsDB = () => {
+export const parseQuestionsDB = (): InterviewQuestions => {
   const html = fs.readFileSync(config.files.questionsDatabasePath, 'utf8');
 
   const parsedHtml = parse(html);
   const mainContent = parsedHtml.querySelector(mainContentKey);
-  const mainContentSplit = mainContent.structuredText.split('\n');
+  const mainContentSplit = mainContent?.structuredText.split('\n') || [];
   const dbTopicsIndexes = getDBTopicsIndexes(mainContentSplit);
+  const wordsToIgnore = ['Links', 'http', 'REACT', 'NATIVE PLATFORMS', 'TESTING'];
 
   const interviewQuestions: InterviewQuestions = {};
 
   dbTopicsIndexes.forEach((dbTopicIndex, index) => {
-    const topic = Object.keys(questionsDBTopicsMap).find(dbTopic =>
-      mainContentSplit[dbTopicIndex].includes(dbTopic)
-    );
-    const question: Question = {
-      data: [],
-    };
+    const topic = Object.keys(questionsDBTopicsMap).find(dbTopic => mainContentSplit[dbTopicIndex].includes(dbTopic));
+    const question: Question = { data: [] };
 
     const lastDBTopicsItemIndex = dbTopicsIndexes.length - 1;
-    const currentDBTopicsIndex = dbTopicsIndexes.findIndex(
-      possibleIndex => possibleIndex === dbTopicIndex
-    );
+    const currentDBTopicsIndex = dbTopicsIndexes.findIndex(possibleIndex => possibleIndex === dbTopicIndex);
     const nextDBTopicsIndex = dbTopicsIndexes[currentDBTopicsIndex + 1];
     const lastContentItemIndex = mainContentSplit.length - 1;
     const until = index === lastDBTopicsItemIndex ? lastContentItemIndex : nextDBTopicsIndex;
 
     for (let i = dbTopicIndex + 1; i < until; i++) {
-      if (mainContentSplit[i] !== 'Links' && !mainContentSplit[i].includes('http')) {
+      if (wordsToIgnore.every(item => !mainContentSplit[i].includes(item)) && topic) {
         question.data.push(parseDatabaseQuestion(mainContentSplit[i], question.data.length, topic));
       }
     }
 
-    interviewQuestions[questionsDBTopicsMap[topic]] = question;
+    if (topic) interviewQuestions[questionsDBTopicsMap[topic]] = question;
   });
 
   return interviewQuestions;

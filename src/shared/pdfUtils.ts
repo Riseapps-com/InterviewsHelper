@@ -1,10 +1,10 @@
-import moment from 'moment-timezone';
+import dayjs from 'dayjs';
 import PDFDocument from 'pdfkit';
 
 import { config } from '../../config';
 import { RISEAPPS_ADDRESS, RISEAPPS_EMAIL, RISEAPPS_PHONE } from '../config';
 
-export const createPDFDocument = () => {
+export const createPDFDocument = (): PDFKit.PDFDocument => {
   const pdfDocument = new PDFDocument({
     margins: {
       top: config.pdfDocument.verticalMargin,
@@ -25,7 +25,7 @@ export const createPDFDocument = () => {
   return pdfDocument;
 };
 
-export const drawHeader = (pdf: PDFKit.PDFDocument) => {
+export const drawHeader = (pdf: PDFKit.PDFDocument): void => {
   pdf
     .image(
       config.pdfDocument.riseappsLogoPath,
@@ -42,26 +42,23 @@ export const drawHeader = (pdf: PDFKit.PDFDocument) => {
     .text(RISEAPPS_EMAIL, { align: 'right' });
 };
 
-const drawText = (pdf: PDFKit.PDFDocument, text: string, fontSize: number) => {
+const drawText = (pdf: PDFKit.PDFDocument, text: string, fontSize: number): void => {
   pdf
     .font(config.pdfDocument.boldFont)
     .fontSize(fontSize)
     .fillColor(config.pdfDocument.brandColor)
     .text(text)
     .moveTo(pdf.x, pdf.y + config.pdfDocument.lineMargin)
-    .lineTo(
-      pdf.page.width - config.pdfDocument.horizontalMargin,
-      pdf.y + config.pdfDocument.lineMargin
-    )
+    .lineTo(pdf.page.width - config.pdfDocument.horizontalMargin, pdf.y + config.pdfDocument.lineMargin)
     .stroke(config.pdfDocument.brandColor)
     .moveDown(1);
 };
 
-export const drawTitle = (pdf: PDFKit.PDFDocument, title: string) => {
+export const drawTitle = (pdf: PDFKit.PDFDocument, title: string): void => {
   drawText(pdf, title, config.pdfDocument.biggerFontSize);
 };
 
-export const drawSubtitle = (pdf: PDFKit.PDFDocument, subtitle: string) => {
+export const drawSubtitle = (pdf: PDFKit.PDFDocument, subtitle: string): void => {
   drawText(pdf, subtitle, config.pdfDocument.baseFontSize);
 };
 
@@ -70,7 +67,7 @@ export const drawTextWithIcon = (
   icon: string,
   text: string,
   isLink?: boolean
-) => {
+): void => {
   pdfDocument
     .font(config.pdfDocument.boldFont)
     .fontSize(config.pdfDocument.baseFontSize)
@@ -93,7 +90,7 @@ export const drawTextWithIcon = (
   pdfDocument.y = yBackup;
 };
 
-export const drawStep = (pdfDocument: PDFKit.PDFDocument, step: string) => {
+export const drawStep = (pdfDocument: PDFKit.PDFDocument, step: string): void => {
   pdfDocument
     .moveDown(1)
     .font(config.pdfDocument.boldFont)
@@ -102,13 +99,13 @@ export const drawStep = (pdfDocument: PDFKit.PDFDocument, step: string) => {
     .text(step, { align: 'center' });
 };
 
-export const drawDate = (pdfDocument: PDFKit.PDFDocument) => {
-  const format = 'DD.MM.yyyy';
+export const drawDate = (pdfDocument: PDFKit.PDFDocument): void => {
+  const format = 'DD.MM.YYYY';
 
   pdfDocument
     .moveDown(1)
     .font(config.pdfDocument.boldFont)
     .fontSize(config.pdfDocument.baseFontSize)
     .fillColor(config.pdfDocument.blackColor)
-    .text(moment().format(format), { align: 'right', underline: true });
+    .text(dayjs().format(format), { align: 'right', underline: true });
 };

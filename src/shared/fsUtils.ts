@@ -8,7 +8,7 @@ const lastName = input.candidate.lastname.toLowerCase();
 export const outputsDirectory = 'outputs';
 export const outputDirectory = `${outputsDirectory}/output-${firstName}-${lastName}`;
 
-export const createOutputsDirectory = () => {
+export const createOutputsDirectory = (): void => {
   console.log('createOutputsDirectory()');
 
   if (!fs.existsSync(outputsDirectory)) {
@@ -16,7 +16,7 @@ export const createOutputsDirectory = () => {
   }
 };
 
-export const createOutputDirectory = () => {
+export const createOutputDirectory = (): void => {
   console.log('createOutputDirectory()');
 
   if (!fs.existsSync(outputDirectory)) {
@@ -24,8 +24,6 @@ export const createOutputDirectory = () => {
   }
 };
 
-export const wrapToOutputDirectory = (filename: string) => {
-  const wrapped = `${outputDirectory}/${filename}`;
-
-  return wrapped;
+export const wrapToOutputDirectory = (filename: string): string => {
+  return `${outputDirectory}/${filename}`;
 };

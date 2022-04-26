@@ -1,4 +1,4 @@
-import { InterviewStructure } from '../src/types';
+import type { InterviewStructure } from '../src/types';
 
 export const interviewStructure: InterviewStructure = {
   totalDurationMin: 90,
@@ -64,13 +64,6 @@ export const interviewStructure: InterviewStructure = {
       questionsNumber: 3,
     },
   },
-  requiredSections: [
-    'javaScript',
-    'react',
-    'reactNative',
-    'nativePlatforms',
-    'communicationSkills',
-    'testTasks',
-  ],
+  requiredSections: ['javaScript', 'react', 'reactNative', 'nativePlatforms', 'communicationSkills', 'testTasks'],
   optionalSections: ['typeScript', 'dataStructuresAndAlgorithms', 'testing', 'other'],
 };

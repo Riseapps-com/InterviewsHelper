@@ -2,29 +2,28 @@ import fs from 'fs';
 
 import { config } from '../../config';
 import { fsUtils, topicsUtils } from '../shared';
-import { InterviewQuestions, QuestionData } from '../types';
 
-const validateRequiredFor = (requiredFor: string) => {
-  const isValid =
+import type { InterviewQuestions, QuestionData } from '../types';
+
+const validateRequiredFor = (requiredFor: string): boolean => {
+  return (
     requiredFor === 'junior' ||
     requiredFor === 'junior+' ||
     requiredFor === 'middle-' ||
     requiredFor === 'middle' ||
     requiredFor === 'middle+' ||
-    requiredFor === 'senior';
-
-  return isValid;
+    requiredFor === 'senior'
+  );
 };
 
-const validateQuestion = (question: QuestionData, key: string, index: number) => {
-  const isValid =
+const validateQuestion = (question: QuestionData, key: string, index: number): boolean => {
+  return (
     question.order === index + 1 &&
     !!question.estimatedTimeMin &&
     !!question.question &&
     question.key === `${key}${index + 1}` &&
-    validateRequiredFor(question.requiredFor);
-
-  return isValid;
+    validateRequiredFor(question.requiredFor)
+  );
 };
 
 const areQuestionsValid = (
@@ -32,8 +31,8 @@ const areQuestionsValid = (
   notValidQuestions: string[],
   key: string,
   topic: string
-) => {
-  const areValid = questions.reduce((prev: boolean, curr, index) => {
+): boolean => {
+  return questions.reduce((prev: boolean, curr, index) => {
     const isValid: boolean = validateQuestion(curr, key, index);
 
     if (!isValid) {
@@ -42,11 +41,9 @@ const areQuestionsValid = (
 
     return prev && isValid;
   }, true);
-
-  return areValid;
 };
 
-const saveNotValidQuestionsToFile = (notValidQuestions: string[]) => {
+const saveNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
   if (notValidQuestions.length) {
     fs.writeFileSync(
       fsUtils.wrapToOutputDirectory(config.files.notValidQuestionsFilename),
@@ -57,19 +54,14 @@ const saveNotValidQuestionsToFile = (notValidQuestions: string[]) => {
   }
 };
 
-export const validateInterviewQuestions = (interviewQuestions: InterviewQuestions) => {
+export const validateInterviewQuestions = (interviewQuestions: InterviewQuestions): boolean => {
   console.log('validateInterviewQuestions()');
 
   const notValidQuestions: string[] = [];
 
   const isValid: boolean = Object.keys(interviewQuestions).reduce(
     (_: boolean, curr: string) =>
-      areQuestionsValid(
-        interviewQuestions[curr].data,
-        notValidQuestions,
-        topicsUtils.topicToKey(curr),
-        curr
-      ),
+      areQuestionsValid(interviewQuestions[curr].data, notValidQuestions, topicsUtils.topicToKey(curr), curr),
     true
   );
 

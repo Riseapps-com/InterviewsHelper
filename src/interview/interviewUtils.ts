@@ -3,19 +3,17 @@ import fs from 'fs';
 import { config, input } from '../../config';
 import { interviewStructure } from '../../data';
 import { fsUtils, pdfUtils } from '../shared';
-import { InterviewQuestions, QuestionData } from '../types';
 
-export const parseQuestions = (interviewQuestions: InterviewQuestions) => {
+import type { InterviewQuestions, QuestionData } from '../types';
+
+export const parseQuestions = (interviewQuestions: InterviewQuestions): Map<string, QuestionData[]> => {
   console.log(`parseQuestions()`);
 
   const parsedQuestions = new Map<string, QuestionData[]>();
   const rows: string[] = fs
     .readFileSync(fsUtils.wrapToOutputDirectory(config.files.questionsFilename), 'utf8')
     .split('\n')
-    .filter(
-      row =>
-        row.includes(config.parsers.topicKey) || row.startsWith(config.files.suitableQuestionMarker)
-    );
+    .filter(row => row.includes(config.parsers.topicKey) || row.startsWith(config.files.suitableQuestionMarker));
   let currentTopic: string;
 
   rows.forEach(row => {
@@ -47,7 +45,7 @@ export const parseQuestions = (interviewQuestions: InterviewQuestions) => {
   return parsedQuestions;
 };
 
-export const generateResultDraft = (questions: Map<string, QuestionData[]>) => {
+export const generateResultDraft = (questions: Map<string, QuestionData[]>): void => {
   console.log(`generateResultDraft(${[...questions.keys()]})`);
 
   const topics: string[] = [];
@@ -61,10 +59,7 @@ export const generateResultDraft = (questions: Map<string, QuestionData[]>) => {
     );
   });
 
-  fs.writeFileSync(
-    fsUtils.wrapToOutputDirectory(config.files.resultDraftFilename),
-    topics.join('\n')
-  );
+  fs.writeFileSync(fsUtils.wrapToOutputDirectory(config.files.resultDraftFilename), topics.join('\n'));
 };
 
 export const generateResultNotesDraft = (): void => {
@@ -79,7 +74,7 @@ export const generateResultNotesDraft = (): void => {
   );
 };
 
-const drawCandidateInfo = (pdf: PDFKit.PDFDocument) => {
+const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
   const candidateName = `${input.candidate.firstname} ${input.candidate.lastname}`;
   const candidateEmail = input.candidate.email || '-';
 
@@ -89,24 +84,18 @@ const drawCandidateInfo = (pdf: PDFKit.PDFDocument) => {
   pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.emailIconPath, candidateEmail);
 };
 
-const drawPieChart = (pdf: PDFKit.PDFDocument) => {
+const drawPieChart = (pdf: PDFKit.PDFDocument): void => {
   const pieChartMargin =
-    (pdf.page.width - config.pdfDocument.horizontalMargin * 2 - config.pdfDocument.pieChartWidth) /
-    2;
+    (pdf.page.width - config.pdfDocument.horizontalMargin * 2 - config.pdfDocument.pieChartWidth) / 2;
 
-  pdf.image(
-    fsUtils.wrapToOutputDirectory(config.files.pieChartFilename),
-    pdf.x + pieChartMargin,
-    pdf.y,
-    {
-      width: config.pdfDocument.pieChartWidth,
-      align: 'center',
-      valign: 'center',
-    }
-  );
+  pdf.image(fsUtils.wrapToOutputDirectory(config.files.pieChartFilename), pdf.x + pieChartMargin, pdf.y, {
+    width: config.pdfDocument.pieChartWidth,
+    align: 'center',
+    valign: 'center',
+  });
 };
 
-const drawEvaluation = (pdf: PDFKit.PDFDocument) => {
+const drawEvaluation = (pdf: PDFKit.PDFDocument): void => {
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, 'Evaluation');
   pdf.fontSize(config.pdfDocument.baseFontSize).fillColor(config.pdfDocument.blackColor);
@@ -119,14 +108,14 @@ const drawEvaluation = (pdf: PDFKit.PDFDocument) => {
   );
 };
 
-const drawQuestions = (pdf: PDFKit.PDFDocument, questions: Map<string, QuestionData[]>) => {
+const drawQuestions = (pdf: PDFKit.PDFDocument, questions: Map<string, QuestionData[]>): void => {
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, 'Questions');
   drawPieChart(pdf);
 
   Array.of(...questions.keys()).forEach(question => {
     const topic = `${question} (${
-      Object.values(interviewStructure.topics).find(topic => topic.label === question)?.durationMin
+      Object.values(interviewStructure.topics).find(interviewTopic => interviewTopic.label === question)?.durationMin
     } min)`;
 
     pdf.moveDown(1);
@@ -165,8 +154,6 @@ export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): vo
   drawQuestions(pdfDocument, questions);
   pdfUtils.drawDate(pdfDocument);
 
-  pdfDocument.pipe(
-    fs.createWriteStream(fsUtils.wrapToOutputDirectory(config.files.forInterviewerFilename))
-  );
+  pdfDocument.pipe(fs.createWriteStream(fsUtils.wrapToOutputDirectory(config.files.forInterviewerFilename)));
   pdfDocument.end();
 };

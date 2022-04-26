@@ -1,7 +1,7 @@
 import startCase from 'lodash.startcase';
 
-export const topicToKey = (topic: string) => {
-  const key = topic
+export const topicToKey = (topic: string): string => {
+  return topic
     .split('.')
     .map(item =>
       startCase(item)
@@ -10,6 +10,4 @@ export const topicToKey = (topic: string) => {
         .join('')
     )
     .join('.');
-
-  return key;
 };

@@ -4,8 +4,9 @@ import { interviewUtils } from './src/interview';
 import { questionsUtils } from './src/questions';
 import { resultUtils } from './src/result';
 import { chartsUtils, fsUtils } from './src/shared';
-import { InterviewQuestions } from './src/types';
 import { validationUtils } from './src/validation';
+
+import type { InterviewQuestions } from './src/types';
 
 const validateQuestionsDBArg = process.argv.includes('--validateQuestionsDB');
 const generateQuestionsArg = process.argv.includes('--generateQuestions');
@@ -59,18 +60,7 @@ const generateResultPDF = async (): Promise<void> => {
   }
 };
 
-if (validateQuestionsDBArg) {
-  validateQuestionsDB();
-}
-
-if (generateQuestionsArg) {
-  generateQuestions();
-}
-
-if (generateInterviewPDFArg) {
-  generateInterviewPDF();
-}
-
-if (generateResultPDFArg) {
-  generateResultPDF();
-}
+if (validateQuestionsDBArg) validateQuestionsDB();
+if (generateQuestionsArg) generateQuestions();
+if (generateInterviewPDFArg) generateInterviewPDF();
+if (generateResultPDFArg) generateResultPDF();

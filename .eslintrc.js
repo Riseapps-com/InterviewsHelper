@@ -8,22 +8,12 @@ module.exports = {
   },
   env: {
     es6: true,
-    'jest/globals': true,
   },
-  plugins: ['prettier', '@typescript-eslint', 'jest', 'jest-formatting', 'simple-import-sort'],
-  extends: [
-    'airbnb-base',
-    'plugin:prettier/recommended',
-    'plugin:@typescript-eslint/recommended',
-    'plugin:jest/recommended',
-    'plugin:jest-formatting/recommended',
-  ],
+  plugins: ['@typescript-eslint', 'import', 'simple-import-sort', 'unused-imports', 'sonarjs', 'destructuring'],
+  extends: ['airbnb-base', 'plugin:prettier/recommended', 'plugin:@typescript-eslint/recommended'],
   settings: {
-    react: {
-      version: 'detect',
-    },
     'import/parsers': {
-      '@typescript-eslint/parser': ['.js', '.jsx', '.ts', '.tsx'],
+      '@typescript-eslint/parser': ['.js', '.ts'],
     },
   },
   rules: {
@@ -33,19 +23,21 @@ module.exports = {
     'import/prefer-default-export': 'off',
     'import/no-named-default': 'off',
     'import/no-extraneous-dependencies': 'off',
-    'no-underscore-dangle': 'off',
-    'no-plusplus': 'off',
+    'import/no-import-module-exports': 'off',
     camelcase: 'off',
     'no-throw-literal': 'off',
     'class-methods-use-this': 'off',
+    'consistent-return': 'off',
+    'no-underscore-dangle': 'off',
+    'no-console': 'off',
+    'no-plusplus': 'off',
     'max-depth': ['error', 3],
-    'max-len': ['error', 100],
+    'max-len': ['error', 120],
     'max-lines': ['error', { max: 200 }],
     'max-nested-callbacks': ['error', 4],
     'max-params': ['error', 5],
     'max-statements': ['error', 20],
     'no-negated-condition': 'error',
-    'no-console': 'off',
     'padding-line-between-statements': [
       'error',
       {
@@ -77,7 +69,6 @@ module.exports = {
       {
         selector: 'variable',
         format: ['camelCase', 'PascalCase', 'UPPER_CASE'],
-        leadingUnderscore: 'allow',
       },
       {
         selector: 'function',
@@ -99,6 +90,7 @@ module.exports = {
       {
         selector: 'property',
         format: ['camelCase', 'PascalCase'],
+        leadingUnderscore: 'allow',
       },
     ],
     '@typescript-eslint/explicit-module-boundary-types': 'off',
@@ -109,41 +101,59 @@ module.exports = {
     '@typescript-eslint/prefer-literal-enum-member': 'error',
     '@typescript-eslint/require-array-sort-compare': ['error', { ignoreStringArrays: true }],
     '@typescript-eslint/switch-exhaustiveness-check': 'error',
-    // typescript extension
+
     'no-shadow': 'off',
     'default-param-last': 'off',
     'func-call-spacing': 'off',
     'no-duplicate-imports': 'off',
     'no-loop-func': 'off',
-    'no-magic-numbers': 'off',
     'no-use-before-define': 'off',
     'space-infix-ops': 'off',
     '@typescript-eslint/default-param-last': 'error',
     '@typescript-eslint/func-call-spacing': 'error',
     '@typescript-eslint/no-duplicate-imports': ['error', { includeExports: true }],
     '@typescript-eslint/no-loop-func': 'error',
-    '@typescript-eslint/no-magic-numbers': 'off',
     '@typescript-eslint/no-use-before-define': ['error', { ignoreTypeReferences: false }],
     '@typescript-eslint/space-infix-ops': ['error', { int32Hint: false }],
     '@typescript-eslint/no-shadow': ['error'],
+    '@typescript-eslint/no-unused-vars': ['error', { ignoreRestSiblings: true, argsIgnorePattern: '^_' }],
+    '@typescript-eslint/explicit-function-return-type': ['error', { allowExpressions: true }],
+    '@typescript-eslint/consistent-type-imports': ['error', { prefer: 'type-imports' }],
 
     // simple-import-sort
     'sort-imports': 'off',
     'import/order': 'off',
-    'simple-import-sort/imports': 'error',
-    'simple-import-sort/exports': 'error',
-  },
-  overrides: [
-    {
-      files: ['*.test.ts', '*.test.tsx', '**/__data__/*.ts'],
-      rules: {
-        'max-lines': 'off',
-        'max-nested-callbacks': 'off',
-        'react/jsx-handler-names': 'off',
-        'react/jsx-no-literals': 'off',
-        'react-native/no-inline-styles': 'off',
-        '@typescript-eslint/no-empty-function': 'off',
+    'simple-import-sort/imports': [
+      'error',
+      {
+        groups: [
+          // 1. Side effect imports
+          ['^\\u0000'],
+          // 2. React and React Native imports
+          ['^react$', '^react-native$', '^react/', '^react-native/'],
+          // 3. Any other 3rd party imports
+          ['^@?\\w'],
+          // 4. Our modules, other than the module the current file is part of
+          ['^'],
+          // 5. Other parts of the same module that the current file is part of
+          ['^\\.'],
+          // 6. Styles
+          ['^\\./styles'],
+          // 7. Types
+          ['^.*\\u0000$'],
+        ],
       },
-    },
-  ],
+    ],
+    'simple-import-sort/exports': 'error',
+
+    // unused-imports
+    'unused-imports/no-unused-imports': 'error',
+
+    // sonarjs
+    'sonarjs/prefer-immediate-return': 'error',
+
+    // destructuring
+    'destructuring/in-params': ['error', { 'max-params': 0 }],
+    'destructuring/in-methods-params': 'error',
+  },
 };

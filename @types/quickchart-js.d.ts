@@ -1,5 +1,5 @@
 declare module 'quickchart-js' {
-  import * as ChartJS from 'chart.js';
+  import type * as ChartJS from 'chart.js';
 
   class QuickChart {
     constructor(apiKey?: string, accountId?: string);

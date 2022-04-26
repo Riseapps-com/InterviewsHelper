@@ -1,21 +1,20 @@
+import axios from 'axios';
 import fs from 'fs';
-import fetch, { Response } from 'node-fetch';
 import QuickChart from 'quickchart-js';
 
 import { config, input } from '../../config';
 import { interviewStructure } from '../../data';
-import { TopicDuration } from '../types';
 import { fsUtils } from './index';
 import * as marksUtils from './marksUtils';
 
-export const calculateInterviewDuration = (topicsDurations: TopicDuration[]) => {
-  const interviewDuration = topicsDurations.reduce((prev, curr) => prev + curr.durationMin, 0);
+import type { TopicDuration } from '../types';
 
-  return interviewDuration;
+export const calculateInterviewDuration = (topicsDurations: TopicDuration[]): number => {
+  return topicsDurations.reduce((prev, curr) => prev + curr.durationMin, 0);
 };
 
 export const getTopicsDurations = (topics: string[]): TopicDuration[] => {
-  const topicsDuration = topics.reduce((curr: TopicDuration[], prev) => {
+  return topics.reduce((curr: TopicDuration[], prev) => {
     let topicDuration: TopicDuration;
 
     if (prev.split('.').length > 1) {
@@ -29,11 +28,9 @@ export const getTopicsDurations = (topics: string[]): TopicDuration[] => {
 
     return curr.includes(topicDuration) ? [...curr] : [...curr, topicDuration];
   }, []);
-
-  return topicsDuration;
 };
 
-export const buildPieChart = async () => {
+export const buildPieChart = async (): Promise<void> => {
   console.log(`buildPieChart()`);
 
   const topicsDurations = getTopicsDurations(input.includedTopics);
@@ -103,15 +100,16 @@ export const buildPieChart = async () => {
     },
   });
 
-  const response: Response = await fetch(pieChart.getUrl());
+  const response = await axios({
+    url: pieChart.getUrl(),
+    method: 'get',
+    responseType: 'arraybuffer',
+  });
 
-  fs.writeFileSync(
-    fsUtils.wrapToOutputDirectory(config.files.pieChartFilename),
-    await response.buffer()
-  );
+  fs.writeFileSync(fsUtils.wrapToOutputDirectory(config.files.pieChartFilename), response.data);
 };
 
-export const buildRadarChart = async (resultDraft: Map<string, number[]>) => {
+export const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void> => {
   console.log(`buildRadarChart(${[...resultDraft.keys()]})`);
 
   const radarChart = new QuickChart();
@@ -172,10 +170,11 @@ export const buildRadarChart = async (resultDraft: Map<string, number[]>) => {
     },
   });
 
-  const response: Response = await fetch(radarChart.getUrl());
+  const response = await axios({
+    url: radarChart.getUrl(),
+    method: 'get',
+    responseType: 'arraybuffer',
+  });
 
-  fs.writeFileSync(
-    fsUtils.wrapToOutputDirectory(config.files.radarChartFilename),
-    await response.buffer()
-  );
+  fs.writeFileSync(fsUtils.wrapToOutputDirectory(config.files.radarChartFilename), response.data);
 };

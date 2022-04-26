@@ -1,4 +1,6 @@
-import { QuestionsDBTopicsMap } from '../src/types';
+/* eslint-disable @typescript-eslint/naming-convention */
+
+import type { QuestionsDBTopicsMap } from '../src/types';
 
 export const questionsDBTopicsMap: QuestionsDBTopicsMap = {
   JAVASCRIPT: 'javaScript',
