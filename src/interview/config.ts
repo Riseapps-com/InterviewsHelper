@@ -1,4 +1,4 @@
-import type { InterviewStructure } from '../src/types';
+import type { InterviewStructure } from './types';
 
 export const interviewStructure: InterviewStructure = {
   totalDurationMin: 90,

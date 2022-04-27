@@ -1,11 +1,12 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import type { Config } from '../src/types';
+import type { Config } from './types';
 
 export const config: Config = {
   files: {
     questionsDatabasePath: 'data/questionsDB.html',
     notValidQuestionsFilename: 'notValidQuestions.txt',
+    configFilename: 'config.json',
     questionsFilename: 'questions.txt',
     pieChartFilename: 'pieChart.png',
     forInterviewerFilename: 'forInterviewer.pdf',

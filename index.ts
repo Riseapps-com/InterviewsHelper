@@ -1,12 +1,14 @@
-import { config } from './config';
+import { chartsUtils } from './src/charts';
+import { config } from './src/config';
+import { fsUtils } from './src/fs';
 import { htmlUtils } from './src/html';
+import { inputUtils } from './src/input';
 import { interviewUtils } from './src/interview';
 import { questionsUtils } from './src/questions';
 import { resultUtils } from './src/result';
-import { chartsUtils, fsUtils } from './src/shared';
 import { validationUtils } from './src/validation';
 
-import type { InterviewQuestions } from './src/types';
+import type { InterviewQuestions } from './src/html';
 
 const validateQuestionsDBArg = process.argv.includes('--validateQuestionsDB');
 const generateQuestionsArg = process.argv.includes('--generateQuestions');
@@ -15,22 +17,23 @@ const generateResultPDFArg = process.argv.includes('--generateResultPDF');
 
 const interviewQuestions: InterviewQuestions = htmlUtils.parseQuestionsDB();
 
-fsUtils.createOutputsDirectory();
-fsUtils.createOutputDirectory();
-
-const validateQuestionsDB = (): void => {
+const validateQuestionsDB = async (): Promise<void> => {
   if (!validationUtils.validateInterviewQuestions(interviewQuestions)) {
     console.log(`Questions are not valid. 
-      See ${fsUtils.outputDirectory}/${config.files.notValidQuestionsFilename} for more details.`);
+      See ${fsUtils.getOutputDirectory()}/${config.files.notValidQuestionsFilename} for more details.`);
   }
 };
 
 const generateQuestions = async (): Promise<void> => {
   try {
-    if (validationUtils.validateInterviewQuestions(interviewQuestions)) {
-      questionsUtils.generateQuestions(interviewQuestions);
-      await chartsUtils.buildPieChart();
-    }
+    await inputUtils.generateInput();
+    fsUtils.createOutputsDirectory();
+    fsUtils.createOutputDirectory();
+
+    if (!validationUtils.validateInterviewQuestions(interviewQuestions)) return;
+
+    questionsUtils.generateQuestions(interviewQuestions);
+    await chartsUtils.buildPieChart();
   } catch (error) {
     console.log(error);
   }

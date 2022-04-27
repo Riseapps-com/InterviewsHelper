@@ -1,7 +1,9 @@
 import fs from 'fs';
 
-import { config, input } from '../../config';
-import { fsUtils, pdfUtils } from '../shared';
+import { config } from '../../config';
+import { fsUtils } from '../../fs';
+import { inputUtils } from '../../input';
+import { pdfUtils } from '../../pdf';
 
 export const parseResultDraft = (): Map<string, number[]> => {
   console.log(`parseResultDraft()`);
@@ -48,8 +50,8 @@ export const parseResultNotesDraft = (): string[] => {
 };
 
 const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
-  const candidateName = `${input.candidate.firstname} ${input.candidate.lastname}`;
-  const candidateEmail = input.candidate.email || '-';
+  const candidateName = `${inputUtils.getInput().candidate.firstname} ${inputUtils.getInput().candidate.lastname}`;
+  const candidateEmail = inputUtils.getInput().candidate.email || '-';
 
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, candidateName);
@@ -90,9 +92,11 @@ const drawDecision = (pdf: PDFKit.PDFDocument, decision: string): void => {
 };
 
 const drawInterviewerInfo = (pdf: PDFKit.PDFDocument): void => {
-  const interviewerName = `${input.interviewer.firstname} ${input.interviewer.lastname}`;
-  const interviewerEmail = input.interviewer.email || '-';
-  const interviewerLinkedin = input.interviewer.linkedin || '-';
+  const interviewerName = `${inputUtils.getInput().interviewer.firstname} ${
+    inputUtils.getInput().interviewer.lastname
+  }`;
+  const interviewerEmail = inputUtils.getInput().interviewer.email || '-';
+  const interviewerLinkedin = inputUtils.getInput().interviewer.linkedin || '-';
 
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, 'Interviewer');

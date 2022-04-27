@@ -1,3 +1,1 @@
-import * as resultUtils from './resultUtils';
-
-export { resultUtils };
+export * from './services';

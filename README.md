@@ -169,8 +169,8 @@ Recommend.
 
 ## :bar_chart: Output examples
 
-|                     For interviewer:                     |                 Result:                  |
-| :------------------------------------------------------: | :--------------------------------------: |
+|             For interviewer:             |         Result:          |
+| :--------------------------------------: | :----------------------: |
 | [forInterviewer.pdf](forInterviewer.pdf) | [result.pdf](result.pdf) |
 
 ## :ledger: TODO

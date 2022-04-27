@@ -1,3 +1,1 @@
-import * as validationUtils from './validationUtils';
-
-export { validationUtils };
+export * from './services';

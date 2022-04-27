@@ -1,10 +1,17 @@
 import fs from 'fs';
 
-import { config, input } from '../../config';
-import { interviewStructure } from '../../data';
-import { fsUtils, pdfUtils } from '../shared';
+import { config } from '../../config';
+import { fsUtils } from '../../fs';
+import { inputUtils } from '../../input';
+import { pdfUtils } from '../../pdf';
+import { interviewStructure } from '../config';
 
-import type { InterviewQuestions, QuestionData } from '../types';
+import type { InterviewQuestions, QuestionData } from '../../html';
+import type { TopicDuration } from '../types';
+
+export const calculateInterviewDuration = (topicsDurations: TopicDuration[]): number => {
+  return topicsDurations.reduce((prev, curr) => prev + curr.durationMin, 0);
+};
 
 export const parseQuestions = (interviewQuestions: InterviewQuestions): Map<string, QuestionData[]> => {
   console.log(`parseQuestions()`);
@@ -75,12 +82,12 @@ export const generateResultNotesDraft = (): void => {
 };
 
 const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
-  const candidateName = `${input.candidate.firstname} ${input.candidate.lastname}`;
-  const candidateEmail = input.candidate.email || '-';
+  const candidateName = `${inputUtils.getInput().candidate.firstname} ${inputUtils.getInput().candidate.lastname}`;
+  const candidateEmail = inputUtils.getInput().candidate.email || '-';
 
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, candidateName);
-  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.userIconPath, input.candidate.supposedLevel);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.userIconPath, inputUtils.getInput().candidate.supposedLevel);
   pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.emailIconPath, candidateEmail);
 };
 

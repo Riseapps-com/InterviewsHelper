@@ -1,11 +1,12 @@
 import fs from 'fs';
 import parse from 'node-html-parser';
 
+import { questionsDBTopicsMap } from '../../../data';
 import { config } from '../../config';
-import { questionsDBTopicsMap } from '../../data';
-import { topicsUtils } from '../shared';
+import { topicsUtils } from '../../topics';
 
-import type { InterviewQuestions, Level, Question, QuestionData } from '../types';
+import type { Level } from '../../input';
+import type { InterviewQuestions, Question, QuestionData } from '../types';
 
 const questionDataSeparator = ' [';
 const questionExtraData = ']';

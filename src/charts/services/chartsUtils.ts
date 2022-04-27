@@ -2,16 +2,13 @@ import axios from 'axios';
 import fs from 'fs';
 import QuickChart from 'quickchart-js';
 
-import { config, input } from '../../config';
-import { interviewStructure } from '../../data';
-import { fsUtils } from './index';
-import * as marksUtils from './marksUtils';
+import { config } from '../../config';
+import { fsUtils } from '../../fs';
+import { inputUtils } from '../../input';
+import { interviewStructure, interviewUtils } from '../../interview';
+import { marksUtils } from '../../result';
 
-import type { TopicDuration } from '../types';
-
-export const calculateInterviewDuration = (topicsDurations: TopicDuration[]): number => {
-  return topicsDurations.reduce((prev, curr) => prev + curr.durationMin, 0);
-};
+import type { TopicDuration } from '../../interview';
 
 export const getTopicsDurations = (topics: string[]): TopicDuration[] => {
   return topics.reduce((curr: TopicDuration[], prev) => {
@@ -33,8 +30,8 @@ export const getTopicsDurations = (topics: string[]): TopicDuration[] => {
 export const buildPieChart = async (): Promise<void> => {
   console.log(`buildPieChart()`);
 
-  const topicsDurations = getTopicsDurations(input.includedTopics);
-  const interviewDuration = calculateInterviewDuration(topicsDurations);
+  const topicsDurations = getTopicsDurations(inputUtils.getInput().interview.topics);
+  const interviewDuration = interviewUtils.calculateInterviewDuration(topicsDurations);
 
   const pieChart = new QuickChart();
 

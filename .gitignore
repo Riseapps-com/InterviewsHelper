@@ -4,3 +4,4 @@ node_modules/**/*
 config/input.ts
 /data/questionsDB.html
 backup/**/*
+/config.json

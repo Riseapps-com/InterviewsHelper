@@ -1,9 +1,9 @@
 import fs from 'fs';
 
 import { config } from '../../config';
-import { fsUtils, topicsUtils } from '../shared';
+import { topicsUtils } from '../../topics';
 
-import type { InterviewQuestions, QuestionData } from '../types';
+import type { InterviewQuestions, QuestionData } from '../../html';
 
 const validateRequiredFor = (requiredFor: string): boolean => {
   return (
@@ -45,12 +45,9 @@ const areQuestionsValid = (
 
 const saveNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
   if (notValidQuestions.length) {
-    fs.writeFileSync(
-      fsUtils.wrapToOutputDirectory(config.files.notValidQuestionsFilename),
-      notValidQuestions.join('\n')
-    );
-  } else if (fs.existsSync(fsUtils.wrapToOutputDirectory(config.files.notValidQuestionsFilename))) {
-    fs.unlinkSync(fsUtils.wrapToOutputDirectory(config.files.notValidQuestionsFilename));
+    fs.writeFileSync(config.files.notValidQuestionsFilename, notValidQuestions.join('\n'));
+  } else if (fs.existsSync(config.files.notValidQuestionsFilename)) {
+    fs.unlinkSync(config.files.notValidQuestionsFilename);
   }
 };
 

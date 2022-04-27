@@ -1,10 +1,12 @@
 import fs from 'fs';
 
-import { config, input } from '../../config';
-import { interviewStructure } from '../../data';
-import { fsUtils } from '../shared';
+import { config } from '../../config';
+import { fsUtils } from '../../fs';
+import { inputUtils } from '../../input';
+import { interviewStructure } from '../../interview';
 
-import type { InterviewQuestions, QuestionData, TopicDuration } from '../types';
+import type { InterviewQuestions, QuestionData } from '../../html';
+import type { TopicDuration } from '../../interview';
 
 const isSuitableForJunior = (requiredFor: string): boolean => {
   return requiredFor === 'junior';
@@ -84,10 +86,10 @@ export const generateQuestions = (interviewQuestions: InterviewQuestions): void 
 
   const questionsMap = new Map<TopicDuration, QuestionData[]>();
 
-  input.includedTopics.forEach(topic => {
+  inputUtils.getInput().interview.topics.forEach(topic => {
     const globalTopic: string = topic.includes('.') ? topic.split('.')[0] : topic;
     const suitableQuestions: QuestionData[] = interviewQuestions[topic].data.filter((item: QuestionData) =>
-      isQuestionSuitable(input.candidate.supposedLevel, item.requiredFor)
+      isQuestionSuitable(inputUtils.getInput().candidate.supposedLevel, item.requiredFor)
     );
 
     if (suitableQuestions.length && questionsMap.get(interviewStructure.topics[globalTopic])) {
