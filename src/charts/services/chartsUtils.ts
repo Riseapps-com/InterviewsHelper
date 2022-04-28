@@ -10,13 +10,13 @@ import { marksUtils } from '../../result';
 
 import type { TopicDuration } from '../../interview';
 
-export const getTopicsDurations = (topics: string[]): TopicDuration[] => {
+export const getTopicDurations = (topics: string[]): TopicDuration[] => {
   return topics.reduce((curr: TopicDuration[], prev) => {
     let topicDuration: TopicDuration;
 
     if (prev.split('.').length > 1) {
-      const keys: string[] = prev.split('.');
-      const topLevelTopic: string = keys[0];
+      const keys = prev.split('.');
+      const topLevelTopic = keys[0];
 
       topicDuration = interviewStructure.topics[topLevelTopic];
     } else {
@@ -28,26 +28,23 @@ export const getTopicsDurations = (topics: string[]): TopicDuration[] => {
 };
 
 export const buildPieChart = async (): Promise<void> => {
-  console.log(`buildPieChart()`);
-
-  const topicsDurations = getTopicsDurations(inputUtils.getInput().interview.topics);
-  const interviewDuration = interviewUtils.calculateInterviewDuration(topicsDurations);
+  const topicDurations = getTopicDurations(inputUtils.getInput().interview.topics);
+  const interviewDuration = interviewUtils.calculateInterviewDuration(topicDurations);
 
   const pieChart = new QuickChart();
 
   pieChart.setWidth(config.pieChart.width);
-
   pieChart.setConfig({
     type: 'doughnut',
     data: {
       datasets: [
         {
-          data: topicsDurations.map(topicDuration => topicDuration.durationMin),
+          data: topicDurations.map(topicDuration => topicDuration.durationMin),
           backgroundColor: config.pieChart.dataColors,
           label: 'Main Dataset',
         },
       ],
-      labels: topicsDurations.map(topicDuration => topicDuration.label),
+      labels: topicDurations.map(topicDuration => topicDuration.label),
     },
     options: {
       title: {
@@ -107,8 +104,6 @@ export const buildPieChart = async (): Promise<void> => {
 };
 
 export const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void> => {
-  console.log(`buildRadarChart(${[...resultDraft.keys()]})`);
-
   const radarChart = new QuickChart();
 
   radarChart.setWidth(config.radarChart.width);

@@ -1,74 +1,79 @@
 import fs from 'fs';
 import parse from 'node-html-parser';
 
-import { questionsDBTopicsMap } from '../../../data';
 import { config } from '../../config';
 import { topicsUtils } from '../../topics';
+import {
+  databaseTopicsMap,
+  LOGICAL_AND,
+  MAIN_CONTENT_KEY,
+  QUESTION_DATA_SEPARATOR,
+  QUESTION_EXTRA_DATA,
+  WORDS_TO_IGNORE,
+} from '../config';
 
 import type { Level } from '../../input';
 import type { InterviewQuestions, Question, QuestionData } from '../types';
 
-const questionDataSeparator = ' [';
-const questionExtraData = ']';
-const logicalAnd = '&amp;&amp;';
-const mainContentKey = '#main-content';
-
 const replaceLogicalAnd = (question: string): string =>
-  question.includes(logicalAnd) ? question.replace(logicalAnd, '&&') : question;
+  question.includes(LOGICAL_AND) ? question.replace(LOGICAL_AND, '&&') : question;
 
-const getDBTopicsIndexes = (content: string[]): number[] =>
-  Object.keys(questionsDBTopicsMap).map(topic => {
+const getDatabaseTopicIndexes = (content: string[]): number[] =>
+  Object.keys(databaseTopicsMap).map(topic => {
     let lastIndexOf = -1;
 
     content.forEach((contentRaw, index) => {
-      if (contentRaw.includes(topic)) {
-        lastIndexOf = index;
-      }
+      if (contentRaw.includes(topic)) lastIndexOf = index;
     });
 
     return lastIndexOf;
   });
 
-const parseDatabaseQuestion = (question: string, questionsLength: number, topic: string): QuestionData => {
-  const questionSplit = question.split(questionDataSeparator);
+const parseDatabaseItem = (question: string, questionsLength: number, topic: string): QuestionData => {
+  const questionSplit = question.split(QUESTION_DATA_SEPARATOR);
 
   return {
     order: questionsLength + 1,
-    key: `${topicsUtils.topicToKey(questionsDBTopicsMap[topic])}${questionsLength + 1}`,
-    estimatedTimeMin: Number.parseFloat(questionSplit[2].replace(questionExtraData, '')),
-    requiredFor: questionSplit[1].replace(questionExtraData, '') as Level,
+    key: `${topicsUtils.topicToKey(databaseTopicsMap[topic])}${questionsLength + 1}`,
+    estimatedTimeMin: Number.parseFloat(questionSplit[2].replace(QUESTION_EXTRA_DATA, '')),
+    requiredFor: questionSplit[1].replace(QUESTION_EXTRA_DATA, '') as Level,
     question: replaceLogicalAnd(questionSplit[0]),
   };
 };
 
-export const parseQuestionsDB = (): InterviewQuestions => {
+export const parseDatabase = (): InterviewQuestions => {
   const html = fs.readFileSync(config.files.questionsDatabasePath, 'utf8');
 
   const parsedHtml = parse(html);
-  const mainContent = parsedHtml.querySelector(mainContentKey);
+  const mainContent = parsedHtml.querySelector(MAIN_CONTENT_KEY);
   const mainContentSplit = mainContent?.structuredText.split('\n') || [];
-  const dbTopicsIndexes = getDBTopicsIndexes(mainContentSplit);
-  const wordsToIgnore = ['Links', 'http', 'REACT', 'NATIVE PLATFORMS', 'TESTING'];
+  const databaseTopicIndexes = getDatabaseTopicIndexes(mainContentSplit);
 
   const interviewQuestions: InterviewQuestions = {};
 
-  dbTopicsIndexes.forEach((dbTopicIndex, index) => {
-    const topic = Object.keys(questionsDBTopicsMap).find(dbTopic => mainContentSplit[dbTopicIndex].includes(dbTopic));
+  databaseTopicIndexes.forEach((databaseTopicIndex, index) => {
+    const topic = Object.keys(databaseTopicsMap).find(databaseTopic =>
+      mainContentSplit[databaseTopicIndex].includes(databaseTopic)
+    );
     const question: Question = { data: [] };
 
-    const lastDBTopicsItemIndex = dbTopicsIndexes.length - 1;
-    const currentDBTopicsIndex = dbTopicsIndexes.findIndex(possibleIndex => possibleIndex === dbTopicIndex);
-    const nextDBTopicsIndex = dbTopicsIndexes[currentDBTopicsIndex + 1];
+    const lastDatabaseTopicItemIndex = databaseTopicIndexes.length - 1;
+    const currentDatabaseTopicIndex = databaseTopicIndexes.findIndex(
+      possibleIndex => possibleIndex === databaseTopicIndex
+    );
+    const nextDatabaseTopicIndex = databaseTopicIndexes[currentDatabaseTopicIndex + 1];
     const lastContentItemIndex = mainContentSplit.length - 1;
-    const until = index === lastDBTopicsItemIndex ? lastContentItemIndex : nextDBTopicsIndex;
+    const until = index === lastDatabaseTopicItemIndex ? lastContentItemIndex : nextDatabaseTopicIndex;
 
-    for (let i = dbTopicIndex + 1; i < until; i++) {
-      if (wordsToIgnore.every(item => !mainContentSplit[i].includes(item)) && topic) {
-        question.data.push(parseDatabaseQuestion(mainContentSplit[i], question.data.length, topic));
+    for (let i = databaseTopicIndex + 1; i < until; i++) {
+      if (WORDS_TO_IGNORE.every(item => !mainContentSplit[i].includes(item)) && topic) {
+        const databaseItem = parseDatabaseItem(mainContentSplit[i], question.data.length, topic);
+
+        question.data.push(databaseItem);
       }
     }
 
-    if (topic) interviewQuestions[questionsDBTopicsMap[topic]] = question;
+    if (topic) interviewQuestions[databaseTopicsMap[topic]] = question;
   });
 
   return interviewQuestions;

@@ -15,3 +15,5 @@ export type Question = {
 export type InterviewQuestions = {
   [key in string]: Question;
 };
+
+export type DatabaseTopicsMap = { [key: string]: string };

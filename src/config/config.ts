@@ -4,7 +4,7 @@ import type { Config } from './types';
 
 export const config: Config = {
   files: {
-    questionsDatabasePath: 'data/questionsDB.html',
+    questionsDatabasePath: 'data/database.html',
     notValidQuestionsFilename: 'notValidQuestions.txt',
     configFilename: 'config.json',
     questionsFilename: 'questions.txt',
@@ -80,8 +80,11 @@ export const config: Config = {
   parsers: {
     topicKey: '@topic@',
     questionKey: '@questionKey@',
-    feedbackKey: '@feedback@',
-    decisionKey: '@decision@',
+    englishLevelKey: '@englishLevel@',
+    softwareSkillsKey: '@softwareSkills@',
+    technicalSkillsKey: '@technicalSkills@',
+    supposedLevelKey: '@supposedLevel@',
+    recommendKey: '@recommend@',
   },
   evaluation: {
     maxMark: 5,

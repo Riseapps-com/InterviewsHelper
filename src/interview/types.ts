@@ -7,9 +7,7 @@ export type TopicDuration = {
   questionsNumber: number;
 };
 
-export type Topics = {
-  [key in string]: TopicDuration;
-};
+export type Topics = { [key in string]: TopicDuration };
 
 export type InterviewStructure = {
   totalDurationMin: number;

@@ -64,40 +64,38 @@ const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): stri
   const topics: string[] = [];
 
   questionsMap.forEach((value, key) => {
-    const questions: string[] = value.map(
-      (question, index) =>
-        `${index + 1}. ${question.question} (timeForAnswer: ${question.estimatedTimeMin} min) (requiredFor: ${
-          question.requiredFor
-        }) (key: ${config.parsers.questionKey}${question.key}${config.parsers.questionKey})`
+    const questions: string[] = value.map((question, index) => {
+      return `${index + 1}. ${question.question} `
+        .concat(`(timeForAnswer: ${question.estimatedTimeMin} min) `)
+        .concat(`(requiredFor: ${question.requiredFor}) `)
+        .concat(`(key: ${config.parsers.questionKey}${question.key}${config.parsers.questionKey})`);
+    });
+
+    const topic = `${config.parsers.topicKey}${key.label}${config.parsers.topicKey} `.concat(
+      `≈${key.questionsNumber} `.concat(`questions\n${questions.join('\n')}`)
     );
 
-    topics.push(
-      `${config.parsers.topicKey}${key.label}${config.parsers.topicKey} ≈${
-        key.questionsNumber
-      } questions\n${questions.join('\n')}`
-    );
+    topics.push(topic);
   });
 
   return topics.join('\n');
 };
 
 export const generateQuestions = (interviewQuestions: InterviewQuestions): void => {
-  console.log(`generateQuestions()`);
-
   const questionsMap = new Map<TopicDuration, QuestionData[]>();
 
   inputUtils.getInput().interview.topics.forEach(topic => {
-    const globalTopic: string = topic.includes('.') ? topic.split('.')[0] : topic;
-    const suitableQuestions: QuestionData[] = interviewQuestions[topic].data.filter((item: QuestionData) =>
+    const globalTopic = topic.includes('.') ? topic.split('.')[0] : topic;
+    const suitableQuestions = interviewQuestions[topic].data.filter((item: QuestionData) =>
       isQuestionSuitable(inputUtils.getInput().candidate.supposedLevel, item.requiredFor)
     );
 
     if (suitableQuestions.length && questionsMap.get(interviewStructure.topics[globalTopic])) {
       const questions = questionsMap.get(interviewStructure.topics[globalTopic]);
 
-      if (questions) {
-        questionsMap.set(interviewStructure.topics[globalTopic], [...questions, ...suitableQuestions]);
-      }
+      if (!questions) return;
+
+      questionsMap.set(interviewStructure.topics[globalTopic], [...questions, ...suitableQuestions]);
     } else if (suitableQuestions.length) {
       questionsMap.set(interviewStructure.topics[globalTopic], suitableQuestions);
     }

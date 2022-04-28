@@ -44,8 +44,11 @@ export type Files = {
 export type Parsers = {
   topicKey: string;
   questionKey: string;
-  feedbackKey: string;
-  decisionKey: string;
+  englishLevelKey: string;
+  softwareSkillsKey: string;
+  technicalSkillsKey: string;
+  supposedLevelKey: string;
+  recommendKey: string;
 };
 
 export type Scale = {

@@ -4,7 +4,7 @@ import type { Choice } from 'prompts';
 const TOPICS_BASE: Choice[] = [
   { title: 'Java Script', value: 'javaScript' },
   { title: 'Type Script', value: 'typeScript' },
-  { title: 'Testing: Jest', value: 'testings.jest' },
+  { title: 'Testing: Jest', value: 'testing.jest' },
   { title: 'Data Structures And Algorithms', value: 'dataStructuresAndAlgorithms' },
   { title: 'Communications Skills', value: 'communicationSkills' },
   { title: 'Test Tasks', value: 'testTasks' },
@@ -26,8 +26,14 @@ const INTERVIEW_TOPICS_REACT_NATIVE: Choice[] = [
   { title: 'Native Platforms: Android', value: 'nativePlatforms.android' },
   { title: 'Testing: Detox', value: 'testing.detox' },
 ];
-const INTERVIEW_TOPICS_ANGULAR: Choice[] = [...TOPICS_BASE, { title: 'Angular', value: 'angular' }];
-const INTERVIEW_TOPICS_NODE: Choice[] = [...TOPICS_BASE, { title: 'Node.js', value: 'node' }];
+const INTERVIEW_TOPICS_ANGULAR: Choice[] = [
+  ...TOPICS_BASE,
+  // { title: 'Angular', value: 'angular' }
+];
+const INTERVIEW_TOPICS_NODE: Choice[] = [
+  ...TOPICS_BASE,
+  // { title: 'Node.js', value: 'node' }
+];
 
 export const INTERVIEW_TOPICS: InterviewTopics = {
   react: INTERVIEW_TOPICS_REACT,

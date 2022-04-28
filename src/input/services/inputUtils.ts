@@ -13,8 +13,6 @@ import {
 import type { Input, InterviewType } from '../types';
 
 export const generateInput = async (): Promise<void> => {
-  console.log('generateInput()');
-
   const interviewTypeResponse = await prompts({
     type: 'select',
     name: 'interviewType',
@@ -132,7 +130,7 @@ export const generateInput = async (): Promise<void> => {
 export const getInput = (): Input => {
   const input = JSON.parse(fs.readFileSync(config.files.configFilename, 'utf-8'));
 
-  if (!input) throw new Error('Input should be specified.');
+  if (!input) throw new Error('Generate input at first.');
 
   return input;
 };

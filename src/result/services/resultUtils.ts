@@ -6,10 +6,8 @@ import { inputUtils } from '../../input';
 import { pdfUtils } from '../../pdf';
 
 export const parseResultDraft = (): Map<string, number[]> => {
-  console.log(`parseResultDraft()`);
-
   const parsedResultDraft = new Map<string, number[]>();
-  const rows: string[] = fs
+  const rows = fs
     .readFileSync(fsUtils.wrapToOutputDirectory(config.files.resultDraftFilename), 'utf8')
     .split('\n')
     .filter(row => row);
@@ -22,7 +20,6 @@ export const parseResultDraft = (): Map<string, number[]> => {
       currentTopic = currentTopicInner;
     } else {
       const mark = Number(row.split(') ')[1]);
-
       const currentTopicItem = parsedResultDraft.get(currentTopic);
 
       if (currentTopicItem) {
@@ -36,22 +33,27 @@ export const parseResultDraft = (): Map<string, number[]> => {
   return parsedResultDraft;
 };
 
-export const parseResultNotesDraft = (): string[] => {
-  console.log(`parseResultNotesDraft()`);
+const parseResultNote = (resultNotesDraft: string, key: string): string => {
+  return resultNotesDraft.split(key)[1].split('\n').join(' ').trim();
+};
 
+export const parseResultNotesDraft = (): string[] => {
   const resultNotesDraft = fs.readFileSync(
     fsUtils.wrapToOutputDirectory(config.files.resultNotesDraftFilename),
     'utf8'
   );
-  const feedback = resultNotesDraft.split(config.parsers.feedbackKey)[1].split('\n').join(' ').trim();
-  const decision = resultNotesDraft.split(config.parsers.decisionKey)[1].replace('\n', '');
+  const englishLevel = parseResultNote(resultNotesDraft, config.parsers.englishLevelKey);
+  const softwareSkills = parseResultNote(resultNotesDraft, config.parsers.softwareSkillsKey);
+  const technicalSkills = parseResultNote(resultNotesDraft, config.parsers.technicalSkillsKey);
+  const supposedLevel = parseResultNote(resultNotesDraft, config.parsers.supposedLevelKey);
+  const recommend = resultNotesDraft.split(config.parsers.recommendKey)[1].replace('\n', '');
 
-  return [feedback, decision];
+  return [englishLevel, softwareSkills, technicalSkills, supposedLevel, recommend];
 };
 
 const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
   const candidateName = `${inputUtils.getInput().candidate.firstname} ${inputUtils.getInput().candidate.lastname}`;
-  const candidateEmail = inputUtils.getInput().candidate.email || '-';
+  const candidateEmail = inputUtils.getInput().candidate.email;
 
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, candidateName);
@@ -71,51 +73,39 @@ const drawRadarChart = (pdf: PDFKit.PDFDocument): void => {
     });
 };
 
-const drawFeedback = (pdf: PDFKit.PDFDocument, feedback: string): void => {
-  pdf.moveDown(2);
-  pdfUtils.drawTitle(pdf, 'Feedback');
+const drawSection = (pdf: PDFKit.PDFDocument, title: string, content: string, newLines = 1): void => {
+  pdf.moveDown(newLines);
+  pdfUtils.drawTitle(pdf, title);
   pdf
     .font(config.pdfDocument.regularFont)
     .fontSize(config.pdfDocument.baseFontSize)
     .fillColor(config.pdfDocument.blackColor)
-    .text(feedback);
-};
-
-const drawDecision = (pdf: PDFKit.PDFDocument, decision: string): void => {
-  pdf.moveDown(1);
-  pdfUtils.drawTitle(pdf, 'Decision');
-  pdf
-    .font(config.pdfDocument.regularFont)
-    .fontSize(config.pdfDocument.baseFontSize)
-    .fillColor(config.pdfDocument.blackColor)
-    .text(decision);
+    .text(content);
 };
 
 const drawInterviewerInfo = (pdf: PDFKit.PDFDocument): void => {
-  const interviewerName = `${inputUtils.getInput().interviewer.firstname} ${
-    inputUtils.getInput().interviewer.lastname
-  }`;
-  const interviewerEmail = inputUtils.getInput().interviewer.email || '-';
-  const interviewerLinkedin = inputUtils.getInput().interviewer.linkedin || '-';
+  const name = `${inputUtils.getInput().interviewer.firstname} ${inputUtils.getInput().interviewer.lastname}`;
+  const { email, linkedin } = inputUtils.getInput().interviewer;
 
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, 'Interviewer');
-  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.userIconPath, interviewerName);
-  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.emailIconPath, interviewerEmail);
-  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.linkedinIconPath, interviewerLinkedin, true);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.userIconPath, name);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.emailIconPath, email);
+  pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.linkedinIconPath, linkedin, true);
 };
 
 export const generateResultPDF = (resultNotesDraft: string[]): void => {
-  console.log(`generateResultPDF(${resultNotesDraft})`);
-
   const pdfDocument = pdfUtils.createPDFDocument();
 
   pdfUtils.drawHeader(pdfDocument);
   pdfUtils.drawStep(pdfDocument, 'Result');
   drawCandidateInfo(pdfDocument);
   drawRadarChart(pdfDocument);
-  drawFeedback(pdfDocument, resultNotesDraft[0]);
-  drawDecision(pdfDocument, resultNotesDraft[1]);
+  drawSection(pdfDocument, 'English level', resultNotesDraft[0], 2);
+  drawSection(pdfDocument, 'Software skills', resultNotesDraft[1]);
+  drawSection(pdfDocument, 'Technical skills', resultNotesDraft[2]);
+  drawSection(pdfDocument, 'Supposed level', resultNotesDraft[3]);
+  drawSection(pdfDocument, 'Recommend', resultNotesDraft[4]);
   drawInterviewerInfo(pdfDocument);
   pdfUtils.drawDate(pdfDocument);
 

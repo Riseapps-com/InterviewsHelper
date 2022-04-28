@@ -1,8 +1,14 @@
 /* eslint-disable @typescript-eslint/naming-convention */
 
-import type { QuestionsDBTopicsMap } from '../src/types';
+import type { DatabaseTopicsMap } from './types';
 
-export const questionsDBTopicsMap: QuestionsDBTopicsMap = {
+export const QUESTION_DATA_SEPARATOR = ' [';
+export const QUESTION_EXTRA_DATA = ']';
+export const LOGICAL_AND = '&amp;&amp;';
+export const MAIN_CONTENT_KEY = '#main-content';
+export const WORDS_TO_IGNORE = ['Links', 'http', 'REACT', 'NATIVE PLATFORMS', 'TESTING'];
+
+export const databaseTopicsMap: DatabaseTopicsMap = {
   JAVASCRIPT: 'javaScript',
   TYPESCRIPT: 'typeScript',
   'REACT BASICS': 'react.basics',

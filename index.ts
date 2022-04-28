@@ -10,14 +10,14 @@ import { validationUtils } from './src/validation';
 
 import type { InterviewQuestions } from './src/html';
 
-const validateQuestionsDBArg = process.argv.includes('--validateQuestionsDB');
+const validateDatabaseArg = process.argv.includes('--validateDatabase');
 const generateQuestionsArg = process.argv.includes('--generateQuestions');
 const generateInterviewPDFArg = process.argv.includes('--generateInterviewPDF');
 const generateResultPDFArg = process.argv.includes('--generateResultPDF');
 
-const interviewQuestions: InterviewQuestions = htmlUtils.parseQuestionsDB();
+const interviewQuestions: InterviewQuestions = htmlUtils.parseDatabase();
 
-const validateQuestionsDB = async (): Promise<void> => {
+const validateDatabase = async (): Promise<void> => {
   if (!validationUtils.validateInterviewQuestions(interviewQuestions)) {
     console.log(`Questions are not valid. 
       See ${fsUtils.getOutputDirectory()}/${config.files.notValidQuestionsFilename} for more details.`);
@@ -26,12 +26,11 @@ const validateQuestionsDB = async (): Promise<void> => {
 
 const generateQuestions = async (): Promise<void> => {
   try {
+    if (!validationUtils.validateInterviewQuestions(interviewQuestions)) return;
+
     await inputUtils.generateInput();
     fsUtils.createOutputsDirectory();
     fsUtils.createOutputDirectory();
-
-    if (!validationUtils.validateInterviewQuestions(interviewQuestions)) return;
-
     questionsUtils.generateQuestions(interviewQuestions);
     await chartsUtils.buildPieChart();
   } catch (error) {
@@ -63,7 +62,7 @@ const generateResultPDF = async (): Promise<void> => {
   }
 };
 
-if (validateQuestionsDBArg) validateQuestionsDB();
+if (validateDatabaseArg) validateDatabase();
 if (generateQuestionsArg) generateQuestions();
 if (generateInterviewPDFArg) generateInterviewPDF();
 if (generateResultPDFArg) generateResultPDF();

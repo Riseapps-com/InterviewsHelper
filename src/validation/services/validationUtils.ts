@@ -33,11 +33,9 @@ const areQuestionsValid = (
   topic: string
 ): boolean => {
   return questions.reduce((prev: boolean, curr, index) => {
-    const isValid: boolean = validateQuestion(curr, key, index);
+    const isValid = validateQuestion(curr, key, index);
 
-    if (!isValid) {
-      notValidQuestions.push(`${topic}: ${index + 1}`);
-    }
+    if (!isValid) notValidQuestions.push(`${topic}: ${index + 1}`);
 
     return prev && isValid;
   }, true);
@@ -52,14 +50,10 @@ const saveNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
 };
 
 export const validateInterviewQuestions = (interviewQuestions: InterviewQuestions): boolean => {
-  console.log('validateInterviewQuestions()');
-
   const notValidQuestions: string[] = [];
 
-  const isValid: boolean = Object.keys(interviewQuestions).reduce(
-    (_: boolean, curr: string) =>
-      areQuestionsValid(interviewQuestions[curr].data, notValidQuestions, topicsUtils.topicToKey(curr), curr),
-    true
+  const isValid = Object.keys(interviewQuestions).every(key =>
+    areQuestionsValid(interviewQuestions[key].data, notValidQuestions, topicsUtils.topicToKey(key), key)
   );
 
   saveNotValidQuestionsToFile(notValidQuestions);

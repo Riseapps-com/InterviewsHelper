@@ -129,17 +129,13 @@ module.exports = {
         groups: [
           // 1. Side effect imports
           ['^\\u0000'],
-          // 2. React and React Native imports
-          ['^react$', '^react-native$', '^react/', '^react-native/'],
-          // 3. Any other 3rd party imports
+          // 2. Any other 3rd party imports
           ['^@?\\w'],
-          // 4. Our modules, other than the module the current file is part of
+          // 3. Our modules, other than the module the current file is part of
           ['^'],
-          // 5. Other parts of the same module that the current file is part of
+          // 4. Other parts of the same module that the current file is part of
           ['^\\.'],
-          // 6. Styles
-          ['^\\./styles'],
-          // 7. Types
+          // 5. Types
           ['^.*\\u0000$'],
         ],
       },
