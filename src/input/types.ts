@@ -1,6 +1,6 @@
 import type { Choice } from 'prompts';
 
-export type InterviewType = 'react' | 'reactNative' | 'angular' | 'node';
+export type InterviewType = 'react' | 'reactNative' | 'angular' | 'node' | 'vue';
 
 export type InterviewMode = 'department' | 'partnership';
 

@@ -4,7 +4,27 @@ import type { Config } from './types';
 
 export const config: Config = {
   files: {
-    questionsDatabasePath: 'data/database.html',
+    database: {
+      angularPath: 'data/Angular.html',
+      dataStructuresAndAlgorithmsPath: 'data/DataStructuresAndAlgorithms.html',
+      experiencePath: 'data/Experience.html',
+      javaScriptPath: 'data/JavaScript.html',
+      nativePlatformsAndroidPath: 'data/NativePlatforms-Android.html',
+      nativePlatformsIosPath: 'data/NativePlatforms-iOS.html',
+      nodePath: 'data/Node.html',
+      reactAdvancedPath: 'data/React-Advanced.html',
+      reactApolloPath: 'data/React-Apollo.html',
+      reactBasicsPath: 'data/React-Basics.html',
+      reactHooksPath: 'data/React-Hooks.html',
+      reactReduxPath: 'data/React-Redux.html',
+      reactNativePath: 'data/ReactNative.html',
+      softwareSkillsPath: 'data/SoftwareSkills.html',
+      testingPathDetox: 'data/Testing-Detox.html',
+      testingPathJest: 'data/Testing-Jest.html',
+      testTasksPath: 'data/TestTasks.html',
+      typeScriptPath: 'data/TypeScript.html',
+      vuePath: 'data/Vue.html',
+    },
     notValidQuestionsFilename: 'notValidQuestions.txt',
     configFilename: 'config.json',
     questionsFilename: 'questions.txt',

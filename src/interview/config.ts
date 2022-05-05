@@ -27,6 +27,24 @@ export const interviewStructure: InterviewStructure = {
       label: 'React Native',
       questionsNumber: 7,
     },
+    angular: {
+      status: 'optional',
+      durationMin: 20,
+      label: 'Angular',
+      questionsNumber: 10,
+    },
+    node: {
+      status: 'optional',
+      durationMin: 20,
+      label: 'Node.js',
+      questionsNumber: 10,
+    },
+    vue: {
+      status: 'optional',
+      durationMin: 20,
+      label: 'Vue.js',
+      questionsNumber: 10,
+    },
     nativePlatforms: {
       status: 'required',
       durationMin: 10,
@@ -45,10 +63,10 @@ export const interviewStructure: InterviewStructure = {
       label: 'Testing',
       questionsNumber: 5,
     },
-    communicationSkills: {
+    softwareSkills: {
       status: 'required',
       durationMin: 10,
-      label: 'Communication Skills',
+      label: 'Software Skills',
       questionsNumber: 5,
     },
     testTasks: {
@@ -57,10 +75,10 @@ export const interviewStructure: InterviewStructure = {
       label: 'Test Tasks',
       questionsNumber: 1,
     },
-    other: {
+    experience: {
       status: 'optional',
       durationMin: 10,
-      label: 'Other',
+      label: 'Experience',
       questionsNumber: 3,
     },
   },

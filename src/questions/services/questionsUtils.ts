@@ -5,7 +5,7 @@ import { fsUtils } from '../../fs';
 import { inputUtils } from '../../input';
 import { interviewStructure } from '../../interview';
 
-import type { InterviewQuestions, QuestionData } from '../../html';
+import type { InterviewQuestions, Question } from '../../html';
 import type { TopicDuration } from '../../interview';
 
 const isSuitableForJunior = (requiredFor: string): boolean => {
@@ -60,13 +60,12 @@ const isQuestionSuitable = (level: string, requiredFor: string): boolean => {
   return isSuitable;
 };
 
-const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): string => {
+const formatQuestions = (questionsMap: Map<TopicDuration, Question[]>): string => {
   const topics: string[] = [];
 
   questionsMap.forEach((value, key) => {
     const questions: string[] = value.map((question, index) => {
       return `${index + 1}. ${question.question} `
-        .concat(`(timeForAnswer: ${question.estimatedTimeMin} min) `)
         .concat(`(requiredFor: ${question.requiredFor}) `)
         .concat(`(key: ${config.parsers.questionKey}${question.key}${config.parsers.questionKey})`);
     });
@@ -82,11 +81,11 @@ const formatQuestions = (questionsMap: Map<TopicDuration, QuestionData[]>): stri
 };
 
 export const generateQuestions = (interviewQuestions: InterviewQuestions): void => {
-  const questionsMap = new Map<TopicDuration, QuestionData[]>();
+  const questionsMap = new Map<TopicDuration, Question[]>();
 
   inputUtils.getInput().interview.topics.forEach(topic => {
     const globalTopic = topic.includes('.') ? topic.split('.')[0] : topic;
-    const suitableQuestions = interviewQuestions[topic].data.filter((item: QuestionData) =>
+    const suitableQuestions = interviewQuestions[topic].filter((item: Question) =>
       isQuestionSuitable(inputUtils.getInput().candidate.supposedLevel, item.requiredFor)
     );
 

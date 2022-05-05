@@ -22,6 +22,7 @@ export const generateInput = async (): Promise<void> => {
       { title: 'React-Native', value: 'reactNative' },
       { title: 'Angular', value: 'angular' },
       { title: 'Node', value: 'node' },
+      { title: 'Vue', value: 'vue' },
     ],
   });
   const response = await prompts([

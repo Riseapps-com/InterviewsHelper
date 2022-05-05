@@ -1,5 +1,27 @@
 import ColorValue = PDFKit.Mixins.ColorValue;
 
+export type Database = {
+  angularPath: string;
+  dataStructuresAndAlgorithmsPath: string;
+  experiencePath: string;
+  javaScriptPath: string;
+  nativePlatformsIosPath: string;
+  nativePlatformsAndroidPath: string;
+  nodePath: string;
+  reactAdvancedPath: string;
+  reactApolloPath: string;
+  reactBasicsPath: string;
+  reactHooksPath: string;
+  reactReduxPath: string;
+  reactNativePath: string;
+  softwareSkillsPath: string;
+  testingPathDetox: string;
+  testingPathJest: string;
+  testTasksPath: string;
+  typeScriptPath: string;
+  vuePath: string;
+};
+
 export type PdfDocument = {
   creator: string;
   author: string;
@@ -28,7 +50,7 @@ export type PdfDocument = {
 };
 
 export type Files = {
-  questionsDatabasePath: string;
+  database: Database;
   notValidQuestionsFilename: string;
   configFilename: string;
   questionsFilename: string;

@@ -6,15 +6,15 @@ import { inputUtils } from '../../input';
 import { pdfUtils } from '../../pdf';
 import { interviewStructure } from '../config';
 
-import type { InterviewQuestions, QuestionData } from '../../html';
+import type { InterviewQuestions, Question } from '../../html';
 import type { TopicDuration } from '../types';
 
 export const calculateInterviewDuration = (topicDurations: TopicDuration[]): number => {
   return topicDurations.reduce((prev, curr) => prev + curr.durationMin, 0);
 };
 
-export const parseQuestions = (interviewQuestions: InterviewQuestions): Map<string, QuestionData[]> => {
-  const parsedQuestions = new Map<string, QuestionData[]>();
+export const parseQuestions = (interviewQuestions: InterviewQuestions): Map<string, Question[]> => {
+  const parsedQuestions = new Map<string, Question[]>();
   const rows: string[] = fs
     .readFileSync(fsUtils.wrapToOutputDirectory(config.files.questionsFilename), 'utf8')
     .split('\n')
@@ -29,12 +29,12 @@ export const parseQuestions = (interviewQuestions: InterviewQuestions): Map<stri
     } else {
       const questionSplit: string[] = row.split(config.parsers.questionKey);
       const questionKey: string = questionSplit[1];
-      let interviewQuestion: QuestionData | undefined;
+      let interviewQuestion: Question | undefined;
 
-      Object.values(interviewQuestions).forEach(question => {
+      Object.values(interviewQuestions).forEach(questions => {
         if (interviewQuestion) return;
 
-        interviewQuestion = question.data.find(item => item.key === questionKey);
+        interviewQuestion = questions.find(item => item.key === questionKey);
       });
 
       const parsedQuestionsItem = parsedQuestions.get(currentTopic);
@@ -50,7 +50,7 @@ export const parseQuestions = (interviewQuestions: InterviewQuestions): Map<stri
   return parsedQuestions;
 };
 
-export const generateResultDraft = (questions: Map<string, QuestionData[]>): void => {
+export const generateResultDraft = (questions: Map<string, Question[]>): void => {
   const topics: string[] = [];
 
   Array.of(...questions.keys()).forEach(key => {
@@ -114,7 +114,7 @@ const drawEvaluation = (pdf: PDFKit.PDFDocument): void => {
   );
 };
 
-const drawQuestions = (pdf: PDFKit.PDFDocument, questions: Map<string, QuestionData[]>): void => {
+const drawQuestions = (pdf: PDFKit.PDFDocument, questions: Map<string, Question[]>): void => {
   pdf.moveDown(1);
   pdfUtils.drawTitle(pdf, 'Questions');
   drawPieChart(pdf);
@@ -149,7 +149,7 @@ const drawQuestions = (pdf: PDFKit.PDFDocument, questions: Map<string, QuestionD
   });
 };
 
-export const generateInterviewPDF = (questions: Map<string, QuestionData[]>): void => {
+export const generateInterviewPDF = (questions: Map<string, Question[]>): void => {
   const pdfDocument = pdfUtils.createPDFDocument();
 
   pdfUtils.drawHeader(pdfDocument);

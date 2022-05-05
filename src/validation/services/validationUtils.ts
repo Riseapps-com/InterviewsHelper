@@ -3,7 +3,7 @@ import fs from 'fs';
 import { config } from '../../config';
 import { topicsUtils } from '../../topics';
 
-import type { InterviewQuestions, QuestionData } from '../../html';
+import type { InterviewQuestions, Question } from '../../html';
 
 const validateRequiredFor = (requiredFor: string): boolean => {
   return (
@@ -16,22 +16,16 @@ const validateRequiredFor = (requiredFor: string): boolean => {
   );
 };
 
-const validateQuestion = (question: QuestionData, key: string, index: number): boolean => {
+const validateQuestion = (question: Question, key: string, index: number): boolean => {
   return (
     question.order === index + 1 &&
-    !!question.estimatedTimeMin &&
     !!question.question &&
     question.key === `${key}${index + 1}` &&
     validateRequiredFor(question.requiredFor)
   );
 };
 
-const areQuestionsValid = (
-  questions: QuestionData[],
-  notValidQuestions: string[],
-  key: string,
-  topic: string
-): boolean => {
+const areQuestionsValid = (questions: Question[], notValidQuestions: string[], key: string, topic: string): boolean => {
   return questions.reduce((prev: boolean, curr, index) => {
     const isValid = validateQuestion(curr, key, index);
 
@@ -53,7 +47,7 @@ export const validateInterviewQuestions = (interviewQuestions: InterviewQuestion
   const notValidQuestions: string[] = [];
 
   const isValid = Object.keys(interviewQuestions).every(key =>
-    areQuestionsValid(interviewQuestions[key].data, notValidQuestions, topicsUtils.topicToKey(key), key)
+    areQuestionsValid(interviewQuestions[key], notValidQuestions, topicsUtils.topicToKey(key), key)
   );
 
   saveNotValidQuestionsToFile(notValidQuestions);
