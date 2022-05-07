@@ -4,6 +4,7 @@ import { config } from '../../config';
 import { fsUtils } from '../../fs';
 import { inputUtils } from '../../input';
 import { interviewStructure } from '../../interview';
+import { questionSetsUtilities } from '../../questionSets/services';
 
 import type { InterviewQuestions, Question } from '../../html';
 import type { Topic } from '../../interview';
@@ -61,11 +62,14 @@ const isQuestionSuitable = (level: string, requiredFor: string): boolean => {
 };
 
 const formatQuestions = (questionsMap: Map<Topic, Question[]>): string => {
+  const input = inputUtils.getInput();
   const topics: string[] = [];
 
   questionsMap.forEach((value, key) => {
     const questions: string[] = value.map((question, index) => {
-      return `${index + 1}. ${question.question} `
+      const shouldMarkQuestion = questionSetsUtilities.shouldMarkQuestion(key.key, question.key, input);
+
+      return `${shouldMarkQuestion ? config.files.suitableQuestionMarker : ''}${index + 1}. ${question.question} `
         .concat(`(requiredFor: ${question.requiredFor}) `)
         .concat(`(key: ${config.parsers.questionKey}${question.key}${config.parsers.questionKey})`);
     });

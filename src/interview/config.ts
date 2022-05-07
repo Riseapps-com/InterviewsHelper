@@ -1,7 +1,7 @@
 import data from './data.json';
 
-import type { InterviewStructure } from './types';
+import type { InterviewStructure, Topic } from './types';
 
-const interviewStructure = data as InterviewStructure;
+const interviewStructure = data as InterviewStructure<Topic>;
 
 export { interviewStructure };

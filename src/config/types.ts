@@ -24,8 +24,8 @@ export type PdfFonts = {
 };
 
 export type PdfColors = {
-  brandColor: string;
-  blackColor: string;
+  brandColor: [number, number, number];
+  blackColor: [number, number, number];
 };
 
 export type PdfSizes = {

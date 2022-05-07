@@ -2,293 +2,899 @@
   "department": {
     "recommendedDuration": 55,
     "react": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 7, "duration": 14, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "react": { "label": "React", "questionsNumber": 10, "duration": 20, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 7,
+        "duration": 14,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "react": { "key": "react", "label": "React", "questionsNumber": 10, "duration": 20, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     },
     "reactNative": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "react": { "label": "React", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "reactNative": { "label": "React Native", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "nativePlatforms": { "label": "Native Platforms", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 5,
+        "duration": 10,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "react": { "key": "react", "label": "React", "questionsNumber": 5, "duration": 10, "status": "required" },
+      "reactNative": {
+        "key": "reactNative",
+        "label": "React Native",
+        "questionsNumber": 5,
+        "duration": 10,
+        "status": "required"
+      },
+      "nativePlatforms": {
+        "key": "nativePlatforms",
+        "label": "Native Platforms",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     },
     "angular": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 7, "duration": 14, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "angular": { "label": "Angular", "questionsNumber": 10, "duration": 20, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 7,
+        "duration": 14,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "angular": { "key": "angular", "label": "Angular", "questionsNumber": 10, "duration": 20, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     },
     "vue": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 7, "duration": 14, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "vue": { "label": "Vue.js", "questionsNumber": 10, "duration": 20, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 7,
+        "duration": 14,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "vue": { "key": "vue", "label": "Vue.js", "questionsNumber": 10, "duration": 20, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     },
     "node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 7, "duration": 14, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 10, "duration": 20, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 7,
+        "duration": 14,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 10, "duration": 20, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "key",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     },
     "react+node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 7, "duration": 14, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "react": { "label": "React", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 7,
+        "duration": 14,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "react": { "key": "react", "label": "React", "questionsNumber": 5, "duration": 10, "status": "required" },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 5, "duration": 10, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     },
     "reactNative+node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "react": { "label": "React", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "reactNative": { "label": "React Native", "questionsNumber": 4, "duration": 8, "status": "required" },
-      "nativePlatforms": { "label": "Native Platforms", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 4, "duration": 8, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 5,
+        "duration": 10,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "react": { "key": "react", "label": "React", "questionsNumber": 3, "duration": 6, "status": "required" },
+      "reactNative": {
+        "key": "reactNative",
+        "label": "React Native",
+        "questionsNumber": 4,
+        "duration": 8,
+        "status": "required"
+      },
+      "nativePlatforms": {
+        "key": "nativePlatforms",
+        "label": "Native Platforms",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 4, "duration": 8, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     },
     "angular+node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 7, "duration": 14, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "angular": { "label": "Angular", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 7,
+        "duration": 14,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "angular": { "key": "angular", "label": "Angular", "questionsNumber": 5, "duration": 10, "status": "required" },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 5, "duration": 10, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     },
     "vue+node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 7, "duration": 14, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "vue": { "label": "Vue.js", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 5, "duration": 10, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 7,
+        "duration": 14,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "vue": { "key": "vue", "label": "Vue.js", "questionsNumber": 5, "duration": 10, "status": "required" },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 5, "duration": 10, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "key",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 5, "duration": 5, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 10, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 3, "duration": 6, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 5,
+        "duration": 5,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 10,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "optional"
+      }
     }
   },
   "partnership": {
     "recommendedDuration": 25,
     "react": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "react": { "label": "React", "questionsNumber": 4, "duration": 8, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "react": { "key": "react", "label": "React", "questionsNumber": 4, "duration": 8, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     },
     "reactNative": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "react": { "label": "React", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "reactNative": { "label": "React Native", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "nativePlatforms": { "label": "Native Platforms", "questionsNumber": 1, "duration": 2, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "react": { "key": "react", "label": "React", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "reactNative": {
+        "key": "reactNative",
+        "label": "React Native",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "nativePlatforms": {
+        "key": "nativePlatforms",
+        "label": "Native Platforms",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "required"
+      },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     },
     "angular": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "angular": { "label": "Angular", "questionsNumber": 4, "duration": 8, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "angular": { "key": "angular", "label": "Angular", "questionsNumber": 4, "duration": 8, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     },
     "vue": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "vue": { "label": "Vue.js", "questionsNumber": 4, "duration": 8, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "vue": { "key": "vue", "label": "Vue.js", "questionsNumber": 4, "duration": 8, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     },
     "node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 4, "duration": 8, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 4, "duration": 8, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     },
     "react+node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "react": { "label": "React", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "react": { "key": "react", "label": "React", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     },
     "reactNative+node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 1, "duration": 2, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 1, "duration": 2, "status": "required" },
-      "react": { "label": "React", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "reactNative": { "label": "React Native", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "nativePlatforms": { "label": "Native Platforms", "questionsNumber": 1, "duration": 2, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "required"
+      },
+      "react": { "key": "react", "label": "React", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "reactNative": {
+        "key": "reactNative",
+        "label": "React Native",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "nativePlatforms": {
+        "key": "nativePlatforms",
+        "label": "Native Platforms",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "required"
+      },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     },
     "angular+node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "angular": { "label": "Angular", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "angular": { "key": "angular", "label": "Angular", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     },
     "vue+node": {
-      "javaScript": { "label": "JavaScript", "questionsNumber": 3, "duration": 6, "status": "required" },
-      "typeScript": { "label": "TypeScript", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "vue": { "label": "Vue.js", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "node": { "label": "Node.js", "questionsNumber": 2, "duration": 4, "status": "required" },
-      "testing": { "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
+      "javaScript": {
+        "key": "javaScript",
+        "label": "JavaScript",
+        "questionsNumber": 3,
+        "duration": 6,
+        "status": "required"
+      },
+      "typeScript": {
+        "key": "typeScript",
+        "label": "TypeScript",
+        "questionsNumber": 2,
+        "duration": 4,
+        "status": "required"
+      },
+      "vue": { "key": "vue", "label": "Vue.js", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "node": { "key": "node", "label": "Node.js", "questionsNumber": 2, "duration": 4, "status": "required" },
+      "testing": { "key": "testing", "label": "Testing", "questionsNumber": 3, "duration": 6, "status": "optional" },
       "dataStructuresAndAlgorithms": {
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 1,
         "duration": 2,
         "status": "optional"
       },
-      "softwareSkills": { "label": "Software Skills", "questionsNumber": 2, "duration": 2, "status": "required" },
-      "testTasks": { "label": "Test Tasks", "questionsNumber": 1, "duration": 5, "status": "required" },
-      "experience": { "label": "Experience", "questionsNumber": 1, "duration": 2, "status": "optional" }
+      "softwareSkills": {
+        "key": "softwareSkills",
+        "label": "Software Skills",
+        "questionsNumber": 2,
+        "duration": 2,
+        "status": "required"
+      },
+      "testTasks": {
+        "key": "testTasks",
+        "label": "Test Tasks",
+        "questionsNumber": 1,
+        "duration": 5,
+        "status": "required"
+      },
+      "experience": {
+        "key": "experience",
+        "label": "Experience",
+        "questionsNumber": 1,
+        "duration": 2,
+        "status": "optional"
+      }
     }
   }
 }
