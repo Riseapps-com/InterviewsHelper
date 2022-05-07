@@ -1,5 +1,3 @@
-import ColorValue = PDFKit.Mixins.ColorValue;
-
 export type PdfIcons = {
   angular: string;
   department: string;
@@ -26,8 +24,8 @@ export type PdfFonts = {
 };
 
 export type PdfColors = {
-  brandColor: ColorValue;
-  blackColor: ColorValue;
+  brandColor: string;
+  blackColor: string;
 };
 
 export type PdfSizes = {
