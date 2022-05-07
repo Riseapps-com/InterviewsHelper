@@ -1,17 +1,22 @@
-export type Status = 'optional' | 'required';
+import type { InterviewMode, InterviewType } from '../input';
 
-export type TopicDuration = {
-  status: Status;
-  durationMin: number;
+export type Status = 'required' | 'optional';
+
+export type Topic = {
   label: string;
   questionsNumber: number;
+  duration: number;
+  status: Status;
 };
 
-export type Topics = { [key in string]: TopicDuration };
+export type InterviewTypeSection = {
+  [key in string]: Topic;
+};
+
+export type InterviewModeSection = {
+  [key in InterviewType]: InterviewTypeSection;
+} & { recommendedDuration: number };
 
 export type InterviewStructure = {
-  totalDurationMin: number;
-  topics: Topics;
-  requiredSections: string[];
-  optionalSections: string[];
+  [key in InterviewMode]: InterviewModeSection;
 };

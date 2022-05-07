@@ -37,9 +37,9 @@ const areQuestionsValid = (questions: Question[], notValidQuestions: string[], k
 
 const saveNotValidQuestionsToFile = (notValidQuestions: string[]): void => {
   if (notValidQuestions.length) {
-    fs.writeFileSync(config.files.notValidQuestionsFilename, notValidQuestions.join('\n'));
-  } else if (fs.existsSync(config.files.notValidQuestionsFilename)) {
-    fs.unlinkSync(config.files.notValidQuestionsFilename);
+    fs.writeFileSync(config.files.interview.notValidQuestionsFilename, notValidQuestions.join('\n'));
+  } else if (fs.existsSync(config.files.interview.notValidQuestionsFilename)) {
+    fs.unlinkSync(config.files.interview.notValidQuestionsFilename);
   }
 };
 

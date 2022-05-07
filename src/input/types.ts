@@ -1,6 +1,15 @@
 import type { Choice } from 'prompts';
 
-export type InterviewType = 'react' | 'reactNative' | 'angular' | 'node' | 'vue';
+export type InterviewType =
+  | 'react'
+  | 'reactNative'
+  | 'angular'
+  | 'vue'
+  | 'node'
+  | 'react+node'
+  | 'reactNative+node'
+  | 'angular+node'
+  | 'vue+node';
 
 export type InterviewMode = 'department' | 'partnership';
 
@@ -10,7 +19,9 @@ export type Level = 'junior' | 'junior+' | 'middle-' | 'middle' | 'middle+' | 's
 
 export type Interview = {
   type: InterviewType;
+  typeLabel?: string;
   mode: InterviewMode;
+  modeLabel?: string;
   topics: string[];
 };
 

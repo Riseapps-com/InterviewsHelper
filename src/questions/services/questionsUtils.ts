@@ -6,7 +6,7 @@ import { inputUtils } from '../../input';
 import { interviewStructure } from '../../interview';
 
 import type { InterviewQuestions, Question } from '../../html';
-import type { TopicDuration } from '../../interview';
+import type { Topic } from '../../interview';
 
 const isSuitableForJunior = (requiredFor: string): boolean => {
   return requiredFor === 'junior';
@@ -60,7 +60,7 @@ const isQuestionSuitable = (level: string, requiredFor: string): boolean => {
   return isSuitable;
 };
 
-const formatQuestions = (questionsMap: Map<TopicDuration, Question[]>): string => {
+const formatQuestions = (questionsMap: Map<Topic, Question[]>): string => {
   const topics: string[] = [];
 
   questionsMap.forEach((value, key) => {
@@ -81,24 +81,29 @@ const formatQuestions = (questionsMap: Map<TopicDuration, Question[]>): string =
 };
 
 export const generateQuestions = (interviewQuestions: InterviewQuestions): void => {
-  const questionsMap = new Map<TopicDuration, Question[]>();
+  const input = inputUtils.getInput();
+  const questionsMap = new Map<Topic, Question[]>();
+  const section = interviewStructure[input.interview.mode][input.interview.type];
 
-  inputUtils.getInput().interview.topics.forEach(topic => {
+  input.interview.topics.forEach(topic => {
     const globalTopic = topic.includes('.') ? topic.split('.')[0] : topic;
     const suitableQuestions = interviewQuestions[topic].filter((item: Question) =>
-      isQuestionSuitable(inputUtils.getInput().candidate.supposedLevel, item.requiredFor)
+      isQuestionSuitable(input.candidate.supposedLevel, item.requiredFor)
     );
 
-    if (suitableQuestions.length && questionsMap.get(interviewStructure.topics[globalTopic])) {
-      const questions = questionsMap.get(interviewStructure.topics[globalTopic]);
+    if (suitableQuestions.length && questionsMap.get(section[globalTopic])) {
+      const questions = questionsMap.get(section[globalTopic]);
 
       if (!questions) return;
 
-      questionsMap.set(interviewStructure.topics[globalTopic], [...questions, ...suitableQuestions]);
+      questionsMap.set(section[globalTopic], [...questions, ...suitableQuestions]);
     } else if (suitableQuestions.length) {
-      questionsMap.set(interviewStructure.topics[globalTopic], suitableQuestions);
+      questionsMap.set(section[globalTopic], suitableQuestions);
     }
   });
 
-  fs.writeFileSync(fsUtils.wrapToOutputDirectory(config.files.questionsFilename), formatQuestions(questionsMap));
+  fs.writeFileSync(
+    fsUtils.wrapToOutputDirectory(config.files.interview.questionsFilename),
+    formatQuestions(questionsMap)
+  );
 };

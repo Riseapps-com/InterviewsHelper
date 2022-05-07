@@ -7,10 +7,10 @@ import { RISEAPPS_ADDRESS, RISEAPPS_EMAIL, RISEAPPS_PHONE } from '../config';
 export const createPDFDocument = (): PDFKit.PDFDocument => {
   const pdfDocument = new PDFDocument({
     margins: {
-      top: config.pdfDocument.verticalMargin,
-      bottom: config.pdfDocument.verticalMargin,
-      left: config.pdfDocument.horizontalMargin,
-      right: config.pdfDocument.horizontalMargin,
+      top: config.pdfDocument.sizes.verticalMargin,
+      bottom: config.pdfDocument.sizes.verticalMargin,
+      left: config.pdfDocument.sizes.horizontalMargin,
+      right: config.pdfDocument.sizes.horizontalMargin,
     },
     info: {
       Author: config.pdfDocument.author,
@@ -19,8 +19,8 @@ export const createPDFDocument = (): PDFKit.PDFDocument => {
     },
   });
 
-  pdfDocument.registerFont(config.pdfDocument.regularFont, config.pdfDocument.regularFontPath);
-  pdfDocument.registerFont(config.pdfDocument.boldFont, config.pdfDocument.boldFontPath);
+  pdfDocument.registerFont(config.pdfDocument.fonts.regularFont, config.pdfDocument.fonts.regularFontPath);
+  pdfDocument.registerFont(config.pdfDocument.fonts.boldFont, config.pdfDocument.fonts.boldFontPath);
 
   return pdfDocument;
 };
@@ -28,15 +28,15 @@ export const createPDFDocument = (): PDFKit.PDFDocument => {
 export const drawHeader = (pdf: PDFKit.PDFDocument): void => {
   pdf
     .image(
-      config.pdfDocument.riseappsLogoPath,
-      pdf.page.width - config.pdfDocument.logoWidth - config.pdfDocument.logoMargin,
-      config.pdfDocument.logoMargin,
-      { width: config.pdfDocument.logoWidth }
+      config.pdfDocument.icons.riseappsLogo,
+      pdf.page.width - config.pdfDocument.sizes.logoWidth - config.pdfDocument.sizes.logoMargin,
+      config.pdfDocument.sizes.logoMargin,
+      { width: config.pdfDocument.sizes.logoWidth }
     )
     .moveDown(1)
-    .font(config.pdfDocument.boldFont)
-    .fontSize(config.pdfDocument.baseFontSize)
-    .fillColor(config.pdfDocument.blackColor)
+    .font(config.pdfDocument.fonts.boldFont)
+    .fontSize(config.pdfDocument.fonts.baseFontSize)
+    .fillColor(config.pdfDocument.colors.blackColor)
     .text(RISEAPPS_ADDRESS, { align: 'right' })
     .text(RISEAPPS_PHONE, { align: 'right' })
     .text(RISEAPPS_EMAIL, { align: 'right' });
@@ -44,43 +44,48 @@ export const drawHeader = (pdf: PDFKit.PDFDocument): void => {
 
 const drawText = (pdf: PDFKit.PDFDocument, text: string, fontSize: number): void => {
   pdf
-    .font(config.pdfDocument.boldFont)
+    .font(config.pdfDocument.fonts.boldFont)
     .fontSize(fontSize)
-    .fillColor(config.pdfDocument.brandColor)
+    .fillColor(config.pdfDocument.colors.brandColor)
     .text(text)
-    .moveTo(pdf.x, pdf.y + config.pdfDocument.lineMargin)
-    .lineTo(pdf.page.width - config.pdfDocument.horizontalMargin, pdf.y + config.pdfDocument.lineMargin)
-    .stroke(config.pdfDocument.brandColor)
+    .moveTo(pdf.x, pdf.y + config.pdfDocument.sizes.lineMargin)
+    .lineTo(pdf.page.width - config.pdfDocument.sizes.horizontalMargin, pdf.y + config.pdfDocument.sizes.lineMargin)
+    .stroke(config.pdfDocument.colors.brandColor)
     .moveDown(1);
 };
 
 export const drawTitle = (pdf: PDFKit.PDFDocument, title: string): void => {
-  drawText(pdf, title, config.pdfDocument.biggerFontSize);
+  drawText(pdf, title, config.pdfDocument.fonts.biggerFontSize);
 };
 
 export const drawSubtitle = (pdf: PDFKit.PDFDocument, subtitle: string): void => {
-  drawText(pdf, subtitle, config.pdfDocument.baseFontSize);
+  drawText(pdf, subtitle, config.pdfDocument.fonts.baseFontSize);
 };
 
 export const drawTextWithIcon = (
   pdfDocument: PDFKit.PDFDocument,
-  icon: string,
+  icons: string | string[],
   text: string,
   isLink?: boolean
 ): void => {
   pdfDocument
-    .font(config.pdfDocument.boldFont)
-    .fontSize(config.pdfDocument.baseFontSize)
-    .fillColor(isLink ? config.pdfDocument.brandColor : config.pdfDocument.blackColor)
-    .image(icon, { width: config.pdfDocument.iconWidth });
+    .font(config.pdfDocument.fonts.boldFont)
+    .fontSize(config.pdfDocument.fonts.baseFontSize)
+    .fillColor(isLink ? config.pdfDocument.colors.brandColor : config.pdfDocument.colors.blackColor);
+
+  if (Array.isArray(icons)) {
+    icons.forEach(icon => pdfDocument.image(icon, { width: config.pdfDocument.sizes.iconWidth }));
+  } else {
+    pdfDocument.image(icons, { width: config.pdfDocument.sizes.iconWidth });
+  }
 
   const xBackup = pdfDocument.x;
   const yBackup = pdfDocument.y;
 
   pdfDocument.text(
     text,
-    xBackup + config.pdfDocument.iconWidth * 1.5,
-    yBackup - config.pdfDocument.iconWidth,
+    xBackup + config.pdfDocument.sizes.iconWidth * 1.5,
+    yBackup - config.pdfDocument.sizes.iconWidth,
     isLink ? { link: text, underline: true } : undefined
   );
 
@@ -88,14 +93,16 @@ export const drawTextWithIcon = (
   pdfDocument.x = xBackup;
   // eslint-disable-next-line no-param-reassign
   pdfDocument.y = yBackup;
+
+  pdfDocument.moveDown(0.2);
 };
 
 export const drawStep = (pdfDocument: PDFKit.PDFDocument, step: string): void => {
   pdfDocument
     .moveDown(1)
-    .font(config.pdfDocument.boldFont)
-    .fontSize(config.pdfDocument.biggestFontSize)
-    .fillColor(config.pdfDocument.brandColor)
+    .font(config.pdfDocument.fonts.boldFont)
+    .fontSize(config.pdfDocument.fonts.biggestFontSize)
+    .fillColor(config.pdfDocument.colors.brandColor)
     .text(step, { align: 'center' });
 };
 
@@ -104,8 +111,8 @@ export const drawDate = (pdfDocument: PDFKit.PDFDocument): void => {
 
   pdfDocument
     .moveDown(1)
-    .font(config.pdfDocument.boldFont)
-    .fontSize(config.pdfDocument.baseFontSize)
-    .fillColor(config.pdfDocument.blackColor)
+    .font(config.pdfDocument.fonts.boldFont)
+    .fontSize(config.pdfDocument.fonts.baseFontSize)
+    .fillColor(config.pdfDocument.colors.blackColor)
     .text(dayjs().format(format), { align: 'right', underline: true });
 };

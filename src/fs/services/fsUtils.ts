@@ -4,8 +4,9 @@ import { inputUtils } from '../../input';
 import { OUTPUTS_DIRECTORY } from '../config';
 
 export const getOutputDirectory = (): string => {
-  const firstName = inputUtils.getInput().candidate.firstname.toLowerCase();
-  const lastName = inputUtils.getInput().candidate.lastname.toLowerCase();
+  const input = inputUtils.getInput();
+  const firstName = input.candidate.firstname.toLowerCase();
+  const lastName = input.candidate.lastname.toLowerCase();
 
   return `${OUTPUTS_DIRECTORY}/output-${firstName}-${lastName}`;
 };

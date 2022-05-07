@@ -1,6 +1,55 @@
 import ColorValue = PDFKit.Mixins.ColorValue;
 
-export type Database = {
+export type PdfIcons = {
+  angular: string;
+  department: string;
+  email: string;
+  linkedin: string;
+  node: string;
+  partnership: string;
+  react: string;
+  reactNative: string;
+  riseappsLogo: string;
+  user: string;
+  vue: string;
+};
+
+export type PdfFonts = {
+  regularFont: string;
+  regularFontPath: string;
+  boldFont: string;
+  boldFontPath: string;
+  smallerFontSize: number;
+  baseFontSize: number;
+  biggerFontSize: number;
+  biggestFontSize: number;
+};
+
+export type PdfColors = {
+  brandColor: ColorValue;
+  blackColor: ColorValue;
+};
+
+export type PdfSizes = {
+  verticalMargin: number;
+  horizontalMargin: number;
+  logoWidth: number;
+  logoMargin: number;
+  radarChartWidth: number;
+  iconWidth: number;
+  lineMargin: number;
+};
+
+export type PdfDocument = {
+  creator: string;
+  author: string;
+  fonts: PdfFonts;
+  colors: PdfColors;
+  sizes: PdfSizes;
+  icons: PdfIcons;
+};
+
+export type DatabaseFiles = {
   angularPath: string;
   dataStructuresAndAlgorithmsPath: string;
   experiencePath: string;
@@ -22,44 +71,24 @@ export type Database = {
   vuePath: string;
 };
 
-export type PdfDocument = {
-  creator: string;
-  author: string;
-  verticalMargin: number;
-  horizontalMargin: number;
-  regularFont: string;
-  regularFontPath: string;
-  boldFont: string;
-  boldFontPath: string;
-  smallerFontSize: number;
-  baseFontSize: number;
-  biggerFontSize: number;
-  biggestFontSize: number;
-  brandColor: ColorValue;
-  blackColor: ColorValue;
-  riseappsLogoPath: string;
-  logoWidth: number;
-  logoMargin: number;
-  pieChartWidth: number;
-  radarChartWidth: number;
-  emailIconPath: string;
-  linkedinIconPath: string;
-  userIconPath: string;
-  iconWidth: number;
-  lineMargin: number;
+export type InterviewFiles = {
+  notValidQuestionsFilename: string;
+  inputFilename: string;
+  questionsFilename: string;
+  forInterviewerFilename: string;
+};
+
+export type ResultFiles = {
+  radarChartFilename: string;
+  resultDraftFilename: string;
+  resultNotesDraftFilename: string;
+  resultFilename: string;
 };
 
 export type Files = {
-  database: Database;
-  notValidQuestionsFilename: string;
-  configFilename: string;
-  questionsFilename: string;
-  radarChartFilename: string;
-  forInterviewerFilename: string;
-  resultDraftFilename: string;
-  resultNotesDraftFilename: string;
-  pieChartFilename: string;
-  resultFilename: string;
+  database: DatabaseFiles;
+  interview: InterviewFiles;
+  result: ResultFiles;
   suitableQuestionMarker: string;
 };
 
@@ -82,16 +111,6 @@ export type Evaluation = {
   scale: Scale;
 };
 
-export type PieChart = {
-  width: number;
-  dataColors: string[];
-  fontColor: string;
-  fontSize: number;
-  fontStyle: string;
-  centerFontSize: number;
-  dataFontColor: string;
-};
-
 export type RadarChart = {
   width: number;
   datasetColor: string;
@@ -106,7 +125,6 @@ export type RadarChart = {
 
 export type Config = {
   files: Files;
-  pieChart: PieChart;
   radarChart: RadarChart;
   pdfDocument: PdfDocument;
   parsers: Parsers;

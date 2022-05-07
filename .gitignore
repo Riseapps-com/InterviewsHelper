@@ -4,4 +4,4 @@ node_modules/**/*
 config/input.ts
 *data*/**/*
 backup/**/*
-/config.json
+/input.json

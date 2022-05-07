@@ -20,7 +20,7 @@ const interviewQuestions: InterviewQuestions = htmlUtils.parseDatabase();
 const validateDatabase = async (): Promise<void> => {
   if (!validationUtils.validateInterviewQuestions(interviewQuestions)) {
     console.log(`Questions are not valid. 
-      See ${fsUtils.getOutputDirectory()}/${config.files.notValidQuestionsFilename} for more details.`);
+      See ${fsUtils.getOutputDirectory()}/${config.files.interview.notValidQuestionsFilename} for more details.`);
   }
 };
 
@@ -32,7 +32,6 @@ const generateQuestions = async (): Promise<void> => {
     fsUtils.createOutputsDirectory();
     fsUtils.createOutputDirectory();
     questionsUtils.generateQuestions(interviewQuestions);
-    await chartsUtils.buildPieChart();
   } catch (error) {
     console.log(error);
   }

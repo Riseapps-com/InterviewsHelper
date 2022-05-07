@@ -11,29 +11,36 @@ import {
 } from '../config';
 
 import type { Input, InterviewType } from '../types';
+import type { Choice } from 'prompts';
 
 export const generateInput = async (): Promise<void> => {
+  const interviewTypeChoices: Choice[] = [
+    { title: 'React', value: 'react' },
+    { title: 'React-Native', value: 'reactNative' },
+    { title: 'Angular', value: 'angular' },
+    { title: 'Vue.js', value: 'vue' },
+    { title: 'Node.js', value: 'node' },
+    { title: 'React + Node.js', value: 'react+node' },
+    { title: 'React-Native + Node.js', value: 'reactNative+node' },
+    { title: 'Angular + Node.js', value: 'angular+node' },
+    { title: 'Vue.js + Node.js', value: 'vue+node' },
+  ];
   const interviewTypeResponse = await prompts({
     type: 'select',
     name: 'interviewType',
     message: 'Select interview type',
-    choices: [
-      { title: 'React', value: 'react' },
-      { title: 'React-Native', value: 'reactNative' },
-      { title: 'Angular', value: 'angular' },
-      { title: 'Node', value: 'node' },
-      { title: 'Vue', value: 'vue' },
-    ],
+    choices: interviewTypeChoices,
   });
+  const interviewModeChoices: Choice[] = [
+    { title: 'Department', value: 'department' },
+    { title: 'Partnership', value: 'partnership' },
+  ];
   const response = await prompts([
     {
       type: 'select',
       name: 'interviewMode',
       message: 'Select interview mode',
-      choices: [
-        { title: 'Department', value: 'department' },
-        { title: 'Partnership', value: 'partnership' },
-      ],
+      choices: interviewModeChoices,
     },
     {
       type: 'multiselect',
@@ -107,7 +114,9 @@ export const generateInput = async (): Promise<void> => {
   const input: Input = {
     interview: {
       type: interviewTypeResponse.interviewType,
+      typeLabel: interviewTypeChoices.find(item => item.value === interviewTypeResponse.interviewType)?.title,
       mode: response.interviewMode,
+      modeLabel: interviewModeChoices.find(item => item.value === response.interviewMode)?.title,
       topics: response.interviewTopics,
     },
     candidate: {
@@ -125,13 +134,19 @@ export const generateInput = async (): Promise<void> => {
     useQuestionSets: useQuestionSetsResponse.useQuestionSets,
   };
 
-  fs.writeFileSync(config.files.configFilename, JSON.stringify(input));
+  fs.writeFileSync(config.files.interview.inputFilename, JSON.stringify(input));
 };
 
 export const getInput = (): Input => {
-  const input = JSON.parse(fs.readFileSync(config.files.configFilename, 'utf-8'));
+  const input = JSON.parse(fs.readFileSync(config.files.interview.inputFilename, 'utf-8'));
 
   if (!input) throw new Error('Generate input at first.');
 
   return input;
+};
+
+export const parseInterviewType = (interviewType: InterviewType): string[] => {
+  const interviewTypeSplit = interviewType.split('+');
+
+  return interviewTypeSplit.filter(item => !!item);
 };
