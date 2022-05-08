@@ -4,9 +4,11 @@ import { config } from '../../config';
 import { fsUtils } from '../../fs';
 import { inputUtils } from '../../input';
 import { interviewStructure } from '../../interview';
-import { questionSetsUtilities } from '../../questionSets/services';
+import { questionSetsUtilities } from '../../questionSets';
+import { QUESTION_DEFAULT_DURATION, TEST_TASK_DEPARTMENT_DURATION, TEST_TASK_PARTNERSHIP_DURATION } from '../config';
 
 import type { InterviewQuestions, Question } from '../../html';
+import type { Input } from '../../input';
 import type { Topic } from '../../interview';
 
 const isSuitableForJunior = (requiredFor: string): boolean => {
@@ -82,6 +84,30 @@ const formatQuestions = (questionsMap: Map<Topic, Question[]>): string => {
   });
 
   return topics.join('\n');
+};
+
+export const calculateTopicDuration = (input: Input, question: string, questionsLength?: number): number => {
+  if (!questionsLength) return -1;
+
+  const topic = Object.values(interviewStructure[input.interview.mode][input.interview.type]).find(
+    interviewTopic => interviewTopic.label === question
+  );
+
+  if (!topic) return -1;
+
+  if (topic.key === 'testTasks' && input.interview.mode === 'department') {
+    return questionsLength * TEST_TASK_DEPARTMENT_DURATION;
+  }
+
+  if (topic.key === 'testTasks' && input.interview.mode === 'partnership') {
+    return questionsLength * TEST_TASK_PARTNERSHIP_DURATION;
+  }
+
+  if (topic.key === 'softwareSkills') {
+    return questionsLength;
+  }
+
+  return questionsLength * QUESTION_DEFAULT_DURATION;
 };
 
 export const generateQuestions = (interviewQuestions: InterviewQuestions): void => {

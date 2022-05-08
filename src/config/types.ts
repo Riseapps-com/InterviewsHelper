@@ -1,6 +1,7 @@
 export type PdfIcons = {
   angular: string;
   department: string;
+  duration: string;
   email: string;
   linkedin: string;
   node: string;

@@ -4,6 +4,7 @@ import { config } from '../../config';
 import { fsUtils } from '../../fs';
 import { inputUtils } from '../../input';
 import { pdfUtils } from '../../pdf';
+import { questionsUtils } from '../../questions';
 import { interviewStructure } from '../config';
 
 import type { PdfIcons } from '../../config/types';
@@ -84,7 +85,7 @@ export const generateResultNotesDraft = (): void => {
   );
 };
 
-const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
+const drawInterviewInfo = (pdf: PDFKit.PDFDocument): void => {
   const input = inputUtils.getInput();
   const name = `${input.candidate.firstname} ${input.candidate.lastname}`;
   const { supposedLevel, email } = input.candidate;
@@ -100,6 +101,11 @@ const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
     pdf,
     config.pdfDocument.icons[input.interview.mode],
     input.interview.modeLabel || input.interview.mode
+  );
+  pdfUtils.drawTextWithIcon(
+    pdf,
+    config.pdfDocument.icons.duration,
+    `${interviewStructure[input.interview.mode].recommendedDuration} mins`
   );
   pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.icons.user, supposedLevel);
   pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.icons.email, email);
@@ -125,9 +131,7 @@ const drawQuestions = (pdf: PDFKit.PDFDocument, questions: Map<string, Question[
   pdfUtils.drawTitle(pdf, 'Questions');
 
   Array.of(...questions.keys()).forEach(question => {
-    const duration = Object.values(interviewStructure[input.interview.mode][input.interview.type]).find(
-      interviewTopic => interviewTopic.label === question
-    )?.duration;
+    const duration = questionsUtils.calculateTopicDuration(input, question, questions.get(question)?.length);
     const topic = `${question} (${duration} mins)`;
 
     pdf.moveDown(1);
@@ -159,7 +163,7 @@ export const generateInterviewPDF = (questions: Map<string, Question[]>): void =
 
   pdfUtils.drawHeader(pdfDocument);
   pdfUtils.drawStep(pdfDocument, 'Interview');
-  drawCandidateInfo(pdfDocument);
+  drawInterviewInfo(pdfDocument);
   drawEvaluation(pdfDocument);
   drawQuestions(pdfDocument, questions);
   pdfUtils.drawDate(pdfDocument);

@@ -3,6 +3,7 @@ import fs from 'fs';
 import { config } from '../../config';
 import { fsUtils } from '../../fs';
 import { inputUtils } from '../../input';
+import { interviewStructure } from '../../interview';
 import { pdfUtils } from '../../pdf';
 
 import type { PdfIcons } from '../../config/types';
@@ -59,7 +60,7 @@ export const parseResultNotesDraft = (): string[] => {
   return [englishLevel, softwareSkills, technicalSkills, supposedLevel, recommend];
 };
 
-const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
+const drawInterviewInfo = (pdf: PDFKit.PDFDocument): void => {
   const input = inputUtils.getInput();
   const candidateName = `${input.candidate.firstname} ${input.candidate.lastname}`;
   const candidateEmail = input.candidate.email;
@@ -70,6 +71,11 @@ const drawCandidateInfo = (pdf: PDFKit.PDFDocument): void => {
     pdf,
     inputUtils.parseInterviewType(input.interview.type).map(item => config.pdfDocument.icons[item as keyof PdfIcons]),
     input.interview.typeLabel || input.interview.type
+  );
+  pdfUtils.drawTextWithIcon(
+    pdf,
+    config.pdfDocument.icons.duration,
+    `${interviewStructure[input.interview.mode].recommendedDuration} mins`
   );
   pdfUtils.drawTextWithIcon(
     pdf,
@@ -118,7 +124,7 @@ export const generateResultPDF = (resultNotesDraft: string[]): void => {
 
   pdfUtils.drawHeader(pdfDocument);
   pdfUtils.drawStep(pdfDocument, 'Result');
-  drawCandidateInfo(pdfDocument);
+  drawInterviewInfo(pdfDocument);
   drawRadarChart(pdfDocument);
   drawSection(pdfDocument, 'English level', resultNotesDraft[0], 2);
   drawSection(pdfDocument, 'Software skills', resultNotesDraft[1]);
