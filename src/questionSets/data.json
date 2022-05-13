@@ -666,64 +666,64 @@
         "junior+": ["js16", "js36", "js39", "js54"],
         "middle-": ["js36", "js39", "js54"],
         "middle": ["js36", "js39", "js54"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js39", "js54", "js57"],
+        "senior": ["js7", "js39", "js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1", "ts19"],
         "middle": ["ts1", "ts19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1", "ts20"],
+        "senior": ["ts1", "ts20"]
       },
       "react": {
         "junior": ["r.b1", "r.b9", "r.b19", "r.h4", "r.h5"],
         "junior+": ["r.b2", "r.b9", "r.r1", "r.h4", "r.h5"],
         "middle-": ["r.b9", "r.r3", "r.h4", "r.h5"],
         "middle": ["r.b2", "r.r2", "r.h4", "r.h5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["r.b2", "r.h4", "r.h5", "r.h9"],
+        "senior": ["r.b5", "r.b15", "r.h4", "r.h5"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12" ],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     },
     "reactNative": {
@@ -732,80 +732,80 @@
         "junior+": ["js36", "js39", "js54"],
         "middle-": ["js39", "js54"],
         "middle": ["js39", "js54"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js39", "js54"],
+        "senior": ["js39", "js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1", "ts19"],
         "middle": ["ts1", "ts19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1", "ts20"],
+        "senior": ["ts1", "ts20"]
       },
       "react": {
         "junior": ["r.b9", "r.h4", "r.h5"],
         "junior+": ["r.b9", "r.r1", "r.h4", "r.h5"],
         "middle-": ["r.h4", "r.h5"],
         "middle": ["r.h4", "r.h5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["r.h4", "r.h5"],
+        "senior": ["r.h4", "r.h5"]
       },
       "reactNative": {
         "junior": ["rn4", "rn6", "rn13"],
         "junior+": ["rn5", "rn10"],
         "middle-": ["rn1", "rn21"],
         "middle": ["rn1", "rn20"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["rn1", "rn21"],
+        "senior": ["rn19", "rn20"]
       },
       "nativePlatforms": {
         "junior": [],
         "junior+": [],
         "middle-": ["np.i8"],
         "middle": ["np.i1"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["np.i2"],
+        "senior": ["np.i1"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12" ],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     },
     "angular": {
@@ -814,64 +814,64 @@
         "junior+": ["js10", "js36", "js39", "js54"],
         "middle-": ["js36", "js39", "js54"],
         "middle": ["js36", "js39", "js54"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js39", "js54", "js57"],
+        "senior": ["js7", "js39", "js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1", "ts19"],
         "middle": ["ts1", "ts19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1", "ts20"],
+        "senior": ["ts1", "ts20"]
       },
       "angular": {
         "junior": ["a3"],
         "junior+": ["a1", "a5", "a7", "a11", "a17"],
         "middle-": ["a6", "a12", "a19", "a20"],
         "middle": ["a6", "a17", "a19", "a20"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["a6", "a17", "a18", "a20"],
+        "senior": ["a11", "a17", "a18", "a19"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12"],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     },
     "vue": {
@@ -880,64 +880,64 @@
         "junior+": ["js10", "js36", "js39", "js54"],
         "middle-": ["js36", "js39", "js54"],
         "middle": ["js36", "js39", "js54"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js39", "js54", "js57"],
+        "senior": ["js7", "js39", "js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1", "ts19"],
         "middle": ["ts1", "ts19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1", "ts20"],
+        "senior": ["ts1", "ts20"]
       },
       "vue": {
         "junior": ["v1", "v12"],
         "junior+": ["v1", "v4", "v8", "v13", "v15"],
         "middle-": ["v2", "v4", "v8", "v15"],
         "middle": ["v2", "v8", "v14", "v15"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["v6", "v10", "v14", "v15"],
+        "senior": ["v3", "v8", "v14", "v15"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12"],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     },
     "node": {
@@ -946,64 +946,64 @@
         "junior+": ["js10", "js36", "js39", "js54"],
         "middle-": ["js36", "js39", "js54"],
         "middle": ["js36", "js39", "js54"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js39", "js54", "js57"],
+        "senior": ["js7", "js39", "js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1", "ts19"],
         "middle": ["ts1", "ts19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1", "ts20"],
+        "senior": ["ts1", "ts20"]
       },
       "node": {
         "junior": ["n6"],
         "junior+": ["n1", "n2", "n3", "n6", "n7"],
         "middle-": ["n2", "n3", "n7", "n12"],
         "middle": ["n1", "n2", "n8", "n12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["n12", "n14", "n15", "n16"],
+        "senior": ["n1", "n3", "n12", "n16"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12" ],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     },
     "react+node": {
@@ -1012,72 +1012,72 @@
         "junior+": ["js10", "js39", "js54"],
         "middle-": ["js36", "js39", "js54"],
         "middle": ["js36", "js39", "js54"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js39", "js54", "js57"],
+        "senior": ["js7", "js39", "js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1", "ts19"],
         "middle": ["ts1", "ts19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1", "ts20"],
+        "senior": ["ts1", "ts20"]
       },
       "react": {
         "junior": ["r.b1", "r.b9", "r.h4", "r.h5"],
         "junior+": ["r.b9", "r.h4", "r.h5"],
         "middle-": ["r.h4", "r.h5"],
         "middle": ["r.h4", "r.h5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["r.h4", "r.h5"],
+        "senior": ["r.h4", "r.h5"]
       },
       "node": {
         "junior": ["n6"],
         "junior+": ["n1", "n3", "n6"],
         "middle-": ["n2", "n3"],
         "middle": ["n1", "n12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["n1", "n12"],
+        "senior": ["n2", "n12"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12"],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     },
     "reactNative+node": {
@@ -1086,88 +1086,88 @@
         "junior+": ["js39", "js54"],
         "middle-": ["js39"],
         "middle": ["js39"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js54"],
+        "senior": ["js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1"],
         "middle": ["ts1"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1"],
+        "senior": ["ts1"]
       },
       "react": {
         "junior": ["r.b9", "r.h4", "r.h5"],
         "junior+": ["r.b9", "r.h4", "r.h5"],
         "middle-": ["r.h4", "r.h5"],
         "middle": ["r.h4", "r.h5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["r.h4", "r.h5"],
+        "senior": ["r.h4", "r.h5"]
       },
       "reactNative": {
         "junior": ["rn4", "rn6", "rn13"],
         "junior+": ["rn5", "rn7"],
         "middle-": ["rn1", "rn21"],
         "middle": ["rn1", "rn20"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["rn1", "rn21"],
+        "senior": ["rn1", "rn21"]
       },
       "nativePlatforms": {
         "junior": [],
         "junior+": [],
         "middle-": ["np.i8"],
         "middle": ["np.i1"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["np.i2"],
+        "senior": ["np.i1"]
       },
       "node": {
         "junior": ["n6"],
         "junior+": ["n1", "n3"],
         "middle-": ["n2", "n3"],
         "middle": ["n1", "n12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["n1", "n12"],
+        "senior": ["n2", "n12"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12"],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     },
     "angular+node": {
@@ -1176,72 +1176,72 @@
         "junior+": ["js10", "js39", "js54"],
         "middle-": ["js36", "js39", "js54"],
         "middle": ["js36", "js39", "js54"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js39", "js54", "js57"],
+        "senior": ["js7", "js39", "js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1", "ts19"],
         "middle": ["ts1", "ts19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1", "ts20"],
+        "senior": ["ts1", "ts20"]
       },
       "angular": {
         "junior": ["a3"],
         "junior+": ["a1", "a11", "a17"],
         "middle-": ["a6", "a20"],
         "middle": ["a17", "a19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["a6", "a17"],
+        "senior": ["a15", "a17"]
       },
       "node": {
         "junior": ["n6"],
         "junior+": ["n1", "n3", "n7"],
         "middle-": ["n2", "n3"],
         "middle": ["n1", "n12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["n1", "n12"],
+        "senior": ["n2", "n12"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12"],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     },
     "vue+node": {
@@ -1250,72 +1250,72 @@
         "junior+": ["js10", "js39", "js54"],
         "middle-": ["js36", "js39", "js54"],
         "middle": ["js36", "js39", "js54"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["js39", "js54", "js57"],
+        "senior": ["js7", "js39", "js54"]
       },
       "typeScript": {
         "junior": [],
         "junior+": [],
         "middle-": ["ts1", "ts19"],
         "middle": ["ts1", "ts19"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ts1", "ts20"],
+        "senior": ["ts1", "ts20"]
       },
       "vue": {
         "junior": ["v1", "v12"],
         "junior+": ["v1", "v4", "v15"],
         "middle-": ["v8", "v15"],
         "middle": ["v13", "v15"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["v14", "v15"],
+        "senior": ["v14", "v15"]
       },
       "node": {
         "junior": ["n6"],
         "junior+": ["n1", "n3", "n7"],
         "middle-": ["n2", "n3"],
         "middle": ["n1", "n12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["n1", "n12"],
+        "senior": ["n2", "n12"]
       },
       "testing": {
         "junior": [],
         "junior+": [],
         "middle-": [],
         "middle": ["t.j1", "t.j5", "t.j10"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["t.j1", "t.j5", "t.j10"],
+        "senior": ["t.j1", "t.j12", "t.j13"]
       },
       "dataStructuresAndAlgorithms": {
         "junior": ["dsaa1"],
         "junior+": ["dsaa2"],
         "middle-": ["dsaa8"],
         "middle": ["dsaa6"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["dsaa8"],
+        "senior": ["dsaa5"]
       },
       "softwareSkills": {
         "junior": ["ss6", "ss9"],
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["ss4", "ss12"],
+        "senior": ["ss12", "ss13"]
       },
       "testTasks": {
         "junior": ["tt2"],
         "junior+": ["tt4"],
         "middle-": ["tt6"],
         "middle": ["tt9"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["tt10"],
+        "senior": ["tt14"]
       },
       "experience": {
         "junior": ["e7"],
         "junior+": ["e9"],
         "middle-": ["e12"],
         "middle": ["e5"],
-        "middle+": [],
-        "senior": []
+        "middle+": ["e11"],
+        "senior": ["e4"]
       }
     }
   }
