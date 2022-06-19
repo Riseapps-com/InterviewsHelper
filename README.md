@@ -12,7 +12,7 @@ A bunch of scripts on `node.js` aimed at improving the interview process. Could 
 
 ## :book: Prepare questions database
 
-Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/tkXFm84w) as html files and save each page to the `data` folder (path could be configured through [data.json](https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/src/config/data.json) file).
+Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/tkXFm84w) as HTML files and save each page to the `data` folder (path could be configured through [data.json](https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/src/config/data.json) file).
 
 ## :running: How to use it
 
@@ -31,7 +31,7 @@ Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/
 | Enter `interviewer last name` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerLastName.png" width="1024" /> |
 | Enter `interviewer email` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerEmail.png" width="1024" /> | 
 | Enter `interviewer linkedin` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerLinkedin.png" width="1024" /> | 
-| Decide whether you would like to use `ready-to-use` question sets. In this case, the files with question will be generated with the pre-selected questions in order to save your time. You'll still be able to edit them. | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/questionSets.png" width="1024" /> |
+| Decide whether you would like to use `ready-to-use` question sets. In this case, the files with questions will be generated with the pre-selected questions in order to save your time. You'll still be able to edit them. | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/questionSets.png" width="1024" /> |
 
 2. Check out the generated questions:
 
