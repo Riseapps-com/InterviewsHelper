@@ -7,7 +7,7 @@ A bunch of scripts on `node.js` aimed at improving the interview process. Could 
 ## 🧐 It solves next problems
 
 1. Automation of many manual processes.
-2. More comprehensive evaluation.
+2. A More comprehensive evaluation.
 3. Feedback standardization.
 
 ## 📖 Prepare questions database
@@ -172,5 +172,5 @@ Yes
 
 ## 📒 TODO
 
-- [ ] Finish ready question sets.
-- [ ] Send files to Slack.
+- [ ] Finish ready-to-use question sets.
+- [ ] Send files to `Slack`.
