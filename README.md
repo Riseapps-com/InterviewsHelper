@@ -12,7 +12,7 @@ A bunch of scripts on `node.js` aimed at improving the interview process. Can be
 
 ## 📖 Prepare questions database
 
-Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/tkXFm84w) as HTML files and save each page to the `data` folder (path could be configured through [data.json](https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/src/config/data.json) file).
+Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/tkXFm84w) as HTML files and save each page to the `data` folder.
 
 ## 🧠 Interview format
 
