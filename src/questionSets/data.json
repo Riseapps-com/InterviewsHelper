@@ -827,11 +827,11 @@
       },
       "angular": {
         "junior": ["a3"],
-        "junior+": ["a1", "a5", "a7", "a11", "a17"],
-        "middle-": ["a6", "a12", "a19", "a20"],
-        "middle": ["a6", "a17", "a19", "a20"],
-        "middle+": ["a6", "a17", "a18", "a20"],
-        "senior": ["a11", "a17", "a18", "a19"]
+        "junior+": ["a1", "a5", "a7", "a11", "a16"],
+        "middle-": ["a6", "a12", "a18", "a19"],
+        "middle": ["a6", "a16", "a18", "a19"],
+        "middle+": ["a6", "a16", "a17", "a19"],
+        "senior": ["a11", "a16", "a17", "a18"]
       },
       "testing": {
         "junior": [],
@@ -1189,11 +1189,11 @@
       },
       "angular": {
         "junior": ["a3"],
-        "junior+": ["a1", "a11", "a17"],
-        "middle-": ["a6", "a20"],
-        "middle": ["a17", "a19"],
-        "middle+": ["a6", "a17"],
-        "senior": ["a15", "a17"]
+        "junior+": ["a1", "a11", "a16"],
+        "middle-": ["a6", "a19"],
+        "middle": ["a16", "a18"],
+        "middle+": ["a6", "a16"],
+        "senior": ["a15", "a16"]
       },
       "node": {
         "junior": ["n6"],
