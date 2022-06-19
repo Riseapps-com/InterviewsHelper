@@ -1,20 +1,24 @@
 # ReactNativeInterviewsHelper
 
-## :information_source: Description
+## ℹ️ Description
 
 A bunch of scripts on `node.js` aimed at improving the interview process. Could be reused between different departments (only the questions database should be prepared).
 
-## :monocle_face: It solves next problems
+## 🧐 It solves next problems
 
 1. Automation of many manual processes.
 2. More comprehensive evaluation.
 3. Feedback standardization.
 
-## :book: Prepare questions database
+## 📖 Prepare questions database
 
 Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/tkXFm84w) as HTML files and save each page to the `data` folder (path could be configured through [data.json](https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/src/config/data.json) file).
 
-## :running: How to use it
+## 🧠 Interview format
+
+The interview system supports 2 modes by default: `Department` and `Partnership`. Default durations are: `Department mode - 55 min` and `Partnership mode - 25 min`. In the case of the `Partnership` mode, it's enough to conduct a superficial interview. Usually, the main technical interview with the customer is the next step. So, it's important to double-check if everything is good with the candidate before the main technical interview. In the case of the `Department` mode, the interview must be deeper. The full responsibility for the candidate is on the interviewer. That's why the duration is longer. Moving forward, each interview contains 2 stages: `theory` and `practice`. For the practice part, the amazing resource [https://edabit.com/](edabit) is used. In the case of the `Partnership` mode, the candidate should just describe the possible solution for the provided task in order not to waste the time. In the case of the `Department` mode, the candidate should share his screen and resolve the task in real-time.
+
+## 🏃 How to use it
 
 1. Run `generateQuestions` script. The next file `outputs/output-${firstName}-${lastName}/questions.txt` will be generated:
 
@@ -151,7 +155,7 @@ Yes
 
 7. Run `generateResultPDF` script and `outputs/output-${firstName}-${lastName}/result.pdf` file will be generated.
 
-## :hammer: Scripts
+## 🔨 Scripts
 
 | Script                 | Description                                                                                        |
 | :--------------------- | :------------------------------------------------------------------------------------------------- |
@@ -160,13 +164,13 @@ Yes
 | `generateInterviewPDF` | Generates a PDF document for the interview and .txt drafts for the result.                         |
 | `generateResultPDF`    | Generates a PDF document with the interview result.                                                |
 
-## :bar_chart: Output examples
+## 📊 Output examples
 
 |             For interviewer:             |         Result:          |
 | :--------------------------------------: | :----------------------: |
 | [forInterviewer.pdf](forInterviewer.pdf) | [result.pdf](result.pdf) |
 
-## :ledger: TODO
+## 📒 TODO
 
 - [ ] Finish ready question sets.
 - [ ] Send files to slack.
