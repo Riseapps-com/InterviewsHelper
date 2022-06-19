@@ -162,7 +162,7 @@ Recommend.
 
 | Script                 | Description                                                                                        |
 | :--------------------- | :------------------------------------------------------------------------------------------------- |
-| `validateQuestionsDB`  | Validates the questions database. Checks for the correct format for each question in the database. |
+| `validateDatabase`     | Validates the questions database. Checks for the correct format for each question in the database. |
 | `generateQuestions`    | Generates suitable questions based on the input params and puts them to the .txt file.             |
 | `generateInterviewPDF` | Generates a PDF document for the interview and .txt drafts for the result.                         |
 | `generateResultPDF`    | Generates a PDF document with the interview result.                                                |
