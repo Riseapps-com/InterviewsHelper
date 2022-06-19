@@ -18,7 +18,7 @@ Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/
 
 1. Run `generateQuestions` script:
 * Select interview type (available options are: `React`, `React-Native`, `Angular`, `Vue.js`, `Node.js`, `React + Node.js`, `React-Native + Node.js`, `Angular + Node.js`, `Vue.js + Node.js`).
-<img src="[https://github.com/Riseapps-com/ReactNativeBaseProject/blob/master/ios/ReactNativeBaseProject/Images.xcassets/AppIcon.appiconset/87.png](https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewType.jpg)" width="180" />
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewType.jpg" height="180" />
 
 ```ts
 import { Input } from '../src/types';
