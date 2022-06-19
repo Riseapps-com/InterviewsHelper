@@ -217,7 +217,7 @@
       "node": { "key": "node", "label": "Node.js", "questionsNumber": 10, "duration": 20, "status": "required" },
       "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
-        "key": "key",
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
@@ -419,7 +419,7 @@
       "node": { "key": "node", "label": "Node.js", "questionsNumber": 5, "duration": 10, "status": "required" },
       "testing": { "key": "testing", "label": "Testing", "questionsNumber": 6, "duration": 12, "status": "optional" },
       "dataStructuresAndAlgorithms": {
-        "key": "key",
+        "key": "dataStructuresAndAlgorithms",
         "label": "Data Structures And Algorithms",
         "questionsNumber": 2,
         "duration": 4,
