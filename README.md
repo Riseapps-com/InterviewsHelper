@@ -168,5 +168,5 @@ Yes
 
 ## :ledger: TODO
 
-- [ ] Finish ready questions sets.
+- [ ] Finish ready question sets.
 - [ ] Send files to slack.
