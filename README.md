@@ -2,7 +2,7 @@
 
 ## ℹ️ Description
 
-A bunch of scripts on `node.js` aimed at improving the interview process. Could be reused between different departments (only the questions database should be prepared).
+A bunch of scripts on `node.js` aimed at improving the interview process. Can be reused between different departments (only the questions database should be prepared).
 
 ## 🧐 It solves next problems
 
