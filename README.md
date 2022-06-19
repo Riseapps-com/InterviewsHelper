@@ -16,7 +16,7 @@ Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/
 
 ## :running: How to use it
 
-1. Run `generateQuestions` script:
+1. Run `generateQuestions` script. The next file `outputs/output-${firstName}-${lastName}/questions.txt` will be generated:
 
 | Step | Visualization |
 | ---- | ------------- |
@@ -33,99 +33,123 @@ Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/
 | Enter `interviewer linkedin` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerLinkedin.png" width="1024" /> | 
 | Decide whether you would like to use `ready-to-use` question sets. In this case, the files with question will be generated with the pre-selected questions in order to save your time. You'll still be able to edit them. | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/questionSets.png" width="1024" /> |
 
-2. Run `generateQuestions` script. The next file `outputs/questions.txt` will be generated:
+2. Check out the generated questions:
 
 ```txt
 @topic@JavaScript@topic@ ≈7 questions
-1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j1@questionKey@)
-2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j2@questionKey@)
-3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j3@questionKey@)
-@topic@TypeScript@topic@ ≈4 questions
-1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @questionKey@t1@questionKey@)
-2. What is tsconfig.json file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
-3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
+1.  What is hoisting? (requiredFor: junior) (key: @questionKey@js1@questionKey@)
+2.  What is a scope? (requiredFor: junior) (key: @questionKey@js2@questionKey@)
+3.  What are closures? (requiredFor: junior) (key: @questionKey@js3@questionKey@)
+@topic@TypeScript@topic@ ≈3 questions
+1.  What are the benefits and drawbacks of using TypeScript? (requiredFor: middle-) (key: @questionKey@ts1@questionKey@)
+2.  What is the tsconfig.json file? (requiredFor: middle) (key: @questionKey@ts2@questionKey@)
+3.  What are the components of TypeScript? (requiredFor: middle) (key: @questionKey@ts3@questionKey@)
 ```
 
-3. Mark suitable questions with `"+ "` at the beginning (marker could be configured through `config/config.ts` file):
+3. Mark the suitable questions with `'+ '` at the beginning:
 
 ```txt
 @topic@JavaScript@topic@ ≈7 questions
-+ 1. What is hoisting? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j1@questionKey@)
-2. What is scope? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j2@questionKey@)
-+ 3. What are closures? (timeForAnswer: 3 min) (requiredFor: junior+) (key: @questionKey@j3@questionKey@)
-@topic@TypeScript@topic@ ≈4 questions
-+ 1. What are the benefits of using TypeScript? (timeForAnswer: 3 min) (requiredFor: middle-) (key: @questionKey@t1@questionKey@)
-+ 2. What is tsconfig.json file? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t3@questionKey@)
-3. What is static typing in TypeScript? (timeForAnswer: 2 min) (requiredFor: middle-) (key: @questionKey@t5@questionKey@)
++ 1.  What is hoisting? (requiredFor: junior) (key: @questionKey@js1@questionKey@)
++ 2.  What is a scope? (requiredFor: junior) (key: @questionKey@js2@questionKey@)
+3.  What are closures? (requiredFor: junior) (key: @questionKey@js3@questionKey@)
+@topic@TypeScript@topic@ ≈3 questions
++ 1.  What are the benefits and drawbacks of using TypeScript? (requiredFor: middle-) (key: @questionKey@ts1@questionKey@)
+2.  What is the tsconfig.json file? (requiredFor: middle) (key: @questionKey@ts2@questionKey@)
+3.  What are the components of TypeScript? (requiredFor: middle) (key: @questionKey@ts3@questionKey@)
 ```
 
 4. Run `generateInterviewPDF` script, and the next files will be generated:
 
-- `outputs/forInterviewer.pdf`:
+- `outputs/output-${firstName}-${lastName}/forInterviewer.pdf`:
 
 ```txt
 Will be used for the interview.
 ```
 
-- `outputs/resultDraft.txt`:
+- `outputs/output-${firstName}-${lastName}/resultDraft.txt`:
 
 ```txt
 @topic@JavaScript@topic@
 1)
 2)
 3)
-4)
-5)
 @topic@TypeScript@topic@
 1)
 2)
 3)
-4)
-5)
 ```
 
-- `outputs/resultNotesDraft.txt`:
+- `outputs/output-${firstName}-${lastName}/resultNotesDraft.txt`:
 
 ```txt
-@feedback@
+@englishLevel@
+Fluency: 0/3
+Accuracy: 0/3
+Coherence: 0/3
+Range: 0/3
+Pronunciation: 0/3
+@englishLevel@
+
+@softwareSkills@
 -
-@feedback@
+@softwareSkills@
 
-@decision@
-Recommend / Don't recommend
-@decision@
+@technicalSkills@
+-
+@technicalSkills@
+
+@supposedLevel@
+-
+@supposedLevel@
+
+@recommend@
+Yes / No
+@recommend@
 ```
 
-5. Fill `outputs/resultDraft.txt` with the marks from `0` to `maxMark` (could be configured through `config/config.ts` file):
+5. Fill `resultDraft.txt` file in:
 
 ```txt
 @topic@JavaScript@topic@
-1) 5
-2) 4
-3) 3
-4) 2
-5) 1
-@topic@TypeScript@topic@
-1) 5
+1) 3
 2) 5
-3) 5
-4) 5
-5) 5
+3) 4
+@topic@TypeScript@topic@
+1) 2
+2) 5
+3) 3
 ```
 
-6. Fill `feedback` and `decision` fields in `outputs/resultDraft.txt` file:
+6. Fill `resultDraft.txt` file in:
 
 ```txt
-@feedback@
-Good theory.
-@feedback@
+@englishLevel@
+Fluency: 3/3
+Accuracy: 2/3
+Coherence: 1/3
+Range: 3/3
+Pronunciation: 3/3
+@englishLevel@
 
-@decision@
-Recommend.
-@decision@
+@softwareSkills@
+Pleasant in communicationю
+@softwareSkills@
+
+@technicalSkills@
+Good theory and practical skills.
+@technicalSkills@
+
+@supposedLevel@
+middle+
+@supposedLevel@
+
+@recommend@
+Yes
+@recommend@
 ```
 
-7. Run `generateResultPDF` script and `outputs/result.pdf` file will be generated.
+7. Run `generateResultPDF` script and `outputs/output-${firstName}-${lastName}/result.pdf` file will be generated.
 
 ## :hammer: Scripts
 
@@ -144,5 +168,5 @@ Recommend.
 
 ## :ledger: TODO
 
-- [ ] Prepare ready questions sets.
-- [ ] Send files to email.
+- [ ] Finish ready questions sets.
+- [ ] Send files to slack.
