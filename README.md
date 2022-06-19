@@ -1,4 +1,4 @@
-# ReactNativeInterviewsHelper
+# InterviewsHelper
 
 ## ℹ️ Description
 
@@ -173,4 +173,4 @@ Yes
 ## 📒 TODO
 
 - [ ] Finish ready question sets.
-- [ ] Send files to slack.
+- [ ] Send files to Slack.
