@@ -18,7 +18,7 @@ Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/
 
 1. Run `generateQuestions` script:
 * Select `interview type` (available options are: `React`, `React-Native`, `Angular`, `Vue.js`, `Node.js`, `React + Node.js`, `React-Native + Node.js`, `Angular + Node.js` and `Vue.js + Node.js`).
-<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewType.jpg" height="180" />
+* <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewType.jpg" height="180" />
 * Select `interview mode` (available options are: `Department` and `Partnership`).
 <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewType.jpg" height="180" />
 * Select `candidate supposed level` (available options are: `Junior`, `Junior+`, `Middle-`, `Middle`, `Middle+` and `Senior`).
