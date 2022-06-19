@@ -4,7 +4,7 @@
 
 A bunch of scripts on `node.js` aimed at improving the interview process. Could be reused between different departments (only the questions database should be prepared).
 
-## :cat2::rat: It solves next problems
+## :monocle_face: It solves next problems
 
 1. Automation of many manual processes.
 2. More comprehensive evaluation.
