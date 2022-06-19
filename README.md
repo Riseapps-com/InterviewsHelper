@@ -7,7 +7,7 @@ A bunch of scripts on `node.js` aimed at improving the interview process. Can be
 ## 🧐 It solves next problems
 
 1. Automation of many manual processes.
-2. A More comprehensive evaluation.
+2. A more comprehensive evaluation.
 3. Feedback standardization.
 
 ## 📖 Prepare questions database
