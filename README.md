@@ -17,8 +17,32 @@ Export prepared [questions database](https://riseappsprojects.atlassian.net/l/c/
 ## :running: How to use it
 
 1. Run `generateQuestions` script:
-* Select interview type (available options are: `React`, `React-Native`, `Angular`, `Vue.js`, `Node.js`, `React + Node.js`, `React-Native + Node.js`, `Angular + Node.js`, `Vue.js + Node.js`).
+* Select `interview type` (available options are: `React`, `React-Native`, `Angular`, `Vue.js`, `Node.js`, `React + Node.js`, `React-Native + Node.js`, `Angular + Node.js` and `Vue.js + Node.js`).
 <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewType.jpg" height="180" />
+* Select `interview mode` (available options are: `Department` and `Partnership`).
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewType.jpg" height="180" />
+* Select `candidate supposed level` (available options are: `Junior`, `Junior+`, `Middle-`, `Middle`, `Middle+` and `Senior`).
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/supposedLevel.jpg" height="180" />
+* Select `topics` (options marked with `(*)` are required).
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/topics.jpg" height="180" />
+* Enter `candidate firts name` (just leave it empty if you don't know the required information):
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/candidateFirstName.jpg" height="180" />
+* Enter `candidate last name` (just leave it empty if you don't know the required information):
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/candidateLastName.jpg" height="180" />
+* Enter `candidate email` (just leave it empty if you don't know the required information):
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/candidateEmail.jpg" height="180" />
+* Enter `interviewer first name` (just leave it empty if you don't know the required information):
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerFirstName.jpg" height="180" />
+* Enter `interviewer last name` (just leave it empty if you don't know the required information):
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerLasttName.jpg" height="180" />
+* Enter `interviewer email` (just leave it empty if you don't know the required information):
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerEmail.jpg" height="180" />
+* Enter `interviewer linkedin` (just leave it empty if you don't know the required information):
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerLinkedin.jpg" height="180" />
+* Enter `interviewer first name` (just leave it empty if you don't know the required information):
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerFirstName.jpg" height="180" />
+* Decide whether you would like to use `ready-to-use` question sets. In this case, the files with question will be generated with the pre-selected questions in order to save your time. You'll still be able to edit them.
+<img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/questionSets.jpg" height="180" />
 
 ```ts
 import { Input } from '../src/types';
