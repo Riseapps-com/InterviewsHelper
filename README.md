@@ -4,7 +4,7 @@
 
 A bunch of scripts on `node.js` aimed at improving the interview process. Can be reused between different departments (only the questions database should be prepared).
 
-## 🧐 It solves next problems
+## 🧐 It solves the next problems
 
 1. Automation of many manual processes.
 2. A more comprehensive evaluation.
@@ -28,7 +28,7 @@ The interview system supports 2 modes by default: `Department` and `Partnership`
 | Select `interview mode` (available options are: `Department` and `Partnership`). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewMode.png" width="1024" /> |
 | Select `candidate supposed level` (available options are: `Junior`, `Junior+`, `Middle-`, `Middle`, `Middle+` and `Senior`). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/supposedLevel.png" width="1024" /> |
 | Select `topics` (options marked with `(*)` are required). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/topics.png" width="1024" /> |
-| Enter `candidate firts name` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/candidateFirstName.png" width="1024" /> |
+| Enter `candidate first name` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/candidateFirstName.png" width="1024" /> |
 | Enter `candidate last name` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/candidateLastName.png" width="1024" /> |
 | Enter `candidate email` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/candidateEmail.png" width="1024" /> |
 | Enter `interviewer first name` (just leave it empty if you don't know the required information). | <img src="https://github.com/Riseapps-com/ReactNativeInterviewsHelper/blob/master/imgs/interviewerFirstName.png" width="1024" /> |
