@@ -3,7 +3,7 @@
     "react": {
       "javaScript": {
         "junior": ["js12", "js13", "js14", "js15", "js17", "js39", "js40", "js42", "js46", "js55", "js56"],
-        "junior+": [],
+        "junior+": ["js10", "js15", "js16", "js17", "js39", "js40", "js46", "js55", "js56", "js57"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -19,7 +19,7 @@
       },
       "react": {
         "junior": ["r.b1", "r.b6", "r.b7", "r.b9", "r.b10", "r.b17", "r.b19", "r.b21", "r.h4", "r.h5"],
-        "junior+": [],
+        "junior+": ["r.b2", "r.b6", "r.b9", "r.b10", "r.b12", "r.b13", "r.r1", "r.h4", "r.h5", "r.h7"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -69,7 +69,7 @@
     "reactNative": {
       "javaScript": {
         "junior": ["js12", "js14", "js15", "js39", "js40", "js42", "js46", "js55", "js56"],
-        "junior+": [],
+        "junior+": ["js10", "js15", "js16", "js23", "js39", "js40", "js46", "js56"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -85,7 +85,7 @@
       },
       "react": {
         "junior": ["r.b1", "r.b9", "r.b11", "r.b17", "r.b19", "r.b21", "r.h4", "r.h5"],
-        "junior+": [],
+        "junior+": ["r.b2", "r.b6", "r.b9", "r.b12", "r.r1", "r.h4", "r.h5"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -93,7 +93,7 @@
       },
       "reactNative": {
         "junior": ["rn4", "rn5", "rn6", "rn13"],
-        "junior+": [],
+        "junior+": ["rn4", "rn5", "rn6", "rn10", "rn13"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -151,7 +151,7 @@
     "angular": {
       "javaScript": {
         "junior": ["js1", "js6", "js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
-        "junior+": [],
+        "junior+": ["js10", "js15", "js16", "js17", "js39", "js40", "js46", "js55", "js56", "js57"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -167,7 +167,7 @@
       },
       "angular": {
         "junior": ["a3"],
-        "junior+": [],
+        "junior+": ["a1", "a3", "a5", "a7", "a8", "a9", "a11", "a16", "a18", "a19"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -216,8 +216,8 @@
     },
     "vue": {
       "javaScript": {
-        "junior": ["js6", "js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
-        "junior+": [],
+        "junior": ["js6", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
+        "junior+": ["js10", "js15", "js16", "js23", "js36", "js39", "js40", "js42", "js46", "js51", "js55", "js56"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -233,7 +233,7 @@
       },
       "vue": {
         "junior": ["v1", "v12"],
-        "junior+": [],
+        "junior+": ["v1", "v2", "v4", "v7", "v8", "v12", "v13", "v15"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -283,7 +283,7 @@
     "node": {
       "javaScript": {
         "junior": ["js1", "js6", "js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
-        "junior+": [],
+        "junior+": ["js10", "js15", "js16", "js23", "js36", "js39", "js40", "js42", "js46", "js51", "js55", "js56"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -299,7 +299,7 @@
       },
       "node": {
         "junior": ["n6"],
-        "junior+": [],
+        "junior+": ["n1", "n2", "n3", "n4", "n5", "n6", "n7", "n9"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -349,7 +349,7 @@
     "react+node": {
       "javaScript": {
         "junior": ["js12", "js13", "js14", "js15", "js17", "js18", "js39", "js40", "js42", "js46", "js56"],
-        "junior+": [],
+        "junior+": ["js10", "js15", "js16", "js17", "js39", "js40", "js46", "js55", "js56", "js57"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -365,7 +365,7 @@
       },
       "react": {
         "junior": ["r.b1", "r.b6", "r.b10", "r.b9", "r.b11", "r.b19", "r.b21", "r.h4", "r.h5"],
-        "junior+": [],
+        "junior+": ["r.b2", "r.b9", "r.b12", "r.h4", "r.h5"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -373,7 +373,7 @@
       },
       "node": {
         "junior": ["n6"],
-        "junior+": [],
+        "junior+": ["n1", "n3", "n4", "n6", "n7"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -423,7 +423,7 @@
     "reactNative+node": {
       "javaScript": {
         "junior": ["js12", "js13", "js14", "js15", "js17", "js39", "js40", "js42", "js46"],
-        "junior+": [],
+        "junior+": ["js10", "js15", "js39", "js40", "js46", "js56"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -439,7 +439,7 @@
       },
       "react": {
         "junior": ["r.b1", "r.b6", "r.b9", "r.b17", "r.b19", "r.h4", "r.h5"],
-        "junior+": [],
+        "junior+": ["r.b2", "r.b9", "r.h4", "r.h5"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -447,7 +447,7 @@
       },
       "reactNative": {
         "junior": ["rn4", "rn5", "rn6", "rn13"],
-        "junior+": [],
+        "junior+": ["rn4", "rn5", "rn6", "rn10", "rn13"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -463,7 +463,7 @@
       },
       "node": {
         "junior": ["n6"],
-        "junior+": [],
+        "junior+": ["n1", "n2", "n3", "n5", "n6"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -513,7 +513,7 @@
     "angular+node": {
       "javaScript": {
         "junior": ["js6", "js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
-        "junior+": [],
+        "junior+": ["js10", "js15", "js16", "js17", "js39", "js40", "js46", "js55", "js56", "js57"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -529,7 +529,7 @@
       },
       "angular": {
         "junior": ["a3"],
-        "junior+": [],
+        "junior+": ["a3", "a5", "a7", "a11", "a16"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -537,7 +537,7 @@
       },
       "node": {
         "junior": ["n6"],
-        "junior+": [],
+        "junior+": ["n1", "n2", "n3", "n5", "n6"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -587,7 +587,7 @@
     "vue+node": {
       "javaScript": {
         "junior": ["js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
-        "junior+": [],
+        "junior+": ["js10", "js15", "js16", "js17", "js39", "js40", "js46", "js55", "js56", "js57"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -603,7 +603,7 @@
       },
       "vue": {
         "junior": ["v1", "v12"],
-        "junior+": [],
+        "junior+": ["v1", "v7", "v8", "v12", "v15"],
         "middle-": [],
         "middle": [],
         "middle+": [],
@@ -611,7 +611,7 @@
       },
       "node": {
         "junior": ["n6"],
-        "junior+": [],
+        "junior+": ["n1", "n2", "n3", "n5", "n6"],
         "middle-": [],
         "middle": [],
         "middle+": [],
