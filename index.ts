@@ -5,7 +5,7 @@ import { htmlUtils } from './src/html';
 import { inputUtils } from './src/input';
 import { interviewUtils } from './src/interview';
 import { questionsUtils } from './src/questions';
-import { resultUtils } from './src/result';
+import { englishEvaluationUtils, resultUtils } from './src/result';
 import { validationUtils } from './src/validation';
 
 import type { InterviewQuestions } from './src/html';
@@ -43,6 +43,7 @@ const generateInterviewPDF = async (): Promise<void> => {
 
     interviewUtils.generateInterviewPDF(parsedQuestions);
     interviewUtils.generateResultDraft(parsedQuestions);
+    interviewUtils.generateEnglishDraft();
     interviewUtils.generateResultNotesDraft();
   } catch (error) {
     console.log(error);
@@ -53,9 +54,12 @@ const generateResultPDF = async (): Promise<void> => {
   try {
     const parsedResultDraft = resultUtils.parseResultDraft();
     const parsedResultNotesDraft = resultUtils.parseResultNotesDraft();
+    const parsedEnglishDraft = resultUtils.parseEnglishDraft();
+    const englishLevel = englishEvaluationUtils.evaluateEnglishLevel(parsedEnglishDraft);
 
-    await chartsUtils.buildRadarChart(parsedResultDraft);
-    resultUtils.generateResultPDF(parsedResultNotesDraft);
+    await chartsUtils.buildRadarChart(parsedResultDraft, 'Topics', config.files.result.topicsChartFilename);
+    await chartsUtils.buildRadarChart(parsedEnglishDraft, 'English', config.files.result.englishChartFilename);
+    resultUtils.generateResultPDF(parsedResultNotesDraft, englishLevel);
   } catch (error) {
     console.log(error);
   }

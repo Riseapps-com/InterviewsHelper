@@ -18,6 +18,7 @@ export type PdfFonts = {
   regularFontPath: string;
   boldFont: string;
   boldFontPath: string;
+  smallestFontSize: number;
   smallerFontSize: number;
   baseFontSize: number;
   biggerFontSize: number;
@@ -78,8 +79,10 @@ export type InterviewFiles = {
 };
 
 export type ResultFiles = {
-  radarChartFilename: string;
+  topicsChartFilename: string;
+  englishChartFilename: string;
   resultDraftFilename: string;
+  englishDraftFilename: string;
   resultNotesDraftFilename: string;
   resultFilename: string;
 };
@@ -122,10 +125,30 @@ export type RadarChart = {
   ticksBackgroundColor: string;
 };
 
+export type CriteriaRange = {
+  min: number;
+  max: number;
+};
+
+export type Grid = {
+  a0a1: CriteriaRange;
+  a2: CriteriaRange;
+  b1: CriteriaRange;
+  b2: CriteriaRange;
+  c1: CriteriaRange;
+  c2: CriteriaRange;
+};
+
+export type EnglishEvaluation = {
+  criteria: string[];
+  grid: Grid;
+};
+
 export type Config = {
   files: Files;
   radarChart: RadarChart;
   pdfDocument: PdfDocument;
   parsers: Parsers;
   evaluation: Evaluation;
+  englishEvaluation: EnglishEvaluation;
 };

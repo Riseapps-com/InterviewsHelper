@@ -150,7 +150,28 @@
     },
     "angular": {
       "javaScript": {
-        "junior": ["js1", "js6", "js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
+        "junior": [
+          "js1",
+          "js6",
+          "js8",
+          "js12",
+          "js13",
+          "js14",
+          "js15",
+          "js17",
+          "js18",
+          "js22",
+          "js39",
+          "js40",
+          "js42",
+          "js43",
+          "js45",
+          "js46",
+          "js47",
+          "js52",
+          "js55",
+          "js56"
+        ],
         "junior+": ["js10", "js15", "js16", "js17", "js39", "js40", "js46", "js55", "js56", "js57"],
         "middle-": [],
         "middle": [],
@@ -216,7 +237,26 @@
     },
     "vue": {
       "javaScript": {
-        "junior": ["js6", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
+        "junior": [
+          "js6",
+          "js12",
+          "js13",
+          "js14",
+          "js15",
+          "js17",
+          "js18",
+          "js22",
+          "js39",
+          "js40",
+          "js42",
+          "js43",
+          "js45",
+          "js46",
+          "js47",
+          "js52",
+          "js55",
+          "js56"
+        ],
         "junior+": ["js10", "js15", "js16", "js23", "js36", "js39", "js40", "js42", "js46", "js51", "js55", "js56"],
         "middle-": [],
         "middle": [],
@@ -282,7 +322,28 @@
     },
     "node": {
       "javaScript": {
-        "junior": ["js1", "js6", "js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
+        "junior": [
+          "js1",
+          "js6",
+          "js8",
+          "js12",
+          "js13",
+          "js14",
+          "js15",
+          "js17",
+          "js18",
+          "js22",
+          "js39",
+          "js40",
+          "js42",
+          "js43",
+          "js45",
+          "js46",
+          "js47",
+          "js52",
+          "js55",
+          "js56"
+        ],
         "junior+": ["js10", "js15", "js16", "js23", "js36", "js39", "js40", "js42", "js46", "js51", "js55", "js56"],
         "middle-": [],
         "middle": [],
@@ -512,7 +573,27 @@
     },
     "angular+node": {
       "javaScript": {
-        "junior": ["js6", "js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
+        "junior": [
+          "js6",
+          "js8",
+          "js12",
+          "js13",
+          "js14",
+          "js15",
+          "js17",
+          "js18",
+          "js22",
+          "js39",
+          "js40",
+          "js42",
+          "js43",
+          "js45",
+          "js46",
+          "js47",
+          "js52",
+          "js55",
+          "js56"
+        ],
         "junior+": ["js10", "js15", "js16", "js17", "js39", "js40", "js46", "js55", "js56", "js57"],
         "middle-": [],
         "middle": [],
@@ -586,7 +667,26 @@
     },
     "vue+node": {
       "javaScript": {
-        "junior": ["js8", "js12", "js13", "js14", "js15", "js17", "js18", "js22", "js39", "js40", "js42", "js43", "js45", "js46", "js47", "js52", "js55", "js56"],
+        "junior": [
+          "js8",
+          "js12",
+          "js13",
+          "js14",
+          "js15",
+          "js17",
+          "js18",
+          "js22",
+          "js39",
+          "js40",
+          "js42",
+          "js43",
+          "js45",
+          "js46",
+          "js47",
+          "js52",
+          "js55",
+          "js56"
+        ],
         "junior+": ["js10", "js15", "js16", "js17", "js39", "js40", "js46", "js55", "js56", "js57"],
         "middle-": [],
         "middle": [],
@@ -706,7 +806,7 @@
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": ["ss4", "ss12" ],
+        "middle+": ["ss4", "ss12"],
         "senior": ["ss12", "ss13"]
       },
       "testTasks": {
@@ -788,7 +888,7 @@
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": ["ss4", "ss12" ],
+        "middle+": ["ss4", "ss12"],
         "senior": ["ss12", "ss13"]
       },
       "testTasks": {
@@ -986,7 +1086,7 @@
         "junior+": ["ss6", "ss9"],
         "middle-": ["ss7", "ss10"],
         "middle": ["ss10", "ss12"],
-        "middle+": ["ss4", "ss12" ],
+        "middle+": ["ss4", "ss12"],
         "senior": ["ss12", "ss13"]
       },
       "testTasks": {

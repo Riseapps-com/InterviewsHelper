@@ -29,8 +29,10 @@
     },
     "result": {
       "resultDraftFilename": "resultDraft.txt",
+      "englishDraftFilename": "englishDraft.txt",
       "resultNotesDraftFilename": "resultNotesDraft.txt",
-      "radarChartFilename": "radarChart.png",
+      "topicsChartFilename": "topicsChart.png",
+      "englishChartFilename": "englishChart.png",
       "resultFilename": "result.pdf"
     },
     "suitableQuestionMarker": "+ "
@@ -58,12 +60,16 @@
       "logoWidth": 80,
       "logoMargin": 48
     },
-    "colors": { "brandColor": [0, 54, 176], "blackColor": [15, 15, 15] },
+    "colors": {
+      "brandColor": [0, 54, 176],
+      "blackColor": [15, 15, 15]
+    },
     "fonts": {
       "regularFont": "EBGaramond-Regular",
       "regularFontPath": "assets/fonts/EBGaramond-Regular.ttf",
       "boldFont": "EBGaramond-SemiBold",
       "boldFontPath": "assets/fonts/EBGaramond-SemiBold.ttf",
+      "smallestFontSize": 10,
       "smallerFontSize": 12,
       "baseFontSize": 14,
       "biggerFontSize": 18,
@@ -101,6 +107,35 @@
       "3": "Has enough practice and superficial theoretical skills in this area.",
       "4": "Has good theoretical and practice skills in this area.",
       "5": "Has excellent theoretical and practice skills in this area."
+    }
+  },
+  "englishEvaluation": {
+    "criteria": ["Fluency", "Accuracy", "Coherence", "Range", "Pronunciation"],
+    "grid": {
+      "a0a1": {
+        "min": 0,
+        "max": 9
+      },
+      "a2": {
+        "min": 10,
+        "max": 14
+      },
+      "b1": {
+        "min": 15,
+        "max": 17
+      },
+      "b2": {
+        "min": 18,
+        "max": 20
+      },
+      "c1": {
+        "min": 21,
+        "max": 23
+      },
+      "c2": {
+        "min": 24,
+        "max": 25
+      }
     }
   }
 }

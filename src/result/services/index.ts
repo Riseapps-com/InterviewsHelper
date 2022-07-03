@@ -1,4 +1,5 @@
+import * as englishEvaluationUtils from './englishEvaluationUtils';
 import * as marksUtils from './marksUtils';
 import * as resultUtils from './resultUtils';
 
-export { marksUtils, resultUtils };
+export { englishEvaluationUtils, marksUtils, resultUtils };

@@ -4,20 +4,19 @@ import QuickChart from 'quickchart-js';
 
 import { config } from '../../config';
 import { fsUtils } from '../../fs';
-import { marksUtils } from '../../result';
 
-export const buildRadarChart = async (resultDraft: Map<string, number[]>): Promise<void> => {
+export const buildRadarChart = async (data: Map<string, number>, label: string, filename: string): Promise<void> => {
   const radarChart = new QuickChart();
 
   radarChart.setWidth(config.radarChart.width);
   radarChart.setConfig({
     type: 'radar',
     data: {
-      labels: [...resultDraft.keys()],
+      labels: [...data.keys()],
       datasets: [
         {
-          label: 'Topics',
-          data: marksUtils.normalizeMarks([...resultDraft.values()]),
+          label,
+          data: [...data.values()],
           backgroundColor: config.radarChart.datasetBackgroundColor,
           pointBorderColor: config.radarChart.datasetColor,
           pointBackgroundColor: config.radarChart.datasetColor,
@@ -47,7 +46,7 @@ export const buildRadarChart = async (resultDraft: Map<string, number[]>): Promi
         },
         ticks: {
           suggestedMin: 0,
-          suggestedMax: 100,
+          suggestedMax: 5,
           fontColor: config.radarChart.fontColor,
           fontSize: config.radarChart.fontSize,
           fontStyle: config.radarChart.fontStyle,
@@ -71,5 +70,5 @@ export const buildRadarChart = async (resultDraft: Map<string, number[]>): Promi
     responseType: 'arraybuffer',
   });
 
-  fs.writeFileSync(fsUtils.wrapToOutputDirectory(config.files.result.radarChartFilename), response.data);
+  fs.writeFileSync(fsUtils.wrapToOutputDirectory(filename), response.data);
 };

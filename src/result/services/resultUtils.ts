@@ -5,10 +5,11 @@ import { fsUtils } from '../../fs';
 import { inputUtils } from '../../input';
 import { interviewStructure } from '../../interview';
 import { pdfUtils } from '../../pdf';
+import { marksUtils } from './index';
 
-import type { PdfIcons } from '../../config/types';
+import type { PdfIcons } from '../../config';
 
-export const parseResultDraft = (): Map<string, number[]> => {
+export const parseResultDraft = (): Map<string, number> => {
   const parsedResultDraft = new Map<string, number[]>();
   const rows = fs
     .readFileSync(fsUtils.wrapToOutputDirectory(config.files.result.resultDraftFilename), 'utf8')
@@ -33,17 +34,33 @@ export const parseResultDraft = (): Map<string, number[]> => {
     }
   });
 
-  return parsedResultDraft;
+  const normalizedResultDraft = new Map<string, number>();
+  const normalizedMarks = marksUtils.normalizeMarks([...parsedResultDraft.values()]);
+  const keys = [...parsedResultDraft.keys()];
+
+  keys.forEach((key, index) => normalizedResultDraft.set(key, normalizedMarks[index]));
+
+  return normalizedResultDraft;
+};
+
+export const parseEnglishDraft = (): Map<string, number> => {
+  const englishDraft = new Map<string, number>();
+  const marks = fs
+    .readFileSync(fsUtils.wrapToOutputDirectory(config.files.result.englishDraftFilename), 'utf8')
+    .split(config.parsers.englishLevelKey)[1]
+    .split('\n')
+    .filter(criteria => !!criteria)
+    .map(criteria => criteria.split(': ')[1][0]);
+
+  config.englishEvaluation.criteria.forEach((criteria, index) =>
+    englishDraft.set(criteria, Number.parseInt(marks[index], 10))
+  );
+
+  return englishDraft;
 };
 
 const parseResultNote = (resultNotesDraft: string, key: string): string => {
   return resultNotesDraft.split(key)[1].split('\n').join(' ').trim();
-};
-
-const parseEnglishLevel = (resultNotesDraft: string): string => {
-  const criteria = resultNotesDraft.split(config.parsers.englishLevelKey)[1].split('\n');
-
-  return criteria.filter(item => !!item).join('\n');
 };
 
 export const parseResultNotesDraft = (): string[] => {
@@ -51,13 +68,12 @@ export const parseResultNotesDraft = (): string[] => {
     fsUtils.wrapToOutputDirectory(config.files.result.resultNotesDraftFilename),
     'utf8'
   );
-  const englishLevel = parseEnglishLevel(resultNotesDraft);
   const softwareSkills = parseResultNote(resultNotesDraft, config.parsers.softwareSkillsKey);
   const technicalSkills = parseResultNote(resultNotesDraft, config.parsers.technicalSkillsKey);
   const supposedLevel = parseResultNote(resultNotesDraft, config.parsers.supposedLevelKey);
   const recommend = resultNotesDraft.split(config.parsers.recommendKey)[1].replace('\n', '');
 
-  return [englishLevel, softwareSkills, technicalSkills, supposedLevel, recommend];
+  return [softwareSkills, technicalSkills, supposedLevel, recommend];
 };
 
 const drawInterviewInfo = (pdf: PDFKit.PDFDocument): void => {
@@ -85,17 +101,15 @@ const drawInterviewInfo = (pdf: PDFKit.PDFDocument): void => {
   pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.icons.email, candidateEmail);
 };
 
-const drawRadarChart = (pdf: PDFKit.PDFDocument): void => {
+const drawRadarChart = (pdf: PDFKit.PDFDocument, filename: string): void => {
   const radarChartMargin =
     (pdf.page.width - config.pdfDocument.sizes.horizontalMargin * 2 - config.pdfDocument.sizes.radarChartWidth) / 2;
 
-  pdf
-    .moveDown(2)
-    .image(fsUtils.wrapToOutputDirectory(config.files.result.radarChartFilename), pdf.x + radarChartMargin, pdf.y, {
-      width: config.pdfDocument.sizes.radarChartWidth,
-      align: 'center',
-      valign: 'center',
-    });
+  pdf.moveDown(1).image(fsUtils.wrapToOutputDirectory(filename), pdf.x + radarChartMargin, pdf.y, {
+    width: config.pdfDocument.sizes.radarChartWidth,
+    align: 'center',
+    valign: 'center',
+  });
 };
 
 const drawSection = (pdf: PDFKit.PDFDocument, title: string, content: string, newLines = 1): void => {
@@ -119,18 +133,35 @@ const drawInterviewerInfo = (pdf: PDFKit.PDFDocument): void => {
   pdfUtils.drawTextWithIcon(pdf, config.pdfDocument.icons.linkedin, linkedin, true);
 };
 
-export const generateResultPDF = (resultNotesDraft: string[]): void => {
+export const drawEnglishLevel = (pdf: PDFKit.PDFDocument, englishLevel: string): void => {
+  pdf.addPage();
+  pdfUtils.drawTitle(pdf, 'English level');
+  drawRadarChart(pdf, config.files.result.englishChartFilename);
+  pdf
+    .moveDown(1)
+    .font(config.pdfDocument.fonts.regularFont)
+    .fontSize(config.pdfDocument.fonts.baseFontSize)
+    .fillColor(config.pdfDocument.colors.blackColor)
+    .text(`Supposed level: ${englishLevel}`);
+  pdfUtils.drawNote(
+    pdf,
+    // eslint-disable-next-line max-len
+    'This is an approximate evaluation. If you would like to get more comprehensive evaluation, then contact a language specialist.'
+  );
+};
+
+export const generateResultPDF = (resultNotesDraft: string[], englishLevel: string): void => {
   const pdfDocument = pdfUtils.createPDFDocument();
 
   pdfUtils.drawHeader(pdfDocument);
   pdfUtils.drawStep(pdfDocument, 'Result');
   drawInterviewInfo(pdfDocument);
-  drawRadarChart(pdfDocument);
-  drawSection(pdfDocument, 'English level', resultNotesDraft[0], 2);
-  drawSection(pdfDocument, 'Software skills', resultNotesDraft[1]);
-  drawSection(pdfDocument, 'Technical skills', resultNotesDraft[2]);
-  drawSection(pdfDocument, 'Supposed level', resultNotesDraft[3]);
-  drawSection(pdfDocument, 'Recommend', resultNotesDraft[4]);
+  drawRadarChart(pdfDocument, config.files.result.topicsChartFilename);
+  drawEnglishLevel(pdfDocument, englishLevel);
+  drawSection(pdfDocument, 'Software skills', resultNotesDraft[0]);
+  drawSection(pdfDocument, 'Technical skills', resultNotesDraft[1]);
+  drawSection(pdfDocument, 'Supposed level', resultNotesDraft[2]);
+  drawSection(pdfDocument, 'Recommend', resultNotesDraft[3]);
   drawInterviewerInfo(pdfDocument);
   pdfUtils.drawDate(pdfDocument);
 

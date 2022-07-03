@@ -33,7 +33,7 @@ module.exports = {
     'no-plusplus': 'off',
     'max-depth': ['error', 3],
     'max-len': ['error', 120],
-    'max-lines': ['error', { max: 200 }],
+    'max-lines': ['error', { max: 250 }],
     'max-nested-callbacks': ['error', 4],
     'max-params': ['error', 5],
     'max-statements': ['error', 20],

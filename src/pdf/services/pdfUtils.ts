@@ -116,3 +116,12 @@ export const drawDate = (pdfDocument: PDFKit.PDFDocument): void => {
     .fillColor(config.pdfDocument.colors.blackColor)
     .text(dayjs().format(format), { align: 'right', underline: true });
 };
+
+export const drawNote = (pdfDocument: PDFKit.PDFDocument, note: string): void => {
+  pdfDocument
+    .moveDown(0.5)
+    .font(config.pdfDocument.fonts.boldFont)
+    .fontSize(config.pdfDocument.fonts.smallestFontSize)
+    .fillColor(config.pdfDocument.colors.brandColor)
+    .text(`* Note: ${note}`);
+};

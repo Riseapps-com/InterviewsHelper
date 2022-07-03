@@ -7,7 +7,7 @@ import { pdfUtils } from '../../pdf';
 import { questionsUtils } from '../../questions';
 import { interviewStructure } from '../config';
 
-import type { PdfIcons } from '../../config/types';
+import type { PdfIcons } from '../../config';
 import type { InterviewQuestions, Question } from '../../html';
 
 const parseLink = (question: string): string => {
@@ -69,16 +69,27 @@ export const generateResultDraft = (questions: Map<string, Question[]>): void =>
   fs.writeFileSync(fsUtils.wrapToOutputDirectory(config.files.result.resultDraftFilename), topics.join('\n'));
 };
 
+export const generateEnglishDraft = (): void => {
+  const {
+    parsers: { englishLevelKey },
+  } = config;
+
+  fs.writeFileSync(
+    fsUtils.wrapToOutputDirectory(config.files.result.englishDraftFilename),
+    `${englishLevelKey}\n`
+      .concat(`${config.englishEvaluation.criteria.map(criteria => `${criteria}: 0/5`).join('\n')}`)
+      .concat(`\n${englishLevelKey}`)
+  );
+};
+
 export const generateResultNotesDraft = (): void => {
   const {
-    parsers: { englishLevelKey, softwareSkillsKey, technicalSkillsKey, recommendKey, supposedLevelKey },
+    parsers: { softwareSkillsKey, technicalSkillsKey, recommendKey, supposedLevelKey },
   } = config;
 
   fs.writeFileSync(
     fsUtils.wrapToOutputDirectory(config.files.result.resultNotesDraftFilename),
-    // eslint-disable-next-line max-len
-    `${englishLevelKey}\nFluency: 0/3\nAccuracy: 0/3\nCoherence: 0/3\nRange: 0/3\nPronunciation: 0/3\n${englishLevelKey}`
-      .concat(`\n\n${softwareSkillsKey}\n-\n${softwareSkillsKey}`)
+    `${softwareSkillsKey}\n-\n${softwareSkillsKey}`
       .concat(`\n\n${technicalSkillsKey}\n-\n${technicalSkillsKey}`)
       .concat(`\n\n${supposedLevelKey}\n-\n${supposedLevelKey}`)
       .concat(`\n\n${recommendKey}\nYes / No\n${recommendKey}`)
@@ -158,6 +169,23 @@ const drawQuestions = (pdf: PDFKit.PDFDocument, questions: Map<string, Question[
   });
 };
 
+const drawEnglish = (pdf: PDFKit.PDFDocument): void => {
+  pdf.moveDown(1);
+  pdfUtils.drawTitle(pdf, 'English');
+
+  config.englishEvaluation.criteria.forEach(criteria =>
+    pdf
+      .font(config.pdfDocument.fonts.regularFont)
+      .fontSize(config.pdfDocument.fonts.baseFontSize)
+      .fillColor(config.pdfDocument.colors.blackColor)
+      .text(`${criteria} ~`, { continued: true })
+      .text('      ', { continued: true })
+      .font(config.pdfDocument.fonts.boldFont)
+      .text(`Mark: `, { continued: true })
+      .text(`    / ${config.evaluation.maxMark}`, { underline: true })
+  );
+};
+
 export const generateInterviewPDF = (questions: Map<string, Question[]>): void => {
   const pdfDocument = pdfUtils.createPDFDocument();
 
@@ -166,6 +194,7 @@ export const generateInterviewPDF = (questions: Map<string, Question[]>): void =
   drawInterviewInfo(pdfDocument);
   drawEvaluation(pdfDocument);
   drawQuestions(pdfDocument, questions);
+  drawEnglish(pdfDocument);
   pdfUtils.drawDate(pdfDocument);
 
   pdfDocument.pipe(fs.createWriteStream(fsUtils.wrapToOutputDirectory(config.files.interview.forInterviewerFilename)));
